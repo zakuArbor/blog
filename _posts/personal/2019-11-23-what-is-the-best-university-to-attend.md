@@ -35,7 +35,7 @@ In my previous [blog](different-options-after-highschool), I have mentioned what
 
 
 
-<img src = "/assets/manga-life-choices/not-knowing.png" alt = "image on how it is normal not to know what to do after university" class="center" style="width: 386px;"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/not-knowing.png" alt = "image on how it is normal not to know what to do after university" class="center" style="width: 386px;"/>
 
 
 
@@ -55,7 +55,7 @@ University has shaped a lot of who I am right now. I am now less ignorant of the
 
 
 
-<img src = "/assets/manga-life-choices/lack-knowledge.png" alt = "image showing a character stating how small their existence is compared to the world" class="center"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/lack-knowledge.png" alt = "image showing a character stating how small their existence is compared to the world" class="center"/>
 
 
 
@@ -73,7 +73,7 @@ I have interacted and observed many students throughout the years and each and e
 
 
 
-<img src = "/assets/manga-life-choices/not-knowing2.png" alt = "image on how it is normal not to know what to do after university" class="center"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/not-knowing2.png" alt = "image on how it is normal not to know what to do after university" class="center"/>
 
 <br/>
 
