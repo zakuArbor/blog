@@ -174,6 +174,8 @@ Back to the topic of University’s purpose, there are many social and economica
 
 <br/>
 
+---
+
 ### Sources
 
 [1] http://www.heqco.ca/en-ca/Research/ResPub/Pages/Still-Worth-It-After-All-These-Years.aspx

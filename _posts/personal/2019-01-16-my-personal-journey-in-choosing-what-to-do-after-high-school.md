@@ -3,7 +3,7 @@ title: My Personal Journey in Choosing What to do After High School
 published: true
 ---
 **Prelude:**
-Recently I wrote a [blog](https://zakuarbor.wordpress.com/2019/01/04/different-options-after-highschool/) about the various options that students often choose from and discussed the prospect of each option. Originally I intended the blog to be about my personal experience and my struggles in choosing what I wanted to do after HighSchool but I ended up deviating.
+Recently I wrote a [blog](different-options-after-highschool) about the various options that students often choose from and discussed the prospect of each option. Originally I intended the blog to be about my personal experience and my struggles in choosing what I wanted to do after HighSchool but I ended up deviating.
 
 <br/>
 
