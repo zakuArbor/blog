@@ -19,7 +19,7 @@ Some students already decided what they’ll do right after HighSchool and some 
 
 
 
-**Things to Consider on what options you want to pursue:** I suggest you read this article: https://80000hours.org/career-decision/article/
+**Things to Consider on what options you want to pursue:** I suggest you read this article: [https://80000hours.org/career-decision/article/](https://80000hours.org/career-decision/article/)
 
 <br/>
 
@@ -43,7 +43,7 @@ There are lots of jobs that will not be available to you since most jobs require
 
 
 
-> Students graduating from university after the 2008-2009 economic downturn were better protected from unemployment than high school-only graduates – Higher Education Quality Council of Ontario [1]
+> Students graduating from university after the 2008-2009 economic downturn were better protected from unemployment than high school-only graduates – Higher Education Quality Council of Ontario [[1]](http://www.heqco.ca/en-ca/Research/ResPub/Pages/Still-Worth-It-After-All-These-Years.aspx)
 
 
 
@@ -151,7 +151,7 @@ Furthermore, programs such as Art, Music, and Drama have a lot of competition as
 
 
 
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/data-graphs/student-trends-higher-education.png" alt = "A graph highlighting the median income by education attainment" class="center"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/student-trends-higher-education.png" alt = "A graph highlighting the median income by education attainment" class="center"/>
 
 
 
