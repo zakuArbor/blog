@@ -151,7 +151,7 @@ Furthermore, programs such as Art, Music, and Drama have a lot of competition as
 
 
 
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/student-trends-higher-education.png" alt = "A graph highlighting the median income by education attainment" class="center"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/student-trends-higher-education.png" alt = "A principal addressing to a body of students on the recent trend of students going to post-secondary" class="center" style="width:400px"/>
 
 
 
