@@ -2,7 +2,7 @@
 title: "Computer Science – A long and gargled Explanation"
 published: true
 ---
-**Prologue:**
+# Prologue:
 
 Computer Science has been getting a lot of attention in the past few years, especially due to media coverage. The 21st century began with a lot of optimism of Computer Technology transforming the lives of humanity for the greater good. However, there has not been a sudden boom of interest in the field of Computer Science and it may be due to the lack of understanding of the field along with the Dot Com Bubble near the beginning of the 21st Century. But there seems to be this revival in the field that many students are being encouraged to go study Software Engineering and Computer Science by their parents, teachers, and by society since “programming” is the future. This revival can probably be attributed to our increasing reliance on technology and especially due to the introduction of smartphones, fast growth of the internet such as social media, and the revival of Artificial Intelligence and Deep Learning. But not many have a good understanding of what Computer Science is.
 
@@ -11,8 +11,6 @@ The motivation for this blog came from a [video](https://www.youtube.com/watch?v
 Anyways, the video intrigued me to write a comment about what I was told during an orientation held by the Department of Computer Science, Math, and Statistics at the University of Toronto Mississauga back when I was in first year. I was told that I cannot avoid Math and so I was expecting MindaRyn to say that instead of coding. Unlike Software Engineering, Computer Science focuses a lot on Math and not on learning the process of designing software from an Engineering perspective. It makes me laugh and also frustrated how many people do not understand what Computer Science is but I was once also guilty of this.
 
 Anyways, the video intrigued me to write a comment about what I was told during an orientation held by the Department of Computer Science, Math, and Statistics at the University of Toronto Mississauga back when I was a freshman. I was told that I cannot avoid Math and so I was expecting MindaRyn to say that instead of coding. Unlike Software Engineering, Computer Science focuses a lot on Math and not on learning the process of designing software from an engineering perspective. It makes me laugh and also frustrated how many people do not understand what Computer Science is but I was once also guilty of this.
-
-<br/>
 
 # Introduction
 
@@ -28,13 +26,18 @@ As stated earlier, there’s no way we can define Computer Science in a clear an
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Tzl0ELY_TiM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class = "center" allowfullscreen></iframe>
 
+<br/>
+
 ## What is Computer Science Part 2:
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/q-Vqxugd6HQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class = "center" allowfullscreen></iframe>
 
+<br/>
+
 ## The Math Needed for Computer Science:
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eSFA1Fp8jcU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class = "center" allowfullscreen></iframe>
 
+<br/>
 
 In fact these three videos are sufficient enough for me to end this blog as these three videos highlight the major points of what Computer Science is in a nutshell. But I’ll continue on with my rambling as I like to do in my blogs.
 
@@ -79,10 +82,12 @@ There are tons of Computer Science fields so I’ll list a few fields below and 
 * Mobile Development
 * Memory Systems
 * Computational Physics
-List from https://www.internationalstudent.com/study-computer-science/what-is-computer-science/
+
+List from [https://www.internationalstudent.com/study-computer-science/what-is-computer-science/](https://www.internationalstudent.com/study-computer-science/what-is-computer-science/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2VpDcjFshJI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class = "center" allowfullscreen></iframe>
 
+<br/>
 
 # Conclusion
 I hope you learn and have a basic understanding of what Computer Science is. I’ll write another blog about my initial view of Computer Science and my experience in Computer Science at my University.
