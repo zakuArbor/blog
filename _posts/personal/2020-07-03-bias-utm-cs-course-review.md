@@ -3,8 +3,13 @@ title: Bias UTM CS Course Review
 published: true
 ---
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
+	iframe {
+		width: 560px; 
+		height: 315px;
+	}
+
 	.img_50 {
 		max-width: 50%;
 	}
@@ -32,6 +37,25 @@ published: true
 		.multiple_img_div {
 			display: block;
 		}
+
+		iframe {
+			width: 80vw; 
+			height: 45vw;
+		}
+	}
+
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 3/2),
+	only screen and (min--moz-device-pixel-ratio: 1.5),
+	only screen and (min-device-pixel-ratio: 1.5){
+
+	  html,
+	  body{
+	    width:100%;
+	    overflow-x:hidden;
+	  }
+
 	}
 </style>
 
@@ -48,7 +72,7 @@ Now that I am finished with University (unless somehow I fail my electives), I t
 
 Before I start talking about the various courses I took, there may be some bias reviews with courses taught by my favorite professors: Larry Yulei Zhang, Vincent Maccio, Arnold Rosenbloom, Ilir Dema, and Simon Bogdan and perhaps also Furkan Alaca (it’s unfortunate I was not able to take a regular course with him so I cannot judge his teaching. I have a feeling he would have been one of my favorites if I had taken a regular course with him). Spoilers: I never had a terrible professor. Anyways, this is not only a review of courses I took but will also include a reflection on my progress in University along with some personal side stories.
 
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/collage1920x1080.jpg" alt = "my personal wallpaper with all my favorite professors"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/collage1920x1080.jpg" alt = "my personal wallpaper with all my favorite professors" class = "center"/>
 <p class = "excerpt">My desktop wallpaper with all my professors</p>
 
 <br/>
@@ -145,7 +169,7 @@ Since the course is trying to teach students agile development, you will be requ
 
 The course is not hard but it does require a lot of time commitment. You need to be responsive to emails and texts from various team members and communicate any issues you have to the team. The tests were not at all difficult but not easy at all. Working with a team is also quite interesting because your changes can cause a conflict with another member's code so you learn how to deal with merge conflicts. In case you are wondering, the project we usually make in CSC207 is a Paint Program that can save and load files utilizing various design patterns.
 
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/csc207_paint.png" alt = "an example of a CSC207 Paint Project"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/csc207_paint.png" alt = "an example of a CSC207 Paint Project" class = "center"/>
 <p class = "excerpt">An example of a CSC207 Paint Project</p>
 
 When working with a group, you need to ensure that each member merges their change after each user story and then perform a regression test on the program to ensure nothing gets broken. DO NOT MERGE ALL YOUR CHANGES ON THE LAST MINUTE. You will likely encounter merge conflicts and have a very very very difficult time fixing the merge conflict and find out which changes causes the program to break or behave differently. This is terrible software development practice. I've seen a group do this and all I can say is that they were not able to fix their merge conflict by the deadline and therefore did poorly in the course.
@@ -334,7 +358,7 @@ You need to have a great group to have a great experience. I worked with a group
 
 Here's an example of a great project I saw from this year's CSC301.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/bPAOhb8r5Co" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class = "center" allowfullscreen></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/bPAOhb8r5Co" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class = "center" allowfullscreen></iframe>
 
 You can view an example of what sorts of documents are expected in the course over at their github page: [https://github.com/collabcloud/project-collabcloud](https://github.com/collabcloud/project-collabcloud)
 
