@@ -17,15 +17,19 @@ published: true
 		max-width: 40%;
 	}
 
-	.double_img_div {
+	.img_33 {
+		max-width: 33%;
+	}
+
+	.multiple_img_div {
 		display: inline-block;
 	}
 	@media only screen and (max-width: 800px) {
-		.img_50, .img_60, .img_40 {
+		.img_50, .img_60, .img_40, img_33 {
 			max-width: 100%;
 		}
 
-		.double_img_div {
+		.multiple_img_div {
 			display: block;
 		}
 	}
@@ -236,7 +240,7 @@ When I took CSC209 at UTM, we barely learned gdb and never covered topics such a
 **Review:** Larry is an excellent professor and made the course quite enjoyable. The lab has two components, a prelab where you submit your circuit design and the lab where you program the FPGA using Altera. There's also a weekly quiz that tests you on the recent topics covered in class to ensure you keep up with the materials and a midterm and exam. The class was not difficult and probably is the easiest out of the 2nd semester CS courses in 2nd year (CSC209 and CSC263). Although we only briefly touched assembly, it was fun making recursion calls. The course I would imagine changed drastically so my knowledge of the course is very outdated. I loved the labs and made me understand more in-depth on how computers work. I have a confession to make, I never understood how flip flops worked even though it wasn't hard. It was only after 2 years from when I took the course that I understood how flipflop works. I read an excellent manga, [The Manga Guide to Microprocessors](https://www.amazon.ca/Manga-Guide-Microprocessors-Michio-Shibuya/dp/1593278179) and a book [Code: The Hidden Language of Computer Hardware and Software](https://www.amazon.ca/Code-Language-Computer-Hardware-Software/dp/0735611319) that I understood all the concepts taught in the course. I was always ashamed of how I got a good mark despite not understanding how flip flops work so I decided to study CSC258 again with those books which I highly recommend.
 
 <center>
-<div style = "display: inline-block;" class = "double_img_div center" >
+<div style = "display: inline-block;" class = "multiple_img_div center" >
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/csc258_manga.jpg" alt = "The cover of the Manga Guide to Microprocessors" style = "float:left;" class = "half-img"/>
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/csc258_book.jpg" alt = "The cover of the book Code" style = "float:right;"  class = "half-img"/>
 </div>
@@ -365,7 +369,7 @@ When I took the course back in 2018, the lab machines were not powerful as they 
 The last CSC309 Projects in 2019 and in 2020 was to make an io game which a lot of students refer to it as Fortnite on the web because it's a shooter based game. The project I had was much easier as we didn't need to draw graphics using HTML5 and think of how to effectively scale your game to handle many users along with the game mechanics being much simpler. The game we worked on was called Warehouse wars where you push boxes through a grid to surround the monster with boxes to kill it off (like surrounding a single enemy piece in Go/Baduk). The game mechanics were so simple that I didn't need to code more complex collision detection, have smart enemy bots nor have different types of weapons and hideouts.
 
 <center>
-<div class = "double_img_div">
+<div class = "multiple_img_div">
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/ww_reg.png" alt = "An example of my Warehouse War login screen" style = "float:left;" class = "img_50"/>
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/ww_game.png" alt = "An example of my Warehouse War gameplay" style = "float:right;" class = "img_50"/>
 </div>
@@ -532,7 +536,7 @@ I do have a confession to make, I did not really do the first two assignments wh
 If you are worried about this course because you know nothing about hardware, do not worry. I didn't know much about hardware either when I first took the course. As it may come as a shock to some people, I didn't even know what a GPU was other than it stands for Graphical Processing Unit. The labs were a lot of fun and the assignments were very interesting other than the first assignment which was very frustrating. This course is unlike any other with the exception of perhaps Operating Systems with Bogdan, there are reports we have to write for every assignment. I never had to write reports for any programming assignment unless it was one of those projects you work on with a team over a few months. In each report, students have to collect data, generate graphs, and report their findings explaining why some methods took longer than others by taking into consideration of the hardware. If you need to remember one thing from the course, memory access is very expensive.
 
 
-<div class = "double_img_div center">
+<div class = "multiple_img_div center">
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/367-sample1.png" alt = "A screenshot of a CSC367 Report with graphs" style = "float:left;" class = "img_40"/>
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/367-sample2.png" alt = "A screenshot of a CSC356 Report" style = "float:right;" class = "img_60"/>
 </div>
@@ -540,7 +544,7 @@ If you are worried about this course because you know nothing about hardware, do
 
 The first assignment was investigating the benefits of caches and we were tasked to write a program that measures the throughput of different caches which was very difficult to write. Luckily my partner was able to come up with a program that could measure the throughput and latency of each cache. The second component of the assignment was to profile a given program using gprof and figure out where in the code optimization was needed. The second assignment was applying filters on images using different numbers of threads and methods such as row sharding, row, column-major, and distributing tasks using a work queueing system. The goals were to understand the properties of each method such as why a particular method was slow or why a particular method would perform well on certain types of image dimensions. This assignment was loads of fun and I am very proud of how I wrote the code. I spent a lot of time structuring my code to be beautiful and it's probably the best piece of work I ever have written. The third assignment was working with different parallel computing platforms such as OMP and MPI on a data set, trying out different join techniques. This was neat as you can visualize from the gathered data on how scalable the program was using different numbers of processors and different numbers of computing nodes (using different number of computers). The final assignment was similar to assignment 2 where we apply different methods of partitioning and decomposing data except this time we are using GPUs to perform these tasks. I struggled a lot trying to wrap my head around CUDA programming and therefore was my lowest performing assignment (which was still relatively very good). But it was interesting to see and understand how useful GPUs are in computation.
 
-<div class = "double_img_div center">
+<div class = "multiple_img_div center">
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/zaku.jpg" alt = "Raw image of a zaku before applying Laplacian filter over it" style = "float:left;" class = "img_50"/>
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/zaku_filter.jpg" alt = "Image of a zaku after applying a Laplacian filter over it" style = "float:right;" class = " img_50"/>
 </div>
@@ -694,13 +698,17 @@ Here are some links to my presentation, tutorial, and assignment I gave in CSC42
 
 At the start of the course, students are to explore various research papers relating to the project they wish to explore. I mainly looked into kernel programming, Linus Security Modules (LSM), and Trusted Platform Module as I was very interested in working with low-level security systems for the course. However, there were not many who were interested in the subject and so I never ended up working on them. However, the group I joined suggested they would work on making computer login easy by using our phones to authenticate the desktop with zero interaction. This involved needing to work with Linux Linux Pluggable Authentication Modules (PAM) which needed to be written in C. So I worked on the project which we named ProxyAuth for Proximity Based Authentication which would allow users to authenticate their laptops if they are by their laptop and auto-lock their laptop if they are not nearby. This involved learning how to program Bluetooth and program an Android app (which we chose Kotlin over Java). The course consists of having a weekly meeting with the professor and TA to talk about your progress and any issues you have. The professor and TA help refine your project and often can guide you through your issues. Every 2 weeks, every group is required to demonstrate what they have so far to the class. It was often interesting to see how other groups progress and ask questions about their project. At the end of the course, not only do you have to demonstrate the project to the entire class, but you also need to write a 20-page report on your project. Normally this would be done together by the entire team but I got fed up with the team and was going through some stressful time that I requested the professor if I could just write my report separate from the team and was granted permission.
 
-<div>
-	
+<div class = "multiple_img_div center">
+	<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/proxy-1.png" alt = "Title page of my paper" class = "img_33"/>
+	<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/proxy-2.png" alt = "Table of Contents of my paper" class = "img_33"/>
+	<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/proxy-3.png" alt = "The first page of my paper" class = "img_33"/>
 </div>
-<p class = "excerpt">An example of what my final capstone paper looks like in CSC490. A lot of work to write one alone. Reports are usually written together with the team.</p>
+<p class = "excerpt">An example of what my final capstone paper looks like in CSC490. A lot of work to write one alone. Reports are usually written together with the team. Tex is great :D</p>
 
-<div>
-	
+<div class = "multiple_img_div center">
+	<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/vesta-1.png" alt = "Title page of my paper" class = "img_33"/>
+	<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/vesta-2.png" alt = "Table of Contents of my paper" class = "img_33"/>
+	<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/vesta-3.png" alt = "The first page of my paper" class = "img_33"/>
 </div>
 <p class = "excerpt">Another example of a capstone project final report looks like. Taken without permission from the internet</p>
 
