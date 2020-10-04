@@ -560,7 +560,7 @@ The first assignment was investigating the benefits of caches and we were tasked
 **Review:** This course is another course that is great for interview preparation as it covers topics that one may find in interviews. This course was taught by Vincent Maccio upon being hired, replacing Daniel Zingaro. However, now that Maccio left, Sushant will be replacing Maccio. As usual, Vincent makes the course very interesting and interactive. I don't have much to say other than Vincent is a great professor and it's such a shame the University did not renew his contract despite all the good reviews he has. Vincent is currently working on a video series on this very course, so any student interested in learning what is covered in CSC373 or self-study CSC373 rather than taking the course can watch the videos over at his youtube channel [Professor Vincent Maccio
 ](https://www.youtube.com/channel/UCKpGnRhm920yZYlf5-nSBuw). I look forward to his videos to refresh the content.
 
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/373.png" alt = "Professor Maccio's youtube channel which hosts video lectures of CSC373" class = "center"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/csc373.png" alt = "Professor Maccio's youtube channel which hosts video lectures of CSC373" class = "center"/>
 <p class = "excerpt">A clip from Professor Maccio's youtube channel</p>
 
 <br/>
