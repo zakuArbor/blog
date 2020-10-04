@@ -18,7 +18,7 @@ published: true
 	}
 
 	.img_33 {
-		max-width: 33%;
+		max-width: 30%;
 	}
 
 	.multiple_img_div {
@@ -63,6 +63,8 @@ First year computer science courses are not difficult at all. If you are new to 
 A lot of students are lost on how to start and often tell me they don’t know where to start on their assignment or that those little projects are stupid and meaningless. You need to start somewhere and starting simple is probably the best idea. When I first tried to learn programming a long time ago, I made very simple programs that would just take in inputs from the user and add them together, a random number guessing game, or just simply spamming different functions with different inputs to see how they would behave. It may seem stupid to others but it’s quite fascinating in my own opinion. To be able to tell the computer what to do and theorize how programs work was interesting.
 
 First-year is probably going to be stressful and competitive because of POST requirements where you need to do very well in first-year to get into Computer Science POST unlike other Universities such as uOttawa, CarletonU, Ryerson, and YorkU where you are admitted directly to the Computer Science program after High School. UTM does things differently by evaluating your high school marks to enter the University but not to the program itself. To enter into the Computer Science program, they evaluate your performance in first-year. Nowadays, you will probably be competing to be the top 250 students or so out of 1000 or more first-year students who also wish to study Computer Science at the University.
+
+<br/>
 
 # CSC108: INTRODUCTION TO PROGRAMMING 1
 **Professor:** Ilir Dema
@@ -287,7 +289,7 @@ Preordering at No Scratch Press gives you a much better deal with the coupon `PR
 
 **Description:** In this course, you will learn how to effectively communicate written and orally. You will learn about interpersonal communication and how to deescalate situations and avoid workplace communication issues. In addition, students will learn how to effectively write code comments and documentation. UML diagrams and case diagrams are taught in much greater depth than in 207. 
 
-**Review:** This is a standard communication course for computer science students but I heard this course may be removed in the near future. Instead, students may have to take some writing course designed in collaboration with the writing department or just any set of writing courses the department approves of. Students will be writing weekly blogs or pieces of work (at least when I took it - this blog originally was for this course) and work in groups to present and write a project proposal (I cannot recall what that was about). The test was very interesting because there was two components to the test. The first component is just a normal test but in the second component, you discuss the answers about the test you just wrote not long ago with the group. You can see all my blogs from the course over [here](https://zakuarbor.wordpress.com/csc290/). It includes my view of the course whether or not it is useful and how I felt about the two stage test format.
+**Review:** This is a standard communication course for computer science students but I heard this course may be removed in the near future. Instead, students may have to take some writing course designed in collaboration with the writing department or just any set of writing courses the department approves of. Students will be writing weekly blogs or pieces of work (at least when I took it - this blog originally was for this course) and work in groups to present and write a project proposal (I cannot recall what that was about). The test was very interesting because there was two components to the test. The first component is just a normal test but in the second component, you discuss the answers about the test you just wrote not long ago with the group. You can see all my blogs from the course over [here](https://zakuarbor.github.io/blog/csc290). It includes my view of the course whether or not it is useful and how I felt about the two stage test format.
 
 ## Reflection
 For those doing a CS major or minor and wondering which courses are easier, it all depends on what you are good at. Are you better at programming or theory? If you find theory much easier, you will like CSC263 over CSC209. CSC258 is the easiest out of CSC209, CSC258, and CSC263 for the average student. However, CSC263 is quite an important course which allows you to take courses such as CSC343. It is also very useful to know for interviews and to program better. So you should plan ahead on what courses you want to take in 3rd year instead of choosing what is easier. I suggest you to take all three of them. You don't have to take all three in 2nd year but you should plan to eventually complete all of them as they open a lot of courses to you.
@@ -494,10 +496,11 @@ The exam was very challenging but fair. Due to Covid-19, the exam was held on Qu
 	<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/363-1.png" alt = "A professor relating dating sims to NP-Hard to motivate his research student" style = "float:left;" class = "img_40"/>
 	<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/363-2.png" alt = "A turing machine that determines whether a person loves each other or not" style = "float:right;" class = " img_60"/>	
 </div>
+<p class = "excerpt">>Excerpt from Rikei ga Koi ni Ochita no de Shoumei shitemita</p>
 
 This course is probably the most useless theoretical computer science course you can take at the university but I found it to be the most interesting. The idea of being about to reduce problems from other problems to determine the class of the problem was very fascinating. In addition, it was interesting to know that there are some problems that cannot be solved in polynomial time and how we know which problems are in P, NP, NP-Hard, or NP-Complete.
 
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/363-3.png" alt = "A student questioning why they are learning about computing theory when all they want to learn is how to program a video game" class = "center"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/363-3.jpg" alt = "A student questioning why they are learning about computing theory when all they want to learn is how to program a video game" class = "center"/>
 
 The assignments were quite difficult for me to solve but luckily Vincent allowed us to cooperate with anyone as long as we mention that we worked with them. This allowed us to gather in big groups to debate and discuss the problem to eventually come up with the solutions. Since the assignments could be worked with others, the assignments are not worth much and so most of your marks are from your midterm and exam. Since I performed so poorly on the midterm, I was going to into the exam with 55% which was a huge yikes despite loving the course. This was probably the first time I spent an entire week to study for a course (I was lucky to have my exam schedule to be placed nicely to have the time to study). It was fun reviewing every single concept taught in the course during exam week and oddly enough I didn’t feel much pressure. Of course, if I failed the course, I would be at risk of delaying my graduation (I still could retake it in my final year). The exam turned out to be not difficult as I would have expected it to be and I did prepare myself a lot. I ended with 73% at the end of the course, rising 18% from the exam, the biggest jump I ever had in a course. I usually drop 10%-20% from exams (in my first and second year) and so this was quite a nice change.
 
