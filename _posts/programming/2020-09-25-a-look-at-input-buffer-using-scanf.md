@@ -37,7 +37,7 @@ while (scanf("%c", &c) == 1) {
 
 Let's try running **figure 2** with various inputs and see how the program behaves:
 
-```bash
+```
 $ echo -e "5" | ./a.out
 read integer: 5
 Let's check what is in the input buffer:
@@ -48,7 +48,7 @@ Weird, why would `scanf` read 10 from the input `"5"` from `echo`? Recall that `
 
 The input buffer does not get cleared after executing `scanf` as we have seen in the example above. To make this point more clear, here's another example with the input **5A**
 
-```bash
+```
 $ echo -e "5A" | ./a.out
 read integer: 5
 Let's check what is in the input buffer:
