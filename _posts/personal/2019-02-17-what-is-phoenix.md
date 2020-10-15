@@ -1,7 +1,9 @@
 ---
+layout: post
 title: What is Phoenix
-published: true
+categories: [phoenix]
 ---
+
 **Disclaimer:** I do not claim to be an expert in any of the topics discussed below. Furthermore, I do not formally cite my sources but I will provide my list of sources below. I do not speak on behalf the Government, any companies mentioned in below nor as an employee of any organization that will be mentioned below. I simply am interested in the topic and decided to write a report to further learn about the issue. There will be parts of the blog that will resemble the Auditor General’s work. I am merely restating the Auditor General’s report along with any additional information I came across. The plan is to write a commentary at the end on my criticism of the project from both a software and political perspective.
 
 <br/>

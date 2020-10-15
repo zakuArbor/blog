@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Reflection of the Course
-published: true
+categories: csc290
 ---
 > What was the most significant thing you learned this term in CSC290 so far? Your answer should be specific and your blog post should be focused.  Don't write about what you learned in general.  Pick the most significant thing.  The most significant thing you learned does not have to be related to communication skills or course topics. The most significant thing you learned can be something you learned on your own, in tutorial, through related research, etc.  What you learned could be something about communication skills, about your learning style, about your organizational skills, about the tech industry, etc.
 

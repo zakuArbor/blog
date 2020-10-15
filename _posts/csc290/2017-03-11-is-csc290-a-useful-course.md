@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Is CSC290 a Useful Course?
-published: true
+categories: csc290
 ---
 > Reflect on the lectures/tutorials on team work/group work and communication techniques for working with others (eg. perception check, "I" statements, guest lecturers).  Did you find the activities and materials to be helpful in preparing and in dealing with the group work in this course? Why or why not?  In what ways have you used the materials taught in your group work?  Can you suggest other topics and/or activities that would have helped you? Did you find yourself lacking the right skills in dealing with certain group situations that you've encountered?  What was the situation that was challenging? What did you wish you had known? Did you find the guest lecturers and their 'lecture' helpful?
 

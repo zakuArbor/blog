@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Personal Thoughts on Participation
-published: true
+categories: csc290
 ---
 > Reflect on your participation in the lectures and tutorials in CSC290 so far. Was there a particular activity that was significant? In what ways did you participate or not participate in an activity? In hindsight, is there something you would have done differently for a particular activity?  In what ways did a particular activity enhance or detract from your learning? If you have not been participating, what would encourage more participation or engagement from you?
 

@@ -1,6 +1,7 @@
 ---
+layout: post
 title: "Preparing for the Real World: Teamwork"
-published: true
+categories: csc290
 ---
 > Taking into consideration the policies that have been put in place to deal with slackers, what concerns you when it comes to group work in this course?  Do you think group work in the university setting is a good preparation for working with others in the 'real world'? In what ways are group work in the academic setting similar to or different from group work in the workplace?  How have your past group work experiences (positive or negative) shaped your attitude towards group work?
 

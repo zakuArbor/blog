@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Different Options after HighSchool
-published: true
+categories: [school, career]
 ---
 
 **Disclaimer:** This blog post is based on my knowledge and is subject to changes. I am also not an expert in any of these topics nor do I have much experience in life.

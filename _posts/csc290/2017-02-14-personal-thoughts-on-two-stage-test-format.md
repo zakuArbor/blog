@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Personal Thoughts on Two-Stage Test Format
-published: true
+categories: csc290	
 ---
 > Reflect on the two-stage test format.  If this is your first time having a test in this format, what did you think of it?  In what was was it or was it not effective?  What did you like or not like about it?  If you're had a two-stage test before, in what ways was this experience different?  How do the two experiences compare?
 

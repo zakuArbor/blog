@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Communications in IT
-published: true
+categories: csc290
 ---
 **Topic:**
 >Tell me about where you are at the start of this course with regards to the ‘non-technical’ skills needed for an IT professional. For example: how would you rate your writing skills, your speaking skills, your ability to organize? Are you comfortable with speaking in front of a crowd, working with a group of strangers?

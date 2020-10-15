@@ -1,6 +1,7 @@
 ---
+layout: post
 title: What is the Best University to Attend
-published: true
+categories: [university, school]
 ---
 
 ## Introduction

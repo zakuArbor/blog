@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Killing time during Commute by Reading Books
-published: true
+categories: [commute, books]
 ---
 Depending on where you live, your commute to work or school may be short or very long. Your mode of transportation probably consists of one or more of the following: walking, taking a bus, subway/train, or even a ferry. I used to commute to my High School through a yellow bus since there is no public transit in the countryside where my High School was located. I would have to wake up early and be at my bus stop by 7 am and make up my loss of sleep on the bus since I usually slept around 2 or 3 in the morning. Sleeping is a great way of killing time on the bus since my commute was about 45mins. I would also sleep on the way back from school since I have motion sickness and taking a school bus in a country road does not help at all. I typically find commutes suck up your energy and time and would get frustrated about the loss of time. Perhaps not so much since I lacked sleep anyways. But I’m sure many of you who commute through public transportation feel that your time is being wasted. During commutes, you are losing productive time that can be spent on things more valuable to you.
 

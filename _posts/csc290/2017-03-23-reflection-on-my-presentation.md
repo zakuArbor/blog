@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Reflection on my Presentation
-published: true
+categories: csc290
 ---
 > Reflect on the video recordings of your presentation.  Did you observe anything interesting about your presentation that you may not have noticed while presenting?  Did you look as scared/confident as you felt when you were presenting?  What other interesting observations do you note from the recording?
 

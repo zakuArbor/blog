@@ -1,6 +1,7 @@
 ---
+layout: post
 title: The Type and Expectations of Guest Speakers
-published: true
+categories: csc290
 ---
 > Knowing that we have some guest speakers (who have had experience working full time in the workforce/in the 'real world') coming to the our class, what expectations do you have for that particular 'lecture'? What sort of guest speakers would be of interest to you?  That is, would you want to talk to someone of a particular background, position, experience, etc? What questions might you ask our guest speakers?  What advice would you ask for? Explain.
 

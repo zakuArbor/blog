@@ -1,6 +1,7 @@
 ---
+layout: post
 title: "Finale: A Time of Reflection"
-published: true
+categories: csc290
 ---
 > Reflect on and write about your learning, growth, and engagement throughout the CSC290 course.  What have you learned? How have you engaged in the course? How have you grown as a professional, a computer scientist, an academic, and a communicator?  Be specific and provide examples/evidence of your learning, growth, and engagement.  Consider the original intent and purpose of this engagement assignment.
 

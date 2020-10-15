@@ -1,6 +1,7 @@
 ---
+layout: post
 title: "First Year of University – Entering a new Environment"
-published: true
+categories: [UTM, university, school]
 ---
 
 In one of my previous [blogs](my-personal-journey-in-choosing-what-to-do-after-high-school), I have gone over my struggles in choosing what to do after High School. Like most students, we all have to find a program or vocation to major in. After many dilemmas, I choose to study Computer Science (Specialist Program) at the University of Toronto Mississauga. As usual, this blog will be poorly written and incoherent.

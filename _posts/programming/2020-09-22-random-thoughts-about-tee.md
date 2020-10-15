@@ -1,6 +1,7 @@
 ---
+layout: post
 title: "Random thought about Tee"
-published: true
+categories: [programming, unix]
 ---
 <style>
 	.tee-img {

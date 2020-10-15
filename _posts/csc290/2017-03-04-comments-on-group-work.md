@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Comments on Group Work
-published: true
+categories: csc290
 ---
 > Browse through your classmates' blog posts.  Respond to/comment on a post of interest.  The post of interest may be one that you disagree with, one that reminds you of something else related to the course, or one that you can relate to in some way.  Explain why the post was interesting to you, along with your response to the post  The post of interest may also be one that you agree with.  In which case, you may explain why you agree or you may add supporting ideas.
 

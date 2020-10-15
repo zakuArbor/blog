@@ -1,0 +1,53 @@
+#introduction
+* written for those who are into programming - "hard to explain to nonprogrammers why solving probles htrough programming is so rewarding and fun", "hopes you are hooked"
+* won't see any traditional textbook problems, "lots of textbooks out there that do these things", "suspect that many people are not motivated by those kinds of puzzles"
+* intro made me chuckle and got me hooked, especially after he said he hopes you are hooked to programming and that this wasn't another rehash of explaining classical problems (which I initially thought. It's even better)
+* agree that the issue with reusing same problems is that it's simply reashing or googling and is repetitive
+* side note: thinking how some data structures like vectors and sets are written in C++ made me think of his book
+* the use of C: I was surprised he wanted to use C to teach data structures and algorithms but reading his justifications, it made more sense. C is plain without anything fancy such as dictionaries and requires you to build everything up (allude to how this usually frustrates people)
+* no formal proof that algorithm is correct but does try to convince you in hopes you will be interested in why it works
+* concise and well written. It's clear as to how the problems are formatted. This book expects readers to know how to compile in C and are familiar with C which will decrease the number of suitable readers
+
+# Goals
+* teach you data structures and algorithms using problems from the competitive programming world and to have fun while doing so
+* a silent goal to conve you that the data structure or algorithm is correct
+* imagine that you're here to learn powerful problem-solving approaches and how to implement them
+
+# HASH TABLES
+* I like the summary given in the beginning, makes me aware what the key to solve the problem (i.e. efficient search) and the problems presented and how we will tackle this with a hash table
+* give examples before defining what is a valid snowflake. I like this approach beause explaining before examples can overwhelm people
+* I like the advice he gives on how to first tackle the problem and outlines steps to solve the core problem. Many students are often stumped on how to begin with a problem. Always think simple and start with something simple instead of trying to tackle the problem altogether. Break the problem to cases
+* I like how he doesn't give the answer straight away but builds it up and explains the problem with the implemented code
+* though it's early access, perhaps the digital copy could have refs so I can click on it to get to the listing
+* when he is diagnosing the problem of the snowflakes, I like how he does counting on the number of comparisons and it builds up to explain complexity theory that it's O(n^2). It's well thought of on how to convey the topic 
+* this reminds me of lecture such as CSC236 where we implement a bad solution and build up, you could clearly see his experience in teaching
+* profile (diagnose) the bottleneck 
+* introduces Linkedlist before even teaching it, feels like he expects you to know some data structure from CSC148, though to be fair, it's quite simple to understand even for beginners
+* we building up to create a hashtable before formally defining it. Search up first principles to see if this matches the concept
+    * though it's not necessarly the case in every topic but there's always and time and place to use this concept and linkedlist was a good area to do so
+* my head is constantly screaming what is the average case or when he mentions about binary search is great to quickly search for elements but can't compete speed of a hashtable, made me think of combining the two
+* I like how the author keeps to point and doesn't introduce further analysis or optimization (i.e. hashtable with binary search on the buckets will be much better than a linked list). This introduces too much information. Another example is in compound word, it presents a simple solution when the input is too long, we just simply double the array's length. It doesn't introduce amortized cost and etc.
+* great he focuses on clarity rather than optimizations as long as it's a reasonable solution
+* perhaps it would be great to tell the audience not to worry how he formulated the ooats hash function. Though he did a fine job explaining the effect of the hash function (i.e. avalanche effect) but I could see readers trying to spend too much time on this
+* this review may be too nitty picky
+* I like how each listing is explained. This helps those who are not too familiar nor strong with reading code to understand the code much better. I notice no scratch press books tends to do that
+* the author always ensures he reminds us the purpose of the hashtable
+* use of upper and lower bound before defining what they are. Not wrong but does presume you have some mathematic knowledge which most of the readers should have
+* great to show a case where hashtable isn't suitable but I think that could be an extra reading for the reader. I would think for those who are new to algorithms, it may be best to keep it simple and said there are use cases where hashtables are not suitable (though think about this point more). Perhaps have it in a section called word of caution
+* as I said earlier, I like the introduction of each chapter because it's also a good way to recap your memory on what was covered, something I didn't like about C++ Crash Course. Though it did have a review section but I guess it's a bit harder when it's just about blasting concepts and now approaches to solve problems
+* I like reading this more than a textbook where it can present the problems a bit more boring.
+
+# TREES AND RECURSION
+* too nitpicky but I don't the statement 'that path has six edges on it, so the height of this tree is six'. In this particular example, that's true but what if you need to traverse to a sibling to go down another level. Anyhow this is too nitpicky. I prefer to split each level of the tree as "generations".
+    * anyhow, the author is clear to the point, this is a nitpick of mine. The author proceeds to say downward path so if we take the context, he is completely right but would have been better to explicitly say it.
+* I like how he presents how to represent a tree node with linked list that was shown in the previous chapter
+* introduces trees and then stacks and you can see why he introduces various data structures for a particular problem even if it's not the best solution because he wants to show you how much better recurisve is
+* builds up a tree slowly to convince readers how recursion works. Nice that it isn't some mathematical notion
+* shows common mistakes or explains code if written a bit differently and their consequences
+* can't be helped but due to the medium chosen, I have to draw the tree to remind myself how it looks like. Would be nice to have hyperlinks so I can jump straight to the listing. Perhaps on a physical copy, you could have bookmarks to quickly go back and forth.
+* although it does seem the author's intention is to have people try the code by building up the solution by not only building up the solution but how to process the data
+    * this would be good to help people prep for competition but to me it is noise. I think providing the starter code and focus on the solution itslf is better (nothing wrong with teaching representation but you also need to explain how to write such a program. Using C makes it more harder as you need to explain it which he does a great job in)
+* I like representing the tree using a family tree
+
+# Dynamic Programming
+Perhaps compare with his old book

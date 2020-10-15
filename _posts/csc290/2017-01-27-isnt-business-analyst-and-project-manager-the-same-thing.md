@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Isn’t Business Analyst and Project Manager the same thing?
-published: true
+categories: csc290
 ---
 > Reflect on the BA and PM topics covered in the lecture on Jan 16.  What did you find especially interesting? What was unclear or confusing?  What experience do you have in either areas (BA or PM)?  How do you see the topics applicable or not applicable to you?  What other thoughts do you have to share on the topic?
 

@@ -1,6 +1,7 @@
 ---
+layout: post
 title: My Personal Journey in Choosing What to do After High School
-published: true
+categories: [school, life, career]
 ---
 **Prelude:**
 Recently I wrote a [blog](different-options-after-highschool) about the various options that students often choose from and discussed the prospect of each option. Originally I intended the blog to be about my personal experience and my struggles in choosing what I wanted to do after HighSchool but I ended up deviating.
@@ -148,15 +149,15 @@ Humans are incapable of foreseeing the future. That is what makes life both inte
 
 I now faced the question: Should I accept my alternative offer to “Computer Science” at UTM or not. The way I made my decision was not always rational. Often times I would get a random number generator or a coin flipper to make my life decisions.
 
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/making-decisions-using-coin-toss.png" alt = "An image of a highschooler flipping a coin to make very important decisions for him" class="center"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/making-decisions-using-coin-toss.png" alt = "An image of a highschooler flipping a coin to make very important decisions for him" class="center big_img"/>
 
 Therefore, I decided to apply the same logic to decide whether I should remain in my program or go to UofT. So I played a mix of random number generator and coin flippers.
 
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/deciding-majors-through-paper-game.png" alt = "An image of a highschooler playing a game on a piece of paper to decide whether she should study humanities or arts" class="center"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/deciding-majors-through-paper-game.png" alt = "An image of a highschooler playing a game on a piece of paper to decide whether she should study humanities or arts" class="center big_img"/>
 
 However, an old friend of mine found out about it and gave me a lecture about how I should use rational thinking to make life decisions instead of leaving a coin to decide my life. I agreed and had to make hard decisions.
 
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/flipping-coins-to-determine-uni.png" alt = "An image of a coin toss to decide which university the student should apply to. Heads for Tono-U and tails for Kawa-U, two universities in Japan." class="center"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/flipping-coins-to-determine-uni.png" alt = "An image of a coin toss to decide which university the student should apply to. Heads for Tono-U and tails for Kawa-U, two universities in Japan." class="center big_img"/>
 
 Making the decision myself was a very difficult task since I am the type of person who just follows others and have people make the decisions for me. And the situation was not getting any better since the deadline was less than 7 days when I received the alternative offer and so I had to make a decision quickly. This had affected my sleep a lot (I get little sleep on a daily basis i.e. 6 hours but this reduced my little hours of daily sleep) since it was always stressing me out. The more I thought of it, the more I did not want to go to University since making a decision was really hard. I risk failing, leaving my friends, and in potential debt, for the decision, I was about to make. I am not academically motivated to study, nor do I have any friends going to my campus, and I hate the idea of socializing with strangers.
 
@@ -164,11 +165,11 @@ Making the decision myself was a very difficult task since I am the type of pers
 
 One of the reoccurring problems I faced during my senior year was planning out how I can pay off my Education. I never worked and I don’t plan on ever working part-time while studying full time (unless it was a job at the University). Luckily my parents saved up enough money for me to study at a local university for 2 years. With my scholarship, co-op, and student loans, I would not have a problem paying my education. However, I could not devise a plan to pay off my education outside of my hometown. I calculated and it would cost me over 100k if I study Engineering in Toronto. Since I got an alternative offer to a non-Engineering program, the tuition is significantly lower (at least that is what I thought at the time). I did not research much about the tuition of UofT’s Computer Science which came to bite me later on. With my poorly thought and research, I calculated that I would need to pay about 80k to fund my Education. I had nowhere near the amount I would need to pay if I studied at UofT. During my senior year, my Father always reassured me that he would pay my entire Undergrad regardless of the cost. I do come from a relatively well-off family and my Dad did have a plan to pay off all three of his children’s Undergrad if we studied at a local University since he does make a fair bit. My parents also wanted me to consider studying in the US as well which has ridiculous tuition and also wanted all 3 of their kids to study in Toronto (UofT). Along with the fact that my mother demanded that we study at a University so we did expect some financial assistance from our family if they demand us to pursue a degree.
 
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/asking-dad-to-pay-uni-fees.png" alt = "An image of a highschooler dragging her friend to request the Dad to pay the son's tuition fees" class="center"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/asking-dad-to-pay-uni-fees.png" alt = "An image of a highschooler dragging her friend to request the Dad to pay the son's tuition fees" class="center big_img"/>
 
 However, the cost always bothered me since money has always bothered me since I was a young child (perhaps as young as 7 years old). I would always worry about my meal for the next week and always debate whether or not I should open a new pack of snacks or whether I should hang out with my friends to the movies. I usually end up declining hangouts since I disliked spending money. This habit of mine always bothered my parents since they never raised me to be stingy on money. The memory of the dot-com bubble (my Dad lost his job and had to leave my Family behind in Canada due to that) and being raised with a lot of refugees around me, money has always been an issue to me. I think the effect of my Dad losing his job affected my brother and I since we never grew up with our Dad and my family’s habit of spending money did not help our financial situation. Which is one of the main factors for my brother joining the military to be independent from my Father so that he could save up for his retirement aside from the job security.
 
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/mom-live-better-life.png" alt = "An image of a young child trying to grow up as fast as they can to help support her single mother" class="center"/>
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/mom-live-better-life.png" alt = "An image of a young child trying to grow up as fast as they can to help support her single mother" class="center big_img"/>
 
 Since my brother got accepted to the military, the Canadian Government agreed to pay for his entire tuition which left me enough money to pay off my entire education if I studied at a local University.
 

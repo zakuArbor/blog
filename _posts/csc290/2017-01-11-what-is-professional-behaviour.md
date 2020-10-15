@@ -1,6 +1,7 @@
 ---
+layout: post
 title: What is Professional Behaviour
-published: true
+categories: csc290
 ---
 > CSC290 is a course to teach the conventions associated with professional and technical communication and behaviour.  What does professional behaviour mean to you?  If you were told that you are expected to carry yourself with professionalism in this course, what does that mean?  Is it something you are already doing in the academic setting?  Are there certain situations where another student or an instructor has shown you exceptional professionalism?  Perhaps more interestingly, can you think of a scenario where other students or instructors have been less than professional? You needn't name names but be specific about the behaviour and/or scenario.
 

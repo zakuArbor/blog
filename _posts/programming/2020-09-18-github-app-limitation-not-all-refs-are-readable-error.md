@@ -1,6 +1,7 @@
 ---
+layout: post
 title: "Github App Limitation - not all refs are readable"
-published: true
+categories: [programming, github]
 ---
 
 ## Introduction
