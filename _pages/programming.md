@@ -1,9 +1,12 @@
 ---
 layout: page
+permalink: /programming/
 title: Programming
 ---
 A random blog discussing various topics in Computer Science and Programming that I find interesting to write about. It mostly serves as a medium to test or reiterate to myself what I learned.
 
+* [2020-01-01: Dangers of Improper Macro Naming](dangers-of-improper-macro-naming)
+* [2020-10-15: Another Look at scanf - scanset](scanset)
 * [2020-19-04: Another Look at CONST in C](c-const)
 * [2020-09-25: A Look at Input Buffer and Scanf](a-look-at-input-buffer-using-scanf)
 * [2020-09-22: Random Thoughts about Tee](random-thoughts-about-tee)
