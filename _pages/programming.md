@@ -5,6 +5,7 @@ title: Programming
 ---
 A random blog discussing various topics in Computer Science and Programming that I find interesting to write about. It mostly serves as a medium to test or reiterate to myself what I learned.
 
+* [2020-12-31: Debugging expr with ldd](../ldd-to-debug-expr)
 * [2020-11-01: Dangers of Improper Macro Naming](../dangers-of-improper-macro-naming)
 * [2020-10-25: A look at Double Pointers](../double-pointers)
 * [2020-19-04: Another Look at CONST in C](../c-const)
