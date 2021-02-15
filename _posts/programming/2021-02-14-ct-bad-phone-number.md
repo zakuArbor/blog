@@ -4,6 +4,10 @@ title: ct - Bad Phone Number
 categories: [programming]
 ---
 
+During my internship at IBM a while back, I recall encountering an error on 
+some HP UNIX machine when I was trying to checkout a file using the CLI tool 
+`cleartool` for the version control system `Clearcase`. 
+
 <style>                                                                         
   iframe {                                                                      
     width: 560px;                                                               
@@ -59,12 +63,6 @@ categories: [programming]
   }                                                                             
 </style>    
 
-
-<h1 id = "sec1">ct: Bad Phone Number Error</h1>
-
-During my internship at IBM a while back, I recall encountering an error on 
-some HP UNIX machine when I was trying to checkout a file using the CLI tool 
-`cleartool` for the version control system `Clearcase`. 
 
 ```bash
 # ct co -nc foo.c
