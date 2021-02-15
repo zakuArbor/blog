@@ -112,7 +112,7 @@ ct is /usr/bin/ct
 ```
 
 Therefore any attempts to use it as a version control will inevitably return 
-`ct: bad phone number`
+`ct: bad phone number` since those options are not valid phone numbers.
 
 <h1 id = "sec3">A brief talk about ct</h1>
 
