@@ -7,61 +7,6 @@ categories: [programming]
 Reminiscing another problem I encounter during my internship at IBM, I 
 encountered an issue with some internal tools during a server migration.
 
-<style>                                                                         
-  iframe {                                                                      
-    width: 560px;                                                               
-    height: 315px;                                                              
-  }                                                                             
-                                                                                
-  .img_50 {                                                                     
-    max-width: 50%;                                                             
-  }                                                                             
-                                                                                
-  .img_60 {                                                                     
-    max-width: 60%;                                                             
-  }                           
-  
-  .img_40 {                                                                     
-    max-width: 40%;                                                             
-  }                                                                             
-                                                                                
-  .img_33 {                                                                     
-    max-width: 30%;                                                             
-  }                                                                             
-                                                                                
-  .multiple_img_div {                                                           
-    display: inline-block;                                                      
-  }                                                                             
-  @media only screen and (max-width: 800px) {                                   
-    .img_50, .img_60, .img_40, img_33 {                                         
-      max-width: 100%;                                                          
-    }                                                                           
-                                                                                
-    .multiple_img_div {                                                         
-      display: block;                                                           
-    }                
-    
-    iframe {                                                                    
-      width: 80vw;                                                              
-      height: 45vw;                                                             
-    }                                                                           
-  }                                                                             
-                                                                                
-  @media                                                                        
-  only screen and (-webkit-min-device-pixel-ratio: 1.5),                        
-  only screen and (-o-min-device-pixel-ratio: 3/2),                             
-  only screen and (min--moz-device-pixel-ratio: 1.5),                           
-  only screen and (min-device-pixel-ratio: 1.5){                                
-                                                                                
-    html,                                                                       
-    body{                                                                       
-      width:100%;                                                               
-      overflow-x:hidden;                                                        
-    }                                                                           
-                                                                                
-  }                                                                             
-</style>    
-
 One particular issue out of many I would like to discuss is how a 
 misconfiguration to `/etc/hosts` can cause your script to fail. After 
 identifying all the dependencies that needed to be installed and migrating 
