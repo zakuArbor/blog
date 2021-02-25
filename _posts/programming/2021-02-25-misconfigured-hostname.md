@@ -5,16 +5,7 @@ categories: [programming]
 ---
 
 Reminiscing another problem I encounter during my internship at IBM, I 
-encountered an issue with some internal tools during a server migration. Server 
-migration is a process that is very tedious and annoying to work on because 
-of all the work that needs to be done. It distracts employees from doing their 
-everyday job and creates uncertainties about whether or not the new server can 
-deliver all its tasks without any issues. You have to figure out what 
-dependencies are needed to be installed, what tools and files need to be 
-migrated, and perform a regression test on 
-all the tools that the server utilizes. However, server migration is very 
-critical to ensure security compliance as the hardware and Operating System 
-gets outdated.
+encountered an issue with some internal tools during a server migration.
 
 <style>                                                                         
   iframe {                                                                      
@@ -145,15 +136,6 @@ the file where `aloha` would be considered the SITE of the lab.
 ```
 192.168.2.1    yukikaze.aloha.net    yukikaze
 ```
-
-**Note:** I find Blackberry QNX's documentation on `gethostbyname` to be 
-very straightforward. For instance, [QNX Doc 4.25](http://www.qnx.com/developers/docs/qnx_4.25_docs/tcpip50/prog_guide/libs/hostent.html) 
-directly tells you where the information is gathered from in the description:
-```
-This structure describes an Internet host. It contains either the information obtained from the name server, named, or broken-out fields from a line in /etc/hosts. 
-```
-The man pages do mention the same thing but you had to read a lot more to find 
-that information.
 
 ---
 
