@@ -4,6 +4,7 @@ permalink: /programming/
 title: Programming
 ---
 A random blog discussing various topics in Computer Science and Programming that I find interesting to write about. It mostly serves as a medium to test or reiterate to myself what I learned.
+* [2021-02-28: printf - Reorder Arguments using $](../printf-$)
 * [2021-02-25: Misconfigured Hostname](../misconfigured-hostname)
 * [2021-02-14: ct - Bad Phone Number](../ct-bad-phone-number)
 * [2020-12-31: Debugging expr with ldd](../ldd-to-debug-expr)
