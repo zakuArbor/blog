@@ -1,18 +1,14 @@
 ---
 layout: post
-title: What does the Build Team Do?
+title: A Dive to Build - Part 2 of the Build Series
 categories: [programming]
 ---
 
-In my undergraduate in Computer Science, I got the opportunity to work at IBM as a member of the Build Infrastructure Team. I have absolutely no clue what the Build Infrastructure team is or does. Though I am no expert and have a difficult time explaining what a Build Team does, I'll try to tackle the subject with the best of my ability. This post is a precursor to an education session titled *An Overview of DevOps and Builds* I plan to give to new interns of the Build Infrastructure Team at IBM this May. I am hoping my actions of writing a blog will prepare me for my presentation. (On a side note, this is a good sequel to my previous blog about [Software Ports](https://zakuarbor.github.io/blog/software-ports/))
-
-On my first week of joining the Build Infrastructure team, I tried to search up what a Build Team does because it was not clear to me what I will be doing. I came across a paper titled *[Understanding and Improving Software Build Teams](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/phillips-icse-2014.pdf)* which examines the various Build Teams at Microsoft. It's one of the only comprehensive information I could find about Build Infrastructure team.
-
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/build-paper.png)
-
-Before we talk about what a Build team is, we first need to go to the basic question, **what is a build?**
+On my previous post [What does the Build Team Do](build-team), I covered various topics about builds and devOps. Today, I want to go more in depth on what goes on when you press the run button which I briefly brushed over in the previous post. This does get quite technical but don't fret. I have stopped myself from writing and reading up in depth about the topic to avoid going through the rabbit hole. 
 
 ## What is a Build
+
+For the sake of those who did not read my [previous post](build-team) , I'll repeat some of the content I shared previously. 
 
 You may recall when working on Java, C, or C++ you ran a Build by pressing  pressing Build, Run, or Play button
 
@@ -22,13 +18,11 @@ or you "compile" your code on the terminal
 
 ![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/gcc-build.png)
 
-But what does this actually do? As you may know, a build is just simply the process of converting your source code (i.e. `.c` or `.java`) to a binary/exectuable (i.e. `.exe` or `.o`). More formally (if you accept Wikipedia as credible):
-
-> In software development, a **build** is the process of converting **source code** files into standalone **software artifact(s)** that can be run on a computer, or the result of doing so. - Wikipedia
+But what does this actually do? As you may know, a build is just simply the process of converting your source code (i.e. `.c` or `.java`) to a binary/exectuable (i.e. `.exe` or `.o`).
 
 ![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/highlevel-build.png)
 
-An executable to put it briefly is the **ready to run** form of a program (hence why we call it an **executable**). An executable consists of instructions (i.e. machine code) that consists of zeros and ones assembled in a way the CPU understands. Some common locations where executables can often be found on Unix-Like Operating System (OS) under `/bin`, `/sbin`, `/usr/bin`, or `usr/local/bin`. As this is more of a brief overview about builds, I won't delve into the structure of an exectuable (i.e. ELF Format. Though not like I have a good understanding of the topic of it either).
+An executable to put it briefly is the **ready to run** form of a program (hence why we call it an **executable**). An executable consists of instructions (i.e. machine code) that consists of zeros and ones assembled in a way the CPU understands. Some common locations where executables can often be found on Unix-Like Operating System (OS) under `/bin`, `/sbin`, `/usr/bin`, or `usr/local/bin`. 
 
 ### Steps In  A Build
 
@@ -250,7 +244,7 @@ As expected, all the macros of been expanded and substituted along with the decl
 
 Once the source files have been preprocessed such that all external symbols have been declared and all macros have either been expanded or ran, we need to compile the code to produce the assembly code of our source files. This can be done using the `-S` option in `gcc`. Let's look at the ouput of compiling `main.c`:
 
-```assembly
+```c
         .file   "main.c"
         .text
         .globl  main
@@ -276,12 +270,9 @@ main:
         .size   main, .-main
         .ident  "GCC: (GNU) 10.2.1 20201125 (Red Hat 10.2.1-9)"
         .section        .note.GNU-stack,"",@progbits
-
 ```
 
----
-
-
+[]alk about relocatable files here]
 
 ---
 
@@ -296,8 +287,6 @@ $ gcc -c goose.c
 ### Step 3: Linking
 
 As I stated earlier, producing the object file for the project does not mean you can execute the program. The object files may contain instructions that your CPU could somewhat understand, it is not complete. Object files will have undefined references to symbols and functions that are not defined within the files themselves. To illustrate, imagine you are running an errand to deliver a package to a person's house using the bus. However, you are not given the address of where the house is, who is the receiver, nor have the package with you. You cannot complete the tasks with those missing information. That's where the linker comes in handy. The information you need to perform some action in software development is often defined elsewhere. The linker combines all the object files, static files and figure out what dynamic libraries are needed and packaged them into one executable file. 
-
-
 
 We will be using **ld** to link our object files to relocate data and tie up symbol references. 
 
@@ -335,17 +324,13 @@ The Cat Meows
 
 * You do **NOT** need to understand the entire detail of what was covered just now about how to build each step. But it's very helpful and useful to have a general understanding of what goes behind the scenes
 
+### Why Care How Build Works
+
+Frankly most developers do not care how software gets built. We just want to make small changes, recompile and iterate. Learning all the complexities of the build simply consumes way too much time. Accordnig to the book **Software Build Systems: Principles and Experience**
+
 ## Compiled v.s Interpreted Languages
 
-## Build Tools
 
-Build tools are simply just tools that automate the build process. Some examples are Make, Cmake, Ant, Maven, Gradle, 
-
-The following are examples of some commonly used build tool in software development.
-
-**Examples:** Make, Cmake, Ant, Maven, Gradle, Ninja
-
-For more in-depth look at Build Tools, I would suggest looing at a blog post titled [What's in a Build Tool by Haoyi Li]([What's in a Build Tool?](https://www.lihaoyi.com/post/WhatsinaBuildTool.html)).
 
 ## Image Credits (Not exhaustive)
 
