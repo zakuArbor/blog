@@ -207,33 +207,35 @@ If we were to look at the game requirements, we find that there are different re
 
 ![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/csgo-linux.png)
 
-Another example is the Debian Kernel which is essentially the Linux Kernel version Debian uses. The Linux kernel runs on all sorts of different CPU architecture.
+Another example is the Debian Kernel which is essentially the Linux Kernel version Debian uses. The Linux kernel Debian selects supports many different architecture.
 
 ![Debian Arch Table](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/debian-arch-list.png)
 
+---
+
+Notice how each architecture may represent data size of a pointer or a long double differently? This can cause programs to behave differently which is very bad. Even different operating systems may represent data types differently and some data types may not even exist in another operating system. This can cause builds to break. These are build issues that are not rare to see when working on projects that can support different platforms. Also notice how there are two different types of endian each CPU architecture can support.
 
 
-* **Examples:** linuxppc64le: Linux PowerPC 64 bits Little Endian
-  
-  * Debian Distros like to use refer LE as EL hence `ppc64el`
-  
-  * **amd64:** x86 64bit Instruction Set - AMD was the first to release the specifications for 64bit of Intel's x86 ISA hence the naming
 
-* **Note:** Endian refers order of bytes: LE stores LSB at smallest address space (`xxd` by default shows in big-endian)
-  
-  * big endian seems more "natural" to us (since we read left to right in English)
+---
 
-* **Example:** Assume int is 4 Bytes and its value is **0x01234567** = 19088743
-  
-  * **Recall:** 8 bits = 1 Byte and two Hex values can be represented in 1B (4 Bits to represent 16 values from 0 to 15)
-  
-  * May have seen it when dealing with Socket Programming where Big Endian  (commonly used in networks) sends the MSB first
-  
-  * LE is commonly used in consumer CPU since x86 is in LE
+### Random Note
+
+**amd64** does refer to builds running on AMD chips despite the name. It refers to Intel's x86 Instruction set but the 64 bit version. AMD was the first to release the specifications for the 64 bit hence the name
+
+---
+
+### A Note about Endian
+
+Endian refers to the order of bytes. Little Endian (LE) stores the least sign significant byte at the smallest address while Big endian does the opposite.
 
 ![](https://4.bp.blogspot.com/_IEmaCFe3y9g/SO3GGEF4UkI/AAAAAAAAAAc/z7waF2Lwg0s/s400/lb.GIF)
 
-![](/home/zaku/Documents/work/builds/notes/images/endian-computerphile.png)
+Why there are two different orders to represent bytes is a mystery to me. Perhaps there were several advantages of each architecture but I don't think endian affects performance now.
+
+
+
+Big Endian is more natural to us since we read numbers from left to right in English. So I like to see things in Big endian order. It's great to know that `xdd`, a hexdump tool, displays hex in big endian by default.
 
 ```shell
 $ xxd /tmp/test.txt 
@@ -243,6 +245,14 @@ $ xxd -e -g 2 /tmp/test.txt
 00000000: 6970 616b 6863 0a75                      pikachu.
 ```
 
+
+
+You may have seen endian before when working on socket programming. Data being sent to the network is sent in big endian where the most significant byte is sent first. Little endian is probably more popular, at least among us consumers since x86 architecture are in little endian.
+
+![](/home/zaku/Documents/work/builds/notes/images/endian-computerphile.png)
+
+When working on forensics or in cybersecurity, sometimes you may see text in weird order such as "ehll oowlr". This is due to the difference in endian mode. If we take endian into account, the text should be more readable.
+
 ```shell
 $ echo "0000 6568 6c6c 206f 6f77 6c72 0a64" | xxd -r
 ehll oowlr
@@ -251,34 +261,37 @@ $ echo "0000 6865 6c6c 6f20 776f 726c 640a" | xxd -r
 hello world
 ```
 
-* **WHY CARE ABOUT CPU ARCH?**
-  
-  * represent data types differently
-  - different instruction set (i.e. assembly, therefore machine code will differ)
-    
-    - like speaking in differnet languages, doesn't understand
-  
-  - different endian
-  
-  ![](../images/assembly-example.png)
-  
-  - **Example:** Executing two binaries from two different CPU (also compiled on different OS - i.e. Compiled on Solaris & SuseLinux but executed on RedHat 8.3)
-  
-  ```shell
-  $ ls | grep hello
-  helloAMD64.o
-  helloSPARC.o
-  $ file helloAMD64.o
-  helloAMD64.o: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.4, BuildID[sha1]=939dce5a136c499f9d64124f5e7cf29b1dd647b2, with debug_info, not stripped
-  $ file helloSPARC.o 
-  helloSPARC.o: ELF 32-bit MSB executable, SPARC32PLUS, total store ordering, version 1 (Solaris), dynamically linked, interpreter /usr/lib/ld.so.1, with debug_info, not stripped
-  $ lscpu | grep Arch
-  Architecture:        x86_64
-  $ ./helloAMD64.o 
-  Hello World
-  $ ./helloSPARC.o 
-  bash: ./helloSPARC.o: cannot execute binary file: Exec format errorsussus
-  ```
+### Executing Programs on a Different Architecture
+
+If you have ever programmed in assembly or taken a computer architecture, you'll recall that each architecture has their own Instruction set. This means that every single assembly program has to be ported to run on another architecture since the instruction sets are different. This gets very annoying but there are reasons for this. It's based on how the CPU is designed. When designing CPU, they are to follow certain instruction set architecture. Back in the days, there were a lot of chip manufacturers and their design philosophy were different. Therefore you had a lot of different architectures popping up since companies would not conform to a standard and following certain architectures may not be easily optimized for their certain use case at the time. Unlike Java where it can run anywhere or C which is fairly portable as long as it doesn't touch very low level stuff, assembly programs cannot be run on different architecture. They simply don't understand. Compilers were written to reflect the architecture it runs so that us high level programmers don't ever need to learn the hardware of the computers we run. We just need to have a higher level understanding of how computers work and the operating system we are working on. Full stack developers, Java programmers, and mobile app developers don't even need to understand the underlying operating system. It's been so abstracted that there's no real need to learn about them.
+
+
+
+Below is an example how different the assembly code is between ARM and x86. The CPU may speak in zeroes and ones but it needs to be in a format that the CPU understand. It's like Latin and English. They both use similar character set but an English speaker would not be able to understand Latin.
+
+![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/assembly-example.png)
+
+- **Example:** Executing two binaries from two different CPU (also compiled on different OS - i.e. Compiled on Solaris & SuseLinux but executed on RedHat 8.3)
+
+Here's another example trying to execute a program compiled on a Solaris machine on my laptop using an Intel chip. You'll get an error because the computer cannot understand the instructions. This reminds me of a time when my father came to me for help since his program would no longer execute on his company's server. Upon inspecting the binary, I soon realized the program was compiled from a solaris workstation but the workstation he was trying to run on was running on PowerPC. Turned out the company moved the server from a Solaris workstation to a powerpc workstation running Red Hat. My father didn't realize that he couldn't simply run a program running on a different CPU, so I had him just recompile the program since he did have the source code in hand. 
+
+```shell
+$ ls | grep hello
+helloAMD64.o
+helloSPARC.o
+$ file helloAMD64.o
+helloAMD64.o: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.4, BuildID[sha1]=939dce5a136c499f9d64124f5e7cf29b1dd647b2, with debug_info, not stripped
+$ file helloSPARC.o 
+helloSPARC.o: ELF 32-bit MSB executable, SPARC32PLUS, total store ordering, version 1 (Solaris), dynamically linked, interpreter /usr/lib/ld.so.1, with debug_info, not stripped
+$ lscpu | grep Arch
+Architecture:        x86_64
+$ ./helloAMD64.o 
+Hello World
+$ ./helloSPARC.o 
+bash: ./helloSPARC.o: cannot execute binary file: Exec format errors
+```
+
+To conclude talking about platforms, I just wanted to talk about them to understand why programs may not be portable and just because your changes compiled and run fine on your development machine may break on a supported platform. We often see breaks come in because the developer did not consider of other platforms and would use code that are not platform independent.
 
 ---
 
