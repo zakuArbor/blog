@@ -122,7 +122,7 @@ Anyhow, back to the topic of **nightly builds**. Nightly builds can contains mor
 
 **CI (Continuous Integrated) Builds** are builds that merge all work done by developers several times a day. The idea of CI builds is to build **frequently**. Although the frequency varies depending on company and project, CI builds can vary from a few times a day to every single code change that gets commited or merged.
 
-**Example:** Open Source Project Docker Compose: [Overview of Docker Compose | Docker Documentation](https://docs.docker.com/compose/)
+**Example:** Open Source Project Docker Compose: [Overview of Docker Compose](https://docs.docker.com/compose/)
 
 ![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/docker-compose-github.png)
 
@@ -213,7 +213,7 @@ Another example is the Debian Kernel which is essentially the Linux Kernel versi
 
 ---
 
-Notice how each architecture may represent data size of a pointer or a long double differently? This can cause programs to behave differently which is very bad. Even different operating systems may represent data types differently and some data types may not even exist in another operating system. This can cause builds to break. These are build issues that are not rare to see when working on projects that can support different platforms. Also notice how there are two different types of endian each CPU architecture can support.
+Notice how each architecture may represent data size of a pointer or a long double differently? This can cause programs to behave differently which is very bad. Even different operating systems may represent data types differently and some data types may not even exist in another operating system. This can cause builds to break. These are build issues that are not rare to see when working on projects that can support different platforms. Also notice how there are two different types of endian each CPU architecture can support (with the exception of CPU with bi-endian support where you just need to set a bit to change endians). 
 
 
 
@@ -227,7 +227,7 @@ Notice how each architecture may represent data size of a pointer or a long doub
 
 ### A Note about Endian
 
-Endian refers to the order of bytes. Little Endian (LE) stores the least sign significant byte at the smallest address while Big endian does the opposite.
+Endian refers to the order of bytes. Little Endian (LE) stores the least significant byte at the smallest address while Big endian does the opposite.
 
 ![](https://4.bp.blogspot.com/_IEmaCFe3y9g/SO3GGEF4UkI/AAAAAAAAAAc/z7waF2Lwg0s/s400/lb.GIF)
 
@@ -235,7 +235,7 @@ Why there are two different orders to represent bytes is a mystery to me. Perhap
 
 
 
-Big Endian is more natural to us since we read numbers from left to right in English. So I like to see things in Big endian order. It's great to know that `xdd`, a hexdump tool, displays hex in big endian by default.
+Big Endian is more natural to us since we read numbers from left to right in English. For instance, in the number 123, 1 represents the highest number (i.e. $1\cdot100$) and 3 represents the smallest digit in the number (i.e. $3\cdot1$). Therefore I like to see things in Big endian order. It's great to know that `xdd`, a hexdump tool, displays hex in big endian by default.
 
 ```shell
 $ xxd /tmp/test.txt 
@@ -271,8 +271,6 @@ Below is an example how different the assembly code is between ARM and x86. The 
 
 ![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/assembly-example.png)
 
-- **Example:** Executing two binaries from two different CPU (also compiled on different OS - i.e. Compiled on Solaris & SuseLinux but executed on RedHat 8.3)
-
 Here's another example trying to execute a program compiled on a Solaris machine on my laptop using an Intel chip. You'll get an error because the computer cannot understand the instructions. This reminds me of a time when my father came to me for help since his program would no longer execute on his company's server. Upon inspecting the binary, I soon realized the program was compiled from a solaris workstation but the workstation he was trying to run on was running on PowerPC. Turned out the company moved the server from a Solaris workstation to a powerpc workstation running Red Hat. My father didn't realize that he couldn't simply run a program running on a different CPU, so I had him just recompile the program since he did have the source code in hand. 
 
 ```shell
@@ -306,67 +304,79 @@ or I like to refer it as
 
 > Combining development and operations best practices to continuously integrate (**CI**) through building and testing frequently to continuously deliver **(CD)** a good artifact to be ready for deployment
 
-* * catch bugs faster
-  
-  * easier to manage when caught early in the pipeline when they are small
-  
-  * reduce idling
-  
-  * deploy faster
+There are a few definitions of what DevOps is but I like to look at the practical role of DevOps to the organization. I see it as the practice of joining development and operations to deliver software more quickly through the use of CI/CD pipelines. One of the benefits of DevOps is catching bugs and deploying changes faster by building more frequently. So when a bug or build break occurs, it's easier to catch early in the CI/CD pipeline when they are small and easier to manage. This also reduces idling because developers will no longer be waiting for the results on their changes and can work on a code base that is up to date and more stable. It also means more releases since there are more builds.
 
-* Done through **Continuous Integration** & **Continuous Deliver** (or Continuous Deployment)
-  
-  * **CI:**
-    
-    * source control (Version Control) to allow **single truth**
-    
-    * automated tests (can be covered in Continuous delivery as well)
-    
-    ![](../images/ci-process.png)
-  
-  * **CD:** can refer to either delivery v.s deployment 
-    
-    * both require creating artifacts that are in "ready-state" (production ready)
-    
-    * **difference** is whether you deploy (running the new artifact/changes) them automatically (without explicit approvals) or not
-      
-      * depends on use case, you may not want to deploy new changes automatically
-      
-      * **Example:** A website or microservice (small applications that focuses on one very small thing and you can have multiple instances of them) may be use continuous deployment to show the latest changes
-      
-      * **Example:** A schema change in a structure database (i.e. SQL) requires a downtime, so you don't want to immediately deploy the schema change to the database
-      
-      * **Example:** You want to release an executable/update to customers when there is enough changes rather than having the customer constantly update for every small change
-    
-    ![Continuous Integration and Continuous Delivery](https://d1.awsstatic.com/product-marketing/DevOps/continuous_delivery.4f4cddb8556e2b1a0ca0872ace4d5fe2f68bbc58.png "Continuous Integration and Continuous Delivery")
-    
-    ![](https://wpblog.semaphoreci.com/wp-content/uploads/2019/03/cicd-pipeline-introduction-1024x422.png)
 
-* **artifact** is an image, the packaged build (like a single executable file)
 
-* Good **CI** can avoid the code change your team member pushes to master without ever compiling nor testing
-  
-  * also want to avoid isolated branches where large long running branches get merged
-  
-  ![](https://harness.io/wp-content/uploads/2021/03/032021-Harness-Blogpost-Diagram-1-1024x597.png)
+The central idea of DevOps and CI/CD is that you want to automate the pipeline as much as possible and take a more shared responsibility approach between teams to increase response and understanding.
 
-* The Build Team focuses mostly on **CI** where we focus on automating and improving the build processes and workflows
-  
-  * **Examples:**
-    
-    * require developers to perform a build under neutral environment before merging to main code base (**Example:** React)
-      
-      * Allow all PR go through an extensive CI check with tests before merging to master
-        
-        ![](../images/react-ci-check.png)
-    
-    * Use bots to notify developers quickly of any failures
-      
-      * Important to deal with failures quickly - may need to stop delivery
-      
-      ![](../images/ibm-carbon.png)
+
+
+![](https://www.synopsys.com/blogs/software-security/wp-content/uploads/2018/03/differences-wp.jpg)
+
+### CI - Continuous Integration
+
+As mentioned previously, CI is the process of building and testing changes frequently. This allows you to catch bugs much faster rather than waiting for the end of the day or even at the end of a sprint to build and test the changes into the project which often has disasterous results.
+
+
+
+A lot of sources I read on CI and DevOps like to emphasize on the use of a version control system to have a **single source** of truth. To elaborate, CI focuses on building changes frequently to quicken development and software deliveries while maintaining quality. The first step to enable this benefit is to ensure there is a centralized code branch that is being built frequently. Building and testing on different copies of the projects or branches can cause issues whereby it gets hard to know which version works and the branch or version developers are working on could be out of date, unstable, or diverge from the project's direction. You want to establish a centralized version where developers make changes based off stable, up-to date, and correct code base.
+
+
+
+![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/ci-process.png)
+
+Here's an overview how a typical CI build process could work:
+
+1. Developers push their changes to Github
+
+2. An automation server would either be notified or notice a change has been pushed to Github and trigger a build via Jenkins
+
+3. Jenkins would select a machine to run the builds
+
+4. If the build is clean, it may either trigger another Jenkins job to run some basic build tests (or the build job may be part of a pipeline and the next stage is testing the build to ensure the build is not corrupted and passes all essential tests)
+
+5. If the builds fail, the developers and manager would be notified of the failure and would be urged to take immediate action to resolve the issue
+
+![](https://harness.io/wp-content/uploads/2021/03/032021-Harness-Blogpost-Diagram-1-1024x597.png)
+
+#### Example - React CI BUILDS
+
+![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/react-ci-check.png)
+
+Here's an example of where CI builds from React, a Javascript frontend framework, where builds are triggered when a PR is created. I assume all subsequent commits in the commit will trigger the CI builds as well. Anyhow, the reason why I want to highlight this is that the PR must go through extensive automated checks before the PR can be merged to msater. This approach is great because it doesn't require any active management to go around and catch developers to fix their changes. It'll probably require an approval by the project maintainers but you can see how the project embraces Continuous integration.
+
+#### Example - IBM Carbon
+
+IBM Carbon is an open source UX library for Javascript frameworks. It utilizes carious tools to automate the builds, tests and has a bot to communicate with the developers when the builds fail.
+
+![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/ibm-carbon.png)
+
+### Continuous Delivery/Deployment
+
+
+
+![Continuous Integration and Continuous Delivery](https://d1.awsstatic.com/product-marketing/DevOps/continuous_delivery.4f4cddb8556e2b1a0ca0872ace4d5fe2f68bbc58.png "Continuous Integration and Continuous Delivery")
+
+**CD** refers to either continuous delivery or continuous deployment. The main difference between the two is whether you want explicit approval to deploy new changes automatically or not. Both delivery and deployment require creating artifacts (such as a website, app or an executable) that are in "ready state" (i.e. production ready). Continuous deployment means you are automatically releasing the latest changes to production and this could be great if you want to reflect a change in the website as fast as possible. Perhaps you want to automatically deploy changes in a canary deployment fashion where you release the change to a small subset of servers or users. You often see this in social media where they roll out a features incrementally to random selective users. This is a good way to have changes be tested in the real environment without facing huge consequences if the feature has severe issues or isn't appreciated by the users. You can simply rollback the change. There are other deployment techiques such as blue-green deployment but I won't talk about that in this post. 
+
+
+
+What I want to emphasize is that depending on the sensitivity and type of product you are working on will affect whether you will define CD as delivery or deployment. I typically see microservices, apps, and websites use continuous deployment. But I don't think it's a great idea to use continuous deployment on products that are very critical and can have extremely severe impact on the consumers and society such as the databases or applications that involve in bank and credit card transactions. Any code  changes that require a downtime to have the changes be reflected such as changing the database schema should not be deployed automatically.
+
+
+
+![](https://wpblog.semaphoreci.com/wp-content/uploads/2019/03/cicd-pipeline-introduction-1024x422.png)
+
+
+
+The picture below is a nice picture of tools that can be used in each stage of the CI/CD pipeline. Jenkins is an automation server that can schedule and kick off jobs. For instance, Jenkins could be listening to any changes that gets pushed to Github and if a change occurs, it'll kick off a build on a node. Once the build passes, it can kick off another job/stage to upload the artifact to Artifactory, a repository on the cloud that stores artifacts. In case you've been wondering what I've been referring an artifact as, I referred it as the binary or executable file that has been produced from the builds. 
 
 ![](https://apifriends.com/wp-content/uploads/2019/05/DevOps-pipeline-An-assembly-line-analogy-pic-4.png)
+
+## Conclusion
+
+I hope you have more of an idea what a Builder does and their role in the organization. You may have notice my explanation of devOps isn't complete nor great. I'm still learning about devOps as I am not very knowledgeable in this field.
 
 ## Image Sources - From the Ones I remember
 
@@ -374,6 +384,6 @@ or I like to refer it as
 
 [SupportedArchitectures - Debian Wiki](https://wiki.debian.org/SupportedArchitectures)
 
-[The DB2Night Show #215: Breaking News from IBM Toronto Lab - Db2 V11.5 - YouTube](https://www.youtube.com/watch?v=aPwAhRA6tb8)
-
 [Metrics to Improve Continuous Integration Performance - Harness](https://harness.io/blog/continuous-integration/continuous-integration-performance-metrics/)
+
+I am trying to put more credits to the images on my blogs, especially if I downloaded the images rather than linking them but it'll be a while till I get a hang of it.
