@@ -213,7 +213,8 @@ Another example is the Debian Kernel which is essentially the Linux Kernel versi
 
 Notice how each architecture may represent the data size of a pointer or a long double differently? This can cause programs to behave differently which is very bad. Even different operating systems may represent data types differently and some data types may not even exist in another operating system. This can cause builds to break. These are build issues that are not rare to see when working on projects that can support different platforms. Also, notice how there are two different types of endian each CPU architecture can support (with the exception of CPU with bi-endian support where you just need to set a bit to change endians). 
 
-
+Below is an example of the difference between Windows and Linux in representing the data size of a long int. Windows represent long int with 4 Bytes causing any large value that would run on Linux perfectly fine to overflow and become a negative number. The compiler is smart enough to notice this and would give a warning but for demonstration purposes, I chose to ignore the warning.
+![A gif showing the size difference of long int between Windows and Linux](https://raw.githubusercontent.com/zakuArbor/blog/1a36a44b96f88aa00b0fc17ece4c1b7e1b658bb8/assets/programming/builds/windows-linux-longint.gif)
 
 ---
 
