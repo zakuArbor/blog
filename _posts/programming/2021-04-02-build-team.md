@@ -247,7 +247,7 @@ $ xxd -e -g 2 /tmp/test.txt
 
 You may have seen endian before when working on socket programming. Data being sent to the network is sent in big endian where the most significant byte is sent first. Little endian is probably more popular, at least among us consumers since x86 architecture is in little endian.
 
-![](/home/zaku/Documents/work/builds/notes/images/endian-computerphile.png)
+![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/endian-computerphile.png)
 
 When working on forensics or in cybersecurity, sometimes you may see text in weird order such as "ehll oowlr". This is due to the difference in endian mode. If we take endian into account, the text should be more readable.
 
@@ -314,7 +314,7 @@ The central idea of DevOps and CI/CD is that you want to automate the pipeline a
 
 ### CI - Continuous Integration
 
-As mentioned previously, CI is the process of building and testing changes frequently. This allows you to catch bugs much faster rather than waiting for the end of the day or even at the end of a sprint to build and test the changes into the project which often has disasterous results.
+As mentioned previously, CI is the process of building and testing changes frequently. This allows you to catch bugs much faster rather than waiting for the end of the day or even at the end of a sprint to build and test the changes into the project which often has disastrous results.
 
 
 
