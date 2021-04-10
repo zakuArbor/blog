@@ -7,7 +7,7 @@ categories: [programming]
 
 In my undergraduate in Computer Science, I got the opportunity to work at IBM as a member of the Build Infrastructure Team. I had absolutely no clue what the Build Infrastructure Team is or does. Though I am no expert and I still have a difficult time explaining what I do to friends and family, I'll try to tackle the subject to the best of my ability. This post is a precursor to an education session titled *An Overview of DevOps and Builds* I plan to give to new interns of the Build Infrastructure Team at IBM this May. I am hoping my actions of writing a blog will prepare me for my presentation. (On a side note, this is a good sequel to my previous blog about [Software Ports](https://zakuarbor.github.io/blog/software-ports/))
 
-On my first week of joining the Build Infrastructure team, I tried to search up what a Build Team does because it was not clear to me what I will be doing. I came across a paper titled *[Understanding and Improving Software Build Teams](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/phillips-icse-2014.pdf)* which examines the various Build Teams at Microsoft. It's one of the only comprehensive pieces of  information I could find about Build Infrastructure teams.
+On my first week of joining the Build Infrastructure team, I tried to search up what a Build Team does because it was not clear to me what I will be doing. I came across a paper titled *[Understanding and Improving Software Build Teams](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/phillips-icse-2014.pdf)* which examines the various Build Teams at Microsoft. It's one of the only comprehensive pieces of  information I could find about Build Infrastructure teams at the time. Little did I know that there are tons of information about Build Teams but I did not google `Build Engineer`.
 
 ![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/build-paper.png)
 
@@ -91,7 +91,7 @@ Bugs are very common to create so a single build failure creates more delays not
 
 Build teams were formed out of both **necessity** and **frustration** in the growing complexity of build systems. Though since Build teams were formed out of a reactionary response to the growing issue, roles are often ambiguous, especially in the early formations (i.e. Microsoft). Though I could not find much information about Build teams online, they are not uncommon in large organizations. They can be found in many companies such as Microsoft, Google, IBM, Facebook, Netflix, Mozilla, LinkedIn, Gnome, Eclipse, Qualcomm*, VMWare*
 
-If a build team does not exist, it'll exist within some devOps team. The main tasks of the Build team from my experience and what I read is to abstract the build complexity and to be responsible for building the entire project for all supported hardware and platforms. More on this later.
+If a build team or a Build & Release team does not exist, it'll exist within some devOps team. The main tasks of the Build team from my experience and what I read is to abstract the build complexity and to be responsible for building the entire project for all supported hardware and platforms. More on this later.
 
 ## What Does the Build Team Do?
 
@@ -232,8 +232,6 @@ Endian refers to the order of bytes. Little Endian (LE) stores the least signifi
 
 Why there are two different orders to represent bytes is a mystery to me. Perhaps there were several advantages of each architecture but I don't think endian affects performance now.
 
-
-
 Big Endian is more natural to us since we read numbers from left to right in English. For instance, in the number 123, 1 represents the highest number (i.e. $1\cdot100$) and 3 represents the smallest digit in the number (i.e. $3\cdot1$). Therefore I like to see things in Big endian order. It's great to know that `xdd`, a hexdump tool, displays hex in big endian by default.
 
 ```shell
@@ -243,8 +241,6 @@ $ #xxd represents in Big Endian by default
 $ xxd -e -g 2 /tmp/test.txt
 00000000: 6970 616b 6863 0a75                      pikachu.
 ```
-
-
 
 You may have seen endian before when working on socket programming. Data being sent to the network is sent in big endian where the most significant byte is sent first. Little endian is probably more popular, at least among us consumers since x86 architecture is in little endian.
 
@@ -263,8 +259,6 @@ hello world
 ### Executing Programs on a Different Architecture
 
 If you have ever programmed in assembly or taken a computer architecture, you'll recall that each architecture has its own Instruction set. This means that every single assembly program has to be ported to run on another architecture since the instruction sets are different. This gets very annoying but there are reasons for this. It's based on how the CPU is designed. When designing CPU, they are to follow certain instruction set architecture. Back in the days, there were a lot of chip manufacturers and their design philosophies were different. Therefore you had a lot of different architectures popping up since companies would not conform to a standard and following certain architectures may not be easily optimized for their certain use case at the time. Unlike Java where it can run anywhere or C which is fairly portable as long as it doesn't touch very low-level stuff, assembly programs cannot be run on a different architecture. They simply don't understand. Compilers were written to reflect the architecture it runs so that us high level programmers don't ever need to learn the hardware of the computers we run. We just need to have a higher-level understanding of how computers work and the operating system we are working on. Fullstack developers, Java programmers, and mobile app developers don't even need to understand the underlying operating system. It's been so abstracted that there's no real need to learn about them.
-
-
 
 Below is an example of how different the assembly code is between ARM and x86. The CPU may speak in zeroes and ones but it needs to be in a format that the CPU understands. It's like Latin and English. They both use similar character sets but an English speaker would not be able to understand Latin.
 
@@ -305,11 +299,7 @@ or I like to refer it as
 
 There are a few definitions of what DevOps is but I like to look at the practical role of DevOps to the organization. I see it as the practice of joining development and operations to deliver software more quickly through the use of CI/CD pipelines. One of the benefits of DevOps is catching bugs and deploying changes faster by building more frequently. So when a bug or build break occurs, it's easier to catch early in the CI/CD pipeline when they are small and easier to manage. This also reduces idling because developers will no longer be waiting for the results of their changes and can work on a codebase that is up to date and more stable. It also means more releases since there are more builds.
 
-
-
 The central idea of DevOps and CI/CD is that you want to automate the pipeline as much as possible and take a more shared responsibility approach between teams to increase response and understanding.
-
-
 
 ![](https://www.synopsys.com/blogs/software-security/wp-content/uploads/2018/03/differences-wp.jpg)
 
@@ -317,11 +307,7 @@ The central idea of DevOps and CI/CD is that you want to automate the pipeline a
 
 As mentioned previously, CI is the process of building and testing changes frequently. This allows you to catch bugs much faster rather than waiting for the end of the day or even at the end of a sprint to build and test the changes into the project which often has disastrous results.
 
-
-
 A lot of sources I read on CI and DevOps like to emphasize on the use of a version control system to have a **single source** of truth. To elaborate, CI focuses on building changes frequently to quicken development and software deliveries while maintaining quality. The first step to enable this benefit is to ensure there is a centralized code branch that is being built frequently. Building and testing on different copies of the projects or branches can cause issues whereby it gets hard to know which version works and the branch or version developers are working on could be out of date, unstable, or diverge from the project's direction. You want to establish a centralized version where developers make changes based off stable, up-to date, and correct code base.
-
-
 
 ![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/ci-process.png)
 
@@ -353,21 +339,13 @@ IBM Carbon is an open-source UX library for Javascript frameworks. It utilizes v
 
 ### Continuous Delivery/Deployment
 
-
-
 ![Continuous Integration and Continuous Delivery](https://d1.awsstatic.com/product-marketing/DevOps/continuous_delivery.4f4cddb8556e2b1a0ca0872ace4d5fe2f68bbc58.png "Continuous Integration and Continuous Delivery")
 
 **CD** refers to either continuous delivery or continuous deployment. The main difference between the two is whether you want explicit approval to deploy new changes automatically or not. Both delivery and deployment require creating artifacts (such as a website, app or an executable) that are in "ready state" (i.e. production-ready). Continuous deployment means you are automatically releasing the latest changes to production and this could be great if you want to reflect a change in the website as fast as possible. Perhaps you want to automatically deploy changes in a canary deployment fashion where you release the change to a small subset of servers or users. You often see this in social media where they roll out features incrementally to random selective users. This is a good way to have changes be tested in the real environment without facing huge consequences if the feature has severe issues or isn't appreciated by the users. You can simply rollback the change. There are other deployment techniques such as blue-green deployment but I won't talk about that in this post. 
 
-
-
 What I want to emphasize is that depending on the sensitivity and type of product you are working on will affect whether you will define CD as delivery or deployment. I typically see microservices, apps, and websites use continuous deployment. But I don't think it's a great idea to use continuous deployment on products that are very critical and can have an extremely severe impact on the consumers and society such as the databases or applications that involve in bank and credit card transactions. Any code  changes that require a downtime to have the changes be reflected such as changing the database schema should not be deployed automatically.
 
-
-
 ![](https://wpblog.semaphoreci.com/wp-content/uploads/2019/03/cicd-pipeline-introduction-1024x422.png)
-
-
 
 The picture below is a nice picture of tools that can be used in each stage of the CI/CD pipeline. Jenkins is an automation server that can schedule and kick-off jobs. For instance, Jenkins could be listening to any changes that get pushed to Github and if a change occurs, it'll kick off a build on a node. Once the build passes, it can kick off another job/stage to upload the artifact to Artifactory, a repository on the cloud that stores artifacts. In case you've been wondering what I've been referring an artifact as, I referred to it as the binary or executable file that has been produced from the builds. 
 
@@ -376,6 +354,14 @@ The picture below is a nice picture of tools that can be used in each stage of t
 ## Conclusion
 
 I hope you have more of an idea what a Builder does and their role in the organization. You may have notice my explanation of devOps isn't complete nor great. I'm still learning about devOps as I am not very knowledgeable in this field.
+
+### More Resources
+
+* [The Challenge of the Build Engineer | Gradle Enterprise](https://gradle.com/blog/build-engineer-challenges/)
+
+* https://medium.com/linusplog/what-does-a-software-configuration-management-and-build-engineer-do-849e6ece9292
+
+* 
 
 ## Image Sources - From the Ones I remember
 

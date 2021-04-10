@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Dive to Build - Part 2 of the Build Series
+title: A Dive to the Build Process - What Goes On When You Press the Play Button
 categories: [programming]
 ---
 
@@ -39,8 +39,7 @@ For those with no or limited C programming experience, here's an example of a pr
 ```c
 #define MAX_BUFFER_SIZE 10
 
-
-int main () {
+int main() {
     int arr[MAX_BUFFER_SIZE];
     ...
 ```
@@ -48,12 +47,12 @@ int main () {
 The output of the preprocessor becomes:
 
 ```c
-int main () {
+int main() {
     int arr[10];
     ...
 ```
 
-Although it may look similar to a **constant** variable but macros are substituted by the preprocessor while the compiler will deal with variables. There are some things you can do with macros that const cannot do such as the example above where the array size can be easily changed. Macros can do more than subsitute constant values. The power of macros are its ability to control what part of the source code to substitute (conditional directives) and the ability to write "function" like macros that does not have the overhead of function calls (which I won't get into).
+Although it may look similar to a **constant** variable, macros are substituted by the preprocessor while the compiler will deal with variables. There are some things you can do with macros that const cannot do such as the example above where the array size can be easily changed. Macros can do more than subsitute constant values. The power of macros are its ability to control what part of the source code to substitute (conditional directives) and the ability to write "function" like macros that does not have the overhead of function calls (which I won't get into).
 
 ```c
 #ifdef DEBUG
@@ -146,7 +145,7 @@ $ ./test.o
 -bash: ./test.o: cannot execute binary file: Exec format error 
 ```
 
-The compiler will first translate the given highl level source code into assembly which gets passed onto the assembler to be translated to machine language. Typically, each assembly instruction has a one to one corresponding machine code instruction unlike high level languages where a lot of lines of assembly code will be needed per instruction. An object file typically isn't complete because it contains symbol references (i.e. variables and functions) not defined in the file itself and doesn't have the instructions for the program to be executable. To make the program executable, the files must be linked which is done by the linker.
+The compiler will first translate the given high level source code into assembly which gets passed onto the assembler to be translated to machine language. Typically, each assembly instruction has a one to one corresponding machine code instruction unlike high level languages where a lot of lines of assembly code will be needed per instruction. An object file typically isn't complete because it contains symbol references (i.e. variables and functions) not defined in the file itself and doesn't have the instructions for the program to be executable. To make the program executable, the files must be linked which is done by the linker.
 
 **Note:** To replicate the compile stage (which also assembles the code), run **gcc** with `-c` option
 
@@ -221,6 +220,10 @@ void meow() {
 }
 ```
 
+Here's a diagram, please ignore the fact the diagram may not be a proper UML diagram (I forgot how it works).
+
+![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/code-example-diagram.png)
+
 ### Step 1 - Preprocessing
 
 The first step in the build process is preprocessing. To see what the compiler (`gcc` in our case) sees, we can run `gcc -E <file.c>`. 
@@ -242,7 +245,7 @@ As expected, all the macros of been expanded and substituted along with the decl
 
 ## Step 2- Compilation and Assembler
 
-Once the source files have been preprocessed such that all external symbols have been declared and all macros have either been expanded or ran, we need to compile the code to produce the assembly code of our source files. This can be done using the `-S` option in `gcc`. Let's look at the ouput of compiling `main.c`:
+Once the source files have been preprocessed such that all external symbols have been declared and all macros have either been expanded or ran, we need to compile the code to produce the assembly code of our source files. This can be done using the `-S` option in `gcc`. Let's look at the ouput of compiling `main.c` (file: `main.s`):
 
 ```c
         .file   "main.c"
@@ -272,11 +275,11 @@ main:
         .section        .note.GNU-stack,"",@progbits
 ```
 
-[]alk about relocatable files here]
+Notice how there's call to `meow` and `honk` but there's no label anywhere in the code. The linker will resolve this issue in a moment (though after we assemble the code from assembly to binary).
 
 ---
 
-Although assembly is an extremely low-level language, our CPU does not understand ASCII characters. We need to translate the resulting assembly code to ones and zeroes. Luckily, assembly is a mnemonic language (symbolic language) meaning that each command in Assembly typically has a corresponding opcode (binary instruction). So we will need to run the assembler to transform our assembly code to machine language which should be very fast. This can be done using the assembler `as`. But let's just use the   `-c` option in `gcc` to do all the steps we covered so far: preprocessor, compilation, and assembly stage. 
+Although assembly is an extremely low-level language, our CPU does not understand ASCII characters. We need to translate the resulting assembly code to ones and zeroes. Luckily, assembly is a mnemonic language (symbolic language) meaning that each command in Assembly typically has a corresponding opcode (binary instruction). So we will need to run the assembler to transform our assembly code to machine language. This can be done using the assembler `as`. But let's just use the   `-c` option in `gcc` to do all the steps we covered so far: preprocessor, compilation, and assembly stage. 
 
 ```bash
 $ gcc -c main.c
@@ -284,9 +287,89 @@ $ gcc -c cat.c
 $ gcc -c goose.c
 ```
 
+If we were to look at the symbols for `meow` and `honk`  for our newly created object file of `main.c` (file: `main.o`) using `readelf`, we'll see the following:
+
+```bash
+$ readelf --syms main.o | grep -E "honk|meow"
+     9: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND honk
+    10: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND meow
+```
+
+Notice **UND** appears in our object file. The object file has absolutely no clue where `honk` and `meow` are defined because it's defined in a different object file. Which comes to our most interesting topic in the build, linkers.
+
+Recall how I mentioned that object files are not executable. To clarify, there are three main types of object files:
+
+1. Relocatable object files
+
+2. executable object files
+
+3. shared object files
+
+The object files `main.o`, `cat.o`, and `goose.o` are not executable object files as I have repeated many times but they are relocatable files. Relocatable files are binary code and data formatted/structured in a way where it can be combined with other relocatable object files to create an executable object files. Let's look at one of the relocatable file:
+
+```bash
+$ file main.o
+main.o: LF 64-bit LSB relocatable, x86-64, version 1 (SYSV), not stripped
+```
+
+Notice how the the `file` utility tells us that `main.o` is a relocatable object file. (It also gives us a lot of different information such as LSB for Lease Significant Bit -> Little Endian, x86-64 architecture).
+
+Here's a typical ELF (The standard Executable & Linkable Format Linux uses) relocatable format:
+
+![](https://images4.programmersought.com/829/d6/d60698353f3420af3f727ba71cdcbd0d.png)
+
+We can see the same in our newly created object files as well using `objdump`:
+
+```bash
+$ objdump -x main.o
+
+main.o:     file format elf64-x86-64
+main.o
+architecture: i386:x86-64, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x0000000000000000
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+  0 .text         0000001f  0000000000000000  0000000000000000  00000040  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  0000000000000000  0000000000000000  0000005f  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  0000000000000000  0000000000000000  0000005f  2**0
+                  ALLOC
+  3 .comment      0000002f  0000000000000000  0000000000000000  0000005f  2**0
+                  CONTENTS, READONLY
+  4 .note.GNU-stack 00000000  0000000000000000  0000000000000000  0000008e  2**0
+                  CONTENTS, READONLY
+  5 .eh_frame     00000038  0000000000000000  0000000000000000  00000090  2**3
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+SYMBOL TABLE:
+0000000000000000 l    df *ABS*    0000000000000000 main.c
+0000000000000000 l    d  .text    0000000000000000 .text
+0000000000000000 l    d  .data    0000000000000000 .data
+0000000000000000 l    d  .bss    0000000000000000 .bss
+0000000000000000 l    d  .note.GNU-stack    0000000000000000 .note.GNU-stack
+0000000000000000 l    d  .eh_frame    0000000000000000 .eh_frame
+0000000000000000 l    d  .comment    0000000000000000 .comment
+0000000000000000 g     F .text    000000000000001f main
+0000000000000000         *UND*    0000000000000000 honk
+0000000000000000         *UND*    0000000000000000 meow
+
+
+RELOCATION RECORDS FOR [.text]:
+OFFSET           TYPE              VALUE 
+000000000000000a R_X86_64_PLT32    honk-0x0000000000000004
+0000000000000014 R_X86_64_PLT32    meow-0x0000000000000004
+
+
+RELOCATION RECORDS FOR [.eh_frame]:
+OFFSET           TYPE              VALUE 
+0000000000000020 R_X86_64_PC32     .text
+```
+
 ### Step 3: Linking
 
-As I stated earlier, producing the object file for the project does not mean you can execute the program. The object files may contain instructions that your CPU could somewhat understand, it is not complete. Object files will have undefined references to symbols and functions that are not defined within the files themselves. To illustrate, imagine you are running an errand to deliver a package to a person's house using the bus. However, you are not given the address of where the house is, who is the receiver, nor have the package with you. You cannot complete the tasks with those missing information. That's where the linker comes in handy. The information you need to perform some action in software development is often defined elsewhere. The linker combines all the object files, static files and figure out what dynamic libraries are needed and packaged them into one executable file. 
+As I stated earlier, producing the object file for the project does not mean you can execute the program. The object files may contain instructions that your CPU could somewhat understand, it is not complete. Object files will have undefined references to symbols and functions that are not defined within the files themselves. To illustrate, imagine you are running an errand to deliver a package to a person's house using the bus. However, you are not given the address of where the house is, who is the receiver, nor have the package with you. You cannot complete the tasks with those missing information. That's where the linker comes in handy. The information you need to perform some action in software development is often defined elsewhere. The linker combines all the object files, static files and performs symbol resolution and packaged them into one executable file. 
 
 We will be using **ld** to link our object files to relocate data and tie up symbol references. 
 
@@ -312,6 +395,24 @@ The Goose Honks
 The Cat Meows
 ```
 
+Let's inspect the executable itself using `objdump`: `readelf -d prog`
+
+If we were to look at the code for `main`, we see the following:
+
+```c
+0000000000401177 <main>:
+  401177:       55                      push   %rbp
+  401178:       48 89 e5                mov    %rsp,%rbp
+  40117b:       b8 00 00 00 00          mov    $0x0,%eax
+  401180:       e8 c2 ff ff ff          callq  401147 <honk>
+  401185:       b8 00 00 00 00          mov    $0x0,%eax
+  40118a:       e8 a7 ff ff ff          callq  401136 <meow>
+  40118f:       b8 00 00 00 00          mov    $0x0,%eax
+  401194:       5d                      pop    %rbp
+```
+
+Notice how our exectuable has an address associated with `meow` and `honk` function calls. Our linker is responsible for the symbol resolution and relocation. In the object files, the code and data sections starts at address 0. But when the linker combines various object files, it has to do two things: (1) associate a memory location for each symbol definition (2) modify all references to those symbols to the associated memory location. Anyhow Linkers are complex and would span a few blogs. I still don't have a full picture of how linkers work. If you want to learn more, I would suggest reading up a lecture I found online that gives a nice explanation about the build process but in more depth: [Linking](https://people.cs.pitt.edu/~xianeizhang/notes/Linking.html#reloc). For a full series of blog post on linkers, try reading [Linkers blog series from the creator of the Gold Linker himself](http://a3f.at/lists/linkers).
+
 ## Build Definition - Summary
 
 * build is the process of converting source code into an executable
@@ -330,8 +431,45 @@ Frankly most developers do not care how software gets built. We just want to mak
 
 ## Compiled v.s Interpreted Languages
 
+# Links to look at for research
 
+https://www.cs.princeton.edu/courses/archive/fall05/cos217/lectures/24portable.pdf
+
+[Portability &amp; the ARM Processor | Dr Dobb's](https://www.drdobbs.com/architecture-and-design/portability-the-arm-processor/184405435)
+
+http://www2.hawaii.edu/~takebaya/ics111/process_of_programming/process_of_programming.html
+
+[glibc/endian.h at master · lattera/glibc · GitHub](https://github.com/lattera/glibc/blob/master/string/endian.h)
+
+[Writing endian-independent code in C &#8211; IBM Developer](https://developer.ibm.com/technologies/systems/articles/au-endianc/)
+
+Db2 LUW Problem Determination and
+Troubleshooting Workshop
+
+[Linking](https://people.cs.pitt.edu/~xianeizhang/notes/Linking.html)
+
+[Linkers « a3f.at](http://a3f.at/lists/linkers)
+
+[Linux Understanding Shared Library Files - YouTube](https://www.youtube.com/watch?v=RmdvkUWQ78g)
+
+[CppCon 2017: Michael Spencer “My Little Object File: How Linkers Implement C++” - YouTube](https://www.youtube.com/watch?v=a5L66zguFe4)
+
+[Static and Dynamic Linking using GCC for Linux - YouTube](https://www.youtube.com/watch?v=UdMRcJwvWIY)
+
+[CppCon 2018: Jason Turner “Applied Best Practices” - YouTube](https://www.youtube.com/watch?v=DHOlsEd0eDE)
+
+https://www.idug.org/events/calendar/na-conference-2021/na21-registration
 
 ## Image Credits (Not exhaustive)
 
 * Olivier Pinçon &amp; Sébastien Granjoux - http://library.gnome.org/users/anjuta-build-tutorial/2.26/build-gcc.html.en, [GFDL](https://commons.wikimedia.org/w/index.php?curid=13208308)
+
+## More Resources:
+
+* A nice video covers the linkers: [Static and Dynamic Linking using GCC for Linux - YouTube](https://www.youtube.com/watch?v=UdMRcJwvWIY)
+
+* Another nice video that covers linkers but more advance: [CppCon 2018: Matt Godbolt “The Bits Between the Bits: How We Get to main()” - YouTube](https://www.youtube.com/watch?v=dOfucXtyEsU&t=1201s)
+
+* A series of blogs about Linkers from the creator of Gold (another linker): [Linkers « a3f.at](http://a3f.at/lists/linkers)
+
+* Some notes about linkers: [Linking](https://people.cs.pitt.edu/~xianeizhang/notes/Linking.html)
