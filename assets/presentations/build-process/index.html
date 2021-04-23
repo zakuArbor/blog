@@ -116,6 +116,23 @@
         </code></pre> 
       </section>
       <section>
+        <h2>Preprocessor Madness</h2>
+        <pre><code class = "c">#include "include.h"
+
+#include "declare_main.h"
+#include "open_bracket.h"
+#include "print_hello.h"
+#include "close_bracket.h"
+</code></pre>
+        <p>Each "header" file contains a line of C code</p>
+        <pre><code class = "c">#include &lt;stdio.h&gt;
+void main()
+{
+  printf("Hello World\n");
+}</code></pre>
+      </section>
+      <section data-background="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/preprocessor_madness.gif"></section>      
+      <section>
         <h3>Conditional Macros</h3>
         - You can choose which source code will be compiled -
       </section>
@@ -966,411 +983,333 @@ $ ./test.o
         <img src = "https://raw.githubusercontent.com/zakuArbor/blog/3629c04cab2406113320382858f05716a2eb0540/assets/programming/builds/gcc-linker.png"/>
       </section>
       <section>
-
+      <div style = "background-color: white">
+      <img src = "https://www.webopedia.com/wp-content/uploads/2020/10/link_5f854d22127de-2.gif"/>
+      </div>
+      </section>
+      <section>
+	<h2>main.c</h2>
+	<pre><code class = "c" data-line-numbers="4,5">  void honk();
+  void meow();
+  int main() {
+    honk();
+    meow();
+    return 0;
+  }	</code></pre>
+      <p><b><code>honk</code></b> and <b><code>meow</code></b> are not defined in <b>main.c</b></p>
+      <p>How does <b>main.c</b> know about these two functions?</p>
+      </section>
+    <section>
+      <h2>main.c</h2>
+      <pre><code class = "c" data-line-numbers="1,2">  void honk();
+  void meow();
+  int main() {
+    honk();
+    meow();
+    return 0;
+  } </code></pre>
+      <p>The functions have to be <b>declared</b> to tell the compiler they exist</p>
+      <p><b>honk</b> and <b>meow</b> are defined in other source files</p>
+      </section>
+      <section>
+        <b>goose.c</b>
+        <pre><code class = "c" data-trim >#include &lt;stdio.h&gt;
+#define PI 3.14
+#define Square(x) ((x)*(x))
+void honk() {
+    double area = PI * Square(9); //area = pi * r^2
+    printf("The Goose Honks the area of the circular pond: %.2f m^2\n", a);
+}</code></pre>
+        <b>cat.c</b>
+        <pre><code class = "c" data-trim>#include &lt;stdio.h&gt;
+  void meow() {
+  printf("The Cat Meows at its \n");
+}</code></pre>
       </section>
     </section>
-      
-	<!-- Example of nested vertical slides -->
-		<section>
-			<section>
-				<h2>Vertical Slides</h2>
-				<p>Slides can be nested inside of each other.</p>
-				<p>Use the <em>Space</em> key to navigate through all slides.</p>
-				<br>
-				<a href="#" class="navigate-down">
-					<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
-				</a>
-			</section>
-			<section>
-				<h2>Basement Level 1</h2>
-				<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-			</section>
-			<section>
-				<h2>Basement Level 2</h2>
-				<p>That's it, time to go back up.</p>
-				<br>
-				<a href="#/2">
-					<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
-				</a>
-			</section>
-		</section>
 
-		<section>
-			<h2>Slides</h2>
-			<p>
-				Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="https://slides.com" target="_blank">https://slides.com</a>.
-			</p>
-		</section>
+  <section>
+    <section>
+      <h2>Example</h2>
+      <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/code-example-diagram.png"/>
+    </section>
+    <section>
+      <small style="margin-top:10px;"><b>main.c</b></small>
+<pre style = "margin: 0px auto !important;font-size: 16px;"><code class = "c" data-line-numbers="1,2">void honk();
+void meow();
+int main() {
+  honk();
+  meow();
+  return 0;
+} </code></pre>
 
-		<section data-visibility="hidden">
-			<h2>Hidden Slides</h2>
-			<p>
-				This slide is visible in the source, but hidden when the presentation is viewed. You can show all hidden slides by setting the `showHiddenSlides` config option to `true`.
-			</p>
-		</section>
-
+      <small style="margin-top:10px;"><b>goose.c</b></small>
+      <pre style = "margin: 0px auto !important; font-size: 16px;"><code class = "c" data-trim data-line-numbers="4">#include &lt;stdio.h&gt;
+#define PI 3.14
+#define Square(x) ((x)*(x))
+void honk() {
+    double area = PI * Square(9); //area = pi * r^2
+    printf("The Goose Honks the area of the circular pond: %.2f m^2\n", a);
+}</code></pre>
+      <small style="margin-top:10px;"><b>cat.c</b></small>
+      <pre style = "margin: 0px auto !important;font-size: 16px;"><code class = "c" data-trim data-line-numbers="2">#include &lt;stdio.h&gt;
+  void meow() {
+  printf("The Cat Meows at its \n");
+}</code></pre>
+    </section>
+    <section>
+      <h2>Preprocessor</h2>
+      <b>gcc -E &lt;file.c&gt;</b>
+      <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/preprocessor_demo.gif"/>
+    </section>
+    <section data-background="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/preprocessor_demo.gif">
+    </section>
+    <section>
+      <h2>Compilation and Assembler</h2>
+      <b>gcc -c &lt;file.c&gt;</b>
+      <br/>
+      Could compile separately <b>gcc -S &lt;file.c&gt;</b> and use <b>as</b> for the assembler as well
+    </section>
 		<section data-auto-animate>
-			<h2 data-id="code-title">Pretty Code</h2>
-			<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-				import React, { useState } from 'react';
-
-				function Example() {
-				  const [count, setCount] = useState(0);
-
-				  return (
-				    ...
-				  );
-				}
+			<pre data-id="code-animation"><code class="shell" data-trim data-line-numbers="1|2,3">$ gcc -c main.c cat.c goose.c
+$ ls *.o
+cat.o goose.o main.o
 			</code></pre>
-			<p>Code syntax highlighting courtesy of <a href="https://highlightjs.org/usage/">highlight.js</a>.</p>
+      <p><b>gcc -c</b> does preprocessing, compilation, and assembling</p>
 		</section>
+    <section>
+      <h2>Steps So Far</h2>
+      <p>main.c &rArr; main.i &rArr; main.s &rArr; main.o</p>
+    </section>
+    <section data-background="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/compilation_demo.gif"> 
+    </section>
+    <section>
+    <pre style="width: 100% !important;" data-id="code-animation"><code class="shell" data-noescape>$ readelf --syms main.o | grep -E "honk|meow"
+     9: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  <font color="#EF2929"><b>UND</b></font> <font color = "#a6e22e"><b>honk</b></font>
+    10: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  <font color="#EF2929"><b>UND</b></font> <font color="#a6e22e"<b>meow</b></font></code></pre>
+    <p style = "font-size:0.6em"><b>Notice: Object file has absolutely no clue where and what <b>honk</b> &amp; <b>meow</b></b> are. Hence it appears as <font color="#EF2929"><b>UND</b></font> in the symbol table</p>
+    </section>
+    <section>
+      <h2>Linkers to the rescue</h2>
+      <small><b>Linkers connect the missing pieces</b></small>
+    </section>
+    <section>
+      <img height="400px" src = "https://github.com/zakuArbor/blog/blob/master/assets/programming/builds/linker-demo.png?raw=true"/>
+      <br/>
+      <small><b>Simple Idea:</b> ld cat.o goose.o main.o</small><br/>
+      <small><b>Actual Command:</b></small>
+      <pre style="font-size: 10px; margin: -10px !important;"><code class = "shell" data-line-numbers="3,5">ld /usr/lib64/crti.o /usr/lib64/crtn.o /usr/lib64/crt1.o \ 
+&gt;/usr/lib64/libc.so \
+&gt;cat.o goose.o main.o 
+&gt;-dynamic-linker /lib64/ld-linux-x86-64.so.2 \
+&gt;-o prog</code></pre>
+    </section>
+    <section>
+      <h2>Execute and Run</h2>
+      <pre><code class = "shell">$ ./prog
+The Goose Honks the area of the circular pond: 254.34 m^2
+The Cat Meows
+</code></pre>
+    </section>
+  </section>
+  <section>
+    <section>DEMO SUMMARY</section>
+    <section>
+      <pre><code class = "shell">$ gcc cat.c goose.c main.c -o prog</code></pre>
+      <h4>to</h4>
+      <pre><code class = "shell" data-line-numbers="1-3|4-6|7-9|10-14">$ gcc -E main.c -o main.i
+$ gcc -E cat.c -o cat.i
+$ gcc -E goose.c -o goose.i
+$ gcc -S main.i -o main.s
+$ gcc -S cat.i -o cat.s
+$ gcc -S goose.i -o goose.s
+$ as main.s -o main.o
+$ as cat.s -o cat.o
+$ as goose.s -o goose.o
+$ ld /usr/lib64/crti.o /usr/lib64/crtn.o /usr/lib64/crt1.o \
+/usr/lib64/libc.so \
+cat.o goose.o main.o \
+-dynamic-linker /lib64/ld-linux-x86-64.so.2 \
+-o prog</code></pre>
+    </section>
+  </section>
+  <section>
+	  <h2>Quick Overview of Static Libraries and Dynamic Libraries</h2>
+  </section>
+  <section>
+    <p>
+    In software development, it's very normal for different programs/projects to share the same functions
+    <p/>
+    <br/>
+    <p>
+    <b>Example:</b> printf, sqrt, cos, fopen
+    </p>
+  </section>
+  <section>
+    <p>Libraries allow programmers to reuse common functions among different projects and programs</p>   
+  </section>
+  <section>
+    <p>This saves development time and prevent reventing the wheel</p>
+    <p>Have a consistent and reliable set of functions with defined behavior</p>
+  </section>
+  <section>
+    <h2>Library Examples</h2>
+    <ul>
+            <li>DirectX SDK (Microsoft's Multimedia API used frequently by Videogame Programmers</li>
+            <li>libc (Standard C library)</li>
+            <li>asio (C++ Library for network and Low-level I/O programming)</li>
+            <li>GTK (GNOME GUI Library) or Qt (another GUI library)</li>
+    </ul>
+  </section>
+  <section>
+  <section>
+          <h2>Static Libraries (*.a files)</h2>
+          <p>Static Librares (known as <b>archives</b> are collection of object files</p>
+          <p>Like archiving files (i.e. zipping files), multiples files become one larger file</p>
+  </section>
+    <section>
+          <img src = "https://github.com/zakuArbor/blog/blob/master/assets/programming/builds/static-lib-demo.png?raw=true"/>
+  </section>
 
-		<section data-auto-animate>
-			<h2 data-id="code-title">With animations</h2>
-			<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="|4,8-11|17|22-24"><script type="text/template">
-				import React, { useState } from 'react';
-
-				function Example() {
-				  const [count, setCount] = useState(0);
-
-				  return (
-				    <div>
-				      <p>You clicked {count} times</p>
-				      <button onClick={() => setCount(count + 1)}>
-				        Click me
-				      </button>
-				    </div>
-				  );
-				}
-
-				function SecondExample() {
-				  const [count, setCount] = useState(0);
-
-				  return (
-				    <div>
-				      <p>You clicked {count} times</p>
-				      <button onClick={() => setCount(count + 1)}>
-				        Click me
-				      </button>
-				    </div>
-				  );
-				}
-			</script></code></pre>
-		</section>
-
-		<section>
-			<h2>Point of View</h2>
-			<p>
-				Press <strong>ESC</strong> to enter the slide overview.
-			</p>
-			<p>
-				Hold down the <strong>alt</strong> key (<strong>ctrl</strong> in Linux) and click on any element to zoom towards it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Click again to zoom back out.
-			</p>
-			<p>
-				(NOTE: Use ctrl + click in Linux.)
-			</p>
-		</section>
-
-		<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
-			<h2>Auto-Animate</h2>
-			<p>Automatically animate matching elements across slides with <a href="https://revealjs.com/auto-animate/">Auto-Animate</a>.</p>
-			<div class="r-hstack justify-center">
-				<div data-id="box1" style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;"></div>
-				<div data-id="box2" style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;"></div>
-				<div data-id="box3" style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;"></div>
-			</div>
-		</section>
-		<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
-			<div class="r-hstack justify-center">
-				<div data-id="box1" data-auto-animate-delay="0" style="background: cyan; width: 150px; height: 100px; margin: 10px;"></div>
-				<div data-id="box2" data-auto-animate-delay="0.1" style="background: magenta; width: 150px; height: 100px; margin: 10px;"></div>
-				<div data-id="box3" data-auto-animate-delay="0.2" style="background: yellow; width: 150px; height: 100px; margin: 10px;"></div>
-			</div>
-			<h2 style="margin-top: 20px;">Auto-Animate</h2>
-		</section>
-		<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
-			<div class="r-stack">
-				<div data-id="box1" style="background: cyan; width: 300px; height: 300px; border-radius: 200px;"></div>
-				<div data-id="box2" style="background: magenta; width: 200px; height: 200px; border-radius: 200px;"></div>
-				<div data-id="box3" style="background: yellow; width: 100px; height: 100px; border-radius: 200px;"></div>
-			</div>
-			<h2 style="margin-top: 20px;">Auto-Animate</h2>
-		</section>
-
-		<section>
-			<h2>Touch Optimized</h2>
-			<p>
-				Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-			</p>
-		</section>
-
-		<section data-markdown>
-			<script type="text/template">
-				## Markdown support
-
-				Write content using inline or external Markdown.
-				Instructions and more info available in the [docs](https://revealjs.com/markdown/).
-
-				```[]
-				<section data-markdown>
-				  ## Markdown support
-
-				  Write content using inline or external Markdown.
-				  Instructions and more info available in the [docs](https://revealjs.com/markdown/).
-				</section>
-				```
-			</script>
-		</section>
-
-		<section>
-			<p>Add the <code>r-fit-text</code> class to auto-size text</p>
-			<h2 class="r-fit-text">FIT TEXT</h2>
-		</section>
-
-		<section>
-			<section id="fragments">
-				<h2>Fragments</h2>
-				<p>Hit the next arrow...</p>
-				<p class="fragment">... to step through ...</p>
-				<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-				<aside class="notes">
-					This slide has fragments which are also stepped through in the notes window.
-				</aside>
-			</section>
-			<section>
-				<h2>Fragment Styles</h2>
-				<p>There's different types of fragments, like:</p>
-				<p class="fragment grow">grow</p>
-				<p class="fragment shrink">shrink</p>
-				<p class="fragment fade-out">fade-out</p>
-				<p>
-					<span style="display: inline-block;" class="fragment fade-right">fade-right, </span>
-					<span style="display: inline-block;" class="fragment fade-up">up, </span>
-					<span style="display: inline-block;" class="fragment fade-down">down, </span>
-					<span style="display: inline-block;" class="fragment fade-left">left</span>
-				</p>
-				<p class="fragment fade-in-then-out">fade-in-then-out</p>
-				<p class="fragment fade-in-then-semi-out">fade-in-then-semi-out</p>
-				<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
-			</section>
-		</section>
-
-		<section id="transitions">
-			<h2>Transition Styles</h2>
-			<p>
-				You can select from different transitions, like: <br>
-				<a href="?transition=none#/transitions">None</a> -
-				<a href="?transition=fade#/transitions">Fade</a> -
-				<a href="?transition=slide#/transitions">Slide</a> -
-				<a href="?transition=convex#/transitions">Convex</a> -
-				<a href="?transition=concave#/transitions">Concave</a> -
-				<a href="?transition=zoom#/transitions">Zoom</a>
-			</p>
-		</section>
-
-		<section id="themes">
-			<h2>Themes</h2>
-			<p>
-				reveal.js comes with a few themes built in: <br>
-				<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-				<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-				<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-				<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-				<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-				<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-				<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-				<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-				<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-				<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-				<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-				<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-			</p>
-		</section>
-
-		<section>
-			<section data-background="#dddddd">
-				<h2>Slide Backgrounds</h2>
-				<p>
-					Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-				</p>
-				<a href="#" class="navigate-down">
-					<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
-				</a>
-			</section>
-			<section data-background="https://static.slid.es/reveal/image-placeholder.png">
-				<h2>Image Backgrounds</h2>
-				<pre><code class="hljs html">&lt;section data-background="image.png"&gt;</code></pre>
-			</section>
-			<section data-background="https://static.slid.es/reveal/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-				<h2>Tiled Backgrounds</h2>
-				<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-			</section>
-			<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4" data-background-color="#000000">
-				<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-					<h2>Video Backgrounds</h2>
-					<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-				</div>
-			</section>
-			<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-				<h2>... and GIFs!</h2>
-			</section>
-		</section>
-
-		<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-			<h2>Background Transitions</h2>
-			<p>
-				Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-			</p>
-			<pre><code class="hljs javascript">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-		</section>
-
-		<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-			<h2>Background Transitions</h2>
-			<p>
-				You can override background transitions per-slide.
-			</p>
-			<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-		</section>
-
-		<section data-background-iframe="https://hakim.se" data-background-interactive>
-			<div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
-				<h2>Iframe Backgrounds</h2>
-				<p>Since reveal.js runs on the web, you can easily embed other web content. Try interacting with the page in the background.</p>
-			</div>
-		</section>
-
-		<section>
-			<h2>Marvelous List</h2>
-			<ul>
-				<li>No order here</li>
-				<li>Or here</li>
-				<li>Or here</li>
-				<li>Or here</li>
-			</ul>
-		</section>
-
-		<section>
-			<h2>Fantastic Ordered List</h2>
-			<ol>
-				<li>One is smaller than...</li>
-				<li>Two is smaller than...</li>
-				<li>Three!</li>
-			</ol>
-		</section>
-
-		<section>
-			<h2>Tabular Tables</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>Item</th>
-						<th>Value</th>
-						<th>Quantity</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Apples</td>
-						<td>$1</td>
-						<td>7</td>
-					</tr>
-					<tr>
-						<td>Lemonade</td>
-						<td>$2</td>
-						<td>18</td>
-					</tr>
-					<tr>
-						<td>Bread</td>
-						<td>$3</td>
-						<td>2</td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
-
-		<section>
-			<h2>Clever Quotes</h2>
-			<p>
-				These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">The nice thing about standards is that there are so many to choose from</q> and block:
-			</p>
-			<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-				&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-				reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-			</blockquote>
-		</section>
-
-		<section>
-			<h2>Intergalactic Interconnections</h2>
-			<p>
-				You can link between slides internally,
-				<a href="#/2/3">like this</a>.
-			</p>
-		</section>
-
-		<section>
-			<h2>Speaker View</h2>
-			<p>There's a <a href="https://revealjs.com/speaker-view/">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-			<p>Press the <em>S</em> key to try it out.</p>
-
-			<aside class="notes">
-				Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-			</aside>
-		</section>
-
-		<section>
-			<h2>Export to PDF</h2>
-			<p>Presentations can be <a href="https://revealjs.com/pdf-export/">exported to PDF</a>, here's an example:</p>
-			<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-		</section>
-
-		<section>
-			<h2>Global State</h2>
-			<p>
-				Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-				will be added as a class to the document element when the slide is open. This lets you
-				apply broader style changes, like switching the page background.
-			</p>
-		</section>
-
-		<section data-state="customevent">
-			<h2>State Events</h2>
-			<p>
-				Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-			</p>
-			<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.on( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-			</code></pre>
-		</section>
-
-		<section>
-			<h2>Take a Moment</h2>
-			<p>
-				Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-			</p>
-		</section>
-
-		<section>
-			<h2>Much more</h2>
-			<ul>
-				<li>Right-to-left support</li>
-				<li><a href="https://revealjs.com/api/">Extensive JavaScript API</a></li>
-				<li><a href="https://revealjs.com/auto-slide/">Auto-progression</a></li>
-				<li><a href="https://revealjs.com/backgrounds/#parallax-background">Parallax backgrounds</a></li>
-				<li><a href="https://revealjs.com/keyboard/">Custom keyboard bindings</a></li>
-			</ul>
-		</section>
-
-		<section style="text-align: left;">
-			<h1>THE END</h1>
-			<p>
-				- <a href="https://slides.com">Try the online editor</a> <br>
-				- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-			</p>
-		</section>
-
+  <section>
+    <pre><code class = "shell" data-line-numbers="1,2|3,4">$ ls *.o
+cat.o goose.o main.o
+$ ar -rs libanimal.a cat.o goose.o
+ar: creating animal.a
+</code></pre>
+To see what files compose <b>libanimal.a</b>
+<pre><code class = "shell" data-line-numbers="1|2,3">$ ar -t libanimal.a
+cat.o
+goose.o</code></pre>
+  </section>
+  <section>
+          <pre><code class = "shell" data-line-numbers="1|2-4">$ gcc main.o -L. -lanimal -o prog2
+$ ./prog2
+The Goose Honks the area of the circular pond: 254.34 m^2
+The Cat Meows</code></pre>
+    <aside class = "notes">
+            Let's replicate the demo I presented earlier where I compiled main.c, cat.c, and goose.c.
+            Since libanimal.a contains both goose.o and cat.o, we can simply link it with main.o 
+            using gcc with -L. to specify the library directory to be in the current directory and -lanimal, the static library we made without the prefix lib and extension .a
+            As you can see we get the same result as before
+    </aside>
+  </section>
+  <section>
+    <h2>Benefits</h2>
+    <ul>
+      <li>If multiple components or projects use the same set of libraries, no need to recompile</li>
+      <li>Saves compilation time, compile once and link it each time</li>
+    </ul>
+  </section>
+  </section>
+  <section>
+    <section>
+      <h2>Dynamic Libraries (*.so)</h2>
+      <p>Also known as <b>SHARED LIBRARIES</b></p>
+      <small>*.dll on Windows</small>
+    </section>
+    <section>
+      <p>
+      Unlike previous examples where we link object files to create an executable program (BEFORE RUNNING THE PROGRAM), </p><br/>
+      <p>
+      dynamic libraries are linked during <b>RUNTIME</b> whenever we run the program
+      </p>
+    </section>
+    <section>
+      <p>As the name implies, dynamic libraries are loaded and linked during RUNTIME</p> 
+      <p>
+      The other name, <b>shared library</b> has a reason, it means multiple programs share the 
+      same library in memory by linking to it
+      </p>
+    </section>
+    <section>
+      <h2>How I imagine it</h2>
+      <img src = "https://raw.githubusercontent.com/zakuArbor/blog/f2afcfe49b6d56fe8c472def251f649baac433c0/assets/programming/builds/shared-lib-imagine.png"/>
+    </section>
+    <section>
+      <h2>Benefits</h2>
+      <ul>
+              <li>Executable is smaller because definition isn't in the executable itself (i.e. the code for the libraries are stored in the computer at some common location such as <b>/usr/lib</b></li>
+              <li>All programs using the library just need to link to the definition loaded in memory</li>
+              <li>Easy to update if a bug exists</li>
+      </ul>
+    </section>
+    <section>
+      <h2>LDD - See object Dependencies</h2>
+      <pre><code class = "shell" style="font-size: 0.7em;" data-trim>$ ldd /bin/ls
+	linux-vdso.so.1 (0x00007fff41141000)
+	libselinux.so.1 => /lib64/libselinux.so.1 (0x00007f11d1688000)
+	libcap.so.2 => /lib64/libcap.so.2 (0x00007f11d1482000)
+	libc.so.6 => /lib64/libc.so.6 (0x00007f11d10bf000)
+	libpcre2-8.so.0 => /lib64/libpcre2-8.so.0 (0x00007f11d0e3b000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x00007f11d0c37000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f11d1ad5000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x00007f11d0a17000)
+      </code></pre>
+    </section>
+    <section>
+            <b>demo Program</b>
+                <pre><code class = "shell" style="font-size: 0.7em;" data-line-numbers="2-5" data-noescape>$ ldd prog
+  <b>linux-vdso.so.1</b> (0x00007ffe18950000)
+  <b>libc.so.6</b> =&gt; /lib64/libc.so.6 (0x00007f8c50cb4000)
+  <b>/lib64/ld-linux-x86-64.so.2</b> (0x00007f8c51077000)
+      </code></pre>
+      <b>LS Utility</b>
+          <pre><code class = "shell" style="font-size: 0.7em;" data-line-numbers="2,5,8" data-noescape>$ ldd /bin/ls
+  <b>linux-vdso.so.1</b> (0x00007fff41141000)
+  libselinux.so.1 =&gt; /lib64/libselinux.so.1 (0x00007f11d1688000)
+  libcap.so.2 =&gt; /lib64/libcap.so.2 (0x00007f11d1482000)
+  <b>libc.so.6</b> =&gt; /lib64/libc.so.6 (0x00007f11d10bf000)
+  libpcre2-8.so.0 =&gt; /lib64/libpcre2-8.so.0 (0x00007f11d0e3b000)
+  libdl.so.2 =&gt; /lib64/libdl.so.2 (0x00007f11d0c37000)
+  <b>/lib64/ld-linux-x86-64.so.2</b> (0x00007f11d1ad5000)
+  libpthread.so.0 =&gt; /lib64/libpthread.so.0 (0x00007f11d0a17000)
+      </code></pre>
+    </section>
+  </section>
+  <section>
+    <section><h2>STATIC V.S DYNAMIC LIBRARIES</h2></section>
+    <section>
+      <h2>STATIC LIBRARIES CONS</h2>
+      <ul>
+        <li>generate bigger executable files since library is integrated inside executable</li>
+        <li>less memory efficient - each program has their own copy of the library</li>
+        <li>Not easy to update - Requires all programs to update their copy of the library if a bug exists</li>
+      <ul>
+    </section>
+    <section>
+            <h2>Drawback of Dynamic Libraries</h2>
+            <ul>
+                    <li>Since many programs link to the same library, can cause compatibility issues if library gets updated or removed</li>
+                    <li>Extremely annoying to install program</li>
+            </ul>
+            <img src = "https://www.personalcomputerfixes.com/wp-content/uploads/2011/05/d3dx9-not-found.jpg">
+    <aside class="notes">when building open source programs, it may fail because you are missing some packages</aside>
+    </section>
+    <section>
+            <h2>Interesting Example</h2>
+            <b>expr</b> evaluates expression (i.e. a calculator)
+            <pre><code class = "shell">$ expr 2 \* 2
+4</code></pre>
+    </section>
+    <section>
+      <p>What happens if the library used by expr is corrupted?</p>
+      <pre><code>$ expr 2 \* 2
+8589934592</code></pre>
+      <aside class = "notes">ppc08</aside>
+    </section>
+    <section>
+    <p>A pseudo install of a program contained <b>libgmp</b> which caused an issue</p>
+    <pre><code class = "shell" data-line-numbers="3" data-noescape style = "font-size: 0.75em;">$ ldd `which expr`
+  linux-vdso64.so.1 =&gt; (0x0003fff9d4800000)
+  libgmp.so.10 &gt; /home/user/<b>program</b>/lib/libgmp.so.10 (0x00003fff9df00000)
+  libc.so.6 =&gt; /lib64/power8/libc.so.6 (0x00003fff9d200000)
+  /lib64/ld64.so.2 (0x00000000749a0000)</code></pre>
+    <small>Still not sure why the program gives an unexpected output because the differences in version should not matter</small>
+    </section>
+  </section>
+  <section><h1>FIN</h1>
+  </section>
 	</div>
 
 </div>
