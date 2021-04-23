@@ -34,6 +34,11 @@ Turns out, there is actually a lot that goes on in a build. Your IDE or compiler
 
 Before your source code is translated to assembly or machine code, it first goes through a program which we call the **preprocessor**. Essentially the preprocessor expands and substitute your code by expanding macros and include files. 
 
+The preprocessor gives you the ability to:
+* include header files
+* object-like (i.e. constants) and function like macros (more on this below)
+* conditional compilation
+
 For those with no or limited C programming experience, here's an example of a preprocessor:
 
 ```c
@@ -52,7 +57,15 @@ int main() {
     ...
 ```
 
-Although it may look similar to a **constant** variable, macros are substituted by the preprocessor while the compiler will deal with variables. There are some things you can do with macros that const cannot do such as the example above where the array size can be easily changed. Macros can do more than subsitute constant values. The power of macros are its ability to control what part of the source code to substitute (conditional directives) and the ability to write "function" like macros that does not have the overhead of function calls (which I won't get into).
+Although it may look similar to a **constant** variable, macros are substituted by the preprocessor while the compiler will deal with variables. There are some things you can do with macros that const cannot do such as the example above where the array size can be easily changed. You cannot do this easily in C with a variable. For example, the code below is illegal:
+
+```c
+int max_buffer_size = 10;
+int arr[max_buffer_size]; #this is illegal
+```
+
+
+Macros can do more than subsitute constant values. The power of macros are its ability to control what part of the source code to substitute (conditional directives) and the ability to write "function" like macros that does not have the overhead of function calls.
 
 ```c
 #ifdef DEBUG
@@ -64,6 +77,8 @@ printf("Value of x: %d\n", x);
 If the macro `DEBUG` is 1 or enabled (i.e. pass `-DDEBUG` to the preprocessor), the resulting source code will contain the block above. If not, the code above will not appear in the resulting program. This is especially important if you are working on software that supports multiple platforms (we'll get to this later). But here's a sneak preview (extracted from the source code of Node.js JS runtime):
 
 ![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/nodejs-macro.png)
+
+The ability to control what part of the source code gets compiled is essential in software development. Not only is it useful to remove any debug code from the product, but it also enables programmers to control how a particular feature is implemented depending on the targeted platform. Perhaps you want to take advantage full advantage of the excluseive libraries that exist on each platform such as DirectX on Windows or Metal on Apple to render graphics. You can simply use a Macros to ensure you can split the code for Apple environments from Windows environment. In addition, perhaps there are some features that are unsupported on some platforms or you wish to turn off for the free version. You can simply use conditional macros to turn features on or off as you desire.
 
 In regards to macro's "function" like ability, here's a short example:
 
@@ -132,6 +147,58 @@ As you can see, there is a notiecable performance impact when we choose not to u
 
 ---
 
+#### Include Directives
+
+In software development, it is normal to break down programs into many parts. This is particularly useful when specific parts of the code are frequently used by many other components. That's where libraries come in. There's no point of pasting the same code in various files or re-implementing code that already exists. Libraries make it easy to reuse and update code. If a particular library has a bug, you can simply fix the code that lies in one file or download the latest version. While your compiler does not care if you do not specify the library (i.e. stdio.h) when calling a function not defined in the same file, you'll encounter a linker error (which I'll get to later on).
+
+```shell
+/tmp/ccVUd15N.o: In function `main':
+test.c:(.text+0xf): undefined reference to `print'
+collect2: error: ld returned 1 exit status
+```
+
+Let's look at an example to see what your preprocessor does when you include a header file with the following source code:
+
+```c	
+#include <stdio.h>
+int main() {
+  printf("Hello World\n");
+  return 0;
+}
+```
+
+If we were to run the preprocessor (i.e. `gcc -E file.c`), source code expands from 6 lines to **720 lines** or 75B to 15.6KB file. The file takes up 208 times more space. So what is going on? 
+
+Include directives inserts the contents of the header files to the source code. So in the example earlier, most of the code is from expanding the contents of **stdio.h** library. Which is why you see lines such as these in the resulting source code that gets passed into the compiler:
+
+```c
+extern int printf (const char *__restrict __format, ...);
+extern int fseek (FILE *__stream, long int __off, int __whence);
+```
+
+A good example to visualize what is going on is expanding the following:
+```c
+#include "include.h"
+
+#include "declare_main.h"
+#include "open_bracket.h"
+#include "print_hello.h"
+#include "close_bracket.h"
+```
+
+where each file contains a line of C code:
+```
+#include <stdio.h>
+void main()
+{
+  printf("Hello World\n");
+}
+```
+
+I find this to be a good example because each header file contains a single line of code which itself makes no sense. The code is only complete when you bring in all the header files together. I do understand this is not how you should be using header files but it's an extreme example to visualize how include directives work.
+
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/preprocessor_madness.gif" alt = "A gif showing you the preprocessor madness"/>
+
 ### 2. Compile & Assembler
 
 The job of the compilation and assembling stage is to create an object file which contains machine code but is not complete. The resulting object file is **not executable**. If we were to try execute the object file, we'll get the following error:
@@ -147,9 +214,9 @@ $ ./test.o
 
 The compiler will first translate the given high level source code into assembly which gets passed onto the assembler to be translated to machine language. Typically, each assembly instruction has a one to one corresponding machine code instruction unlike high level languages where a lot of lines of assembly code will be needed per instruction. An object file typically isn't complete because it contains symbol references (i.e. variables and functions) not defined in the file itself and doesn't have the instructions for the program to be executable. To make the program executable, the files must be linked which is done by the linker.
 
-**Note:** To replicate the compile stage (which also assembles the code), run **gcc** with `-c` option
+**Note:** To replicate the compile and assembling stage, run **gcc** with `-c` option
 
-**Note:** To produce the assembly code, run **gcc** with `-S` option
+**Note:** To produce the assembly code, run **gcc** with `-S` option. You can use `as` to assemble the assembly code into binary.
 
 ## 3. Linker
 
@@ -243,6 +310,8 @@ void honk() {
 
 As expected, all the macros of been expanded and substituted along with the declaration of printf to tell the compiler that the function exists.
 
+<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/preprocessor_demo.gif" alt = "a gif demoing running the preprocessor"/>
+
 ## Step 2- Compilation and Assembler
 
 Once the source files have been preprocessed such that all external symbols have been declared and all macros have either been expanded or ran, we need to compile the code to produce the assembly code of our source files. This can be done using the `-S` option in `gcc`. Let's look at the ouput of compiling `main.c` (file: `main.s`):
@@ -289,11 +358,10 @@ $ gcc -c goose.c
 
 If we were to look at the symbols for `meow` and `honk`  for our newly created object file of `main.c` (file: `main.o`) using `readelf`, we'll see the following:
 
-```bash
-$ readelf --syms main.o | grep -E "honk|meow"
-     9: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND honk
-    10: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND meow
-```
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>readelf <span class="nt">--syms</span> main.o | <span class="nb">grep</span> <span class="nt">-E</span> <span class="s2">"honk|meow"</span>
+     9: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  <font color="#EF2929"><b>UND</b></font> <font color="#a6e22e"><b>honk</b></font> 
+    10: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  <font color="#EF2929"><b>UND</b></font> <font color="#a6e22e"><b>meow</b></font> 
+</code></pre></div></div>
 
 Notice **UND** appears in our object file. The object file has absolutely no clue where `honk` and `meow` are defined because it's defined in a different object file. Which comes to our most interesting topic in the build, linkers.
 
@@ -429,22 +497,97 @@ Notice how our exectuable has an address associated with `meow` and `honk` funct
 
 Frankly most developers do not care how software gets built. We just want to make small changes, recompile and iterate. Learning all the complexities of the build simply consumes way too much time. Accordnig to the book **Software Build Systems: Principles and Experience**
 
-## Compiled v.s Interpreted Languages
 
+# Quick Overview of Static and Dynamic Libraries
+
+As stated earlier, it's very normal for different programs/projects to share the same functions in software development. Notable examples are printf, sqrt, cos, fopen. Libraries allow programmers to reuse common functions among different projects and programs. This saves development time and prevent reventing the wheel. It also allows a consistent and reliable set of functions with defined behavior that can easily be updated by either updating the code or downloading the latest library. Some examples of libraries outside of C you may be familiar with are:
+
+* DirectX SDK (Microsoft's Multimedia API used frequently by Videogame programmers)
+* Asio (C++ library for network and low-level I/O programming)
+* Boost in C++
+* GTK (GNOME GUI library) or Qt (another GUI library) 
+
+## Static Libraries
+Static Libraries are libraries that are linked during the build process and not during runtime. Static libraries have the extension of **.a** and are also known as archives. They are known as archives because they are a collection of object files.
+
+<img src = "https://github.com/zakuArbor/blog/blob/master/assets/programming/builds/static-lib-demo.png?raw=true"/>
+
+For instance, let's say I generated an archive file named **libanimal.a** which is an archive that contains **cat.o** and **goose.o**. I can simply link it to a program like so:
+```shell
+gcc main.o -L. -lanimal -o prog
+```
+This is much easier than typing all the files that composed the static library such as the below:
+```shell
+gcc cat.o goose.o main.o -o prog
+```
+
+You can easily see how scalable this becomes when you are working on larger projects. But that's not the entire point of static libraries.
+
+### Benefits
+* If multiple components or projects use the same set of libraries, no need to recompile
+* Saves compilation time, compile once and link it each time
+* makes distributing object files much easier (since it's like a zip file where it combines various files into one)
+
+You can also easily distribute your code to your clients and friends saving them the trouble of compiling the code and somewhat protect your code from others by not giving them the source code.
+
+To see the object files that composes the static library, use the tool **ar** with the option **-t**:
+```shell
+$ ar -t libanimal.a
+cat.o
+goose.o
+```
+
+
+## Dynamic Libraries
+Dynamic Libraries (also known as shared libraries) are linked during runtime whenever we run the program. Which differs from static libraries where it gets link during the build process. Dynamic libraries have the extension **\*.so** on UNIX/Linux systems and on Windows they have the extension **\*.dll**.
+
+
+Based on the name **dynamic library** and **shared library** we can infer the following:
+* **dynamic libraries** are loaded and linked during RUNTIME
+* **shared library**: means multiple programs share the same library in memory by linking to it
+
+### Benefits
+* Executable is smaller because definition isn't in the executable itself (i.e. the code for the libraries are stored in the computer at some common location such as /usr/lib
+* All programs using the library just need to link to the definition loaded in memory
+* Easy to update if a bug exists
+
+You can view the dependencies programs have by running `ldd`. It's a useful tool to debug weird program behaviors:
+```shell
+ ldd /bin/ls
+	linux-vdso.so.1 (0x00007fff41141000)
+	libselinux.so.1 => /lib64/libselinux.so.1 (0x00007f11d1688000)
+	libcap.so.2 => /lib64/libcap.so.2 (0x00007f11d1482000)
+	libc.so.6 => /lib64/libc.so.6 (0x00007f11d10bf000)
+	libpcre2-8.so.0 => /lib64/libpcre2-8.so.0 (0x00007f11d0e3b000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x00007f11d0c37000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f11d1ad5000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x00007f11d0a17000)
+```
+
+## Static v.s Dynamic Libraries
+
+**Cons of Static Libraries:**
+* generate bigger executable files since library is integrated inside executable
+* less memory efficient - each program has their own copy of the library
+* Not easy to update - Requires all programs to update their copy of the library if a bug exists
+
+**Cons of Dynamic Libraries:**
+* Since many programs link to the same library, can cause compatibility issues if library gets updated or removed
+* Extremely annoying to install program
+<img src = "https://www.personalcomputerfixes.com/wp-content/uploads/2011/05/d3dx9-not-found.jpg" alt = "An error explaining that it failed to execute because it's unable to locate a dll"/>
+
+<!--
 # Links to look at for research
 
-https://www.cs.princeton.edu/courses/archive/fall05/cos217/lectures/24portable.pdf
+[Notes on Portable Code](https://www.cs.princeton.edu/courses/archive/fall05/cos217/lectures/24portable.pdf)
 
-[Portability &amp; the ARM Processor | Dr Dobb's](https://www.drdobbs.com/architecture-and-design/portability-the-arm-processor/184405435)
+[Portability &amp; the ARM Processor &#124; Dr Dobb's](https://www.drdobbs.com/architecture-and-design/portability-the-arm-processor/184405435)
 
-http://www2.hawaii.edu/~takebaya/ics111/process_of_programming/process_of_programming.html
+[Process of Programming Notes](http://www2.hawaii.edu/~takebaya/ics111/process_of_programming/process_of_programming.html)
 
 [glibc/endian.h at master · lattera/glibc · GitHub](https://github.com/lattera/glibc/blob/master/string/endian.h)
 
 [Writing endian-independent code in C &#8211; IBM Developer](https://developer.ibm.com/technologies/systems/articles/au-endianc/)
-
-Db2 LUW Problem Determination and
-Troubleshooting Workshop
 
 [Linking](https://people.cs.pitt.edu/~xianeizhang/notes/Linking.html)
 
@@ -457,8 +600,7 @@ Troubleshooting Workshop
 [Static and Dynamic Linking using GCC for Linux - YouTube](https://www.youtube.com/watch?v=UdMRcJwvWIY)
 
 [CppCon 2018: Jason Turner “Applied Best Practices” - YouTube](https://www.youtube.com/watch?v=DHOlsEd0eDE)
-
-https://www.idug.org/events/calendar/na-conference-2021/na21-registration
+-->
 
 ## Image Credits (Not exhaustive)
 
