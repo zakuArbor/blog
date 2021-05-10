@@ -579,6 +579,7 @@ You can view the dependencies programs have by running `ldd`. It's a useful tool
 **Cons of Dynamic Libraries:**
 * Since many programs link to the same library, can cause compatibility issues if library gets updated or removed
 * Extremely annoying to install program
+<br/>
 <img src = "https://www.personalcomputerfixes.com/wp-content/uploads/2011/05/d3dx9-not-found.jpg" alt = "An error explaining that it failed to execute because it's unable to locate a dll"/>
 
 <!--
