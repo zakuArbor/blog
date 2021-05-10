@@ -514,6 +514,8 @@ As stated earlier, it's very normal for different programs/projects to share the
 Static Libraries are libraries that are linked during the build process and not during runtime. Static libraries have the extension of **.a** and are also known as archives. They are known as archives because they are a collection of object files.
 
 <img src = "https://github.com/zakuArbor/blog/blob/master/assets/programming/builds/static-lib-demo.png?raw=true"/>
+<small>Note: The image is incorrect. An archiver creates the static library and not the linker.</small>
+
 
 For instance, let's say I generated an archive file named **libanimal.a** which is an archive that contains **cat.o** and **goose.o**. I can simply link it to a program like so:
 ```shell
