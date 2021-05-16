@@ -9,3 +9,5 @@ gem 'jekyll-sitemap', '~> 1.4'
 gem "jekyll-feed"
 gem "jekyll-seo-tag"
 gem "jekyll-paginate"
+
+gem "ffi", "~> 1.14"
