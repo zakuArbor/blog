@@ -466,7 +466,7 @@ The Goose Honks the area of the circular pond: 254.34 m^2
 The Cat Meows
 ```
 
-Let's inspect the executable itself using `objdump`: `readelf -d prog`
+Let's inspect the executable itself using `objdump`:
 
 If we were to look at the code for `main`, we see the following:
 
