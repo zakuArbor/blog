@@ -459,7 +459,7 @@ Once the files have been compiled, assembled, and linked, we can execute the pro
 
 ```bash
 $ ./prog
-The Goose Honks
+The Goose Honks the area of the circular pond: 254.34 m^2
 The Cat Meows
 ```
 
