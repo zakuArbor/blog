@@ -4,7 +4,10 @@ title: A Dive to the Build Process - What Goes On When You Press the Play Button
 categories: [programming]
 ---
 
-On my previous post [What does the Build Team Do](build-team), I covered various topics about builds and devOps. Today, I want to go more in depth on what goes on when you press the run button which I briefly brushed over in the previous post. This does get quite technical but don't fret. I have stopped myself from writing and reading up in depth about the topic to avoid going through the rabbit hole. 
+On my previous post [What does the Build Team Do](build-team), I covered various topics about builds and devOps. Today, I want to go more in depth on what goes on when you press the run button which I briefly brushed over in the previous post. This does get quite technical but don't fret. I have stopped myself from writing and reading up in depth about the topic to avoid going through the rabbit hole.
+
+If you prefer looking at the slides, I'll provide them below:
+<center><iframe src = "/blog/assets/presentations/build-process/index.html" title = "Build Process - Slides" style = "width: 100% !important; height: 75vh !important"></iframe></center>
 
 ## What is a Build
 
@@ -511,6 +514,8 @@ As stated earlier, it's very normal for different programs/projects to share the
 Static Libraries are libraries that are linked during the build process and not during runtime. Static libraries have the extension of **.a** and are also known as archives. They are known as archives because they are a collection of object files.
 
 <img src = "https://github.com/zakuArbor/blog/blob/master/assets/programming/builds/static-lib-demo.png?raw=true"/>
+<small>Note: The image is incorrect. An archiver creates the static library and not the linker.</small>
+
 
 For instance, let's say I generated an archive file named **libanimal.a** which is an archive that contains **cat.o** and **goose.o**. I can simply link it to a program like so:
 ```shell
@@ -574,6 +579,7 @@ You can view the dependencies programs have by running `ldd`. It's a useful tool
 **Cons of Dynamic Libraries:**
 * Since many programs link to the same library, can cause compatibility issues if library gets updated or removed
 * Extremely annoying to install program
+<br/>
 <img src = "https://www.personalcomputerfixes.com/wp-content/uploads/2011/05/d3dx9-not-found.jpg" alt = "An error explaining that it failed to execute because it's unable to locate a dll"/>
 
 <!--
