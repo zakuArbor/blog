@@ -114,24 +114,24 @@ seen because usually if you do poorly, you'll have to drop the course and wait
 for a semester or even an entire year to enroll in another calculus course. 
 This isn't even the hardest and in-depth first year
 calculus course the university offers from what I heard.
-
 Due to this difference in approach and depth, I am required to take all my 
-Math courses again. While I have no qualms about it, I do have an issue with 
-the fact I need to retake an Introductory Course to Mathematical Logics 
-because I've taken this course twice at my previous University. I would have 
-understood this decision if the course was more rigorous than those taken by 
-the Math major but it is not. All my Math courses at UofT were under the Math 
-department that shared the same requirements as any Math major. Anyhow, I'll 
-have to consult with the University sometime soon if I want to make room 
-for electives because the program offers almost no electives.
+Math courses again (with the exception of Mathematical Reasoning. 
 
-On the bright side, I was able to transfer 2.5 Credits (5 Courses):
+On the bright side, I am starting my degree with 3 Credits (6 Courses) out 
+of 21.0 Credits (42 Courses) so I am not exactly starting from scratch. 
+Though all the courses I have are non-core credits (i.e. not in Physics nor 
+in Mathematics) with the exception of Mathematical Reasoning: 
 * 1 Course in Computer Programming
 * 2 Courses Outside of Science and Engineering
 * 2 Free Electives
+* 1 Course in Math (Mathematical Reasoning)
 
-This gives me the flexibility to fit 5 courses of my interest during the
-duration at the University. I have some courses in mind such as a course in 
+![A screenshot of the courses I have so far before starting my 2nd undergrad](../assets/personal/carleton-transfer-electives.png)
+
+This gives me the flexibility to fit 6 courses of my interest during the
+duration at the University (or 4 courses if I do not want to take more than 
+5 courses/semester). 
+I have some courses in mind such as a course in 
 Compilers, Distributed Computing and Graphics Programming. These were the 
 courses I was very interested in taking but did not due to various reasons 
 during my previous undergrad.
@@ -153,12 +153,17 @@ Math and Physics for the next 4 years. While I do not know what I'll do
 with my studies, I'll be trying to explore and rationalize my decision in 
 the next few posts and over the years. Only time can tell.
 
-Some additional details are that I'll be retaking all my Math courses since 
+Some additional details are that I'll be retaking almost
+all my Math courses since 
 the Math courses I've taken are only for Math majors which are not rigorous 
 enough for the Honours Program. Luckily I was able to transfer a few 
 courses to cover the breadth requirements and the introductory computer 
 programming course so I can make room to take senior-level Computer 
 Science courses for fun.
 
+---
+
+### Edits
+2021-05-23: Mathematical Reasoning was transfered without any action on my part
 
 
