@@ -5,6 +5,7 @@ title: Personal
 ---
 A random blog about me discussing on various topics that I randomly felt writing. Most of the blogs will probably be slabs of sloppy work.
 
+* [2021-05-16: Going Back to School - Another Undergrad](../going-back-to-school-1)
 * [2021-01-29: My 2021 Reading List](../books-i-read-2021)
 * [Bias UTM CS Course Review](../bias-utm-cs-course-review)
 * [Different Options after HighSchool](../different-options-after-highschool)

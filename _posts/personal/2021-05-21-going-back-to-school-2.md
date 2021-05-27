@@ -70,6 +70,24 @@ Only time will tell if I'll regret my decision.
 
 ---
 
+## Feeling of Emptiness
+
+The pandemic has amplified the feeling of emptiness and helplessness I feel 
+on an almost daily basis. While I am not exactly clear on how I feel, my 
+productivity both at work and in my personal development has been deteriorating 
+as time passes. The feeling stems in the fact that I feel inadequate in both 
+knowledge and productivity at work. The reoccurring feeling of guilt to my 
+team for my lack of productivity made me question why I should even be paid 
+the salary I currently receive.
+
+I have been told by others to be content with what I have and stop running 
+away from reality. Close friends and family are not supportive of my decision 
+which is fair. Not having a clear plan on how I am going to utilize my 
+education in Mathematics and Physics makes others wonder why I would go back to 
+school and it is understandable.
+
+---
+
 ## Summary
 
 Considering my age, martial status, and financial status, it does not seem to 
