@@ -48,6 +48,13 @@
         We dive a bit deeper but not too deep
       </p>
       <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/highlevel-build2.png"/>
+      <aside class = "notes">
+        Today, ...
+        In fact, the content presented to you may already be something you've been exposed to or already know from your courses. 
+        At least for me who has never taken a compiler course, being in this team exposed me to the build process in more detail.
+        Of course, this is just going over the high overview of building code. I won't go into compiler design
+        since I don't think that's important nor am I knowledable of the subject since I never taken a compiler course.
+      </aside>
 		</section>
      <section>
       <h2>GCC Build Process</h2>
@@ -55,11 +62,19 @@
         Your compiler does more than compiling code
       </p>
       <img src = "https://upload.wikimedia.org/wikipedia/commons/9/9a/Preprocessor.png"/>
+      <aside class = "notes">
+        Anyhow, as I stated previously, your compiler does more than compilng code. There's a lot of steps that goes on in the build toolchain before and after the compilation stage
+        such as the preproccessor, assembler, and linker. The diagram you are seeing is all the steps the gcc compiler performs.
+      </aside>
 		</section>
     <section>
       <section>
         <h2>Preprocessor</h2>
         <img src = "https://raw.githubusercontent.com/zakuArbor/blog/3629c04cab2406113320382858f05716a2eb0540/assets/programming/builds/gcc-preprocessor.png"/>
+        <aside class = "notes">
+          Let's go onto the first stage, the preprocessor. This is the first stage whenever you are trying to build your code into an executable.
+          I like to refer this stage as expanding your source code before the compiler gets to see it.
+        </aside>
       </section>
       <section>
         <h2>Expands Source Code</h2>
@@ -84,9 +99,13 @@
             #inclide "windows.h"
           #endif
         </code></pre>
+        <aside class = "notes">
+          The preprocessor gives the ability to include headerfiles, perform macro expansion, and gives the ability to have conditional compilation. Here's an example of a macro.
+        </aside>
       </section>
       <section>
         <h3>Preprocessor - MACRO</h3>
+        <aside class = "notes">I assume you know what a macro is but I'll just quickly go over it just in case.</aside>
       </section>
       <section>
         <h3>- substitute text -</h3>
@@ -96,10 +115,18 @@
           int arr[max_buffer_size];
         </code></pre>
         <h3><u>THIS IS ILLEGAL</u></h3>
+        <aside class="notes">
+          essentially, macros substitute text. Let's say we want to have an array whose size is determined by some value which in this case is a variable. 
+          Recall .. So this code is illegal in C. You cannot dynamically 
+          assign the size of an array using a variable. 
+        </aside>
       </section>
       <section>
         <h2>Solution</h2>
         <p>- Use a MACRO - </p>
+        <aside class="notes">
+          So the solution to this is to simply use a macro.
+        </aside>
       </section>
       <section>
         <pre><code class = "cpp">
@@ -108,12 +135,15 @@
             int arr[MAX_BUFFER_SIZE];
             // Rest of the code
         </code></pre>
-        The output after running the preprocessor:
         <pre><code class = "cpp">
           int main() {
             int arr[10];
             //Rest of the code
         </code></pre> 
+        <aside class="notes">
+          On the top, you can see the code has been changed to use a macro named ... with the value ... and assign the array size with MAX_BUFFER_SIZE. When we compile the code, the 
+          compiler will see that the array is of size 10 and not MAX_BUFFER_SIZE because the preproccessor substituted the macro with its value.    
+        </aside>
       </section>
       <section>
         <h2>Preprocessor Madness</h2>
@@ -130,11 +160,18 @@ void main()
 {
   printf("Hello World\n");
 }</code></pre>
+      <aside class="notes">The Preprocessor madness is an example I came up with to illustrate how the preprocessor can expand code and substitute text. Let's say we have a file 
+        where it only contains include directives to other files where each header file contains a line of C code. When the preprocessor processes the source code, it'll give you a 
+        normal hello world program.
+      </aside>
       </section>
-      <section data-background="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/preprocessor_madness.gif"></section>      
+      <section data-background="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/preprocessor_madness.gif">
+      <aside class="notes">Here's the demo of the preprocessor madness example.</aside>
+      </section>      
       <section>
         <h3>Conditional Macros</h3>
         - You can choose which source code will be compiled -
+        <aside class="notes">...</aside>
       </section>
       <section>
         <small>
@@ -148,9 +185,17 @@ void main()
             #endif
           </code></pre>
           <small>
-            If we compile code with <code>-DDEBUG</code>, the lines will be 
+            If we compile code with <code>-DDEBUG</code>, the print statements will be 
             generated in the file the compiler processes
           </small>
+          <aside class="notes">
+            It's quite often that we want to have slightly different variation of our code for different use cases such as having a lot of print statements to help make debugging 
+            easier. But it's not something you wish to expose to the clients or there's some feature that is under development that is not ready yet so you wish to turn the feature off, 
+            or the feature only works on certain devices such as on mac but not on windows yet.
+            One way to do this is to use conditional macros. It helps reduce making copies of files that does essentially the same thing but with very slight differences.
+            
+            In the example I am showing, if we compile .. 
+          </aside>
       </section>
       <section>
         Great for supporting multiple platforms
@@ -158,6 +203,10 @@ void main()
         <p>
         <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/nodejs-macro.png"/>
         </p>
+        <aside class="notes">
+          As you can imagine, conditional macros are great for supporting multiple platforms. Here's an example from nodejs runtime that can be found on github.
+          They use conditional directives to include certain libraries which differs depending on the targed platform. [go over the code briefly]
+        </aside>
       </section>
       <section>
         <h3>Include Directive</h3>
@@ -169,7 +218,7 @@ int main() {
   printf("Hello World\n");
   return 0;
 }</code></pre>
-        <small>After preprocessing, the code becomes 720 lines from 6 lines!!!</small><br/>
+        <small>After preprocessing, the code becomes 720 lines from 5 lines!!!</small><br/>
         <small>75B Source Code to 15.6KB</small>
         <pre><code class="c" data-trim data-noescape data-line-numbers="0|407|620|717"># 1 "main.c"
 # 1 "<built-in>"
@@ -891,7 +940,12 @@ int main () {
   printf("Hello World\n");
   return 0;
 }</code></pre>
-      <h3>What's going On?</h3>
+      <aside class="notes">
+        Using libraries are very normal in programming and this is especially true in C.
+        If you have programmed in C, you'll be familiar with the fact that we need to include libraries such as Standard input/output library to work on anything tangible.
+        Although writing a hello world program can take about 5 lines of code, what your compiler sees is a totally different file from how you see it.
+        If we were to run the preprocessor, the code becomes 720 lines which is way more than the 5 lines we wrote. This is very noticeable if we were to check the file size as well.
+      </aside>
       </section>
       <section>
         Include Directive inserts the contents of the header files to the source code
@@ -901,6 +955,9 @@ int main () {
           Declaration is telling the compiler the existence of identifiers (i.e. functions) 
           without the complete definition/implementation.
         </small>
+        <aside class="notes">
+          You may be thinking what's going on. I only wrote 5 lines so how can the file the compiler sees be about 144x larger. It turns out the ...
+        </aside>
       </section>
     </section>
 
@@ -909,6 +966,9 @@ int main () {
         <h2>Compiler</h2>
         - Translates C code to Assembly - 
         <img src = "https://raw.githubusercontent.com/zakuArbor/blog/3629c04cab2406113320382858f05716a2eb0540/assets/programming/builds/gcc-compile.png"/>
+        <aside class="notes">
+          The step after the preprocessor is the compilation stage which is probably the step you are most familiar with. It translates C code into Assembly.
+        </aside>
       </section>
       <section>
         <pre><code class = "c">
@@ -949,6 +1009,9 @@ int main () {
           .section        .note.GNU-stack,"",@progbits
 
         </code></pre>
+        <aside class="notes">
+          If we were to compile a hello world program, we get the following assembly code.
+        </aside>
       </section>
     </section>
 
@@ -957,6 +1020,10 @@ int main () {
         <h2>Assembler</h2>
         - Converts Assembly to Object Files - 
         <img src = "https://raw.githubusercontent.com/zakuArbor/blog/3629c04cab2406113320382858f05716a2eb0540/assets/programming/builds/gcc-assembler.png"/>
+        <aside class = "notes">
+          However, your computer does not understand assembly code. Your cpu only understands 1s and 0s. Assembly is just a mnemonic language that is supposedly readable to humans.
+          We need to translate assembly code into binary code which consists of 1s and 0s. And this is what the role of the assembler is.
+        </aside>
       </section>
       <section>
         <h2>Object Files</h2>
@@ -967,6 +1034,10 @@ int main () {
           <li>Executable Object File</li>
         </ul>
         <p>The file generated from the assembler is a <b>RELOCATABLE OBJECT FILE</b></p>
+        <aside class="notes">
+          Object files are just binary files but there are three different types of object files: ... 
+          In our case, the file generated from the assembler ...
+        </aside>
       </section>
       <section>
         <p>Not Executable even though file is in binary</p>
@@ -974,6 +1045,13 @@ int main () {
 $ chmod +x test.o
 $ ./test.o
 -bash: ./test.o: cannot execute binary file: Exec format error </code></pre>
+        <aside class="notes">
+          A Relocatable object file is not executable ... 
+          Here's what it would like if you were to try to run a Relocatable object file. You'll get an exec format error.
+          A rel object file isn't complete in the sense that it's not formatted in a way that your computer understands. Even if your code is formatted in a way that 
+          your computer can understand, it contains symbol references (which are variables and functions) not defined in the file itself and therefore incomplete.
+          That's where the linker, the next stage after the assembling stage, comes into play.
+        </aside>
       </section>
     </section>
     <section>
@@ -981,11 +1059,21 @@ $ ./test.o
         <h2>Linker</h2>
         <p>Combines multiple object files into one executable file</p>
         <img src = "https://raw.githubusercontent.com/zakuArbor/blog/3629c04cab2406113320382858f05716a2eb0540/assets/programming/builds/gcc-linker.png"/>
+        <aside class = "notes">
+          The Linker combines ... 
+          It's responsible for patching all the undefined symbols that exist in each translation unit.
+        </aside>
       </section>
       <section>
       <div style = "background-color: white">
       <img src = "https://www.webopedia.com/wp-content/uploads/2020/10/link_5f854d22127de-2.gif"/>
       </div>
+      <aside class = "notes">
+        Here's a good image I found on the internet how the linkers work. It essentially combines all the resulting object file from each translation unit into one larger file 
+        that is executable. Ignore the runtime library, I won't be going into that but you'll see it in the example later on 
+        (i.e. crt0 is a set of execution startup routines linked into a c program)
+        Just understand that the linker is needed to create an executable program.
+      </aside>
       </section>
       <section>
 	<h2>main.c</h2>
@@ -998,6 +1086,10 @@ $ ./test.o
   }	</code></pre>
       <p><b><code>honk</code></b> and <b><code>meow</code></b> are not defined in <b>main.c</b></p>
       <p>How does <b>main.c</b> know about these two functions?</p>
+      <aside class = "notes">
+        In main.c, we have the following code. In line 4 and 5, we call the function honk and meow but those two functions are not defined in the file. So how does the compiler know 
+        about these two functions when we never wrote the code for both honk and meow?
+      </aside>
       </section>
     <section>
       <h2>main.c</h2>
@@ -1010,6 +1102,10 @@ $ ./test.o
   } </code></pre>
       <p>The functions have to be <b>declared</b> to tell the compiler they exist</p>
       <p><b>honk</b> and <b>meow</b> are defined in other source files</p>
+      <aside class = "notes">
+      Frankly the compiler does not need to know how the functions are defined. All it needs is for the functions to be declared to tell the compiler they exist.
+      The implementation of honk and meow are defined in other source files.
+      </aside>
       </section>
       <section>
         <b>goose.c</b>
@@ -1023,8 +1119,11 @@ void honk() {
         <b>cat.c</b>
         <pre><code class = "c" data-trim>#include &lt;stdio.h&gt;
   void meow() {
-  printf("The Cat Meows at its \n");
+  printf("The Cat Meows\n");
 }</code></pre>
+      <aside class = "notes">
+      Here are the implementations of honk and meow respectively.
+      </aside>
       </section>
     </section>
 
@@ -1032,6 +1131,9 @@ void honk() {
     <section>
       <h2>Example</h2>
       <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/code-example-diagram.png"/>
+      <aside class = "notes">
+      Let's now go through an example to review what I have covered so far.
+      </aside>
     </section>
     <section>
       <small style="margin-top:10px;"><b>main.c</b></small>
@@ -1054,13 +1156,18 @@ void honk() {
       <small style="margin-top:10px;"><b>cat.c</b></small>
       <pre style = "margin: 0px auto !important;font-size: 16px;"><code class = "c" data-trim data-line-numbers="2">#include &lt;stdio.h&gt;
   void meow() {
-  printf("The Cat Meows at its \n");
+  printf("The Cat Meows\n");
 }</code></pre>
+    <aside class = "notes">This is the entire program. Let's now go through each step in the gcc toolchain.</aside>
     </section>
     <section>
       <h2>Preprocessor</h2>
       <b>gcc -E &lt;file.c&gt;</b>
       <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/preprocessor_demo.gif"/>
+      <aside class = "notes">
+      The first step of the toolchain is the preprocessor. We can see the output of the preprocessor if we use "-E" option. In the left side, we can see the original code
+      and on the right the output of the preprocessor. As you can see, the file has been expanded to include all the contents of stdio and the macros Square and Pi substituted to 9*9 and 3.14
+      </aside>
     </section>
     <section data-background="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/preprocessor_demo.gif">
     </section>
@@ -1069,6 +1176,9 @@ void honk() {
       <b>gcc -c &lt;file.c&gt;</b>
       <br/>
       Could compile separately <b>gcc -S &lt;file.c&gt;</b> and use <b>as</b> for the assembler as well
+      <aside class = "notes">
+      The next step is the compilation and assembly stage. I'm just going to combine the two steps together but we could perform the steps separately.
+      </aside>
     </section>
 		<section data-auto-animate>
 			<pre data-id="code-animation"><code class="shell" data-trim data-line-numbers="1|2,3">$ gcc -c main.c cat.c goose.c
@@ -1082,16 +1192,26 @@ cat.o goose.o main.o
       <p>main.c &rArr; main.i &rArr; main.s &rArr; main.o</p>
     </section>
     <section data-background="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/compilation_demo.gif"> 
+            <aside class = "notes">
+                As you can see from the timestamps, it creates a c file, then an i file which is the extension from the preprocessor, and the s file is the assembly file generated during compilation
+                and the o file is the output from the assembler
+            </aside>
     </section>
     <section>
     <pre style="width: 100% !important;" data-id="code-animation"><code class="shell" data-noescape>$ readelf --syms main.o | grep -E "honk|meow"
      9: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  <font color="#EF2929"><b>UND</b></font> <font color = "#a6e22e"><b>honk</b></font>
     10: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  <font color="#EF2929"><b>UND</b></font> <font color="#a6e22e"<b>meow</b></font></code></pre>
     <p style = "font-size:0.6em"><b>Notice: Object file has absolutely no clue where and what <b>honk</b> &amp; <b>meow</b></b> are. Hence it appears as <font color="#EF2929"><b>UND</b></font> in the symbol table</p>
+    <aside class = "notes">
+            If we take a look at the resulting object file, we can see that the two functions honk and meow are undefined. The object ...
+    </aside>
     </section>
     <section>
       <h2>Linkers to the rescue</h2>
       <small><b>Linkers connect the missing pieces</b></small>
+      <aside class = "notes">
+        This is where the linkers come to the rescue. Linkers connects the missing pieces of the program together.
+      </aside>
     </section>
     <section>
       <img height="400px" src = "https://github.com/zakuArbor/blog/blob/master/assets/programming/builds/linker-demo.png?raw=true"/>
@@ -1103,6 +1223,10 @@ cat.o goose.o main.o
 &gt;cat.o goose.o main.o 
 &gt;-dynamic-linker /lib64/ld-linux-x86-64.so.2 \
 &gt;-o prog</code></pre>
+      <aside class = "notes">
+      The simple idea is that we run the linker ld with all the object files generated during the build to create one executable file. The actual command is a lot more complex than this but let's
+      not get into that.
+      </aside>
     </section>
     <section>
       <h2>Execute and Run</h2>
@@ -1110,6 +1234,7 @@ cat.o goose.o main.o
 The Goose Honks the area of the circular pond: 254.34 m^2
 The Cat Meows
 </code></pre>
+    <aside class = "notes">With the linking stage completed, we now have an executable that we can run which prints out the goose honks and the cat meows.</aside>
     </section>
   </section>
   <section>
@@ -1131,6 +1256,12 @@ $ ld /usr/lib64/crti.o /usr/lib64/crtn.o /usr/lib64/crt1.o \
 cat.o goose.o main.o \
 -dynamic-linker /lib64/ld-linux-x86-64.so.2 \
 -o prog</code></pre>
+      <aside class = "notes">
+              To summarize the demo, when you compile the code using gcc or the play button, it's actually doing a lot of step. Firstly it expands the files through the preprocessor creating i files,
+              then it goes through the compilation stage where the C code becomes assembly code. As soon as this is done, it'll create object files by assembling each file translating it from assembly 
+              to binary. The final step of the build is to link all the object files into one executable file with the linker ld. That's essentially all the steps when you run gcc. Of course, there's 
+              more technicalities we could dive into but that's just going to the rabbit hole.
+      </aside>
     </section>
   </section>
   <section>
@@ -1169,6 +1300,11 @@ cat.o goose.o main.o \
   </section>
     <section>
           <img src = "https://github.com/zakuArbor/blog/blob/master/assets/programming/builds/static-lib-demo.png?raw=true"/>
+          <small>The image is incorrect. It should be archiver and not a linker.</small>
+          <aside class = "notes">
+          Here's an idea of a static library that can be created using some tool. We combine the object files rabbit, goose, and cat into one larger file named animal. The image is incorrect, it 
+          shouldn't be a linker over there but the archiver tool.
+          </aside>
   </section>
 
   <section>
@@ -1181,6 +1317,10 @@ To see what files compose <b>libanimal.a</b>
 <pre><code class = "shell" data-line-numbers="1|2,3">$ ar -t libanimal.a
 cat.o
 goose.o</code></pre>
+  <aside class = "notes">
+  We have 2 object files we wish to combine into a larger file. We use an archiver ar to create animal as I said in the previous slides. 
+  To see the content of the files, we can run the archiver with -t option
+  </aside>
   </section>
   <section>
           <pre><code class = "shell" data-line-numbers="1|2-4">$ gcc main.o -L. -lanimal -o prog2
@@ -1225,6 +1365,10 @@ The Cat Meows</code></pre>
     <section>
       <h2>How I imagine it</h2>
       <img src = "https://raw.githubusercontent.com/zakuArbor/blog/f2afcfe49b6d56fe8c472def251f649baac433c0/assets/programming/builds/shared-lib-imagine.png"/>
+      <aside class = "notes">
+      Here's how I imagine how the dynamic linker works. We have two programs, program1 and program2 loaded into memory. When they want to call printf, the program will jump to somewhere in memory 
+      where print is located in memory. So if program 2 wants to call printf or malloc as well, it'll call the function from the same address as program1 used.
+      </aside>
     </section>
     <section>
       <h2>Benefits</h2>
@@ -1246,6 +1390,7 @@ The Cat Meows</code></pre>
 	/lib64/ld-linux-x86-64.so.2 (0x00007f11d1ad5000)
 	libpthread.so.0 => /lib64/libpthread.so.0 (0x00007f11d0a17000)
       </code></pre>
+      <aside class = "notes">ldd is a nice tool that let's us know the dependencies of a program. This is very helpful when debugging unexpected program behaviors.</aside>
     </section>
     <section>
             <b>demo Program</b>
@@ -1265,6 +1410,8 @@ The Cat Meows</code></pre>
   <b>/lib64/ld-linux-x86-64.so.2</b> (0x00007f11d1ad5000)
   libpthread.so.0 =&gt; /lib64/libpthread.so.0 (0x00007f11d0a17000)
       </code></pre>
+      <small>Since ASLR is enabled, the addresses are not the same but would be if we disabled ASLR. ASLR is some memory protection techinque that randomize the positions of programs and libraries</small>
+      <aside class = "notes">If we were to compare between our demo and ls, a unix utility, we can see common libraries that are shared between the two programs. Since ASLR is enabled ...</aside>
     </section>
   </section>
   <section>
@@ -1281,7 +1428,7 @@ The Cat Meows</code></pre>
             <h2>Drawback of Dynamic Libraries</h2>
             <ul>
                     <li>Since many programs link to the same library, can cause compatibility issues if library gets updated or removed</li>
-                    <li>Extremely annoying to install program</li>
+                    <li>Extremely annoying to install programs</li>
             </ul>
             <img src = "https://www.personalcomputerfixes.com/wp-content/uploads/2011/05/d3dx9-not-found.jpg">
     <aside class="notes">when building open source programs, it may fail because you are missing some packages</aside>
@@ -1291,12 +1438,16 @@ The Cat Meows</code></pre>
             <b>expr</b> evaluates expression (i.e. a calculator)
             <pre><code class = "shell">$ expr 2 \* 2
 4</code></pre>
+    <aside class = "notes">
+            Here's an interesting example, one time I was using the expr utility to do some calculations because I was too lazy to get a open the calculator app. 
+            expr for those who don't know, it's like a calculator but on the terminal.
+    </aside>
     </section>
     <section>
       <p>What happens if the library used by expr is corrupted?</p>
       <pre><code>$ expr 2 \* 2
 8589934592</code></pre>
-      <aside class = "notes">ppc08</aside>
+      <aside class = "notes">But when I was punching in some numbers, it gave me some bizzare number such as what you see in the screen. This was on one of our build machines. ppcle08</aside>
     </section>
     <section>
     <p>A pseudo install of a program contained <b>libgmp</b> which caused an issue</p>
@@ -1306,6 +1457,10 @@ The Cat Meows</code></pre>
   libc.so.6 =&gt; /lib64/power8/libc.so.6 (0x00003fff9d200000)
   /lib64/ld64.so.2 (0x00000000749a0000)</code></pre>
     <small>Still not sure why the program gives an unexpected output because the differences in version should not matter</small>
+    <aside class = "notes">
+            So I quickly try to debug the program and in the end found out that the shared library it was using wasn't the one installed on the computer but was contained in a pseudo install of a 
+            program under home.
+    </aside>
     </section>
   </section>
   <section><h1>FIN</h1>
