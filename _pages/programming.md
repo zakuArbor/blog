@@ -4,6 +4,7 @@ permalink: /programming/
 title: Programming
 ---
 A random blog discussing various topics in Computer Science and Programming that I find interesting to write about. It mostly serves as a medium to test or reiterate to myself what I learned.
+* [2021-05-27: Error Loading Shared Library Even If File Exists](../lddconfig)
 * [2021-04-14: What Goes on When you Press the Play Button](../building-code)
 * [2021-04-10: An overview of Build and DevOps from A Semi-Outside Perspective](../build-team)
 * [2021-03-13: Software Portability](../software-ports)
