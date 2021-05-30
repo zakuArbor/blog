@@ -70,27 +70,50 @@ Only time will tell if I'll regret my decision.
 
 ---
 
-## Feeling of Emptiness
+## Why Not Graduate School
 
-The pandemic has amplified the feeling of emptiness and helplessness I feel 
-on an almost daily basis. While I am not exactly clear on how I feel, my 
-productivity both at work and in my personal development has been deteriorating 
-as time passes. The feeling stems in the fact that I feel inadequate in both 
-knowledge and productivity at work. The reoccurring feeling of guilt to my 
-team for my lack of productivity made me question why I should even be paid 
-the salary I currently receive.
+Resigning from a job to pursue higher education is understandable for many. 
+Many view higher education as an investment. But what about pursuing an undergraduate degree, how does that make any sense. 
+Why am I pursuing another undergraduate instead of going to graduate school?
 
-I have been told by others to be content with what I have and stop running 
-away from reality. Close friends and family are not supportive of my decision 
-which is fair. Not having a clear plan on how I am going to utilize my 
-education in Mathematics and Physics makes others wonder why I would go back to 
-school and it is understandable.
+Graduate school has a lot of requirements and has a different focus compared to undergraduate programs. 
+A graduate degree is quite frankly useless if your purpose is to make more money in IT. 
+There are much better avenues to obtain a higher wage whether that be upgrading your 
+skills through self-studying and projects, going to another company, or going into management. 
+In terms of career outlook, a graduate degree in Computer Science allows one to work in very specialized fields that require a 
+subset of knowledge or experience that is hard to obtain without a graduate degree in some subfield such as Machine Learning. 
+While a graduate degree is not required to be able to work in these subfields, the typical programmer would not have the 
+academic rigor and understanding required to work in these subfields. 
+
+Graduate school requires you to specialize in a particular subfield which is the problem I have with graduate school. 
+I want to expand my knowledge but not necessarily in-depth than breadth. 
+I do want to go explore deeper in some of the fields in Computer Science such as Systems Programming 
+(i.e. Databases, Embedded Systems, Parallel & Distributed Computing, and Operating Systems) but I do not want to dedicate and limit myself to a specific subfield. 
+While I did have some interest in specializing in operating systems or databases, I want to branch out my knowledge before specializing. 
+There’s a lot of branches of Computer Science I haven’t explored or just touched the surface. 
+
+Furthermore, I am going for an undergraduate in Physics and Mathematics. 
+A very drastic change compared to my discipline. 
+The purpose of going back to school is not to further my knowledge in Computer Science (though I do plan on taking a few courses in Computer Science). 
+I won’t go into specifics about why Physics and Mathematics as that would be for another post.
+
+Anyhow, even if I did want to go into graduate school I would be unlikely to be able to. 
+If I was to apply for graduate school, I would go for the thesis route where it’s more theoretical than application-based. 
+Application-based masters are more suitable for those who wish to upgrade their credentials, knowledge, or skills. 
+Therefore, it is more suitable for those with a few years of work experience and not someone like me who only has one year of work experience outside of an internship. 
+Graduate school requires you to have a few things I lack which are research experience, close relationships with your professors, and a good CGPA. 
+I have 0 research experience, very little relationship with my professors and my CGPA isn’t competitive. 
+While my CGPA is not terrible, it is far from being competitive. 
+CGPA isn’t everything but with no research experience and the backing of your professors who are willing to be your references, it’s very unlikely I’ll have any success. 
+Therefore, I have no reason to nor many chances to get into graduate school even if I wanted to.
 
 ---
 
 ## Summary
 
 Considering my age, martial status, and financial status, it does not seem to 
-be a terrible idea to explore and learn.
+be a terrible idea to explore and learn. In addition, graduate school does not 
+make sense for me to pursue because I do not have much interest to specialize 
+at this point of my life nor do I have a profile to be competitive candidate.
 
 
