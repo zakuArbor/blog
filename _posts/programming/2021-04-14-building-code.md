@@ -81,7 +81,7 @@ If the macro `DEBUG` is 1 or enabled (i.e. pass `-DDEBUG` to the preprocessor), 
 
 ![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/nodejs-macro.png)
 
-The ability to control what part of the source code gets compiled is essential in software development. Not only is it useful to remove any debug code from the product, but it also enables programmers to control how a particular feature is implemented depending on the targeted platform. Perhaps you want to take advantage full advantage of the excluseive libraries that exist on each platform such as DirectX on Windows or Metal on Apple to render graphics. You can simply use a Macros to ensure you can split the code for Apple environments from Windows environment. In addition, perhaps there are some features that are unsupported on some platforms or you wish to turn off for the free version. You can simply use conditional macros to turn features on or off as you desire.
+The ability to control what part of the source code gets compiled is essential in software development. Not only is it useful to remove any debug code from the product, but it also enables programmers to control how a particular feature is implemented depending on the targeted platform. Perhaps you want to take advantage full advantage of the exclusive libraries that exist on each platform such as DirectX on Windows or Metal on Apple to render graphics. You can simply use a Macros to ensure you can split the code for Apple environments from Windows environment. In addition, perhaps there are some features that are unsupported on some platforms or you wish to turn off for the free version. You can simply use conditional macros to turn features on or off as you desire.
 
 In regards to macro's "function" like ability, here's a short example:
 
@@ -466,7 +466,7 @@ The Goose Honks the area of the circular pond: 254.34 m^2
 The Cat Meows
 ```
 
-Let's inspect the executable itself using `objdump`: `readelf -d prog`
+Let's inspect the executable itself using `objdump`:
 
 If we were to look at the code for `main`, we see the following:
 
@@ -493,13 +493,6 @@ Notice how our exectuable has an address associated with `meow` and `honk` funct
 * compilation is the process of converting source code into machine code saved in the form of an **object file**
 
 * linking is the process of combining object files into an executable
-
-* You do **NOT** need to understand the entire detail of what was covered just now about how to build each step. But it's very helpful and useful to have a general understanding of what goes behind the scenes
-
-### Why Care How Build Works
-
-Frankly most developers do not care how software gets built. We just want to make small changes, recompile and iterate. Learning all the complexities of the build simply consumes way too much time. Accordnig to the book **Software Build Systems: Principles and Experience**
-
 
 # Quick Overview of Static and Dynamic Libraries
 
