@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Going Back to School - Why Would Anyone Go Back?
-categories: [school]
+categories: [school, back-to-school]
 ---
 
 This is part 2 in the ongoing series where I am trying to 
