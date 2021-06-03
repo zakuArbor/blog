@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Going Back to School - Another Undergrad
-categories: [school]
+categories: [school, back-to-school]
 ---
 
 As the title states, I decided to resign from my job and go back to
