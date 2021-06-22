@@ -58,6 +58,10 @@ categories: [university, school, computer science, UTM]
 	  }
 
 	}
+
+  .line {
+    border: 1px dashed;
+  }
 </style>
 
 **DISCLAIMER:** The following content is a biased review based on my own experience and does not reflect the overall experience of others. Please excuse my poor writing, it’s still a skill that I am working on. This review is subjected to changes as I continue to reflect on my time at UTM.
@@ -66,9 +70,10 @@ categories: [university, school, computer science, UTM]
 
 ---
 
-<br/>
-
 # INTRODUCTION
+
+---
+
 Now that I am finished with University (unless somehow I fail my electives), I thought I would briefly review all the Computer Science (CS) courses I have taken at the University of Toronto (Mississauga and St. George campus). I have taken 11.5 credits (23 CS courses), I thought it would be nice to reflect on my experiences with them on a sunny Canada Day. Hopefully, this would be of some use to others but please do take note this is my bias experience.
 
 Before I start talking about the various courses I took, there may be some bias reviews with courses taught by my favorite professors: Larry Yulei Zhang, Vincent Maccio, Arnold Rosenbloom, Ilir Dema, and Simon Bogdan and perhaps also Furkan Alaca (it’s unfortunate I was not able to take a regular course with him so I cannot judge his teaching. I have a feeling he would have been one of my favorites if I had taken a regular course with him). Spoilers: I never had a terrible professor. Anyways, this is not only a review of courses I took but will also include a reflection on my progress in University along with some personal side stories.
@@ -76,13 +81,12 @@ Before I start talking about the various courses I took, there may be some bias 
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/collage1920x1080.jpg" alt = "my personal wallpaper with all my favorite professors" class = "center"/>
 <p class = "excerpt">My desktop wallpaper with all my professors</p>
 
-<br/>
+---
+
+# FIRST YEAR – 2 COURSES
 
 ---
 
-<br/>
-
-# FIRST YEAR – 2 COURSES
 First year computer science courses are not difficult at all. If you are new to programming, then you will need to invest more time than those who already know programming beforehand. Programming can be weird at first but you just need practice. I have helped a lot of students in CSC108 and CSC148 and I notice that a lot of students don’t think like a computer scientist. You need to be able to understand what the problem is, how to break it down, and be familiar with concepts taught in class. This does not simply come from just reading lecture notes but to get your hands dirty and make a bunch of small programs. Make a lot of simple programs that are less than 50 lines of codes to get a hang on with Python and how to think like a computer scientist.
 
 A lot of students are lost on how to start and often tell me they don’t know where to start on their assignment or that those little projects are stupid and meaningless. You need to start somewhere and starting simple is probably the best idea. When I first tried to learn programming a long time ago, I made very simple programs that would just take in inputs from the user and add them together, a random number guessing game, or just simply spamming different functions with different inputs to see how they would behave. It may seem stupid to others but it’s quite fascinating in my own opinion. To be able to tell the computer what to do and theorize how programs work was interesting.
@@ -91,7 +95,12 @@ First-year is probably going to be stressful and competitive because of POST req
 
 <br/>
 
+<hr class = "line"/>
+
 # CSC108: INTRODUCTION TO PROGRAMMING 1
+
+<hr class = "line"/>                                                            
+
 **Professor:** Ilir Dema
 
 **Coordinator:** Arnold Rosenbloom
@@ -113,8 +122,10 @@ Labs are an essential part of your learning in computer science. Attend your lab
 Feel free to ask questions with your TAs, professors, and classmates. Interacting with others and working on problems together helps you learn. However, you must not commit academic plagiarism. CSC108 along with CSC148 is plagued with students copying each other. There's nothing wrong with asking for help and discussing possible approaches to solving a problem but you must write the code yourself and be able to derive the solution when asked by your professor and TA.
 
 <br/>
-
+<hr class = "line"/>                                                            
 # CSC148: Introduction to Programming 2
+<hr class = "line"/>                                                            
+
 **Professor:** Tiffany Tong
 
 **Coordinator:** Dan Zingaro
@@ -135,7 +146,10 @@ Assignments were quite interesting and can be a bit time-consuming. The hardest 
 
 <br/>
 
+<hr class = "line"/>                                                            
 # Reflection
+<hr class = "line"/>                                                            
+
 I do have regrets not studying much in my first-year but not like I can change the past. However, I have bigger regrets about CSC108 and CSC148 than my performance. My biggest regret was perhaps helping certain individuals too much in the course. They have become too reliant on me and others to succeed in the course (some of them never even passed the course even after a few attempts). There needs to be a balance on how much you can help and know when to stop so that they can have the time to themselves to explore the concepts without being relying on you.
 
 I have helped many students and most of them became quite successful and some who I am proud of even if they no longer are in the University due to their poor academic performance. I have met various students at different levels and I enjoyed teaching students who took the time to study and tell me various approaches on how they would tackle a particular problem. However, teaching unmotivated and unenthusiastic students is mentally draining and makes me wonder if I am suitable to teach and help students. I would often spend so many hours (over 40-60 hours throughout the semester trying to teach some students)  and guide them on concepts and problems without much success and never had the students be enthusiastic about the courses I helped them in. I fear that I may start to form anger issues from these experiences and decided I will probably stop teaching students in their courses.
@@ -146,10 +160,14 @@ Note: I was never a TA (always failed to be a CSC209 TA to my regrets) and I am 
 
 ---
 
-<br/>
-
 # Second Year - 6 Courses
+
+---
+
+<hr class = "line"/>                                                            
 # CSC207: Software Design
+<hr class = "line"/>                                                            
+
 **Professor:** Sadia Sharmin
 
 **Coordinator:** Arnold Rosenbloom
@@ -181,7 +199,10 @@ The course organization is questionable. A lot of students in the past few years
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC236: Introduction to Theory of Computation
+<hr class = "line"/>                                                            
+
 **Professor:** Larry Yulei Zhang
 
 **Coordinator:** Larry Yulei Zhang
@@ -201,7 +222,10 @@ The course organization is questionable. A lot of students in the past few years
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC209: Systems Programming and Software Tools
+<hr class = "line"/>                                                            
+
 **Professor:** Ritu Chaturvedi (1st Attempt), Alan J Rosenthal (St. George), Furkan Alaca (my observation)
 
 **Coordinator:** Andrew Petersen (1st Attempt), Alan J Rosenthal (St. George), Furkan Alaca (my observation)
@@ -253,7 +277,10 @@ When I took CSC209 at UTM, we barely learned gdb and never covered topics such a
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/goose_chat.png" alt = "an example of a chat server made by students in CSC209" class = "center"/>
 <p class = "excerpt">An example of the emote chat server students made in CSC209 in 2020. An excerpt from the official CSC209 2020 Meme Thread. Credits to Emily Wu</p>
 
+<hr class = "line"/>                                                            
 # CSC258 - Computer Organization
+<hr class = "line"/>                                                            
+
 **Professor:** Larry Yulei Zhang
 
 **Coordinator:** Larry Yulei Zhang
@@ -275,7 +302,10 @@ When I took CSC209 at UTM, we barely learned gdb and never covered topics such a
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC263 - Data Structures and Analysis
+<hr class = "line"/>                                                            
+
 **Professor:** Larry Yulei Zhang (UTM), Fatemeh Panahi (St. George)
 
 **Coordinator:** Larry Yulei Zhang & Daniel Zingaro (UTM), Fatemeh Panahi (St. George)
@@ -307,7 +337,10 @@ Preordering at No Scratch Press gives you a much better deal with the coupon `PR
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/dan_book.jpg" alt = "The cover of Algorithmic Thinking" class = "center"/>
 <p class = "excerpt">An excerpt from No Scratch Press. Daniel Zingaro's newest book which is coming out in November 2020</p>
 
+<hr class = "line"/>                                                            
 # CSC290 - Communication Skills for Computer Scientists
+<hr class = "line"/>                                                            
+
 **Professor:** Nia McCash
 
 **Coordinator:** Nia McCash
@@ -316,7 +349,10 @@ Preordering at No Scratch Press gives you a much better deal with the coupon `PR
 
 **Review:** This is a standard communication course for computer science students but I heard this course may be removed in the near future. Instead, students may have to take some writing course designed in collaboration with the writing department or just any set of writing courses the department approves of. Students will be writing weekly blogs or pieces of work (at least when I took it - this blog originally was for this course) and work in groups to present and write a project proposal (I cannot recall what that was about). The test was very interesting because there was two components to the test. The first component is just a normal test but in the second component, you discuss the answers about the test you just wrote not long ago with the group. You can see all my blogs from the course over [here](https://zakuarbor.github.io/blog/csc290). It includes my view of the course whether or not it is useful and how I felt about the two stage test format.
 
+<hr class = "line"/>                                                            
 ## Reflection
+<hr class = "line"/>                                                            
+
 For those doing a CS major or minor and wondering which courses are easier, it all depends on what you are good at. Are you better at programming or theory? If you find theory much easier, you will like CSC263 over CSC209. CSC258 is the easiest out of CSC209, CSC258, and CSC263 for the average student. However, CSC263 is quite an important course which allows you to take courses such as CSC343. It is also very useful to know for interviews and to program better. So you should plan ahead on what courses you want to take in 3rd year instead of choosing what is easier. I suggest you to take all three of them. You don't have to take all three in 2nd year but you should plan to eventually complete all of them as they open a lot of courses to you.
 
 Similarly to first year, I really wished I studied much harder in my second year. I didn't necessarily slacked off but I sure didn't study hard enough. I ended up dropping CSC209 and CSC263 which changed my views about St. George as they were very easy over there. This will probably be the last year I regret not studying hard enough but not the last for dropping out of University (though my reason to consider dropping out of University changed because of financial reasons). Entering in my 3rd year with a weak foundation did hurt me a lot because third year was very tough for me.
@@ -325,9 +361,10 @@ Similarly to first year, I really wished I studied much harder in my second year
 
 ---
 
-<br/>
-
 # Third Year (300-level courses) - 13 Courses
+
+---
+
 Here are some of my views of courses I've taken in my 3rd and 4th year.
 
 **My favorite Courses:** CSC358, CSC367, CSC369, CSC363
@@ -338,7 +375,10 @@ Here are some of my views of courses I've taken in my 3rd and 4th year.
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC301 - Introduction to Software Engineering
+<hr class = "line"/>                                                            
+
 **Professor:** Ilir Dema
 
 **Coordinator:** Ilir Dema
@@ -367,7 +407,10 @@ Here's another example of another CSC301 project I found online that some of my 
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC309 - Computing on the Web
+<hr class = "line"/>                                                            
+
 **Professor:** Arnold Rosenbloom
 
 **Coordinator:** Arnold Rosenbloom
@@ -408,7 +451,10 @@ The last CSC309 Projects in 2019 and in 2020 was to make an io game which a lot 
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC324 - Principles of Programming Languages
+<hr class = "line"/>                                                            
+
 **Professor:** Ilir Dema
 
 **Coordinator:** Ilir Dema
@@ -423,7 +469,10 @@ The first assignment of the course was very interesting because we were to imple
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC333 - Forensic Computing
+<hr class = "line"/>                                                            
+
 **Professor:** Ryan Duquette
 
 **Coordinator:** Ryan Duquette
@@ -444,7 +493,10 @@ The exam was broken into two components: a practical and a theoretical component
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC343 - Introduction to Databases
+<hr class = "line"/>                                                            
+
 **Professor:** Ilir Dema
 
 **Coordinator:** Ilir Dema
@@ -455,7 +507,10 @@ The exam was broken into two components: a practical and a theoretical component
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC347 - Introduction to Information Security
+<hr class = "line"/>                                                            
+
 **Professor:** Arnold Rosenbloom
 
 **Coordinator:** Arnold Rosenbloom
@@ -485,7 +540,10 @@ The exam for this course was interesting. This was my first exam on the computer
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC358 - Computer Networks
+<hr class = "line"/>                                                            
+
 **Professor:** Michael Liut and Larry Yulei Zhang
 
 **Coordinator:** Larry Yulei Zhang
@@ -508,7 +566,10 @@ The exam was very challenging but fair. Due to Covid-19, the exam was held on Qu
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC363 - Computational Complexity and Computability
+<hr class = "line"/>                                                            
+
 **Professor:** Vincent Maccio
 
 **Coordinator:** Vincent Maccio
@@ -539,7 +600,10 @@ One of my fondest memory in the course was when Vincent joked at us for losing t
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC369 - Operating Systems
+<hr class = "line"/>                                                            
+
 **Professor:** Larry Yulei Zhang
 
 **Coordinator:** Larry Yulei Zhang
@@ -550,7 +614,10 @@ One of my fondest memory in the course was when Vincent joked at us for losing t
 
 I do have a confession to make, I did not really do the first two assignments which I still have regrets to this day. I was struggling a lot in trying to grasp functional programming for some odd reason and often left my partner hanging to the last day or two to work on the assignment. My partner was very great and understanding as I gave him prior warnings and he would often see me in the labs from morning to night every day including the weekends working on my assignments or studying for other courses. Though when I brought up my uselessness in the first two assignments up with him more than 2 years later, my partner could not seem to recall it but I can assure you that I did less than 10% of the work in each assignment. I mostly read over his code on the submission date to see what he did and see if I could find any flaws in his implementation. It was right after we received our marks for A2, I decided to ask him to find another partner because I was doing a great disservice to him. We ended up getting almost 100% except for the part I worked on had some flaws which ended up costing us to lose about 5% or more and I felt bad. I worked on a very small part of the assignment on the last day and so was likely to have some flaws. I think this was when I also decided that I would never try to let down my partner like this ever again. I hated a lot of my group partners who did this to me and yet here I was doing the same thing as them (hate is a strong word. I still get along with all my former partners no problem. I just will not work with them but I won't mind hanging out with them). It was not a pleasant feeling. The final assignment was implementing various file operations such as delete, create, recover, renaming, and moving files around a filesystem formatted in EXT3. This assignment was considered the hardest but I found it to be the most easiest and fun assignment in the course. However, that is perhaps it was the only assignment I did more than 10% of the work (I ended up writing most of the code in the assignment with the aid of my new partner who was my rubber ducky, being there constantly to give his input and feedback). The assignment was just more intuitive since all you needed to do was read the entire EXT3 documentation to understand where to read and where to write. But the assignment did take a few days to write and I had to consult with my new partner a lot. I am grateful to my new (and old partner) for being there with me the entire time I was writing the assignment. I often would consult with my partner on what I was writing and he would give his thoughts on my process which helped us complete the assignment in a timely manner.
 
+<hr class = "line"/>                                                            
 # CSC367 - Parallel Computing
+<hr class = "line"/>                                                            
+
 **Professor:** Simon Bogdan
 
 **Coordinator:** Simon Bogdan
@@ -578,7 +645,10 @@ The first assignment was investigating the benefits of caches and we were tasked
 </div>
 <center>Detecting edges using a 9x9 Laplacian of Gaussian filter. A sample what the program in A2 and A4 does</center>
 
+<hr class = "line"/>                                                            
 # CSC373 - Algorithm Design
+<hr class = "line"/>                                                            
+
 **Professor:** Vincent Maccio
 
 **Coordinator:** Vincent Maccio
@@ -594,7 +664,10 @@ The first assignment was investigating the benefits of caches and we were tasked
 <br/>
 
 
+<hr class = "line"/>                                                            
 # CSC376 - Fundamentals of Robotics
+<hr class = "line"/>                                                            
+
 **Professor:** Jessica Burgner-Kahrs
 
 **Coordinator:** Jessica Burgner-Kahrs
@@ -641,7 +714,10 @@ Anyways, would I recommend this course? It depends and here are some things to c
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC384 - Artificial Intelligence
+<hr class = "line"/>                                                            
+
 **Professor:** Sonya Allin & Alex Poole (St. George), Ilir Dema (UTM)
 
 **Coordinator:** Sonya Allin (St. George), Ilir Dema (UTM)
@@ -668,7 +744,10 @@ If you are wondering which campus I liked more for CSC384, I would have to say I
 
 <br/>
 
+<hr class = "line"/>                                                            
 # Reflection of my 3rd year
+<hr class = "line"/>                                                            
+
 My third year was very rough for me. I was under a lot of stress trying to do well in University and find an internship at the same time because I was running out of money to continue my education. I could have asked for money from my parents (who earned enough money and could easily fund my education) but I felt that if I wasn't able to find an internship and not do well in University, I was just wasting their money. My parents paid over 70k in tuition and for my living costs yet I was not doing well in University. Sure I was getting over a 3.0 but I was not studying much in my first two years and ended up needing to retake CSC209 and CSC263 because I dropped them in the winter. I wasn't even taking a full course load in second year which felt very bad. Therefore I considered applying to the military as my younger brother did under their Regular Officer Training Plan (ROTP) where the military would pay for your undergraduate in return of serving the military for quite some time. Although my brother joined the military because he wanted to be independent and help my parents save up for retirement, I just applied because I felt like a failure. Fortunately, I got an offer in January so I never entered the military.
 
 My AGPA in 3rd year went up a lot going over 3.5 (which may not seem much to some but my AGPA has always been around a 3.0 or a tiny bit over) due to all the studying I did. My foundation in Computer Science was weak due to the lack of studying I did in my first two years so I had to study a lot. In addition, I am a bit of a slow learner compared to the average human from my observation. I studied on average 60 hours/week or more going to school in the morning till midnight (12 am) every night. I would be at school everyday including Saturday and Sunday. Those were very stressful years but I was able to preserve due to my friend being there with me. I had it so much better than my friend who took 5 CS courses/semester and stayed at school much more than me by coming to school an hour or two before me. I have no clue how my friend did it but it inspired me and I credit my academic success to him. I wasn't even taking a full course load and took only 4 CS courses in the fall and 3 CS courses in the winter (+FSL106 - Functional French-Advanced Beginner and GGR217 - Fundamental to Hydrology). I will forever be grateful to my friend who has made me value my education.
@@ -681,8 +760,12 @@ Despite 3rd year being very stressful for me, I enjoyed my classes. 3rd year was
 
 # Fourth Year (400 Level Courses) - 2 Courses
 
+---
 
+<hr class = "line"/>                                                            
 # CSC427 - Computer Security
+<hr class = "line"/>                                                            
+
 **Professor:** Arnold Rosenbloom
 
 **Coordinator:** Arnold Rosenbloom
@@ -715,7 +798,10 @@ Here are some links to my presentation, tutorial, and assignment I gave in CSC42
 
 <br/>
 
+<hr class = "line"/>                                                            
 # CSC490 - Capstone Design Courses
+<hr class = "line"/>                                                            
+
 **Professor:** Furkan Alaca
 
 **Coordinator:** Furkan Alaca
@@ -724,7 +810,7 @@ Here are some links to my presentation, tutorial, and assignment I gave in CSC42
 
 **Review:** This course is a project implementation course with the focus being in Cyber Security. Most students tackled the inherit weakness of password-based authentication by providing alternatives to passwords. Not all groups worked on authentication such as DeerCoin, a group focused on creating their own cryptocurrency named after our UTM Deers and the Computer Science building - Deerfield Hall.
 
-At the start of the course, students are to explore various research papers relating to the project they wish to explore. I mainly looked into kernel programming, Linus Security Modules (LSM), and Trusted Platform Module as I was very interested in working with low-level security systems for the course. However, there were not many who were interested in the subject and so I never ended up working on them. However, the group I joined suggested they would work on making computer login easy by using our phones to authenticate the desktop with zero interaction. This involved needing to work with Linux Linux Pluggable Authentication Modules (PAM) which needed to be written in C. So I worked on the project which we named ProxyAuth for Proximity Based Authentication which would allow users to authenticate their laptops if they are by their laptop and auto-lock their laptop if they are not nearby. This involved learning how to program Bluetooth and program an Android app (which we chose Kotlin over Java). The course consists of having a weekly meeting with the professor and TA to talk about your progress and any issues you have. The professor and TA help refine your project and often can guide you through your issues. Every 2 weeks, every group is required to demonstrate what they have so far to the class. It was often interesting to see how other groups progress and ask questions about their project. At the end of the course, not only do you have to demonstrate the project to the entire class, but you also need to write a 20-page report on your project. Normally this would be done together by the entire team but I got fed up with the team and was going through some stressful time that I requested the professor if I could just write my report separate from the team and was granted permission.
+At the start of the course, students are to explore various research papers relating to the project they wish to explore. I mainly looked into kernel programming, Linux Security Modules (LSM), and Trusted Platform Module as I was very interested in working with low-level security systems for the course. However, there were not many who were interested in the subject and so I never ended up working on them. However, the group I joined suggested they would work on making computer login easy by using our phones to authenticate the desktop with zero interaction. This involved needing to work with Linux Linux Pluggable Authentication Modules (PAM) which needed to be written in C. So I worked on the project which we named ProxyAuth for Proximity Based Authentication which would allow users to authenticate their laptops if they are by their laptop and auto-lock their laptop if they are not nearby. This involved learning how to program Bluetooth and program an Android app (which we chose Kotlin over Java). The course consists of having a weekly meeting with the professor and TA to talk about your progress and any issues you have. The professor and TA help refine your project and often can guide you through your issues. Every 2 weeks, every group is required to demonstrate what they have so far to the class. It was often interesting to see how other groups progress and ask questions about their project. At the end of the course, not only do you have to demonstrate the project to the entire class, but you also need to write a 20-page report on your project. Normally this would be done together by the entire team but I got fed up with the team and was going through some stressful time that I requested the professor if I could just write my report separate from the team and was granted permission.
 
 <div class = "multiple_img_div center">
 	<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/proxy-1.png" alt = "Title page of my paper" class = "img_33"/>
@@ -748,7 +834,11 @@ You can view my final capstone report over [here to have an idea how a typical c
 
 <br/>
 
+---
+
 # Conclusion
+
+---
 I hope my bias review was not too boring for you. Thanks for checking out my blog and I hope you have a great time in your studies. Computer Science is very broad which gives you the flexibility to focus on what you want (though if you are in CS Specialist, you are forced to take courses you may not want to take)
 
 It is a shame that I will be graduating soon yet I could not take all the courses I wish to take. There are lot of fascinating courses at UofT that are offered at both campuses. Some courses I would love to take are:
@@ -759,7 +849,12 @@ It is a shame that I will be graduating soon yet I could not take all the course
 
 Another shame is the fact that I never was able to become a TA for any courses (particularly CSC209). I'll probably keep on trying to become a CSC209 TA even after I graduate. Perhaps I'll see you guys in any of the courses I wish to take in the future if I get permission from my employer.
 
+---
+
 # Credits
+
+---
+
 I thank all the professors, TAs, and friends I have met at the University for giving me an overall positive time at UTM. I have learned a lot and am still continually learning to improve my skills and knowledge. Particular thanks to those at the White Van Discord group (a Cool and Vibing community of Math, Stats, and Computer Science students) for providing some of the images in this blog and also for their feedback. You can join the community over here: [http://www.white-van.xyz/](http://www.white-van.xyz/)
 
 Thanks to [Skelzore](https://www.reddit.com/user/Skelzore/) for suggesting to upload this blog on r/UTM and to others who have read parts of my bias review.

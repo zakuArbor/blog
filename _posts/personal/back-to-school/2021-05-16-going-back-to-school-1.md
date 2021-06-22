@@ -65,7 +65,7 @@ honours means
 
 Similar to UofT, CarletonU follows the same credit weight where the 
 completion of a typical 4 month course amounts to 0.5 Credit. A typical 4 year 
-program requires students to complete 20.0 credits (i.e. 40 courses)i. Some 
+program requires students to complete 20.0 credits (i.e. 40 courses). Some 
 programs do require more such as the program I am enrolled in or in Engineering 
 where it's not rare for students to take 6 courses in some semesters to complete 
 their degree on time without taking an extra semester (i.e. summer school).

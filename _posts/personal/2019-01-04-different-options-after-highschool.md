@@ -22,9 +22,11 @@ Some students already decided what they’ll do right after HighSchool and some 
 
 **Things to Consider on what options you want to pursue:** I suggest you read this article: [https://80000hours.org/career-decision/article/](https://80000hours.org/career-decision/article/)
 
-<br/>
+---
 
 ## Breakdown on the options:
+
+---
 
 ### **Option 1: Getting a degree from a University**
 
@@ -72,7 +74,11 @@ If you find yourself in this option, do not feel discouraged. Depending on your 
 
 <br/>
 
+---
+
 ## APPRENTICESHIP
+
+---
 
 **Direction:**
 
@@ -114,7 +120,11 @@ I want to reemphasize that women should not be discouraged by these findings, bu
 
 <br/>
 
+---
+
 ## COLLEGE – NON TRADES ROUTE (CANADIAN VERSION)
+
+---
 
 **Commentary:** I do not have much to say about college (Canadian Version) since I am not knowledgable about it. Oddly enough, a lot of my friends went through college (non-trades). As stated earlier, college is a more hands-on and less academic intensive institution. College offers diplomas and some do offer degrees. College is more geared towards training you for the workforce and has a large range of fields you can study since each program is geared towards a very narrow set of jobs such as Early Childhood Educator or Animation. If you are looking into trades, you will typically go to college. The reason why I am not knowledgable about College is that I used to equate College and Trades to be the same since college offers a wide range of trades programs. However, college does have non-trades diplomas. Non-trades college diplomas and degrees are typically less expensive and shorter than studying at a University. If you dislike school but want to increase your qualification than consider going to college. College graduates are found to have a higher salary than those who only have HighSchool and for a good reason. A college diploma can increase your job prospects by allowing you to get specialized jobs that require a diploma and/or access to a wider range of jobs. College equips you with the skills needed for the industry.
 
@@ -128,10 +138,13 @@ Colleges that offer degrees typically are easier to get into, less academic inte
 
 <br/>
 
+---
+
 ## UNIVERSITIES:
 
-**Outlook:** Universities tend to be the trend where students go to after HighSchool. There has been a shift in the 21st century where more and more students are pursuing a degree. Universities have been seen as the road to success and believed to give graduates a better job and income. University graduates are found to have a higher income and a low unemployment rate. As stated earlier in the blog, studies have shown that University graduates are less volatile to the economic situation compared to others in different levels of education.
+---
 
+**Outlook:** Universities tend to be the trend where students go to after HighSchool. There has been a shift in the 21st century where more and more students are pursuing a degree. Universities have been seen as the road to success and believed to give graduates a better job and income. University graduates are found to have a higher income and a low unemployment rate. As stated earlier in the blog, studies have shown that University graduates are less volatile to the economic situation compared to others in different levels of education.
 
 
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/data-graphs/median-earnings-by-education.png" alt = "A graph highlighting the median income by education attainment" class="center"/>

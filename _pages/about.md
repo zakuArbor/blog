@@ -14,7 +14,7 @@ Computer Science at University.
 
 Bothered by how illiterate I am in Science and Math, wanting to learn new things, and overcome my weakness in Math I am leaving my job to study at a local University.
 
-My hobbies outside of learning about Computers are reading manga and books. Though I am trying to make a habit of spending at minimum an hour or two studying French in hopes of being bilingual by the time I'm 30 years old.
+My hobbies outside of learning about Computers are reading manga and books. Though I am trying to make a habit of spending at minimum an hour or two each week studying French in hopes of being bilingual by the time I'm 30 years old.
 (Perhaps I'll start writing some blogs in French in a few years when I become comfortable enough to practice).
 
 ---

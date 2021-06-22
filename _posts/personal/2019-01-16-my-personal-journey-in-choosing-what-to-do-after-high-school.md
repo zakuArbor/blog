@@ -3,19 +3,31 @@ layout: post
 title: My Personal Journey in Choosing What to do After High School
 categories: [school, life, career]
 ---
+
+<style>
+.line {
+  border: 1px dashed;
+}
+</style>
+
 **Prelude:**
 Recently I wrote a [blog](different-options-after-highschool) about the various options that students often choose from and discussed the prospect of each option. Originally I intended the blog to be about my personal experience and my struggles in choosing what I wanted to do after HighSchool but I ended up deviating.
 
-<br/>
+---
 
 ## First World Problem: The Problem With too many Options
+
+---
 Short story short, I ended up going to University to study Computer Science and still have no clue what I want to do. Living in a very developed and “free” society, I am given the privilege and “freedom” to do what I want to do. This comes with a downside, which is that I have too many options to consider. This means narrowing down my options is quite hard since I do not have many limitations in what I can and cannot do.
 
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/uncertain-what-to-do.png" alt = "An image of a girl lying in bed think of what to do with her life" class="center"/>
 
 <br/>
 
+<hr class = "line"/>
 ### Thoughts Before Senior Year: Becoming an Electrician
+<hr class = "line"/>                                                            
+
 Ever since entering High School, I always thought I would go to college and become an Electrician since I thought it was an interesting career to pursue (and the Main Character of one of my favorite anime, Clannad, was an electrician). However, I know very little about circuitry and physically unfit. But I still wanted to try pursuing college since I heard that Electricians also earned quite a bit in Canada.
 
 <br/>
@@ -24,7 +36,9 @@ Ever since entering High School, I always thought I would go to college and beco
 
 <br/>
 
+<hr class = "line"/>                                                            
 ### Asian Expectations
+<hr class = "line"/>                                                            
 Coming from a Korean family where we place a lot of emphasis on Education, my Mother was obviously against me going to college to become an Electrician. For some reason, there’s this view among Koreans that if a child does not go into University, the child will have a terrible future. They view any jobs that are hands-on such as Electrician as a more lowly job for those who are not educated and have little success in society. Which meant that I had to go to University to please my parents.
 
 <br/>
@@ -33,7 +47,10 @@ Since I have no ambitions in life (and the fact that I only consider becoming an
 
 <br/>
 
+<hr class = "line"/>                                                            
 ### Being a High School Student Rocks
+<hr class = "line"/>                                                            
+
 When I was a young High Schooler, I didn’t think much about the future too much and went by the flow. However, as I approach my senior years, I no longer had the luxury to enjoy life and go by the flow anymore. The more I thought about the future, the more I did not want to leave High School. I love my High School and I wished to stay there for a bit longer. The teachers were nice, my friends were there, and I was doing “very well” academically.
 
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/separation-inevitable.png" alt = "An image of a highschooler being scared to separate from his friends after graduation" class="center"/>
@@ -45,8 +62,10 @@ High School was a period where I least studied in my 12 years of schooling and g
 On a side note, I also didn’t want to become an adult as well. Once you are an adult, you are slapped with responsibilities and burdens associated with adulthood. This meant that I now have to start filing taxes, be expected to be productive in society, start paying my own bills, and be independent. I know a lot of teenagers who want to become independent but I was not one of them. I was comfortable at home with the exception of being forced to play a musical instrument which is probably the only major rift between my mother and me since it still bothers me.
 
 <br/>
-
+<hr class = "line"/>                                                            
 ### What’s the point of University
+<hr class = "line"/>                                                            
+
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/manga-life-choices/thinking-reason-to-attend-uni.jpg" alt = "An image of a highschooler pondering why should she attend college when she doesn't have any goal in life" class="center"/>
 
 Having no goals made me become stressed a lot during my last year and a half of High School (High School in Canada is 4 years). Having no goal meant that I had no direction in life. I just went to school because that was my “job” (or at least that is how my mother puts it) and it was fun.
@@ -61,12 +80,18 @@ Since I had no clue what I wanted to do in life, I started to question the point
 
 <br/>
 
+<hr class = "line"/>                                                            
 ### Seeking Career Advice From Parents 
+<hr class = "line"/>                                                            
+
 Since my parents wanted me to go to University, they must have some thoughts or plans on what I should do in life is what I thought. Turns out I was wrong. I talked to my mother for advice and she was very unhelpful. I guess after having a lot of arguments with my older sister, my mother no longer wants to restrict my choices as long as I went to University (even though one of my Sister’s main argument was the fact that my Mother barred her from entering College. But I guess my sister’s argument won’t apply to me since I didn’t particularly struggle academically compared to my sister who has a learning disability). Although she did not want to restrict my choices, she quickly reversed that after volunteering for a University Fair that my Korean Church ran after I went to University (One time she stopped the car and told me to leave when I joked about switching to Psychology). All my Mother said was that I probably should avoid any program that requires a lot of writing such as English, Literature, and Journalism since English is my weakest subject and the job market in those fields did not seem very good. The response my Mother gave me was obvious to me since I never consider pursuing any career that required me to have good writing skills. You can probably already tell that my English writing is not the best from this blog. My Mother also hinted to me that she does not want me to go into Business since all of her siblings are in Business and they keep going on sinusoidal ups and downs. My Father on the other hand told me to go into Software Engineering (Fake Engineering IMO) or Computer Science. My father thinks I am a genius for some odd reason in Computers since I knew a bunch of programming languages. Long story short, my friend in Middle School introduced me to the idea that you can make a website by writing “code” and that everything I see on the computer was coded and not magic. Ever since then, I started to borrow books from the library, watching videos, and learning online about programming and my Dad found out about it during his bi-yearly visit. However, I have no interest in making a programming career and that was what I decided in my early years of High School. I just found it interesting, a good timer killer that was more productive than reading manga all day, and was something to get my mind off of since I was struggling academically in Middle School (My grades were fairly average by the time I entered Middle School though (perhaps a bit below average) at the time but it sure did not please my Mother).
 
 <br/>
 
+<hr class = "line"/>                                                            
 ### Applying to Universities
+<hr class = "line"/>                                                            
+
 The time comes around and it is Fall (late October) when University application begins. I had to choose 3 programs but I ended up paying extra to apply for 5 programs. I quickly narrow down my options based on the following questions:
 * What are my weaknesses that may hinder my progress in the program
 * What is the job prospect in those programs
@@ -103,12 +128,22 @@ Another motivation for me choosing to apply to Engineering is that Engineering w
 
 <br/>
 
+---
+
 ## Reasons Why I did not Go To College
+
+---
+
 Although my plan for the majority of my time in High School was going to College, I decided to not apply to College for various reasons. The first reason is that my mother was against it. My goal of becoming an Electrician only started due to an anime so there was not much reason to argue. So I should probably stop bothering my Mother about it. But the main reason was probably due to all my friends and most of my classmates were going to University. In Ontario High Schools, there are generally 2 divisions which are the Applied/College Route and the Academic/University Route. Students who wish to go to University have to enroll in Academic/University courses (You do not want to mess up on your course choices or else you’ll have to repeat a few semesters to fix your mistake. My general advice is that if you are not doing badly academically, choose the Academic/University Route so that you don’t have to repeat a semester or two and take as many core courses (i.e. science and math) as you can to not limit yourself to only College). Since I was enrolled in the Academic/University Route, I had very little encounters with those who were in the Applied/College Route even though my High School was some small Countryside High School.
 
 <br/>
 
+---
+
 ## Application Details
+
+---
+
 University applications can be stressful depending on where you are applying and the country you live in. Some countries have national exams, some Universities have their own exams, and some universities just look at your High School marks. The latter is how most Canadian University works. In Canada, applying to University is not difficult at all. Just select the University you wish to apply for and fulfill the program requirements. No additional exams at all (with exceptions of some competitive programs). Some programs in some Universities are very selective such as Theatre Studies, Music, and Visual Design. Art programs such as Visual Design, Music, and Theatre Studies usually require an audition or portfolio to show your skills since there are very limited spots in the University. In addition, some Universities may require students to send an essay and their work/volunteering experience to choose the most desired candidate.
 
 <br/>
@@ -117,12 +152,22 @@ In my case, the University of Ottawa and Carleton University does not require an
 
 <br/>
 
+---
+
 ## Application Headaches – The problems of being an Asian Twin
+
+---
+
 As you may not know, I am an Asian who happens to have a twin brother who also applied to the same University as me (except for the University of Toronto) but in different Engineering Programs (he was more into mechanical, sustainable, and medical Engineering fields). The University application system for uOttawa and CarletonU is absolutely terrible in handling edge cases like dealing with twins, triplets, etc from minority ethnic groups (I heard of the Royal Canadian Military College also had this issue regardless of what ethnic group the applicants were and this was the University my brother ended up going to). I have no actual proof that the University Application System was “racist” in the sense that it only affects minority groups but I just like saying it is. The headache came about when my brother and I noticed that our accounts were joined together and this caused a worry that only one of us can go to University due to this mistake (Years later, my brother told me that happened to one of his friends that was a twin but not a minority at some school). My brother and I being twins that live together have the same address, have similar Asian names, and the same birthday. This apparently caused confusion with the University and so we had to call the University to explain our situation. The University quickly responded (I believe CarletonU was very quick to fix the problem which comes as no surprise since CarletonU has the best administrative staff I have dealt with among the 3 Universities I contacted throughout the years). This confusion ended up my brother being accepted to all the programs I applied for at uOttawa (sadly I did not get accepted to the programs my brother applied for).
 
 <br/>
 
+---
+
 ## Scholarships
+
+---
+
 Education Scholarships are great ways to reduce your student loans. It’s essentially free money based on your accomplishments. Different organizations and universities have different requirements to be eligible for scholarship. Scholarship can either be earned or given depending on the sponsor. Some scholarships are given based on your background such as being the first generation in your family to pursue higher education or being an orphan or single child due to war if your parents served in the military. Most scholarships are earned though. Although many scholarships available are based on your academic accomplishments, there are other scholarships that look at different criteria such as volunteering and innovation. This gives students who are not academically smart an equal opportunity for the scholarship.
 
 <br/>
@@ -137,12 +182,22 @@ In my case, my average for the top 6 courses I received that the Engineering dep
 
 <br/>
 
+---
+
 ## Application Results
+
+---
+
 As expected from “mid-tier” universities such as CarletonU and uOttawa (great schools in my own opinion), I got a reply within 1-2 weeks and got accepted to all the programs I applied for with scholarship. CarletonU and uOttawa didn’t have much expectations in 2015 (that probably has changed now). My result for my application to University of Toronto came very slowly as expected. UofT’s Engineering program is a very competitive program to get in and was my last option since I did not want to leave my hometown and be broke paying for high tuition and rent. I also doubted I would ever get accepted to UofT with my academic scores and extracurricular activities. I never joined a club in High School since I didn’t have much interest and my High School was very far from my house. No public transportation in the countryside so I cannot attend any after school clubs like the Jazz Band nor prep for the Solar Car Race (those are the clubs I did back in Middle School). As I expected, around mid Spring (April I believe), I was rejected from UofT Engineering Program. So I proceeded to accept my offer to Electrical Engineering and Computing Technology at the University of Ottawa and convinced my friend to follow me to the same program. For those who may not be familiar with the program, it’s essentially an Electrical Degree with an additional degree called Computing. As the name applies, it’s a degree that is mixed between Software Engineering and Computer Science. Since it was a double Engineering Degree, it was a 5-year program with co-op. I only choose it because too many classmates were going to Carleton and I wanted to avoid meeting with people I knew (I was not in bad terms but I really did not want to make the effort to talk to them since I disliked socializing at the time). My friend and I planned our courses together but I ended up leaving him to go to another University. After finishing my course selection, I got an offer to a University called University of Toronto Scarborough Campus for Astrophysics. I never knew UofT had 3 campuses till I got an alternative offer in which I said no. Unless I get another offer that had better job prospects, I refused to go study at UofT. Later that month (May) I got another offer to UTM (University of Toronto Mississauga and not Universal Turing Machine if you get the “pun”) in First Year Study in Math, Computer Science, and Statistics. At first, I thought this was a one-year diploma which I thought was great since I can learn all 3 subjects for a year and get more time to think about my life. However, I shortly found that the offer was actually a 4-year program and I only got offered to the department since that is how UofT works and your program of study is determined after 1st year (Very odd system compared to other Canadian Universities. The closest program to UofT’s Art and Science program system is the Undeclared stream in which students can opt to choose the program of study after taking various courses to see what they are interested in but in the case of UofT, all students are “undeclared”. Perhaps I’ll write more about it in another blog).
 
 <br/>
 
+---
+
 ## Dilemma of Making Decisions
+
+---
+
 Humans are incapable of foreseeing the future. That is what makes life both interesting and nerve-wracking. Often times you don’t know what is the right choice to make in life. Making life decisions are hard because once you make a decision, you close other options around you. The damage has been done so whether you like your decision or not, you can never go back in time. There is no save point in life. Regardless of the outcome, you must take responsibility for your decision. You can try reversing your decision but you cannot take back all the time, resource, relationship that was lost if you made the wrong decision.
 
 <br/>
