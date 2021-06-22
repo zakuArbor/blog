@@ -14,6 +14,8 @@ Although I had some interest in becoming an electrician, it was just something I
 
 ## Background
 
+---
+
 You can read [my blog on what made me study Computer Science](../my-personal-journey-in-choosing-what-to-do-after-high-school) 
 for the background why I decided to study Computer Science. But to summarize, 
 I did not particularly want to study Computer Science. I liked learning 
@@ -47,6 +49,8 @@ Math and Physics.
 
 ## Why Math
 
+---
+
 Despite not being knowledgeable in Math and Physics, it is a bit weird for 
 me to quit my job to pursue an undergrad in those subjects. Similar to 
 Computer Science where I had some background in the subject beforehand 
@@ -66,8 +70,8 @@ Math courses during your freshman years become of some use.
 During my undergrad in Computer Science, I started to appreciate Math more and 
 more after each time I completed a Computer Science theory course. The two 
 courses that made me appreciate Math the most aside from the introductory 
-course to Mathematical Proofs were Computational Complexity and Computability 
-and Complex Variables (I was removed from the course sadly for lacking 
+course to Mathematical Proofs were <i>Computational Complexity and Computability</i> 
+and <i>Complex Variables</i> (I was removed from the course sadly for lacking 
 prerequisites since the main campus and the campus I studied at had different 
 requirements). I just loved being in those classes and was excited to 
 attend the next lecture.
@@ -83,6 +87,8 @@ down my CGPA quite a lot. Hopefully, that will not be the case this time
 ---
 
 ## Why Physics
+
+---
 
 It was always my intention early in my studies in Computer Science that I 
 would go back to University to study Physics. Though I was contemplating if 
@@ -130,6 +136,8 @@ atmosphere.
 
 ## Academia or Industry
 
+---
+
 I do realize Math and Physics do not have many career options without 
 pursuing higher-level education. I am open to the idea of pursuing 
 higher-level of education and also going to academia. 
@@ -157,6 +165,8 @@ to the company.
 ---
 
 ## Summary
+
+---
 
 As from what you can see, there's no real good reason as to why I would 
 go back to University to study Maths and Physics. It's something I am curious 

@@ -15,7 +15,7 @@ ldd and the usage of shared libraries. Today, I want to expand on this topic by 
 
 At work, one of my tasks was to do a proof of concept (PoC) on transferring and running a development build of our product to some new internal development environment.
 During my work, I kept encountering a lot of minor errors where the generated object files or libraries would be missing simply due to differences in the project structure and the development environments. 
-After writing a script to resolve all these minor issues, it was time to test run a sanity tests to ensure the product works as intended in the new environment.
+After writing a script to resolve all these minor issues, it was time to test run some sanity tests to ensure the product works as intended in the new environment.
 
 However, I kept encountering a lot of linking errors even though I resolved the issue of missing generated object files and libraries in the new environment.
 ```shell
@@ -56,9 +56,11 @@ DESCRIPTION
 
 ## Summary
 
+---
+
 If you get an error about missing a shared library, try:
 * using <b>`ldd`</b> to see if the library exists
 * check if the linker library path is correct (i.e. <b>`LD_LIBRARY_PATH`</b>)
 * recreate the cache using <b>`ldconfig`</b>
-* You may need to edit the linker config under <i>`/etc/ld.so.conf`</i> before running <b>`ldconfig</b>
+* You may need to edit the linker config under <i>`/etc/ld.so.conf`</i> before running <b>`ldconfig`</b>
 

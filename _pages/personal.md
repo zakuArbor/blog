@@ -15,9 +15,10 @@ A random blog about me discussing on various topics that I randomly felt writing
 * [My Personal Journey in Choosing What to do After High School](../my-personal-journey-in-choosing-what-to-do-after-high-school)
 * [First Year of University – Entering a new Environment](../departure-entering-a-new-environment)
 * [What is the Best University to Attend](../what-is-the-best-university-to-attend)
-* [Going Back to School - Why I Choose to Study Math and Physics](../going-back-to-school-3)
-* [Going Back to School - Why Would Anyone Go Back?](../going-back-to-school-2)
 * [Going Back to School - Another Undergrad](../going-back-to-school-1)
+* [Going Back to School - Why Would Anyone Go Back?](../going-back-to-school-2)
+* [Going Back to School - Why I Choose to Study Math and Physics](../going-back-to-school-3)
+* [Going Back to School - Expectations and Hopes](../going-back-to-school-4)
 
 
 ## Book Reviews
