@@ -225,4 +225,7 @@ of the subject, opportunities, my academic performance, and personal evaluation
 of my education. I have outlined what my goals are in a broad sense such as 
 what grades I want to achieve after each academic year but my goals will be 
 more refined as each quarter passes. I hope the goals and expectations I have 
-laid out are realistic and achievable.
+laid out are realistic and achievable. Though my biggest hope is that I would 
+not regret my decision to go back to school. The possibility of dropping out 
+of school or doing terrible scares me a lot but I guess I'll have to try and 
+see what happens.
