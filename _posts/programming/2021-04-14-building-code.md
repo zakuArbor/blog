@@ -9,7 +9,11 @@ On my previous post [What does the Build Team Do](build-team), I covered various
 If you prefer looking at the slides, I'll provide them below:
 <center><iframe src = "/blog/assets/presentations/build-process/index.html" title = "Build Process - Slides" style = "width: 100% !important; height: 75vh !important"></iframe></center>
 
+---
+
 ## What is a Build
+
+---
 
 For the sake of those who did not read my [previous post](build-team) , I'll repeat some of the content I shared previously. 
 
@@ -27,7 +31,11 @@ But what does this actually do? As you may know, a build is just simply the proc
 
 An executable to put it briefly is the **ready to run** form of a program (hence why we call it an **executable**). An executable consists of instructions (i.e. machine code) that consists of zeros and ones assembled in a way the CPU understands. Some common locations where executables can often be found on Unix-Like Operating System (OS) under `/bin`, `/sbin`, `/usr/bin`, or `usr/local/bin`. 
 
-### Steps In  A Build
+---
+
+## Steps In  A Build
+
+---
 
 Turns out, there is actually a lot that goes on in a build. Your IDE or compiler abstracts the build process. Frankly, most developers will never need to understand how your compiler works nor do they need to understand the steps of creating a build. Here's a diagram of what occurs when you are "compiling" (building) your program:
 
@@ -60,7 +68,7 @@ int main() {
     ...
 ```
 
-Although it may look similar to a **constant** variable, macros are substituted by the preprocessor while the compiler will deal with variables. There are some things you can do with macros that const cannot do such as the example above where the array size can be easily changed. You cannot do this easily in C with a variable. For example, the code below is illegal:
+Although it may look similar to a **constant** variable, macros are substituted by the preprocessor while the compiler will deal with variables. There are some things you can do with macros that const cannot do such as the example above where the array size can be easily changed. You cannot do this easily in C with a variable. For example, the code below is illegal in <b>C89</b>:
 
 ```c
 int max_buffer_size = 10;
@@ -221,7 +229,9 @@ The compiler will first translate the given high level source code into assembly
 
 **Note:** To produce the assembly code, run **gcc** with `-S` option. You can use `as` to assemble the assembly code into binary.
 
-## 3. Linker
+
+### 3. Linker
+
 
 A linker is a program that takes one or more object files & data and combines them into an exectuable file, a library file, or another object file. During compilation (the previous stage), the compiler will not complain if the code references symbols or functions in the code are not defined. To illustrate, here's an example:
 
@@ -253,7 +263,11 @@ When you invoke GCC, it normally does preprocessing, compilation, assembly and l
 
 ![](https://upload.wikimedia.org/wikipedia/commons/9/9a/Preprocessor.png)
 
-#### Demo
+---
+
+## Demo
+
+---
 
 Let's go over to the terminal and work on building a program step by step. We have the following 3 files:
 
@@ -315,7 +329,7 @@ As expected, all the macros of been expanded and substituted along with the decl
 
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/preprocessor_demo.gif" alt = "a gif demoing running the preprocessor"/>
 
-## Step 2- Compilation and Assembler
+### Step 2- Compilation and Assembler
 
 Once the source files have been preprocessed such that all external symbols have been declared and all macros have either been expanded or ran, we need to compile the code to produce the assembly code of our source files. This can be done using the `-S` option in `gcc`. Let's look at the ouput of compiling `main.c` (file: `main.s`):
 
@@ -484,7 +498,11 @@ If we were to look at the code for `main`, we see the following:
 
 Notice how our exectuable has an address associated with `meow` and `honk` function calls. Our linker is responsible for the symbol resolution and relocation. In the object files, the code and data sections starts at address 0. But when the linker combines various object files, it has to do two things: (1) associate a memory location for each symbol definition (2) modify all references to those symbols to the associated memory location. Anyhow Linkers are complex and would span a few blogs. I still don't have a full picture of how linkers work. If you want to learn more, I would suggest reading up a lecture I found online that gives a nice explanation about the build process but in more depth: [Linking](https://people.cs.pitt.edu/~xianeizhang/notes/Linking.html#reloc). For a full series of blog post on linkers, try reading [Linkers blog series from the creator of the Gold Linker himself](http://a3f.at/lists/linkers).
 
+---
+
 ## Build Definition - Summary
+
+---
 
 * build is the process of converting source code into an executable
 
@@ -494,7 +512,11 @@ Notice how our exectuable has an address associated with `meow` and `honk` funct
 
 * linking is the process of combining object files into an executable
 
+---
+
 # Quick Overview of Static and Dynamic Libraries
+
+---
 
 As stated earlier, it's very normal for different programs/projects to share the same functions in software development. Notable examples are printf, sqrt, cos, fopen. Libraries allow programmers to reuse common functions among different projects and programs. This saves development time and prevent reventing the wheel. It also allows a consistent and reliable set of functions with defined behavior that can easily be updated by either updating the code or downloading the latest library. Some examples of libraries outside of C you may be familiar with are:
 
@@ -503,7 +525,12 @@ As stated earlier, it's very normal for different programs/projects to share the
 * Boost in C++
 * GTK (GNOME GUI library) or Qt (another GUI library) 
 
+---
+
 ## Static Libraries
+
+---
+
 Static Libraries are libraries that are linked during the build process and not during runtime. Static libraries have the extension of **.a** and are also known as archives. They are known as archives because they are a collection of object files.
 
 <img src = "https://github.com/zakuArbor/blog/blob/master/assets/programming/builds/static-lib-demo.png?raw=true"/>
@@ -535,8 +562,12 @@ cat.o
 goose.o
 ```
 
+---
 
 ## Dynamic Libraries
+
+---
+
 Dynamic Libraries (also known as shared libraries) are linked during runtime whenever we run the program. Which differs from static libraries where it gets link during the build process. Dynamic libraries have the extension **\*.so** on UNIX/Linux systems and on Windows they have the extension **\*.dll**.
 
 
@@ -562,7 +593,11 @@ You can view the dependencies programs have by running `ldd`. It's a useful tool
 	libpthread.so.0 => /lib64/libpthread.so.0 (0x00007f11d0a17000)
 ```
 
+---
+
 ## Static v.s Dynamic Libraries
+
+---
 
 **Cons of Static Libraries:**
 * generate bigger executable files since library is integrated inside executable
@@ -601,7 +636,11 @@ You can view the dependencies programs have by running `ldd`. It's a useful tool
 [CppCon 2018: Jason Turner “Applied Best Practices” - YouTube](https://www.youtube.com/watch?v=DHOlsEd0eDE)
 -->
 
+---
+
 ## Image Credits (Not exhaustive)
+
+---
 
 * Olivier Pinçon &amp; Sébastien Granjoux - http://library.gnome.org/users/anjuta-build-tutorial/2.26/build-gcc.html.en, [GFDL](https://commons.wikimedia.org/w/index.php?curid=13208308)
 
