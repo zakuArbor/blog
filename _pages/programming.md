@@ -9,6 +9,7 @@ A random blog discussing various topics in Computer Science and Programming that
 
 ---
 
+* [C Programming - Variable Length Array (VLA)](../variable-len-arr)
 * [Error Loading Shared Library Even If File Exists](../lddconfig)
 * [What Goes on When you Press the Play Button](../building-code)
 * [printf - Reorder Arguments using $](../printf-$)
