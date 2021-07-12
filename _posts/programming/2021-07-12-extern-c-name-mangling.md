@@ -2,7 +2,7 @@
 layout: post
 title: What is Name Mangling
 description: Exploring name mangling through extern C
-categories: [programming]
+categories: [programming, c++]
 ---
 
 Today I want to explore what name mangling is in C++ and what does `extern "C"` 
