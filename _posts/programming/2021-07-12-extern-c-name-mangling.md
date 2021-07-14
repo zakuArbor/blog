@@ -53,22 +53,22 @@ of an ellipsis. For instance, in the example below, we have two definitions of
 
 ```c++
 struct Point {
-  int x,
-  int y
+  int x;
+  int y;
 };
 
 void print_data(int x) {
-  cout << x << std::endl;
+  std::cout << x << std::endl;
 }
 
 void print_data(struct Point& pt) {
- cout << "x: " << pt.x << " y: " << pt.y << std::endl;
+ std::cout << "x: " << pt.x << " y: " << pt.y << std::endl;
 }
 
 int main () {
   int point = 10;
   struct Point pt = {1, 2};
-  print_data(x);
+  print_data(point);
   print_data(pt);
   return 0;
 }
