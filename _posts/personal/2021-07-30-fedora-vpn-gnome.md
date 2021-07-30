@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Using Fedora GNOME VPN Feature
+description: Using Fedora GNOME VPN Plugin feature as a substitute for Nordvpn client 
 categories: [vpn, fedora]
 ---
 
