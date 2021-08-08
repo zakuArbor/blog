@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A look at Input Buffer and scanf"
-categories: [programming, c]
+categories: [programming, c/c++]
 ---
 Today I learned something new that should have been obvious but it was something I never took time to think about. In Linux, we have three standard streams: `stdin`, `stdout`, and `stderr`. If you are familiar with programming in C, you should know that `stdin` is the input channel that handles data from an input device such as your keyboard.  `scanf` is a `function that scans input according to format` (definition from `SCANF(3) - Linux Programmer's Manual`). But how does `scanf` actually scan the input?
 

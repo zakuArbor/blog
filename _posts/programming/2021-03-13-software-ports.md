@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Software Ports
-categories: [programming]
+categories: [programming, build]
 ---
 
 Software porting is the process of adapting a program to be able to execute 

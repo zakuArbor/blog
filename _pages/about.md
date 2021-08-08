@@ -4,18 +4,13 @@ title: Hello World
 permalink: /about/
 ---
 
-The name is Ju Hong Kim, a random human who writes random things. I am a computer enthusiast and I love learning new things and expanding my knowledge. 
+The name is Ju Hong Kim, a student, software developer, and a random human who writes random things. I am a computer enthusiast and I love learning new things and expanding my knowledge. 
 With no plans in mind, I'll be venturing into Math and Physics at some random Canadian University till I get bored of it.
 
 My background is in Computer Science and I am particularly interested in reading and learning about Systems Programming (though I am quite lacking in experience and knowledge). 
 More specifically, I want to delve into Operating Systems and Embedded Programming since it looks like it'll be interesting. I initially got into computers after being introduced to 
 HTML during middle school by a friend who told me that websites could be created through notepad. Since then, I fiddled with various languages throughout Highschool and ended up studying 
 Computer Science at University.
-
-Bothered by how illiterate I am in Science and Math, wanting to learn new things, and overcome my weakness in Math I am leaving my job to study at a local University.
-
-My hobbies outside of learning about Computers are reading manga and books. Though I am trying to make a habit of spending at minimum an hour or two each week studying French in hopes of being bilingual by the time I'm 30 years old.
-(Perhaps I'll start writing some blogs in French in a few years when I become comfortable enough to practice).
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A Dive to the Build Process - What Goes On When You Press the Play Button
-categories: [programming]
+categories: [programming, build]
 ---
 
 On my previous post [What does the Build Team Do](build-team), I covered various topics about builds and devOps. Today, I want to go more in depth on what goes on when you press the run button which I briefly brushed over in the previous post. This does get quite technical but don't fret. I have stopped myself from writing and reading up in depth about the topic to avoid going through the rabbit hole.

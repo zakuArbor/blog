@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A look at Double Pointers
-categories: [programming, c]
+categories: [programming, c/c++]
 ---
 I was randomly browsing r/CarletonU community on Reddit since it's one of the schools I may attend 
 next Fall. A particular post interested me due to the title: **For anyone in Computer Science**. 

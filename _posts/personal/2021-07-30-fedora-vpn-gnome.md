@@ -10,6 +10,22 @@ masking your IP address and location, I only want to get a VPN to encrypt my tra
 but I rarely ever have any issues with this. The VPN provider I chose is NordVPN for no particular reason other than there was a summer deal and 
 is a strong choice for Linux users.
 
+<style>
+  video {
+    display: block;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+  }
+  @media only screen and (max-width: 400px) {
+    video {
+      display: block;
+      margin: auto;
+      width: 350px;
+      height: 350px;
+    }
+  }
+</style>
 
 ---
 
@@ -71,7 +87,7 @@ find on Nord Account Dashboard.
 
 Now you have a very convenient place to connect to the VPN that is not through the terminal.
 
-<video width="800" height="600" autoplay loop>
+<video autoplay loop>
 <source src = "../assets/personal/gnome_vpn.webm" type="video/webm" alt = "a video showing you how to connect to VPN using GNOME VPN Plugin">
 Your Browser does not support video
 </video>

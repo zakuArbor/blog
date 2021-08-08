@@ -2,7 +2,7 @@
 layout: post
 title: Possible Linker Options to Use to Replicate xlC bloadmap Option on ld
 description: A possible replication of xlC bloadmap option on ld via g++ to debug undefined symbols
-categories: [programming, c++]
+categories: [programming, c/c++]
 ---
 
 For context, xlC is IBM's C++ compiler that is used to optimize C/C++ applications on IBM's supported environments 

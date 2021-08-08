@@ -2,7 +2,7 @@
 layout: post
 title: C Programming - Variable Length Array (VLA)
 description: Exploring variable length array introduced in C99
-categories: [programming]
+categories: [programming, c/c++]
 ---
 
 I always thought it was not possible to create a "dynamic" array in C without the use of `malloc` till 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What does the Build Team Do - An Overview of Builds and DevOps
-categories: [programming]
+categories: [programming, build]
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dangers of Improper Macro Naming
-categories: [programming, c, c++]
+categories: [programming, c/c++]
 ---
 
 ---
