@@ -35,5 +35,7 @@ back to school in hopes I can be scientific literate).
 <a href = "https://www.instagram.com/misthermit"><i class = "svg-icon instagram"></i></a>
 <a href = "https://www.goodreads.com/user/show/94594273-ju-hong-kim"><i class = "svg-icon goodreads"></i></a>
 <a href = "https://www.youtube.com/user/nabimoon1234"><i class = "svg-icon youtube"></i></a>
+</div>
 
+#### Resume: [PDF Copy](../assets/pdf/resume.pdf)
 

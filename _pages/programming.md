@@ -9,6 +9,7 @@ A random blog discussing various topics in Computer Science and Programming that
 
 ---
 
+* [The Value of An Uninitialized Global Variable](../global-init-val) 
 * [Possible Linker Options to Use to Replicate xlC bloadmap Option on ld](../bloadmap-gcc-alt)
 * [What is Name Mangling](../extern-c-name-mangling)
 * [C Programming - Variable Length Array (VLA)](../variable-len-arr)
