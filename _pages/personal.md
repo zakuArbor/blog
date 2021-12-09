@@ -33,6 +33,7 @@ A random blog about me discussing on various topics that I randomly felt writing
 
 ---
 
+* [A Reflection of My Internship as a Software Build Intern](../internship-reflection)
 * [Using Fedora GNOME VPN Feature](../fedora-vpn-gnome)
 * [My 2021 Reading List](../books-i-read-2021)
 * [What is Phoenix](../what-is-phoenix)
