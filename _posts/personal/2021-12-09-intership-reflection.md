@@ -2,7 +2,7 @@
 layout: post
 title: A Reflection of My Internship as a Software Build Intern
 description: A reflection of my time as an software build intern
-categories: [reflection, work]
+categories: [reflection, career]
 ---
 
 This is a copy of my reflection report I submitted for Professional Experience Year (PEY), a 16 month internship 
