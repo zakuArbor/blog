@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bias UTM CS Course Review
-categories: [university, school, computer science, UTM]
+categories: [university, school, computer science, UTM, reviews]
 ---
 
 
