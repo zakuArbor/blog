@@ -5,12 +5,23 @@ title: Personal
 ---
 A random blog about me discussing on various topics that I randomly felt writing. Most of the blogs will probably be slabs of sloppy work.
 
+## Course Reviews
+
+---
+
+<ul>
+{% for post in site.posts %}                                                  
+{% if post.categories contains 'reviews' and post.categories contains 'university' and page.title != post.title %}
+<!--<li><a href = "..{{ post.url }}">{{ post.title }}</a></li>                  -->
+<li><a href = '..{{post.url}}'>{{ post.title }}</a></li>
+{% endif %}                                                                 
+{% endfor %}  
+</ul>
+
 
 ## University
 
 ---
-
-* [Bias UTM CS Course Review](../bias-utm-cs-course-review)
 * [Different Options after HighSchool](../different-options-after-highschool)
 * [My Personal Journey in Choosing What to do After High School](../my-personal-journey-in-choosing-what-to-do-after-high-school)
 * [First Year of University – Entering a new Environment](../departure-entering-a-new-environment)

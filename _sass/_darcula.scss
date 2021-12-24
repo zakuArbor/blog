@@ -4,14 +4,13 @@
     margin-right: auto;
 }
 
-
 @media screen and (min-width: 740px) {
     .big_img {
         max-width: 740px;
     }
 }
 
-.excerpt {
+.caption, .excerpt {
     text-align: center;
     font-size: small;
 }
