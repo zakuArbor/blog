@@ -2,7 +2,7 @@
 layout: post                                                                    
 title: "Dev Blog - Symink Attack - Do not trust config files"
 description: A dev blog on a attack that could allow a malicious user to access another person's account in ProxyAuth
-categories: [tex, physics]                                                
+categories: [dev blog, programming, c/c++]                                                
 ---
 
 Now that classes are over for the semester, I decided to resume work on a project I've been putting off for a while. 

@@ -31,6 +31,19 @@ A random blog discussing various topics in Computer Science and Programming that
 * [Bias UTM CS Course Review](../bias-utm-cs-course-review)
 * [Computer Science – A Long and Gargled Explanation](../computer-science-a-long-and-gargled-explanation)
 
+
+## Dev Blogs
+
+---
+
+<ul>                                                                            
+{% for post in site.posts %}                                                    
+{% if post.categories contains 'dev blog' %}
+<li><a href = '..{{post.url}}'>{{ post.title }}</a></li>                        
+{% endif %}                                                                     
+{% endfor %}                                                                    
+</ul>        
+
 ## Others
 
 ---
