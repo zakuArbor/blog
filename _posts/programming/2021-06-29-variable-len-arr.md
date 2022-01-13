@@ -80,7 +80,7 @@ in the stack and can easily be filled up.
 VLA is similar to `alloca` where both concepts allocate memory in the stack. 
 As [blogger ayekat](http://ayekat.ch/blog/vla) 
 mentions on his take on VLA, using VLA is very risky because the behavior of 
-`alloca` is undefined if allocation causes a stack overflow.
+`alloca` is undefined if allocation causes a stack overflow and VLA will behave in a similar manner.
 
 <pre style="background: #282a36; color: white; padding: 15px; font-size: 15px">$ man alloca | grep -A 2 "RETURN VALUE"
 <font color="#C01C28"><b>RETURN VALUE</b></font>
