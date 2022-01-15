@@ -4,6 +4,17 @@
     margin-right: auto;
 }
 
+.bug {
+    margin: auto;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.bug p, .bug i{
+    font-size:16px;
+    height: 15px;
+    width: 15px;
+}
+
 @media screen and (min-width: 740px) {
     .big_img {
         max-width: 740px;
