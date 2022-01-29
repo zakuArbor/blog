@@ -9,5 +9,5 @@ gem 'jekyll-sitemap'
 gem "jekyll-feed"
 gem "jekyll-seo-tag"
 gem "jekyll-paginate"
-
+gem "webrick" 
 gem "ffi", "~> 1.14"

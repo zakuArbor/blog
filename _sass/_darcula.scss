@@ -15,6 +15,14 @@
     width: 15px;
 }
 
+
+.code {
+	background: #282a36; 
+	color: white; 
+	padding: 15px; 
+	font-size: 15px;
+}
+
 @media screen and (min-width: 740px) {
     .big_img {
         max-width: 740px;
@@ -78,8 +86,10 @@ code {
 }
 
 .highlighter-rouge { 
-    background-color: #F1EDED; 
-    color: #000; 
+    /*background-color: #F1EDED;
+    color: #000; */ //no longer rouge. I like better contrast
+    background-color: #282a36;
+    color: white;
     padding: 3px;
     font-size: 16px;
 }
