@@ -48,6 +48,7 @@ A random blog discussing various topics in Computer Science and Programming that
 
 ---
 
+* [You Shall Not Slay the Client](../cannot-kill-process)
 * [Misconfigured Hostname](../misconfigured-hostname)
 * [ct - Bad Phone Number](../ct-bad-phone-number)
 * [Random Thoughts about Tee](../random-thoughts-about-tee)
