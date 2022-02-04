@@ -372,13 +372,15 @@ nav {
 
 .post {
   blockquote {
-    margin: 1.8em .8em;
-    /*border-left: 2px solid $gray;*/
+    margin: 1.5em .5em;
+    border-left: 5px solid $gray;
     padding: 0.1em 1em;
-    color: $gray;
-    font-size: 22px;
+    /* color: $gray; */
+    font-size: 18px;
     font-style: italic;
-    background-color: #ede1ff;
+    color: black;
+    background-color: #f5f5f5;
+    /* background-color: #ede1ff; */
   }
 
   .you-may-like{

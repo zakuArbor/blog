@@ -31,7 +31,7 @@ The purpose of this feature has merit and is well explained in the [documentatio
 but the fact it can still stop `SIGKILL` and `SIGTERM` is something unexpected for those of us new to QNX and come from Linux.
 
 From the realm of Linux, signals can be blocked but `SIGKILL` and `SIGTERM` are definitely not one of them as seen from the man pages (`man 7 signal`):
-<pre class = "code"><font color="#D0CFCC"><b>$ </b></font>man 7 signal | grep &quot;SIGKILL and SIGSTOP&quot;
+<pre class = "highlight"><font color="#D0CFCC"><b>$ </b></font>man 7 signal | grep &quot;SIGKILL and SIGSTOP&quot;
        The signals <font color="#C01C28"><b>SIGKILL and SIGSTOP</b></font> cannot be caught, blocked, or ignored.
 </pre>
 
