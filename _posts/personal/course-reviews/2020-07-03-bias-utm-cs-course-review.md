@@ -5,6 +5,10 @@ categories: [university, school, computer science, UTM, reviews]
 ---
 
 
+**DISCLAIMER:** The following content is a biased review based on my own experience and does not reflect the overall experience of others. Please excuse my poor writing, it’s still a skill that I am working on. This review is subjected to changes as I continue to reflect on my time at UTM.
+
+<br/>
+
 <style>
 	iframe {
 		width: 560px; 
@@ -63,10 +67,6 @@ categories: [university, school, computer science, UTM, reviews]
     border: 1px dashed;
   }
 </style>
-
-**DISCLAIMER:** The following content is a biased review based on my own experience and does not reflect the overall experience of others. Please excuse my poor writing, it’s still a skill that I am working on. This review is subjected to changes as I continue to reflect on my time at UTM.
-
-<br/>
 
 ---
 

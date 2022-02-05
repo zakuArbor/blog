@@ -4,8 +4,6 @@ title: What is the Best University to Attend
 categories: [university, school]
 ---
 
-## Introduction
-
 Parents, students, and employers often fuss about going to the best University or hiring employees from the top schools. There also has been a recent trend of parents trying to get their child to attend the best middle school and high school. Education is an important part of one’s life and the education one receives may impact their entire life. Going to the top schools usually implies having the best teachers, the best resources, and the best chances for success after graduation whether it be for high-level education, research, or career.
 
 
