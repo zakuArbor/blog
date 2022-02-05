@@ -3,6 +3,8 @@ layout: post
 title: "Random thought about Tee"
 categories: [programming, unix]
 ---
+In the latter half of June (when I flee from my parent's home to Mississauga for 2 months so that I can study and read all I want without being bothered), I decided to read [Intermediate Perl: Beyond The Basics of Learning Perl](https://www.amazon.ca/Intermediate-Perl-Beyond-Basics-Learning/dp/1449393098). For those of you who are not familiar with the book, it's the sequel to the "Llama book" [(Learning Perl)](https://en.wikipedia.org/wiki/Learning_Perl), a classic book on Perl.
+
 <style>
 	.tee-img {
 		width: 720px;
@@ -12,8 +14,6 @@ categories: [programming, unix]
 		border-color: white;
 	}
 </style>
-
-In the latter half of June (when I flee from my parent's home to Mississauga for 2 months so that I can study and read all I want without being bothered), I decided to read [Intermediate Perl: Beyond The Basics of Learning Perl](https://www.amazon.ca/Intermediate-Perl-Beyond-Basics-Learning/dp/1449393098). For those of you who are not familiar with the book, it's the sequel to the "Llama book" [(Learning Perl)](https://en.wikipedia.org/wiki/Learning_Perl), a classic book on Perl.
 
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/intermediate_perl_cover-1.jpg" alt = "the cover of Intermediate Perl featuring a Llama" class = "center" style = "height: 500px;"/>
 <p class = "excerpt">The cover of Intermediate Perl. Following the tradition of O'Reilly books, the animal feature in the cover is the Llama</p>
