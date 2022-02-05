@@ -11,7 +11,7 @@ nor was proficient in the subject.
 
 There is a concept called Integration by Parts which is derived from the product rule that was taught in Calculus I. 
 What piqued my interest was a technique of isolating the integral when a repeating pattern occurs whereby the integral 
-of u'v (i.e. $\int u'(x)v(x)dx$) is the same as the original question. This may seem like you are stuck in a loop. But 
+of $u^\prime v$ (i.e. $\int u^\prime (x)v(x)dx$) is the same as the original question. This may seem like you are stuck in a loop. But 
 this is actually a step closer to the final solution. Similar to solving for x in a normal math expression where x is 
 the unknown, you can treat the original integration question as a variable such as **I** and solve for **I** to find 
 the integral of the function.
@@ -20,7 +20,7 @@ For instance, let's consider the following problem:
 
 $$
 \begin{equation*}
-\int sin(x)cos(x)dx
+\int \sin(x)\cos(x)dx
 \end{equation*}
 $$
 
@@ -31,22 +31,22 @@ is to plug those terms into the integration by parts formula as shown below:
 
 $$
 \begin{align*}
-\int sin(x)cos(x)dx &= uv - \int u'vdx \\
-&= sin(x)sin(x) - \int cos(x)sin(x)dx 
+\int \sin(x)\cos(x)dx &= uv - \int u'vdx \\
+&= \sin(x)\sin(x) - \int \cos(x)\sin(x)dx 
 \end{align*}
 $$ 
 
 Now we are stuck because the term under the integral is the exact question (i.e. the same function) we 
 are trying to solve for. If we were to continue, we would find ourselves in a loop. This is where 
 setting the function we are trying to integrate for as a variable (just for simplicity but you could 
-just leave it as is) which I will say is **I** (i.e. $I = \int sin(x)cos(x)dx$) and solve for the variable as seen below:
+just leave it as is) which I will say is **I** (i.e. $I = \int \sin(x)\cos(x)dx$) and solve for the variable as seen below:
 
 $$
 \begin{align*}
-\int sin(x)cos(x)dx &= sin^2(x) - \int sin(x)cos(x)dx \\
-I &= sin^2(x) - I \\
-2I &= sin^2(x) \\
-I &= \frac{1}{2}sin^2(x)
+\int \sin(x)\cos(x)dx &= \sin^2(x) - \int \sin(x)\cos(x)dx \\
+I &= \sin^2(x) - I \\
+2I &= \sin^2(x) \\
+I &= \frac{1}{2}\sin^2(x)
 \end{align*}
 $$
 
@@ -54,7 +54,7 @@ $$
 
 $$
 \begin{align*}
-\int sin(x)cos(x)dx &= \boxed{\frac{sin^2(x)}{2} +C} & 
+\int \sin(x)\cos(x)dx &= \boxed{\frac{\sin^2(x)}{2} +C} & 
 \end{align*}
 $$
 
