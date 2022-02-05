@@ -8,6 +8,7 @@ exploration of the subject. I'm a total noob in Math and Physics so a lot of
 the content may be obvious.
 
 * [Physics Lab Tex Template](../lab-tex)
+* [Solving Repeating Integration by Parts through Isolation](../integration-by-parts-repeat)
 
 ---
 
