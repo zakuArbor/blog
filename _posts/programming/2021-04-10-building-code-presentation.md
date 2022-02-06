@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Presentation - What Goes On When You Press the Play Button
-categories: [programming, c/c++, build]
+categories: [programming, c/c++, build, linker, gcc-toolchain]
 ---
 Although still under progress, I have been dabbling with [reveal.js](https://revealjs.com/), an HTML presentation framework. It's absolutely beautiful and has markdown and tex support which is excellent. I wanted to create a presentation that is more functional to showcase computer science concepts and found OpenOffice Impress to be unsuitable. After viewing the demo for reveal.js, I was immediately sold. It contains so many features that I need and has a low learning curve for someone who has sufficient HTML experience.
 

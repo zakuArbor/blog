@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Error Loading Shared Library Even If File Exists
-categories: [programming, c/c++]
+categories: [programming, c/c++, linker]
 ---
 
 Have you ever encountered an error running a program where it's missing a dll or a shared library? 
