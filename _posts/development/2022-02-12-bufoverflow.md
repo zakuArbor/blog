@@ -52,7 +52,7 @@ The project currently has no automated fuzzing and no automated test to try to b
 
 Upon inspecting the code, I realize there were more issues than what CodeQL detected. 
 I never checked whether the string I am concatenating does not exceed the buffer size. 
-I did use `strncat` instead of a `strncat`. However, I was effectively using `strncat` as `strcat`.
+I did use `strncat` instead of a `strcat`. However, I was effectively using `strncat` as `strcat`.
 Here's an example of what I wrote:
 
 ```c
