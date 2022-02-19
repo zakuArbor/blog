@@ -217,7 +217,7 @@ The course organization is questionable. A lot of students in the past few years
 
 **Review:** This course is extremely important in Computer Science. This course is the successor to MAT102 (Introduction to Mathematical Proofs) and so you should remember how to do induction and strong induction before you take the course. CSC236 is probably the easiest theory course you will take at the university (it's also easier than MAT102 in case you were wondering). Anyone who wants to call themselves a computer scientist must know the content taught in this course as it is fundamental in Computer Science. Work is to be done on Latex (a way to write documents that makes writing math easy). The assignments can be quite challenging so I suggest you start early to give you time to think and perhaps work in pairs (for some odd reason I worked solo when you could work in pairs or in groups of 3). The course was interesting and Larry is a great lecturer. He makes the course content interesting and funny. People love his slides as well as it is filled with memes. Cheat sheets are allowed for the tests and exam and are very helpful if you have a poor memory like me.
 
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/fsm.png" alt = "a manga talking about finite state machines" class = "center"/>
+<img src = "../assets/utm/fsm.jpg" alt = "a manga talking about finite state machines" class = "center"/>
 <p class = "excerpt">Excerpt from a professor's Instagram account. Apparently this was on someone's cheat sheet</p>
 
 <br/>
@@ -440,8 +440,8 @@ The last CSC309 Projects in 2019 and in 2020 was to make an io game which a lot 
 
 <center>
 <div class = "multiple_img_div">
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/ww_reg.png" alt = "An example of my Warehouse War login screen" style = "float:left;" class = "img_50"/>
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/ww_game.png" alt = "An example of my Warehouse War gameplay" style = "float:right;" class = "img_50"/>
+<img src = "../assets/utm/ww_reg.jpg" alt = "An example of my Warehouse War login screen" style = "float:left;" class = "img_50"/>
+<img src = "../assets/utm/ww_game.jpg" alt = "An example of my Warehouse War gameplay" style = "float:right;" class = "img_50"/>
 </div>
 </center>
 <p class = "excerpt">An example of a CSC309 A2 project back in 2017</p>
@@ -782,7 +782,7 @@ Due to Covid-19, the content and delivery of the exam were very hectic. Arnold c
 
 I did CR this course, taking advantage of Covid-19 where the University allowed us to CR any number of our courses. However, I ended up doing very well and almost got a 4.0 in the course.
 
-<img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/unrealircd-exploit.png" alt = "An image of metasplot exploting a server" class = "center"/>
+<img src = "../assets/utm/unrealircd-exploit.jpg" alt = "An image of metasplot exploting a server" class = "center"/><!-- image source: I no longer remember but I do not think it's owned by me-->
 <p class = "excerpt">An example of what a typical lab metasploit lab would be in the course. Excerpted from a random <a href = "https://cyberarms.wordpress.com/2012/08/08/metasploitable-2-0-tutorial-part-3-gaining-root-from-a-vulnerable-service/">here</a></p>
 
 <img src = "https://raw.githubusercontent.com/zakuArbor/blog/master/assets/utm/427-steg.png" alt = "An image of metasplot exploting a server" class = "center"/>
