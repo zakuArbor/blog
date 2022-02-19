@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Development Support Tools</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+    <style>
+      .image-list img {
+        margin: 0px;
+        line-height: 0px;
+        padding: 0px;
+        height: 120px;
+        width: 350px;
+      }
+    </style>
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <style>
+    </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+          <h2>C++ Development Support Tools</h2>
+        </section>
+				<section>
+          <h3>Previous Education Agenda</h3>
+          <hr/>
+          <ul>
+            <li>An Overview of Build and DevOps</li>
+            <li>A Dive Into the Build Process</li>
+          </ul>
+          <aside class = "notes">
+          On our previous education sessions, I presented an overview of Build 
+          such as why a dedicated build team exist, different types of builds 
+          such as nightly and CI builds, and an overview of DevOps briefly 
+          covering CI/CD pipelines.
+
+          The next session was more technical where I dived into the Build Process 
+          going over each step in GCC's compilation pipeline. 
+          I also covered briefly about static and dynamic libraries 
+          since I thought that would also be useful.
+
+          So I debated what I should take a look next. While I had many random 
+          ideas such as covering the fundamentals of Db2 or cover something 
+          specific to the team such as how BldInfo and Bldstat works.
+          </aside>
+        </section>
+        <section>
+          So naturally we should cover tools developers could use after a Build
+          <p><small><b>Disclaimer:</b> Not a developer</p></small>
+          <aside class = "notes">
+            I concluded that it would be best to build from my previous education sessions 
+            which are Developer Support Tools C/C++ developers utilize in their 
+            development cycle. Although we are not developers, we are part of 
+            Db2 ecosystem which attempts to improve productivity and workflow 
+            of developers so I think it's a good idea to explore briefly of 
+            the various tools that exist. As a disclaimer, I am not a developer 
+            as you all know and most of what I am presenting is actually new to 
+            me. Therefore this talk will not be technical but going over a general overview of 
+            various topics and tools. In addition, these slides were made quickly as I realized I didn't 
+            have much time with the team to do through research.
+          </aside>
+        </section>
+        <section> <!-- Parent - Documentation -->
+        <section>
+          <h3>Documentation Tools</h3>
+          Doxygen (A tool similar to Javadoc)
+          <aside class = "notes">
+            Let's begin with the tools we used to use at IBM Db2 which some of you may 
+            be aware of. Documentation can be a pain to write and when we have 
+            a code base that spans over 1000s of files and million lines of code, 
+            it gets hard to understand the codebase. That's where Doxygen 
+            come into the scene
+          </aside>
+        </section>
+
+        <section>
+          <h3>Why Use A Documentation Generator</h3>
+          <ul>
+            <li><b>Easy to maintain & Never Forget</b><small>No need to have a dedicated storage nor project for documentation</small></li>
+            <li><b>Living Document</b> <small>Anytime an API changes or a new function is created, the documentation will reflect the code changes</small></li>
+            <li><b>Variety of Formats</b><small>Can generate web documents (HTML), PDF, man pages and many more</small></li>
+          </ul>
+          <small><b>Disclaimer:</b> Stole the points from internal wiki</small>
+        <aside class = "notes">
+          Doxygen is similar to Javadocs where it automatically generates 
+          documentation in variety of formats such as HTML and PDF using 
+          the information from the comments in the source code.
+
+          The benefits of using a documentation generator is that you never need to maintain a repository of documentation 
+          that you may forget about. For instance, I recently found a forgotten internal documentation webserver that our team owns 
+          where early documents from Db2 v7 lies in. It's also easy to maintain because it is generated directly from the source code.
+
+          It allows for "living" documentation where any changes to the code will be reflected in the generated documentation. You can also embed design information 
+          as well. 
+
+          We probably don't maintain a server containing documents generated from doxygen anymore (probably deleted due to space issues on the server) but if you ever want to, you could probably generate it quickly yourself.
+        </aside>
+        </section>
+        <section>
+          <h3> - More Importantly - </h3>
+          <b>Accelerates Familarity of the Codebase</b> <small>Provides diagrams, call graphs, include dependencies, browsing capabilities to accelerate understanding. Makes it great for code review and walkthrough</small>
+          <img alt = "example of include dependencies from doxygen" src = "../../programming/support_tools/doxygen-1.png"/>
+          <aside class = "notes">
+            Most importantly, the point of documentation is to understand the codebase. Tools like doxygen provide diagrams, call graphs, include dependencies, browsing capabilities ...
+            Here's an example of what Doxygen generates on one of my side projects where I can see the include dependencies. 
+          </aside>
+        </section>
+        <section>
+          <img alt = "example of the function definitions and call graphs" src = "../../programming/support_tools/doxygen-2.png"/>
+        </section>
+        <section>
+          <h3>DEMO</h3>
+        </section>
+        <section data-background-iframe="./doxygen/index.html" data-background-interactive>
+          <aside class = "notes">
+            This is the Doxygen documentation generated for a project I am slowly working on. If we go to pam_proxy.c, we will see the following include dependencies. `pam_sm_authenticate` is essentially the main program
+            for this project in which we can see the call graph. Let's click on `get_login_time` to see what this function is about. If we ever want to see the source code, we can also do that via the web.
+          </aside>
+        </section>
+        <section>
+          <h3>Example How To Document Code</h3>
+           <small>                                                               
+<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>/**
+* Check if the directory exists. If not try to create the directory             
+*                                                                               
+* @param dir_path: The path to the directory                                    
+* @param log_fp: the handle of the log file                                     
+* @return                                                                       
+*   -1: cannot access dir or file is not a directory or directory               
+*       could not be created <br>                                               
+*    0: created the directory <br>                                              
+*    1: file exists and it is a directory <br>                                  
+*/                                                                              
+int check_or_creat_dir(const char *dir_path, FILE *log_fp);                     
+</pre></code></small>                                                        
+          <img src = "../../programming/support_tools/doxygen-3.png" style = "height: 350px !important;"/>
+          <aside class = "notes">
+            Doxygen gives you the ability to use Javadoc style, latex (for math), markdown, and their own set of commands. It's a flexible tool.
+          </aside>
+        </section>
+        </section>
+        </section> <!-- End of Parent - Documentation -->
+        <section>
+          <section>
+            <h2>Code Analyzers and Code Checkers</h2>
+          </section>
+          <section>
+            <h3>Two Types</h3>
+            <ol>
+              <li>Static Analysis</li>
+              <li>Dynamic Analysis</li>
+            </ol>
+            <aside class = "notes">
+              There are two types of code analysis: static and dynamic. The difference between the two is the fact that static analysis does not 
+              require the program to be executed while dynamic performs analysis during program execution. Code analysis are great tools to catch common 
+              bugs, security loopholes, data leaks, and enforce good coding standards.
+            </aside>
+          </section>
+          <section>
+            <h2>Static Analysis</h2>
+            <ul>
+              <li>examines source code and compares it with a set of coding rules for potential errors</li>
+              <li>Does not require program to be executed</li>
+            </ul>
+
+            <aside class = "notes">
+              Most static code analyzers look at the source code but some can look at the binaries. Static analyzers examines the source code and compares it 
+              with a set of rules, policies or a dataset generated either by your organization or from the developers of the tools.  Though it also employs 
+              different algorithms and techniques to identify bugs that your compiler may not catch such as
+              common flaws and vulnerabilities in your code making your product much more secure. Typically, static analysis is embedded in CI workflow to ensure 
+              product security and ensure organizations coding standards and compliances are met. 
+            </aside>
+          </section>
+          <section>
+            <div class = "sec-sast">
+            <b>SAST (Static Application Security Testing) Examples</b>
+            <small>HCL Appscan, SonarQube, Veracode, CheckMarx</small>
+            <div class = "image-list">
+              <img src = "../../programming/support_tools/github-code-scanning-1.png" alt = "codeql on github actions"/>
+              <img src = "../../programming/support_tools/github-code-scanning-2.png" alt = "codacy on github actions"/>
+              <img src = "../../programming/support_tools/github-code-scanning-3.png" alt = "devskim on gituhb actions"/>
+              <img src = "../../programming/support_tools/github-code-scanning-4.png" alt = "flawfinder on github actions"/>
+              <img src = "../../programming/support_tools/github-code-scanning-5.png" alt = "fortify on github actions"/>
+              <img src = "../../programming/support_tools/github-code-scanning-6.png" alt = "synopsys on github actions"/>
+              <img src = "../../programming/support_tools/github-code-scanning-7.png" alt = "veracode on github actions"/>
+            </div>
+            </div>
+
+            <aside class = "notes">
+              When we talk about static analyzers in our team, we typically are referring to SAST, static analyzers that 
+              focus on making software applications secure. Here are some examples of SAST Tools available on the market. Github has 
+              introduced a few years back Github Actions which gives developers basic native CI/CD solutions. One of the perks is that 
+              they don't require you to have your own CI/CD server such as Jenkins nor have agents (called runners on github) because 
+              Github can run your CI/CD workflow on their own servers on Windows, Mac, and Ubuntu. It's quite easy to integrate SAST 
+              into your github workflow by using the various templates offered on the marketplace and many are free. Here are some 
+              examples of some SAST workflows that Github suggests.
+            </aside>
+          </section>
+          <section data-background="../../programming/support_tools/codeql-1.png" data-background-size="initial">
+            <aside class = "notes">
+              Here's an example of a report from CodeQL scanning my code looks like.
+            </aside>
+          </section>
+          <section data-background="../../programming/support_tools/2021_jetbrains_code_analysis.png" data-background-size="contain">
+            <aside class = "notes">
+              SAST isn't the only usage for static analyzers. There are many other tools available that focus on guideline enforcement 
+              and avoid any potential bugs that your compiler fails to catch. 
+              For instance, this is the result from the 2021 Jetbrain ecosystem survey and you don't see any of the SAST tools I 
+              mentioned earlier.
+
+              Let's go over some of the ones listed. The Clang project which focuses on compiler front-end for C/C++ have released a number of 
+              neat tools such as Clang-tidy, ClangFormat, and Clang Static Analyzers. 
+            </aside>
+          </section>
+          <section>
+            <aside class = "notes">
+              Clang tidy is a linter which can also diagnose and fix typical programming errors, style violations, and interface misuse.
+              It's highly customizable apparently so you can run custom scripts to enforce stricter guidelines and propose customized fixes. I heard it's a great tool 
+              to refactor code such as adding `override` specifier on all methods in a legacy codebase that's not using C++ 11 or newer. You can either get a poor intern 
+              to go through thousands of files to change those instances or use a single tool to do the job.
+
+              ClangFormat as the name implies reformats your code to follow a particular codestyle such as LLVM, Google, or tailor it to follow your company's coding guideline. 
+              It's a neat tool to ensure everyone uses the same style with no arguments on code style.
+            </aside>
+          </section>
+        </section> <!-- End of Parent - Code Analysis-->
+        <section>
+          <h2>Optimization</h2>
+        </section>
+        <section>
+          <h2>Instrumentation and Profiling</h2>
+        </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

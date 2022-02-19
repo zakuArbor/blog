@@ -1,0 +1,17 @@
+<map id="pam_sm_authenticate" name="pam_sm_authenticate">
+<area shape="rect" id="node1" title=" " alt="" coords="5,296,156,323"/>
+<area shape="rect" id="node2" href="$pam__bt__trust_8c.html#a11ff3cbf9f313d7a9ea434c83f61aa6a" title=" " alt="" coords="204,271,313,297"/>
+<area shape="rect" id="node15" href="$pam__post__auth_8c.html#a255f2465b7fd99377d022a4a9334fed1" title=" " alt="" coords="211,321,306,348"/>
+<area shape="rect" id="node3" href="$pam__bt__trust_8c.html#a218ab45da59bbecedbd1d6ce4f08cf6e" title=" " alt="" coords="361,107,504,133"/>
+<area shape="rect" id="node8" href="$pam__bt__trust_8c.html#a63dca1bb3ba9a16df4a0b270ac1a7438" title=" " alt="" coords="367,179,499,221"/>
+<area shape="rect" id="node10" href="$pam__bt__misc_8c.html#a67e94683bc2c967879c2b18b8b7a7c4b" title=" " alt="" coords="376,245,489,272"/>
+<area shape="rect" id="node11" href="$pam__misc_8c.html#aa241605477f0fba5beeb7be0eff5871c" title=" " alt="" coords="379,347,486,373"/>
+<area shape="rect" id="node12" href="$pam__bt__pair_8c.html#a0982f353fa0e015e06eaba9d7164d55d" title=" " alt="" coords="365,296,500,323"/>
+<area shape="rect" id="node4" href="$pam__misc_8c.html#ac1b67db3c98dde241e209db0b66ed92b" title=" " alt="" coords="559,5,691,32"/>
+<area shape="rect" id="node5" href="$pam__misc_8c.html#a2e30edd72fed52ba52cd1d51afe53c95" title=" " alt="" coords="571,56,678,83"/>
+<area shape="rect" id="node6" href="$pam__bt__trust_8c.html#a5210560ef79fa03ecbeb85f4eccb4940" title=" " alt="" coords="555,107,694,133"/>
+<area shape="rect" id="node7" href="$pam__bt__trust_8c.html#a671181c1f3adc21b30a202ba7f370b11" title=" " alt="" coords="555,157,694,184"/>
+<area shape="rect" id="node9" href="$pam__bt__misc_8c.html#ab1dcac140f23316278bc07c80ba6f98b" title=" " alt="" coords="571,208,678,235"/>
+<area shape="rect" id="node13" href="$pam__bt__pair_8c.html#a438bb3eec94f76856dcbca4cac3974f8" title=" " alt="" coords="552,296,697,323"/>
+<area shape="rect" id="node14" href="$pam__bt__pair_8c.html#af9433b5cdb30a04f8767429d66adf97c" title=" " alt="" coords="745,296,861,323"/>
+</map>
