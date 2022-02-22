@@ -50,5 +50,5 @@ A random blog about me discussing on various topics that I randomly felt writing
 * [What is Phoenix](../what-is-phoenix)
 * [Disturbing Facts about Phoenix: Implementation Part 1](../disturbing-facts-about-phoenix-implementation-part-1)
 * [Killing time during Commute by Reading Books](../kill-time-by-reading-during-commute)
-
+* [Ducky One 2 Mini - Replace Caps Lock as Function Key](../duckyone-mini-keyboard)
 
