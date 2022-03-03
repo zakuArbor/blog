@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
 
 If I were to compile this using `gcc` using purely `c89` standard (**note:** use `-pedantic` option 
 to turn off gcc extensions because gcc adds vla support by default), I would get the following error:
-<pre style="background: #282a36; color: white; padding: 15px; font-size: 15px">$ gcc -std=c89 --pedantic /tmp/test.c
+<pre class = "highlight">$ gcc -std=c89 --pedantic /tmp/test.c
 <b>/tmp/test.c:</b> In function ‘<b>main</b>’:
 <b>/tmp/test.c:6:9:</b> <font color="#AD7FA8"><b>warning: </b></font>ISO C90 forbids variable length array ‘<b>arr</b>’ [<font color="#AD7FA8"><b>-Wvla</b></font>]
          <font color="#AD7FA8"><b>int</b></font> arr[len];
@@ -82,7 +82,7 @@ As [blogger ayekat](http://ayekat.ch/blog/vla)
 mentions on his take on VLA, using VLA is very risky because the behavior of 
 `alloca` is undefined if allocation causes a stack overflow and VLA will behave in a similar manner.
 
-<pre style="background: #282a36; color: white; padding: 15px; font-size: 15px">$ man alloca | grep -A 2 "RETURN VALUE"
+<pre class = "highlight">$ man alloca | grep -A 2 "RETURN VALUE"
 <font color="#C01C28"><b>RETURN VALUE</b></font>
        The alloca() function returns a pointer to the beginning of the allocated space.  If the allocation causes stack overflow, program behavior is undefined.
 </pre>
