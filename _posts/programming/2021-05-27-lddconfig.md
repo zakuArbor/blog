@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Error Loading Shared Library Even If File Exists
+description: Debugging loading shared library even though file exists
 categories: [programming, c/c++, linker]
 ---
 
