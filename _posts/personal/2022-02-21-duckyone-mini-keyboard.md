@@ -22,6 +22,8 @@ will all light up. Then tap the `Caps Lock` once to set the function key to `Cap
 Now that your `Caps Lock` key acts a function key, if you want to use the caps lock functionality, you will need to press `caps lock + tab` (not at the same time). 
 I accidentally found out about this when I tried to write the backtick which is `CAPS LOCK + ESC` but pressed `tab` instead of `ESC`.
 
+**Note [2021-03-25]:** It came to my attention that you will require the latest driver for this feature to work
+
 **Note:** I dislike how the arrow keys do not follow VIM bindings so I get confused whenever I write on any applications that have vim bindings enabled
 
 **Note:** The cover image is an image of my keyboard but with sketch filter which I found out existed today
