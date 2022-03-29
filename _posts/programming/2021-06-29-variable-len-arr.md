@@ -11,7 +11,7 @@ a poor choice, the ability to allocate an array at runtime based on a variable w
 during runtime came as a shock to me.
 
 Variable length arrays came into C starting from C99 standard (hence not suitable for anyone who 
-works on legacy systems or in projects that follow C89 standard. To illustrate, here's an example of 
+works on legacy systems or in projects that follow C89 standard). To illustrate, here's an example of 
 an array whose size is dependent on the variable `len` whose value is set to any number passed as an 
 argument to the program. Hence, the length of the array is not known during compiled time.
 

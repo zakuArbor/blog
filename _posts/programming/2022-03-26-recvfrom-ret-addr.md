@@ -1,7 +1,7 @@
 ---
 layout: post
 title: recvfrom - Obtaining the Return Address 
-description: A quick look at recvfrom API 
+description: A dive into recvfrom API
 categories: [programming, c/c++, network]
 ---
 

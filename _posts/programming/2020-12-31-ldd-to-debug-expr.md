@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Debugging expr with ldd
-categories: [programming]
+categories: [programming, c/c++, linker]
 ---
 
 ---
