@@ -26,8 +26,28 @@
     }
 }
 
+details {
+  margin: 10px;
+}
+
+.note {
+  background-color: #DCDCDC;
+  padding: 5px;
+}
+
+.note-body {
+  background-color: #F5F5F5;
+  border-bottom: 3px solid;
+}
+
+summary {
+  font-weight: bold;
+  cursor: help;
+}
+
 .caption, .excerpt {
     text-align: center;
+    margin: auto;
     font-size: small;
 }
 
