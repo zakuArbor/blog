@@ -77,7 +77,7 @@ Unlike the release notes for 7.0 and 7.1, QNX 6.6 SDP release notes has been arc
 
 During my search for QNX 6.6 Release Notes, I came across on [open qnx forums](https://forums.openqnx.com/t/topic/8040/2) people 
 referencing QNX 6.5 SP 1 Release Notes. While I have absolutely no clue how the links are formatted, but I noticed that the link for 
-QNX 6.5 SP 1 does not follow the format I was brutforcing (i.e. `rel_xxxx_0.html`) but `rel_5189_48.html`. Which I presume corresponds to the major and minor release. 
+QNX 6.5 SP 1 does not follow the format I was bruteforcing (i.e. `rel_xxxx_0.html`) but `rel_5189_48.html`. Which I presume corresponds to the major and minor release. 
 This made me realize some version of the release note has been archived before which makes sense due to its age.
 
 ---
