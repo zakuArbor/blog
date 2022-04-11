@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A Dive to the Build Process - What Goes On When You Press the Play Button
+description: A Look at the Build toolchain
 categories: [programming, build, linker, c/c++, gcc-toolchain]
 ---
 
@@ -291,7 +292,7 @@ int main() {
 #define Square(x) ((x)*(x))
 void honk() {
     double area = PI * Square(9); //area = pi * r^2
-    printf("The Goose Honks the area of the circular pond: %.2f m^2\n", a);
+    printf("The Goose Honks the area of the circular pond: %.2f m^2\n", area);
 }
 ```
 
@@ -300,7 +301,7 @@ void honk() {
 ```c
 #include <stdio.h>
 void meow() {
-    printf("The Cat Meows at its \n");
+    printf("The Cat Meows at its friend\n");
 }
 ```
 
@@ -461,7 +462,7 @@ We will be using **ld** to link our object files to relocate data and tie up sym
 The basic idea is to link all the object files generated for this project like so:
 
 ```bash
-ld cat.c goose.c main.c -o prog
+ld cat.o goose.o main.c -o prog
 ```
 
 Unfortunately, it's a lot more complex than that. We also need to link other files which I won't go into. The actual command is given below:
