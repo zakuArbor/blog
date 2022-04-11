@@ -8,7 +8,7 @@ categories: [programming, c/c++]
 I always thought it was not possible to create a "dynamic" array in C without the use of `malloc` till 
 recently where I was introduced to **variable length arrays (VLA)**. Although the use of "dynamic" is 
 a poor choice, the ability to allocate an array at runtime based on a variable whose value is not known 
-during runtime came as a shock to me.
+till runtime came as a shock to me.
 
 Variable length arrays came into C starting from C99 standard (hence not suitable for anyone who 
 works on legacy systems or in projects that follow C89 standard). To illustrate, here's an example of 
@@ -88,7 +88,7 @@ mentions on his take on VLA, using VLA is very risky because the behavior of
 </pre>
 
 For those who are not familiar, a stack overflow not only breaks the program, 
-it also introduces a door to exploit your system by feeding it malicious 
+it may also introduce a backdoor to exploit your system by feeding it malicious 
 input to overwrite sections of memory it should have no access to (look up 
 buffer overflow).
 
