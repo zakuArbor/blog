@@ -5,6 +5,8 @@ description: A possible replication of xlC bloadmap option on ld via g++ to debu
 categories: [programming, c/c++]
 ---
 
+**Edit: This has not been tested and is merely a suggestion to myself (i.e. I use my blog as my notes). Take my words as a grain of salt)**
+
 For context, xlC is IBM's C++ compiler that is used to optimize C/C++ applications on IBM's supported environments 
 and is out of reach from the hands of the average developer. xlC compiler is typically only 
 used on AIX systems or on mainframes running z/OS or Linux on Power. 
