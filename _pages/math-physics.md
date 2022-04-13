@@ -11,7 +11,7 @@ the content may be obvious.
 {% for post in site.posts %}
 {% unless post.categories contains 'reviews' %}
 {% if post.categories contains 'math' or post.categories contains 'physics' %}
-<li><a href = '../{{post.url}}'>{{ post.title }}</a></li>
+<li><a href = '..{{post.url}}'>{{ post.title }}</a></li>
 {% endif %}
 {% endunless %}
 {% endfor %}

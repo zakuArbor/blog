@@ -1,5 +1,5 @@
 ---
-layout: post                                                                    
+layout: post-math
 title: Solving Repeating Integration by Parts through Isolation
 description: A technique to solve repeating integration by parts by isolation.
 categories: [math]                                                

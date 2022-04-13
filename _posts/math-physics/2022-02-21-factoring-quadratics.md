@@ -1,5 +1,5 @@
 ---
-layout: post                                                                    
+layout: post-math                                                                   
 title: Another Look at Factoring Quadratics Into A Product of Binomials
 description: Going through how quadratic factoring
 categories: [math]                                                
