@@ -110,7 +110,7 @@ I wanted to shorten the code but still be understandable. While researching for 
 I came across a [webpage from Weber University on File Permissions](https://icarus.cs.weber.edu/~dab/cs1410/textbook/2.Core/file_access.html) and it lays out beautifully 
 how to perform the operation I wanted to perform. In Linux, there are three types of owners: owner, group, and others.
 Each type has 3 bits to store the type's permission on the file: 1 bit for read, 1 bit for write, and 1 bit for execute. 
-For instance, $100_{2}$ (binary) is 4 in decimal and means the type has read permission. I won't go into details about how 
+For instance, 100 (binary) is 4 in decimal and means the type has read permission. I won't go into details about how 
 permissions work but if you are curious on how permissions work on Linux, there are many excellent [resources online](https://icarus.cs.weber.edu/~dab/cs1410/textbook/2.Core/file_access.html).
 
 The document I linked explains both visually and with words how to get the permission of the owner type only so take a look at it if you are confused by my explanation. The method is to shift 
@@ -118,7 +118,7 @@ the bits to the right by 6 and clear all the unneeded bits by performing a bitwi
 3 bits for each owner type. So shifting `st_mode` by 6 bits will remove the ACL bits for the group and other type. So the first 3 bits (from the right) will be the read, write, and execute bit for the owner. However, 
 `st_mode` will still contain 7 bits of information for the file mode (i.e. the file type and attributes). To clear the bits, perform a bitwise and operation with the hexadecimal 7 (i.e. binary: 0 000 000 000 000 111) 
 to clear the unneeded bits. So you are left with the 3 bits of interest. Since I desire to check if the owner has RWX permission for directories and RW permission for the config file, 
-I check if `st_mode` after all those bit manipulation equals to 7 and 6 respectively (i.e. $110_{2}$ means type has RW permission but to access a directory, the execute bit must be set as well).
+I check if `st_mode` after all those bit manipulation equals to 7 and 6 respectively (i.e. 110 (binary) means type has RW permission but to access a directory, the execute bit must be set as well).
 
 ```c
 if ( ((st->st_mode >> 6) & 0x7) != 7) { //owner
