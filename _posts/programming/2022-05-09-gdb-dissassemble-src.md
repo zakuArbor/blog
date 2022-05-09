@@ -96,4 +96,4 @@ does not appear to work and only gives me the regular output.
 <p class = "caption">GDB with TUI does not show the annotated line of C doe in the assembly view</p>
 
 I'll update this blog if I do find a way though. At the time of writing, I do not know 
-how to set TUI to display 
+how to set TUI to display the output of `/s` when executing `disassemble`
