@@ -9,6 +9,7 @@ A random blog discussing various topics in Computer Science and Programming that
 
 ---
 
+* [GDB - Mix Source Code with Assembly](../gdb-disassemble-src)
 * [The Value of An Uninitialized Global Variable](../global-init-val) 
 * [Possible Linker Options to Use to Replicate xlC bloadmap Option on ld](../bloadmap-gcc-alt)
 * [What is Name Mangling](../extern-c-name-mangling)
@@ -48,7 +49,10 @@ A random blog discussing various topics in Computer Science and Programming that
 
 ---
 
-* [You Shall Not Slay the Client](../cannot-kill-process)
+* [Rust - Exploring the Assembly Code between Mutable and Shadow Variables](../rust-shadow-vs-mut)
+* [QNX - An Introduction to Adapative Partitioning Scheduler and How to Bankrupt Partitions](../qnx-aps)
+* [QNX - The Search for the Release Notes](../qnx-release-notes)
+* [QNX - You Shall Not Slay the Client](../cannot-kill-process)
 * [Misconfigured Hostname](../misconfigured-hostname)
 * [ct - Bad Phone Number](../ct-bad-phone-number)
 * [Random Thoughts about Tee](../random-thoughts-about-tee)
