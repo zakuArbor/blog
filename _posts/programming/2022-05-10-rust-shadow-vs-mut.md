@@ -135,8 +135,8 @@ mov     dword ptr [rsp + 16], 5   ;x = x + 4
 mov     dword ptr [rsp + 20], 0   ;let mut y: i32 = 0
 mov     dword ptr [rsp + 20], 10  ;y = y + 10
 mov     eax, dword ptr [rsp + 16] ;set register with the value of x
-add     eax, 10                   ;add 10 to the register
-mov     dword ptr [rsp + 12], eax ;store the result to rsp + 12 temporarilt
+add     eax, 10                   ;x + y but instead of adding the value of y it adds 10
+mov     dword ptr [rsp + 12], eax ;store the result to rsp + 12 temporarily
 seto    al                        ;no clue what that does
 test    al, 1                     ; 
 jne     .LBB0_2                   ; 
