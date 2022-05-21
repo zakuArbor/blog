@@ -18,6 +18,27 @@ int i = 0;
 i += 10;
 ```
 
+But in Rust, you must have `mut` keyword when initalizing or declaring the variable 
+to mutate (i.e. change) the value of a variable or else you'll get the following error:
+
+<div class = "language-plaintext highlighter-rouge">
+<pre class = "highlight"><font color="#F66151"><b>error[E0384]</b></font><b>: cannot assign twice to immutable variable `x`</b>
+ <font color="#2A7BDE"><b>--&gt; </b></font>main.rs:3:5
+  <font color="#2A7BDE"><b>|</b></font>
+<font color="#2A7BDE"><b>2</b></font> <font color="#2A7BDE"><b>| </b></font>    let x = 1;
+  <font color="#2A7BDE"><b>| </b></font>        <font color="#2A7BDE"><b>-</b></font>
+  <font color="#2A7BDE"><b>| </b></font>        <font color="#2A7BDE"><b>|</b></font>
+  <font color="#2A7BDE"><b>| </b></font>        <font color="#2A7BDE"><b>first assignment to `x`</b></font>
+  <font color="#2A7BDE"><b>| </b></font>        <font color="#2A7BDE"><b>help: consider making this binding mutable: `mut x`</b></font>
+<font color="#2A7BDE"><b>3</b></font> <font color="#2A7BDE"><b>| </b></font>    x = 2;
+  <font color="#2A7BDE"><b>| </b></font>    <font color="#F66151"><b>^^^^^</b></font> <font color="#F66151"><b>cannot assign twice to immutable variable</b></font>
+
+<font color="#F66151"><b>error</b></font><b>: aborting due to previous error; 1 warning emitted</b>
+
+<b>For more information about this error, try `rustc --explain E0384`.</b>
+</pre>
+</div>
+
 Meanwhile, shadowing allows you to reuse the name of the variable in a different scope. For instance, 
 this is legal and possible in C:
 
@@ -65,7 +86,7 @@ fn main() {
 }
 ```
 
-where you can see the variable x is shadowed twice (i.e. 3 variables with the name `x`.
+where you can see the variable x is shadowed twice (i.e. 3 variables with the name `x`).
 
 ## Mutable v.s Shadowing - Initial Thoughts
 
@@ -235,4 +256,6 @@ assembly code.
 To summarize this long blog post, for the example code I used, it was found that 
 shadow version resulted in smaller use of the stack and makes use of the register 
 more than the mutable version. Meaning mutable seemed to result in both inefficient 
-code in respect to both time and space.
+code in respect to both time and space. **I would like to stress that this is 
+the findings based on my examples and may not apply in most cases nor in a general 
+case either.**
