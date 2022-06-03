@@ -4,6 +4,41 @@
     margin-right: auto;
 }
 
+
+.back-to-top-wrapper {
+  position: absolute;
+  z-index:10;
+  top: 100vh;
+  right: 2.5rem;
+//  bottom: -5em;
+  width: 3em;
+  pointer-events: none;
+}
+
+.back-to-top-link {
+  position: fixed;
+  pointer-events: all;
+  top: calc(100vh - 5rem);
+
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  padding: 0.25rem;
+  padding-bottom: 0px;
+  background-color: white;
+}
+
+@media (min-width: 700px) {
+  .back-to-top-wrapper {
+      right: 4rem;
+  }
+}
+
 .MathJax_Display, .MJXc-display, .MathJax_SVG_Display {
     overflow-x: auto;
     overflow-y: hidden;
