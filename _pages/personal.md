@@ -9,6 +9,7 @@ A random blog about me discussing on various topics that I randomly felt writing
 
 ---
 
+<a name = "courses"/>
 <ul>
 {% for post in site.posts %}                                                  
 {% if post.categories contains 'reviews' and post.categories contains 'university' and page.title != post.title %}
