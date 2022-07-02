@@ -12,8 +12,10 @@ over the past 2 weeks. Below is a preview of one of the projects I have been wor
 still need to edit the script, adjust the timing of each frame, and record the voice):
 
 <center>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BtJV4AiNjmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hRs0t8G0ef0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
+
+**Edit (07/02/2022):** Reuploaded video to fix an error in presenting the result of the matrix multplication
 
 
 
