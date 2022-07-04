@@ -91,13 +91,13 @@ $$
 So if we bring it all together, we get the following:
 $$
 \left[\begin{array}{cc}                                                         
-\color{red}{\textrm{$\cos2\theta$}} & -\sin2\theta\\                            
-\color{blue}{\textrm{$\sin2\theta$}} & \cos2\theta                              
+\color{orange}{\textrm{$\cos2\theta$}} & -\sin2\theta\\                            
+\color{cyan}{\textrm{$\sin2\theta$}} & \cos2\theta                              
 \end{array}\right]
 =
 \left[\begin{array}{cc}                                                         
-\color{red}{\textrm{$\cos^2\theta - \sin^2\theta$}} & -2\sin\theta\cos\theta\\                                                      
-\color{blue}{\textrm{$2\sin\theta\cos\theta$}} & \cos^2\theta - \sin^2\theta                                                        
+\color{orange}{\textrm{$\cos^2\theta - \sin^2\theta$}} & -2\sin\theta\cos\theta\\                                                      
+\color{cyan}{\textrm{$2\sin\theta\cos\theta$}} & \cos^2\theta - \sin^2\theta                                                        
 \end{array}\right]
 $$
 
