@@ -357,7 +357,7 @@ I hope you have more of an idea what a Builder does and their role in the organi
 
 ### More Resources
 
-* [The Challenge of the Build Engineer | Gradle Enterprise](https://gradle.com/blog/build-engineer-challenges/)
+* [The Challenge of the Build Engineer \| Gradle Enterprise](https://gradle.com/blog/build-engineer-challenges/)
 
 * https://medium.com/linusplog/what-does-a-software-configuration-management-and-build-engineer-do-849e6ece9292
 

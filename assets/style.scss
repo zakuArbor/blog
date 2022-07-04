@@ -380,14 +380,12 @@ nav {
 .post {
   blockquote {
     margin: 1.5em .5em;
-    border-left: 5px solid $gray;
+    border-left: 7px solid $blue;
+    background-color: $darkGray;
     padding: 0.1em 1em;
-    /* color: $gray; */
-    font-size: 18px;
+    font-size: 20px;
     font-style: italic;
-    color: black;
-    background-color: #f5f5f5;
-    /* background-color: #ede1ff; */
+    color: white
   }
 
   .you-may-like{
