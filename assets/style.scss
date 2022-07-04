@@ -13,6 +13,10 @@
 /* BASE RULES */
 /**************/
 
+img {
+  filter: brightness(.8) contrast(1.2);
+}
+
 html {
   font-size: 100%;
   height: 100%;
@@ -22,7 +26,7 @@ body {
   background: $background;
   font-family: -system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   //color: #404040;
-  color: #fff;
+  color: #ccc;
   line-height: 1.7;
   font-weight: 400;
   font-size: 18px;
@@ -38,7 +42,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: -system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  color: #fff;//$darkerGray;
+  color: #ddd;//$darkerGray;
   font-weight: bold;
 
   line-height: 1.7;

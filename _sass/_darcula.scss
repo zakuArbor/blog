@@ -149,14 +149,18 @@ code {
 .highlighter-rouge { 
     /*background-color: #F1EDED;
     color: #000; */ //no longer rouge. I like better contrast
-    background-color: #282a36;
+//    background-color: #282a36;
+    background-color: #2d333b;
     color: white;
     padding: 3px;
     font-size: 16px;
 }
 
 .highlight .hll { background-color: #f1fa8c }
-.highlight  { background: #282a36; color: #f8f8f2 }
+.highlight  { 
+//  background: #282a36; 
+  background: #2d333b;
+  color: #f8f8f2 }
 .highlight .c { color: #6272a4 } /* Comment */
 .highlight .err { color: #f8f8f2 } /* Error */
 .highlight .g { color: #f8f8f2 } /* Generic */
