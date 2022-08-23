@@ -14,6 +14,17 @@ categories: [programming]
 <hr/>
 </details>
 
+<div class="language-plaintext highlighter-rouge">                              
+<pre class = "highlight"><code class = "red"># aps                              
+                    +-------- CPU Time --------+-- Critical Time --             
+Partition name   id | Budget |   Max  |   Used | Budget |   Used                
+--------------------+------------------------+---------------------             
+System            0 |  55.0% | 100.0% | 0.01% |  200ms |   0.000ms              
+drivers           1 |  40.0% | 100.0% | 0.25% |    0ms |   0.000ms              
+recovery          2 |   5.0% | 100.0% | 2.08% |    0ms |   0.000ms              
+--------------------+------------------------+---------------------             
+Total               | 100.0% |        | <b>2.35%</b>|</code></pre></div> 
+
 ---
 
 ## Conclusion
