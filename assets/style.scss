@@ -227,6 +227,10 @@ img {
   max-width: 100%;
 }
 
+.img-transparent {
+  background-color: rgba(230, 230, 230, 0.85);
+}
+
 p > img {
   text-align: center;
   display: block;

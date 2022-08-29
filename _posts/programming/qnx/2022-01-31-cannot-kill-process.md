@@ -2,7 +2,7 @@
 layout: post
 title: You shall not slay the client
 description: A QNX flag _NTO_CHF_UNBLOCK that puts client in block pausing signals
-categories: [programming, c/c++, QNX]
+categories: [programming, c/c++, qnx]
 ---
 
 Recently, I got the opportunity to attend a two-week-long training in [Real-Time Programming For QNX Neutrino RTOS](https://blackberry.qnx.com/en/services/training/qnx-realtime-programming) 

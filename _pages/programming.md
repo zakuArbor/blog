@@ -48,6 +48,7 @@ A random blog discussing various topics in Computer Science and Programming that
 
 ---
 
+* [Rust - Invoking Closures in a Struct](../rust-closure-invoke/)
 * [Rust - Exploring the Assembly Code between Mutable and Shadow Variables](../rust-shadow-vs-mut)
 * [QNX - An Introduction to Adapative Partitioning Scheduler and How to Bankrupt Partitions](../qnx-aps)
 * [QNX - The Search for the Release Notes](../qnx-release-notes)
