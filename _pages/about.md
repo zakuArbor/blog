@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 The name is Ju Hong Kim, a student, software developer, and a random human who writes random things. I am a computer enthusiast and I love learning new things and expanding my knowledge. 
-With no plans in mind, I'll be venturing into Math and Physics at some random Canadian University till I get bored of it.
+With no plans in mind, I'll be venturing into Math at some random Canadian University till I get bored of it.
 
 My background is in Computer Science and I am particularly interested in reading and learning about Systems Programming (though I am quite lacking in experience and knowledge). 
 More specifically, I want to delve into Operating Systems and Embedded Programming since it looks like it'll be interesting. I initially got into computers after being introduced to 
