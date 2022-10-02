@@ -1,3 +1,8 @@
+## Notes to self
+`bundle exec jekyll serve`: run local environment of blog
+
+`--incremental` flag to render future web posts
+
 <h1 align="center">
   <br>
   <img src="/images/reverie-text.png" alt="Reverie" width="200"/>
