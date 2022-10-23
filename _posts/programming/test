@@ -1,0 +1,118 @@
+11:19 [zaku:~/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive]
+$ ./csgo_linux64 
+./csgo_linux64: error while loading shared libraries: libtcmalloc_minimal.so.0: cannot open shared object file: No such file or directory
+$ ldd ./csgo_linux64
+	linux-vdso.so.1 (0x00007ffdedd9c000)
+	libtcmalloc_minimal.so.0 => not found
+	libdl.so.2 => /lib64/libdl.so.2 (0x00007febbadac000)
+	libc.so.6 => /lib64/libc.so.6 (0x00007febbaba2000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007febbadca000)
+
+
+https://debian.pkgs.org/11/debian-main-amd64/libtcmalloc-minimal4_2.8.1-1_amd64.deb.html
+```
+The gperftools, previously called google-perftools, package contains some
+utilities to improve and analyze the performance of C++ programs. This is a
+part of that package, and includes an optimized thread-caching malloc.
+```
+
+sudo dnf install gperftools
+11:26 [zaku:~/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive]
+$ ldd ./csgo_linux64
+	linux-vdso.so.1 (0x00007ffd227c9000)
+	libtcmalloc_minimal.so.0 => not found
+	libdl.so.2 => /lib64/libdl.so.2 (0x00007f7f2a4c9000)
+	libc.so.6 => /lib64/libc.so.6 (0x00007f7f2a2bf000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f7f2a4e7000)
+
+$ dnf provides libtcmalloc*
+Last metadata expiration check: 0:00:16 ago on Sat 19 Feb 2022 11:29:15 AM.
+gperftools-libs-2.9.1-2.fc35.i686 : Libraries provided by gperftools
+Repo        : fedora
+Matched from:
+Provide    : libtcmalloc_minimal.so.4
+Provide    : libtcmalloc.so.4
+Provide    : libtcmalloc_and_profiler.so.4
+Provide    : libtcmalloc_debug.so.4
+Provide    : libtcmalloc_minimal_debug.so.4
+
+gperftools-libs-2.9.1-2.fc35.x86_64 : Libraries provided by gperftools
+Repo        : @System
+Matched from:
+Provide    : libtcmalloc.so.4()(64bit)
+Provide    : libtcmalloc_and_profiler.so.4()(64bit)
+Provide    : libtcmalloc_debug.so.4()(64bit)
+Provide    : libtcmalloc_minimal.so.4()(64bit)
+Provide    : libtcmalloc_minimal_debug.so.4()(64bit)
+
+gperftools-libs-2.9.1-2.fc35.x86_64 : Libraries provided by gperftools
+Repo        : fedora
+Matched from:
+Provide    : libtcmalloc_minimal.so.4()(64bit)
+Provide    : libtcmalloc.so.4()(64bit)
+Provide    : libtcmalloc_and_profiler.so.4()(64bit)
+Provide    : libtcmalloc_debug.so.4()(64bit)
+Provide    : libtcmalloc_minimal_debug.so.4()(64bit)
+
+
+$ ldconfig -p | grep libtcmalloc.so.4
+	libtcmalloc.so.4 (libc6,x86-64) => /lib64/libtcmalloc.so.4
+	libtcmalloc.so.4 (libc6) => /lib/libtcmalloc.so.4
+$ readlink -f /lib/libtcmalloc.so.4
+/usr/lib/libtcmalloc.so.4.5.9
+$ readlink -f /lib64/libtcmalloc.so.4
+/usr/lib64/libtcmalloc.so.4.5.9
+$ sudo ln -s libtcmalloc.so.4.5.9 libtcmalloc_minimal.so.0
+
+
+            Stack trace of thread 115814:
+                #0  0x00007fa8adda588c __pthread_kill_implementation (libc.so.6 + 0x8f88c)
+                #1  0x00007fa8add586a6 raise (libc.so.6 + 0x426a6)
+                #2  0x00007fa8add427d3 abort (libc.so.6 + 0x2c7d3)
+                #3  0x00007fa8adf34cbb n/a (/home/zaku/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/bin/linux64/libtcmalloc_minimal.so.0 + 0xdcbb)
+$ coredumpctl
+TIME                           PID  UID  GID SIG     COREFILE EXE                                                                                           SIZE
+Sun 2022-02-06 23:03:11 EST   2187 1000 1000 SIGSEGV missing  /usr/bin/gnome-shell                                                                           n/a
+Mon 2022-02-07 00:27:00 EST 525609 1000 1000 SIGABRT missing  /home/zaku/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo_linux64    n/a
+Mon 2022-02-07 00:27:28 EST 526028 1000 1000 SIGABRT missing  /home/zaku/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo_linux64    n/a
+Sat 2022-02-12 16:51:39 EST 690947 1000 1000 SIGABRT none     /home/zaku/Documents/projects/proxyAuth/pam/pam_test                                           n/a
+Sat 2022-02-12 16:59:33 EST 691892 1000 1000 SIGABRT none     /home/zaku/Documents/projects/proxyAuth/pam/pam_test                                           n/a
+Sat 2022-02-12 17:01:07 EST 692168 1000 1000 SIGABRT none     /home/zaku/Documents/projects/proxyAuth/pam/pam_test                                           n/a
+Sat 2022-02-12 17:03:18 EST 692717 1000 1000 SIGABRT missing  /usr/bin/sleep                                                                                 n/a
+Sat 2022-02-12 17:03:47 EST 692843 1000 1000 SIGABRT none     /home/zaku/Documents/projects/proxyAuth/pam/pam_test                                           n/a
+Sat 2022-02-19 11:40:56 EST 115814 1000 1000 SIGABRT present  /home/zaku/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo_linux64 111.2M
+11:41 [zaku:/lib64]
+$ coredumpctl gdb 115814
+           PID: 115814 (csgo_linux64)
+           UID: 1000 (zaku)
+           GID: 1000 (zaku)
+        Signal: 6 (ABRT)
+     Timestamp: Sat 2022-02-19 11:40:53 EST (41s ago)
+  Command Line: $'/home/zaku/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo_linux64' -steam
+    Executable: /home/zaku/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo_linux64
+ Control Group: /user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome-steam-62070.scope
+          Unit: user@1000.service
+     User Unit: app-gnome-steam-62070.scope
+         Slice: user-1000.slice
+     Owner UID: 1000 (zaku)
+       Boot ID: 0257f388c99e45c28fbd2dde99d9366b
+    Machine ID: 10c065ab03904bffac937ec23995ab37
+      Hostname: zaku-windows.ht.home
+       Storage: /var/lib/systemd/coredump/core.csgo_linux64.1000.0257f388c99e45c28fbd2dde99d9366b.115814.1645288853000000.zst (present)
+     Disk Size: 111.2M
+       Message: Process 115814 (csgo_linux64) of user 1000 dumped core.
+
+... [omitted information] ...
+
+Stack trace of thread 115814:                                       
+                #0  0x00007fa8adda588c __pthread_kill_implementation (libc.so.6 + 0x8f88c)
+                #1  0x00007fa8add586a6 raise (libc.so.6 + 0x426a6)              
+                #2  0x00007fa8add427d3 abort (libc.so.6 + 0x2c7d3)              
+                #3  0x00007fa8adf34cbb n/a (/home/zaku/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/bin/linux64/libtcmalloc_minimal.so.0 + 0xdcbb)
+sudo cp '/home/zaku/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/bin/linux64/libtcmalloc_minimal.so.0' /lib64/
+
+cp '/home/zaku/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/bin/linux64/libtcmalloc_minimal.so.0' '/home/zaku/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/bin/linux64/libtcmalloc_minimal.so.0.bak'
+
+12:03 [zaku:~/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/bin/linux64]
+$ cp libtcmalloc_minimal.so.4 libtcmalloc_minimal.so.4.bak
+

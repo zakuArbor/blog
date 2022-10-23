@@ -1,0 +1,234 @@
+I"�f<p>This is a course review of MATH2052 - Calculus and Introductory Analysis II taken at CarletonU in 
+the winter of 2022. The lectures were asynchronous prerecorded lectures with online synchronous 
+tutorials that were recorded. There was one in-person tutorial open to students who were both 
+comfortable and available to travel to the University.</p>
+
+<p><strong>Note: The course was taken in 2022 during the pandemic so my experiences may be unique</strong></p>
+
+<p><strong>TLDR:</strong></p>
+<ul>
+  <li>Less theoretical compared to MATH1052</li>
+  <li>Assignments heavily depend on the tutorial that is held 2 days before it’s due</li>
+  <li>Covers integrals, sequences and series more in-depth compared to normal/regular Calculus</li>
+</ul>
+
+<hr />
+
+<p><img src="http://bentobooks.com/mathgirls/files/mg1-new-cover-front-only.png" alt="The cover of Math Girls novel shows a power series" /></p>
+<p class="caption">The cover of Math Girls novel shows a power series. Never noticed till I was looking for images</p>
+
+<p><strong>Professor:</strong> Charles Starling</p>
+
+<p><strong>Course Delivery:</strong> Asynchronous lectures with quizzes and exam that have a 24-hour window</p>
+
+<p><strong>Class Size:</strong>  About 60 students</p>
+
+<p><strong>Course Description (from website):</strong> Definite, indefinite integrals. Improper integrals. The fundamental theorem of calculus. An introduction to differential equations. Sequences and series of functions. Power series. Taylor’s formulae. Uniform convergence. An emphasis is placed on proofs and theory.</p>
+
+<p><strong>Course Description (LONG) with Commentary:</strong></p>
+
+<p>Similar to MATH1052, the course goes through a fair number of proofs in lectures. But the course felt less rigorous and more applied compared to MATH1052. I think 
+students may find the course slightly easier compared to MATH1052 or at least the transition from MATH1052 to MATH2052 isn’t so bad compared to transitioning from regular Calculus 1 course to MATH1052 (honors Calculus) and 
+even more so with transitioning to MATH1052 from Highschool. As a fair warning, the review is biased and I do have prior experience with university-level calculus before taking MATH1052 and 
+MATH2052 (i.e. I took up to regular multivariable calculus course many years ago). But I think this will provide an interesting perspective where I can compare my experiences 
+from taking the regular calculus course with MATH2052 (Honors Calculus II) though it’s been many years since I have taken a regular calculus course so it’ll be a struggle to recall my 
+experiences and what topics has been covered in a regular calculus course (and I didn’t do well in my calculus courses hence why I am back in school).</p>
+
+<p>I will begin with the statement that this course covered more topics than my previous experience with a regular calculus course where at least 1/2 of the course content was “new” to me. 
+The regular calculus course does cover integration and sequences and series but MATH2052 has more emphasis on not only with proofs but goes into the topic more talking about continuity, 
+convergence, and the finer details of the concepts covered. Essentially what I am trying to say, MATH2052 is more theoretical and more interesting compared to a regular calculus course. 
+I do want to stress that my comparison with regular calculus does not reflect how regular calculus course is like at CarletonU for two reasons: I took the course at another university and 
+I did not pay attention to lectures when I took calculus in first year. I was a very bad student when I first took calculus in university, reading manga during lecture. I was just there 
+to copy the notes but put my attention to the manga I was binging rather than the course itself. So take my comparison with a grain of salt.</p>
+
+<p>The course begins discussing what an integral means by first introducing Darboux sums to construct a definition of 
+integrals using Darboux Integrals. This was a very interesting approach because I have never heard of Darboux Integrals 
+prior to this course. What I can recall from my regular calculus course many years ago was learning about the Riemann Sums where 
+the mean value was taken instead of grabbing the lower (inf) and upper (sup) value (i.e. lower and upper Darboux sums). However, 
+the regular calculus course only introduced the concept in a high-level perspective and we were never required to calculate the 
+riemann sums and went straight to integrals. Perhaps there was a small excercise but I recall applying the idea more in my 
+Geography course rather than Calculus where I took the depth of a river at different points and repeat with smaller partitions 
+to get an approximate area of the river bank (though I don’t recall the specifics but it probably had to do with measuring the amount of 
+water flowing through the river i.e. river discharge). The course does build up from MATH1052 throughout the course so do recall the big 
+ideas from the previous semester.</p>
+
+<p><img src="../assets/math-physics/riverstream_discharge.jpg" alt="An image I found on google that looked familiar to what I learned in Geography" /></p>
+<p class="caption">An image I found on google that looked familiar to what I learned in Geography to measure discharge. Source: <a href="https://www.fondriest.com/environmental-measurements/measurements/hydrological-measurements/streamflow-measurements/">Fondriest</a></p>
+
+<p>As one would expect, the course goes in-depth and goes through various lemmas and theorems on integration such as the fact that
+every continuous function in a closed interval is integrable or the idea that a monotonic function in a closed interval is also
+integrable. The course also goes through the proofs about integration that I took for granted such as $\int_a^b cf = c \int_a^b f$ and 
+$\int_a^b (f+g) = \int_a^b f + \int_a^b g$. While it may seem obvious intuitively, being able to see the proofs using upper and lower 
+Darboux sums was nice to see. While I would like to mention more theorems, this is a course review so I shall refrain from sharing 
+too much.</p>
+
+<p>The topic of integration was expanded to talking about piecewise functions which was interesting to see. While I do not recall learning 
+about taking integrals of piecewise functions, I should not have been surprised as I was when the topic was introduced. In MATH1052, 
+taking the derivatives of piecewise functions has been covered. So it’s only natural that the integration of piecewise functions would be 
+discussed in the next course. What is interesting about MATH2052 is that there could be questions given where the function may not be integrable. 
+All I know from the theorems is that piecewise monotone and piecewise continuous functions on a closed interval are integrable. But what about 
+non-continuous piecewise functions? Could they still be integrable? I am unclear if the professor covered this during class but I know the Math 
+Problem Set Session held by Kyle Harvey went over this and the answer is it depends. If there are finite many holes, then from my understanding 
+the function is integrable. I want to say if there are infinitely many holes, then the function is not integrable but I cannot say with 
+certainty. What I could say is that bounded functions are not necessarily integrable. In the course, the Cauchy Criterion was introduced to 
+state what conditions the bounded functions needed to be integrable (i.e. $\forall \epsilon \gt 0 \text{ } \exists \text{ a partition P of [a,b] such that U(f,P) - L(f,P)} \lt \epsilon$).
+As in any Math course, students need to recall the full theorem correctly because the Cauchy criterion as the name implies only tells you 
+the criteria for a bounded function to be integrable and does not mean all bounded functions are integrable. For instance, the following 
+function is bounded but is not integrable:</p>
+
+\[f(x) =                                                                          
+\begin{cases}                                                                   
+0,  &amp; \text{if } x \in \mathbb{Q} \\                                               
+1, &amp; \text{if } x \notin \mathbb{Q}                                                           
+\end{cases} \nonumber\]
+
+<p>The fundamental theorem of Calculus 1 and 2 was introduced as one would expect from a Calculus course. Various integration techniques are introduced
+such as integration by substitution, integration by parts, partial fractions, and trigonometric substitution. Although it’s been many years since 
+I took a calculus course prior to attending CarletonU, I do not recall learning about partial fractions and trigonometric substitution. Perhaps I 
+did learn trigonometric substitution before but I do not think it was emphasized at all in the regular calculus course. But I am confident that I 
+did not learn partial fractions in regular calculus which is a very neat technique to integrate rational functions where both the numerator and 
+denominator are polynomials. I would say honors calculus integrates more difficult questions since one needs to be aware of 
+partial fractions and trigonometric substitution to find the integral (I assume there are other ways to approach the problem but these two techniques 
+make integration simpler). One topic I noticed that was not taught in MATH2052 but was taught in my regular calculus course is integrating a function 
+that rotates on some axis to calculate the volume. However, as the honors course is more focused on theory, this is not a surprise.</p>
+
+<p><img src="../assets/math-physics/manga/integral-volume.png" alt="Miyu from one of the Fate series solving the volume of a cone with calculus" /></p>
+<p class="caption">A screenshot from one of the Fate series where a girl solves the volume of a cone with calculus (i.e. solid of revolution) instead of using 
+the formula to calculate the volume of the cone. Taken the image from this <a href="https://afterschoolttime.wordpress.com/2017/04/06/mathinanimeprismaillya/" alt="link to a blog from 
+where the image was taken">blog</a></p>
+
+<p>The next surprising encounter when learning about integrals in MATH 2052 is <a href="../integration-by-parts-repeat/">Solving Repeating Integration by Parts through Isolation</a>.
+Considering my poor performance when I took regular calculus years ago, it would not be a surprise if it was taught but I never realized it. But I will also not be surprised if it wasn’t taught either. 
+I have written an entire <a href="../integration-by-parts-repeat/">blog</a> on this subject if you are curious. Essentially, when trying to integrate a function such as 
+integration by parts, one may realize that the original question reappears as part of the solution and it appears that one is stuck in a loop. However, by assigning the original question as a 
+variable and applying the same substitution throughout the partial solution, one could isolate the variable which solves the question.</p>
+
+<center>
+$$
+\begin{align*}
+\int \sin(x)\cos(x)dx &amp;= \sin^2(x) - \int \sin(x)\cos(x)dx \\
+I &amp;= \sin^2(x) - I \\
+2I &amp;= \sin^2(x) \\
+I &amp;= \frac{1}{2}\sin^2(x) + C
+\end{align*}
+$$
+</center>
+<p class="caption">An example of solving integration by parts through isolation</p>
+
+<p>The course proceeds to expand the topic of integration by posing what would happen if the bounds of integration go to $\pm \infty$ or if the function is undefined within the bounds
+of integration. That is what improper integrals are. This topic was taught in my regular calculus course as well (I did not recall till I checked the tests I wrote for the regular calculus course 
+at the time of writing this review. The name sounded familiar but when I learned it in MATH2052, it didn’t ring any bells). 
+Now that students were “comfortable” with integration, the integral test was introduced to
+determine whether a series converges/diverges by determining if the integration of the function converges (the function has to be continuous, decreasing, and
+non-negative to use this test). The integral test becomes another handy tool to determine whether a series converges or diverges. You’ll be needing this
+along with all the other tests you learned from MATH1052 for the next half of the course. Before going into sequences and series (ignore the fact that the integral 
+test was already introduced unless I copied my notes in the wrong order), a very brief
+introduction to differential equations is introduced. The differential equations are separable meaning the variables in the equation can be separated
+to solve the equation.</p>
+
+<p>The course concludes with talking about sequences and series which is the latter half of the course. The course introduces what a power series is and
+how to find the radius and interval of convergence. The course then delves into how to determine if a sequence of functions converges to a particular
+function pointwise or uniformly where pointwise convergence is a weaker form of convergence (since it is dependent on the value of x for when the sequence converges
+but I won’t get into the technical details). The course goes over some handy theorems that can be used if a sequence of functions is uniform convergence
+such as the fact that if a sequence of continuous functions is uniformly convergent to some function f(x) then f(x) is continuous as well. The textbook
+goes through a nice motivation for this theorem by stating the following example as a counterexample to the idea that it’s easier to show a single function
+is continuous rather than showing a sequence of functions are all continuous: \(f(x) = \sum_{n=1}^\infty \frac{1}{n^2}x^n\) for $x\in[-1,1]$. Another neat
+theorem due to the function being uniformly convergent is that given a sequence of continuous functions $f_n(x)$, one could do the following: $\lim \limits_{x\to\infty} \int_a^b f_n(x)dx = \int_a^b f(x)dx$.
+The conversation about uniformly convergence expands to encompass power series and introduces a few theorems relating to power series and its integration, convergence and continuity. Some 
+theorems covered were Weierstrass M-Test and Abel’s Theorem.</p>
+
+<p><img src="../assets/math-physics/steins-flint-hills.png" alt="A photoshop image of Kirisu from Stein's Gate showing the Flint Hill Series which is not determined whether it's convergent or not from my understanding" /></p>
+<p class="caption">A photoshopped image of Kirisu from Stein's Gate showing the Flint Hill Series which from my understanding is still being debated if it converges or diverges. Why I shared this image, I have no clue. Source: <a href="https://www.reddit.com/r/Animemes/comments/90k63y/where_my_calculus_ois_at/">r/animemes</a></p>
+
+<p>According to the course description of MATH2007 and from what I can recall from the regular calculus course I took many years ago, sequences and series were also taught in the 
+non-honors calculus course. However, when I took the regular calculus, the topic on Taylor Series was very briefly covered (we ran out of time which made my professor sad) and 
+therefore was not tested. As regular Calc 1 did not cover sequences and series, all those convergence tests such as the comparison, geometric, and alternating tests were covered 
+in the course. This is not the case for MATH2052 because a lot of the tests were previously discussed in MATH1052, honor calc 1. More emphasis was placed in finding the 
+radius of convergence of power series and if the endpoints also converge. This was not covered at all in a regular calculus course from my memory. 
+In the regular calculus course I took, it was suffice to state a series converge or diverge for a non-power series (perhaps we worked on some power series problem but 
+I do not recall as it’s been too many years).</p>
+
+<p>One mind-breaking example in the course was seeing how a power series converges pointwise from [0,1) but does not converge uniformly on [0,1). 
+What was mind-bending was that this same function was uniformly convergent from [0,b] where b is between 0 and 1. Perhaps it was just me, but 
+the fact that b can be some arbitrary number close to 1 sounded equivalent to the upper bound of convergence being 1 non-exclusive. 
+i.e. Let b be some fixed number where $b\in (0, 1)$, the function converges uniformly on [0,b] but not on [0,1). This example took a 
+while for me to internalize and this is what honors math is like oftentimes. Even when I read over the proof, I often find that there are 
+times when it just doesn’t register in my mind as it seemed unintuitive.</p>
+
+<p>Anyhow, I digress. The course concludes with the Taylor series and its applications. When power series was first introduced, the prof 
+posed a question to the class about how a calculator would calculate $e^x$ and answers the question by saying its relation to power series. 
+I think this was a good motivation to teach about power series but it did not immediately click to me how the professor came up with 
+the series (i.e. $1 + x + \frac{x^2}{2} + \frac{x^3}{6} \frac{x^4}{24} + …$). That is where the Taylor series enters the scene. A Taylor 
+series can be seen as a special type of power series that represents some function (you can google The specific definition yourself 
+if you are curious). What is special about this section of the course is that students finally (at least explicitly) start to find 
+a power series representation (Taylor series) of common functions such as $\sin(x)$ and $e^x$ by first computing all order of derivatives 
+of the function till a pattern emerges and then determine a few terms of the Taylor series. This is when it explained how the professor 
+got the first few terms to $e^x$ from the start of the second half of the course talking about power series. But it gets more interesting 
+from here on. The question the professor first posed to the students at the beginning of the talk on power series noted that when computing 
+$e^x$, the first 5 or so terms (I don’t remember the exact numbers) were good enough as an approximation. One of my initial reactions to this 
+statement was how did the professor know this. This idea of approximation was stuck in my head because last semester in PHYS1001 - Foundation of 
+Physics 1, the course ended with talking about the motion of a pendulum. Although I cannot recall much about Simple Pendulums, I recall when working 
+on problems relating to Simple Pendulums, we took the liberty of approximating $\sin(x)$ as x with a very tiny error for small angles (i.e. less than $15^{circ}$). 
+This is exactly what was taught in MATH2052, how to derive the Taylor series and the error if only the first n terms were used to 
+approximate the function. The course also goes over other applications of Taylor series such as computing the limits when it’s in an 
+indeterminate form (i.e. $\frac{0}{0}$). One could use L’Hôpital Rule but it’s not pleasant to rely on this method in certain circumstances because 
+one would be repeating the L’Hôpital Rule multiple times before being able to compute the limit. The part I enjoyed working on 
+is manipulating a known Taylor series to obtain the Taylor series of a given function. This involves realizing when one needs to differentiate 
+or multiply a Taylor series by some function such as x or $x^2$.</p>
+
+<hr />
+
+<p><strong>Review:</strong> MATH2052 was less theoretical compared to MATH1052 but there was still way more emphasis on proofs and theory compared to my experience 
+taking a regular calculus course years ago. Despite having prior calculus knowledge, I learned a lot from the course which is exactly what I wanted 
+(or else why would I go back to University). I won’t bore you with the details as I have already written some things I learned from the course in 
+the long course description. This section of the course review will go through my thoughts on the course such as how the course was organized, and my 
+thoughts on the lecture and tutorials.</p>
+
+<p>To begin, the course could be taken fully asynchronous. Meaning that students could watch the prerecorded lectures whenever they wished to and also 
+watch the recorded tutorials if students could not attend the tutorials for whatever reason. Additionally, the quizzes and tutorials could be taken 
+anytime within a 24-hour window. The way the course was organized benefited me a lot because of changes in time schedule. I accepted a 4 month work contract 
+for the winter semester so I had to drop all my courses that conflicted with my work schedule.</p>
+
+<p>The course delivery was the same as how MATH1052 was organized. There were 3 quizzes in the course (each worth equally around 11%-12% of the 
+final grade). The quizzes were 40 mins long and can be started anytime (but finished) within the 24-hour window. Students were required to not only write 
+the quiz within 40 minutes but to also scan their solutions within the 40 minute time limit. Students are required to start the quiz 
+at the latest, 40 mins before the 24-hour mark to take full advantage of the allotted time. The quizzes were not multiple choices and were typically 2-3 questions 
+long. As the course is delivered online, all quizzes and including the exam were open book. My suggestion is to create cheat sheets so that you can quickly 
+find a theorem or example if you have a memory of a goldfish like me. Open book quizzes and exams are both a blessing and a curse. I fear that 
+I rely on my cheat sheet too much such that I may suffer a lot in the fall and winter term when the courses may not be delivered online (or if the course 
+is not open-book). I feel like a computer with little working memory (i.e. RAM) so it needs to keep fetching data from the hard drive (i.e. cheat sheets). 
+The key to open-book quizzes and exams is to be familiar with the content and what is on each cheat sheet so that you have a general understanding how 
+to approach the problem, a lingering idea on how to start answering the question, and wherein your cheat sheet to look for. Essentially, you need to be 
+familiar with the content such that without your cheat sheet, you would be able to answer the question if you were given an hour to tackle the problem 
+(obviously that’s way too slow for a quiz or exam).</p>
+
+<p>I think the quizzes were fair in difficulty but could have been slightly harder (not saying I would like that though but it would be within reasonable bounds 
+for them to do so). There were 5 assignments, each worth 6% to the final grade and these were not easy. I manage to finish all the quizzes within 1-2 days 
+but it required me to concentrate extremely hard. There are a few problems (like 1-3 questions) in the assignments where I have absolutely no clue how I 
+even came up with the solution (i.e. I understand the solution but I find it hard how I came to the answer if that makes any sense). The problem I have with 
+the assignment which in extension is an issue with the timing of the tutorial is that the bulk of the content in the assignment cannot be answered without 
+going to the tutorial first. But the tutorials were held on a Tuesday but the assignment was due 2 days after on a Thursday. Due to my day job (which finishes at 6pm), 
+I am unable to work on the assignment on the day it’s due. So I am limited to working on the assignment after I watched the recordings of the tutorial on a 
+Tuesday night and Wednesday night after I finish dinner and my chores. The difficult part of planning the course is that the assignments and tutorials are based 
+on the previous week’s content so it’s very hard to avoid this situation. Of course, I think the professor could have modified the contents of the quizzes and assignments 
+around to give students at least a full week to work on the assignment. Though I suspect the professor assumes students were working on the assignments before the 
+tutorials, I sure did not.</p>
+
+<p>As for what the lectures were like, they were just prerecorded lectures released at the beginning of each week. This worked very well with my schedule as I could 
+watch Monday’s lectures ahead of time (i.e. on Monday) and then watch the recordings of the tutorial I always missed due to work on a Tuesday. The lectures 
+were very clear and conveys the concept clearly. I have nothing to add other than Charles Starling does an excellent job and I would much rather listen to his 
+lectures than reading the textbook. The textbook for the course is the same as MATH1052 which is Elementary Analysis by Kenneth A. Ross which is not a bad 
+textbook but I personally don’t like it either (i.e. neutral feelings about the textbook). The textbook is available online via the school library for free. I opted 
+to buy the textbook since I like the feel of real paper but I probably would not have bought the textbook if MATH1052 and MATH2052 used different textbooks.</p>
+
+<p>The exam is similar to the quizzes in the sense that there was a 24-hour window to complete the exam. Unlike the quiz, the exam may have been able to be started 
+anytime within the 24-hour window and still be given the full 3 hours to write and scan the exam (though do check with your professor if for some reason MATH2052 was delivered 
+online again because things could have changed and I may have understood how the exam worked). The exam was worth 30% of the final mark which is what every exam 
+should be worth in my own opinion but I won’t get into why. The exam was quite difficult and I did not do as well as I wanted to. Similarly to MATH1052, Charles Starling 
+likes to add a bonus question to the exam for students to solve if they have time. Unfortunately, I did not even have the time to finish all the questions to my satisfaction. 
+Hence why I did not do so well on the exam (didn’t do bad either but could have been way better). I believe the exam average (if Brightspace wasn’t lying to me) was 62.55% which 
+made sense because the exam was quite difficult.</p>
+
+<p><img src="../assets/math-physics/math2052-exam-avg.png" alt="A snippet of the exam average taken from Brightspace" /></p>
+<p class="caption">A screenshot of the exam average taken from Brightspace</p>
+:ET

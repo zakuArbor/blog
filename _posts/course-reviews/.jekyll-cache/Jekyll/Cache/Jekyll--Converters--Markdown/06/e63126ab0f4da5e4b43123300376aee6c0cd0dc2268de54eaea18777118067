@@ -1,0 +1,116 @@
+I"�.<p><strong>TLDR:</strong></p>
+<ul>
+  <li>Intimidating at first when learning about fields</li>
+  <li>Easier than MATH1052</li>
+  <li>Remember Non-singularity Theorem</li>
+</ul>
+
+<hr />
+
+<p><strong>Professor:</strong>  Brandon Fodden</p>
+
+<p><strong>Course Delivery:</strong> Asynchronous lectures with sync quizzes</p>
+
+<p><strong>Class Size:</strong>  Less than 90 students</p>
+
+<p><strong>Description:</strong>  The course begins with modular arithmetic and fields before 
+teaching concepts in linear algebra such as solving linear systems, linear dependence, spanning sets, subspaces and linear transformations.
+It’s a more proof and theory based linear algebra course.</p>
+
+<hr />
+
+<p><img src="https://images-na.ssl-images-amazon.com/images/I/91qPaio+qxS.jpg" alt="Manga Guide to Linear Algebra" />
+<!-- if Amazon image link broken, use "assets/math-physics/manga-guide-physics-example.jpg"--></p>
+<div class="caption">A snippet from the Manga Guide to Linear Algebra. I never read it so I don't know how good it is.</div>
+
+<p><strong>Review:</strong></p>
+
+<p><strong>Note: The course was taken in 2021 during the pandemic so my experiences may be unique</strong></p>
+
+<p>Although the lectures are asynchronous due to the pandemic (i.e. prerecorded lectures uploaded to youtube), I found myself enjoying the lectures a lot. 
+I do not know what makes it appealing to watch his lectures but the way he expresses things makes it enjoyable. I have taken a 
+linear algebra course (at another university and it was for non-honour students or those studying Computer Science) before but a lot of the concepts 
+glossed over my head so it was fun to be able to compare and contrast between the two. Before anyone asks, there is no textbook that you need to purchase when I took the course.
+Fodden did list a few textbooks we could use as reference and they were all freely available online.</p>
+
+<p>To begin with, there’s a lot of theory and proofs in this course compared to a regular course in linear algebra. The lecture does not 
+spit out theorems and lemma without going through the proofs. In general, the emphasis on mathematical proofs is what differentiates 
+honors math (pure math) and regular math from my understanding. A proof is an argument that makes a theorem valid (i.e. to be true). 
+You cannot be sure whether some fact is true if a proof does not exist.</p>
+
+<p>The course starts with fields and modular arithmetic. Both MATH1052 - Calculus and Introductory Analysis 1 start with fields so 
+the first week or two overlap. This is where you need to rethink how you view basic arithmetic and habits that you spent in the past decade. 
+For instance, you cannot say 1 * 0 = 0 without proving this fact. In modulo 2 arithemtric (\(\mathbb{Z}_2\)), 1+1 = 0 because we are performing arithmetic in another 
+field that is not in the real (\(\mathbb{R}\)) that we are used to operating. This takes a while for students to be able to wrap their heads around because 
+we have always taken basic arithmetic for granted. I remember being exposed to fields and modulo arithmetic years back when I took an introductory course to 
+Mathematical Proofs that I almost failed (the course that first sparked my interest in doing Math and here I am now 6 years later studying Math). 
+Fret not if you struggle in the first two weeks, it’s normal. The course gets easier once you pass this section of the course and in fact, you do not 
+touch fields (in the sense of proving ‘basic’ arithemtric we take for granted) after the first few weeks since it is assumed you understand the subject enough 
+to take it for granted again. This subject is not typically taught in a linear algebra course for engineers for instance based on my previous experience.</p>
+
+<p><img src="../assets/math-physics/math-ax0-attempt.png" alt="My attempt to show a*0 = 0" /></p>
+
+<div class="caption">My attempt to show a * 0 = 0. Hopefully it's correct ...</div>
+
+<p>When learning about modulo arithmetic, we were also taught how to find the greatest common denominator (GCD) using the Euclidean Algorithm and its extension 
+the Extended Euclidean algorithm to be able to find multiplicative inverses of integers in the modulus n. The euclidean algorithm is a fast method for finding 
+the gcd of two numbers and I recall it vividly from my previous experiences with them in Highschool when I was trying to write a C program to find the gcd 
+and in university where I had to calculate the gcd of a ridiculously large number on a fill in the blank section of the exam.</p>
+
+<p><img src="../assets/math-physics/manga/mathematical-girls-prime-numbers.jpg" alt="A snippet from Mathematical Girls about prime and coprime" /></p>
+<div class="caption">A snippet from Mathematical Girls manga. Makes me want to buy the novel or the manga to see how good it is</div>
+
+<p>The next topic that is covered is complex numbers such as how to add, multiply, divide complex numbers and convert complex to other forms such as 
+rectangular (z = a + bi) to polar ($r(\cos\theta + i\sin\theta)$) and exponential form ($z = re^{i\theta}$) and finding the roots of complex numbers. 
+This unit is not hard to grasp and you will relearn this concept probably in other courses. The material covered for this unit was also covered in 
+the linear algebra course I took many years ago so I assume learning complex numbers is standard in linear algebra. Though I never understood what 
+the purpose was because we always operated in the reals in the course.</p>
+
+<p>The essence of linear algebra began after learning about complex numbers and there is a reason for this. In the course, you’ll be solving systems 
+of equations not only in the real numbers but also in the complex and modulus plane. This is why complex numbers and modulo arithmetic is taught first. 
+You need to know how to do arithmetic operations on those fields to be able to perform elementary row operations. Unlike my previous experience in linear 
+algebra, this course not only requires students to solve matrices operating in different fields but also goes through the proof of why elementary row operations 
+result in an equivalent system. This course is filled with mathematical proofs. Anything taught in this course is accompanied with a proof or at least 
+attempts to (sometimes the proof is left as an exercise or is too complex for the course).</p>
+
+<p><img src="https://pbs.twimg.com/media/DxscBpKXQAEqcd0?format=jpg&amp;name=small" alt="Komi-san spewing linear algebra" /></p>
+
+<div class="caption">A random edited image I found when googling for an image for this blog post</div>
+
+<p>Throughout the course, you’ll learn a lot of the materials in the course has a relation to the Non-singularity theorem. For instance, 
+if a square matrix is invertible, it is a non-singular matrix and this is equivalent to saying that the nullspace of a square matrix is the zero vector or that 
+the nxn square matrix’s rank is n. And this definition will be expanded in MATH2152, a course I probably won’t be taking anytime soon since I got work next semester so 
+I’ll probably be taking MATH2107 instead in the summer and take MATH2152 next winter.</p>
+
+<p>Comparing my previous experience in linear algebra (which I cannot recall so I’m looking at my notes), this course does not cover much. However, this makes 
+perfect sense if we were to consider the amount of depth the course approaches linear algebra. The course carefully constructs and builds up the material 
+by attempting to prove every single theorem and corollary. The reason why I love MATH1052 and MATH1152 is that it tries to build up from scratch the math I 
+used to take for granted. In my previous linear algebra course, it felt like I had to memorize a bunch of random facts to apply and solve problems without 
+understanding the material. My previous course in linear algebra covered a lot of material such as how to perform rotations, how to check if two vectors are 
+orthogonal to each other (something you need to know in Physics) by performing the cross product, projections, finding the determinants, diagonalization, and finding 
+the eigenvalue along with some random stuff I completely forgot it existed such as the Gram-Schmidt Algorithm (whatever that is) and the least-squares and best approximation (which sounds familiar but I have no clue what that is). 
+I forgot most of the materials after I finished writing that exam many years ago so it was nice to relearn linear algebra. One of the beauties of proofs is that if you ever start 
+questioning how a theorem can be true, you can always look at the proof and understand why and have a deeper understanding of the theorem.</p>
+
+<p>Anyhow, the course itself is not difficult as long as you put in the effort. I found the tutorials super-helpful in solving the assignment questions as they would be similar. Another great resource was attending the 
+Problem Set Session (PSS) with Kyle Harvey. I doubt I would have done as well as I have in the course (even if I did learn briefly the material before) if I have not attended the PSS weekly. It forces me to review what 
+was covered in class and fix any misunderstandings I have. I really enjoyed the PSS and it’s probably one of the main reasons why I really enjoyed MATH1052 and MATH1152.</p>
+
+<p>As for how the course was delivered, the lectures as I mentioned were uploaded on Youtube (which I cannot give the link to since it seems like Fodden doesn’t want us to share with others seeing how he unlisted his videos). But I will 
+share with you an image of his music intro that his friend made for this course which is great (uploaded without permission) below. There is one in-person tutorial section that is limited in seats so the vast majority of students 
+were in the online format which is recorded at your convenience if you choose to rewatch it or have a time conflict. The quizzes were scheduled during lecture hours (the original time slot reserved for the lectures for this course) 
+and it was 45 mins long. Students were to complete, scan, and upload their solutions on Brightspace, the e-learning module system used at Carleton within the time limit. The exam was similar in nature in the sense that students 
+were to write their solutions on paper, scan, and upload within the time limit.</p>
+
+<p><img src="../assets/math-physics/fodden-intro.png" alt="A snippet of Fodden's lecture intro" /></p>
+<div class="caption">A snippet of Fodden's lecture intro. Taken without permission. Please open a git issue to request the image to be taken down.</div>
+
+<p>While I cannot share with you the lecture videos, I could share with you <a href="https://www.youtube.com/watch?v=qXd2gFKdoW0&amp;list=PLu6jbin1VpDBUXUMi7zPS4A5D3iNTnzZF">Yully Billig’s lectures on Linear Algebra</a> 
+which covers both MATH1152 and MATH2152 materials. I’ll probably be watching some of his videos since I am going to be taking MATH2100 before taking MATH2152 (by taking MATH2107 in the summer). 
+Perhaps I’ll take MATH2152 if the quizzes have a 24 hour window like how MATH1052 did.</p>
+
+<p>For those of you in Computer Science or familiar with Computer Science theory will be in treat of some bonus lectures about Error Correcting Codes and applications to Graph theory with the little amount of linear algebra 
+taught in this course. It was indeed a great early Christmas Present as I was reminded that modulo 2 addition is equivalent to xor operation in binary which I completely forgot. Another neat thing I learned from those bonus 
+lectures is the fact that the result of multiplying an adjacency matrix by itself n times results in the number of path of length n between two verticies. This may have been something mentioned in lecture before but this was 
+very shocking to me as I didn’t know about this. Anyhow, these are just bonus lectures and are not important to the course assessment but it’s a fun lecture.</p>
+:ET

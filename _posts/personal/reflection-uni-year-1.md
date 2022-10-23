@@ -2,7 +2,7 @@
 layout: post-math
 title: A Reflection of My First Year Back in University
 description: A reflection of my first year doing another undergrad
-categories: [reflection, university, school]
+categories: [reflection, university, school, carletonu]
 ---
 
 As some may know, I have decided a while back to return to school to do another 
@@ -130,16 +130,29 @@ to solve a particular problem in the past which got me by my degree but it left 
 in Computer Science, I realized I had absolutely no understanding of Calculus and Linear Alegbra. It is one of my biggest shame i
 because I was close to getting a Math minor yet I had no clue what I was learning.
 
+Reading and writing proofs for theorems, lemmas, or for homework may be both hard to comprehend and solve but they 
+are rewarding once you understand how the proof works. One amazing reason to learn how proofs work for those who 
+do not plan to be Mathematician is that it removes any doubts you have about the theorem or lemma. I recall throughout 
+the fall and winter having a hard time understanding a theorem presented in lecture or was unconvinced it was true 
+(even though it is). Going over the proof gives me both a better understanding and confidence in the theorem 
+which makes it much more memorable. On the subject of memorable, one of the biggest criticism of Math is the 
+amount of material that you need to remember. Remembering facts, equations and steps to solve the problems are 
+often hard to do if you have a memory of a goldfish like me. Although with enough practice, you'll remember the 
+material, another trick is to see how the equation was derived. I sometimes found myself having a hard time remembering 
+formulas presented in lectures. Sometimes I associate an equation with an image or with another word such as 
+$R = Q^TA$ as OTA - "Over the Air" update. Sometimes, knowing the proof of the equation makes it easier to remember 
+which I sometimes do quickly over my head or on paper whenever I needed to recall the equation.
+
 Due to my prior experience with mathematical proofs and university math in general, the transition to pure math 
 was likely more smooth and way less painful than what my cohorts faced. Even those who have graduated with a degree 
 will likely encounter difficulty because how different pure math is compared to the regular more application based 
-math courses. But I definitely not at the level of math proffiency I would love to be and a lot of studying I 
-need to do to catch up. I feel like my math fundamentals are weak which is concerning. I do not doubt that I 
+math courses. But I definitely not at the level of math proffiency I would love to be and I require a lot of studying 
+to catch up. I feel like my math fundamentals are weak which is concerning. I do not doubt that I 
 meet the minimum expectations professors will have on me (provided they don't know I already have a degree) but 
 I desire to do better than the minimum.
 
 Due to conflicts with work in the winter, I was not able to take the honors (pure math) version of Linear Algebra 2, 
-so I instead took the regular version instead. The course is more application based with little to no emphasis on 
+so I instead took the regular version instead. The course is more application based with not much emphasis on 
 proofs. But the professor does upload some proofs of the theorems presented in class for anyone who is curious 
 and give more honors level types of questions at the end of every practice problems or in-class tutorial questions 
 to get students to think a bit more deeper. Although the lectures are pre-recorded, the intent of the course was 
@@ -150,13 +163,5 @@ On the subject of writing quizzes, tests, and exams online, it was to my surpris
 each of them were very fair considering we had access to the internet and our cheat sheets as it was an 
 open-book exam. I am grateful for this as I clearly would not have done well in the course because of 
 the lack of practice I have due to the existence of my cheat sheet.
-
-
-
-
-
-
-
-
 
 

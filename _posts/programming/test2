@@ -1,0 +1,79 @@
+============================
+DEBUGGING SYMBOLS
+============================
+Here's my two static libraries:
+libvehicle.a: car.o bike.o
+libanimal.a: cat.o goose.o
+
+I created a debug and non-debug binaries:
+```
+$ ls -s proc proc-g
+ 9 proc  17 proc-g
+```
+
+As you can see the debug version is larger in size as expected
+
+```
+$ objdump -g proc-g | grep honk
+    <5b5>   DW_AT_name        : (indirect string, offset: 0x2df): honk
+    <866>   DW_AT_name        : (indirect string, offset: 0x2da): bike_honk
+    <afc>   DW_AT_name        : (indirect string, offset: 0x2e4): car_honk
+  0x000002e0 6f6e6b00 6361725f 686f6e6b 00636172 onk.car_honk.car
+$ objdump -g proc | grep honk
+```
+As you can see there are debug information in the debug version but not in the non-debug version
+
+```
+$ ntox86_64-gdb proc --quiet
+Reading symbols from proc...Reading symbols from /mnt/hgfs/shared-2/qnx-cases/00192320-debug-sym-static/test/proc.sym...done.
+done.
+(gdb) target qnx 192.168.122.76:1234
+Remote debugging using 192.168.122.76:1234
+Remote target is little-endian
+(gdb) upload proc /tmp/proc
+(gdb) b main
+Breakpoint 1 at 0x999: file main.c, line 6.
+(gdb) r
+Starting program: /mnt/hgfs/shared-2/qnx-cases/00192320-debug-sym-static/test/proc 
+Remote: /tmp/proc
+Reading symbols from /home/juhkim/qnx710/target/qnx7/x86_64/usr/lib/ldqnx-64.so.2...Reading symbols from /home/juhkim/qnx710/target/qnx7/x86_64/usr/lib/ldqnx-64.so.2.sym...done.
+done.
+
+Breakpoint 1, main () at main.c:6
+6	    honk();
+(gdb) s
+honk () at goose.c:5
+5	    double area = PI * Square(9); //area = pi * r^2
+(gdb) l honk
+1	#include <stdio.h>
+2	#define PI 3.14
+3	#define Square(x) ((x)*(x))
+4	void honk() {
+5	    double area = PI * Square(9); //area = pi * r^2
+6	    printf("The Goose Honks the area of the circular pond: %.2f m^2\n", area);
+7	}
+8	
+(gdb) l car_honk
+1	#include <stdio.h>
+2	void car_honk() {
+3		printf("Car is honking\n");
+4	}
+```
+
+As you can see, I am still able to step into the code and also view functions from another library. For reference, this is the commands I used to compile the sample program I wrote:
+```
+qcc -g -Vgcc_ntox86_64 -c main.c -o main.o
+qcc -g -Vgcc_ntox86_64 -c cat.c -o cat.o
+qcc -g -Vgcc_ntox86_64 -c goose.c -o goose.o
+ar -rs libanimal.a cat.o goose.o
+ar: creating libanimal.a
+qcc -g -Vgcc_ntox86_64 -c bike.c -o bike.o
+qcc -g -Vgcc_ntox86_64 -c car.c -o car.o
+ar -rs libvehicle.a bike.o car.o
+ar: creating libvehicle.a
+qcc -g -Vgcc_ntox86_64 main.o -L. -lanimal -lvehicle -o proc-g
+cp proc-g proc
+objcopy --only-keep-debug proc proc.sym
+objcopy --strip-debug proc
+objcopy --add-gnu-debuglink=proc.sym proc
+```

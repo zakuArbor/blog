@@ -1,0 +1,157 @@
+I"6<p><strong>TLDR:</strong></p>
+<ul>
+  <li>Intimidating at first especially to freshman students new to the University</li>
+  <li>Prepared for a lot of Derivations</li>
+  <li>Be comfortable with Math</li>
+  <li>Labs take a lot of effort and time</li>
+  <li>Do not take Monday 8am labs</li>
+</ul>
+
+<hr />
+
+<p><strong>Professor:</strong>  Jesse Heilman</p>
+
+<p><strong>Lab Supervisor:</strong>  Igor Ivanovic</p>
+
+<p><strong>Course Delivery:</strong></p>
+<ul>
+  <li>Hybrid lectures (i.e. can join on Zoom if you cannot come)</li>
+  <li>Tutorials and labs are in-person</li>
+</ul>
+
+<p><strong>Class Size:</strong>  Less than 50 students</p>
+
+<p><strong>Description:</strong>  In this course, you will go over Classical Mechanics (also called 
+Newtonian Physics) covering topics such as kinematics, dynamics, energy, and oscillatory motion.
+This is a calculus-based course is intended for students who intend to take further courses in Physics.</p>
+
+<hr />
+
+<p><img src="https://images-na.ssl-images-amazon.com/images/I/91t60oIC+YS.jpg" alt="Manga Guide to Physics" />
+<!-- if Amazon image link broken, use "assets/math-physics/manga/manga-guide-physics-example.jpg"--></p>
+<div class="caption">A snippet from the Manga Guide to Physics</div>
+
+<p><strong>Review:</strong></p>
+
+<p><strong>Note: The course was taken in 2021 during the pandemic so my experiences may be unique</strong></p>
+
+<p>Jesse Heilman is an enthusiastic professor who loves Physics. The course is taught in a manner that attempts 
+to teach Physics from a first principle perspective as much as possible. However, with the lack of demonstrations 
+especially due to the difficulty of logistics during the pandemic, the course could not achieve the level of 
+effectiveness in taking home the concepts introduced in class (in my own opinion). If you have ever watched 
+any lectures by <a href="https://www.youtube.com/channel/UCiEHVhv0SBMpP75JbzJShqw">Walter Lewin</a>, you will know what I mean.</p>
+
+<p><img src="https://live.staticflickr.com/3518/5734080882_75980d4735_b.jpg" alt="A photo of Lewin performing an experiment" /></p>
+
+<p>The course can be intimidating at the beginning. Especially to those who just came out of Highschool or those who have not touched math in years.
+The course begins with reviewing all the math you will need for the course introducing a bit more advanced topics of calculus that most students 
+will never have touched in the course i.e. Integration. Integration can be thought of as finding the area under a curve and is not taught in most 
+Highschools and is not touched much in your first course in calculus. At most, you may learn integration at the end of the course by introducing it as 
+anti-derivative.</p>
+
+\[\int (5x^2+2x)dx = \frac{5x^3}{3}+x^2+C\]
+
+<div class="caption">An example what an integral looks like</div>
+
+<p>Calculus is an important subject to understand to be able to derive all sorts of equations in Physics. Math is the language of science, it can explain 
+and describe concisely the phenomena around us. So if you plan to take this course, it would be a good idea to be comfortable with math. You do not need 
+to be an expert in calculus but just be familiar with the basics.</p>
+
+<p><img src="https://imgs.xkcd.com/comics/purity.png" alt="An XKCD Comic on the purity of differnet fields/major" /></p>
+
+<p>The lectures spend a lot of time deriving the equations which can be very confusing at times to follow along. Do not fret because you will not be 
+expected to derive most of the formulas. But it’s good to be exposed to the derivations and have a general idea of how the derivations work. There are times 
+when you do need to do some of the derivations that can be quite complicated but you have the course notes and textbook to guide you through the derivations. However, you must 
+understand the kinematic ladder at the very least. The kinematic ladder is a term used in the course to describe the relationship between the object’s position, velocity, and acceleration. 
+You may have already been exposed to this in Highschool where you needed to analyze some graph such as position or the velocity graph and you must figure out how the acceleration curve will look like. 
+When I took Highschool Physics over 6 years ago (I’m quite old), 
+I recall learning the relationship between position velocity, and acceleration including how integrals fit into the puzzle (except we were not expected to be able to do integrals).</p>
+
+<p><img src="../assets/math-physics/manga/physics-manga-1.png" alt="Two science students solving angular velocity while riding a Merry-Go-Around" /></p>
+<div class="caption">A snippet from a manga about two STEM students trying to prove they love each other</div>
+
+<p>The only criticism I have with the lectures is the lack of example problems. But I am still struggling to think of a way to restructure the course because there really is not much time to go through problems 
+aside from the assignments. The lectures focus more on proofs and I cannot criticize this approach because the course is meant for future physicists and not engineers. Having some exposure to Physics at the university level years ago 
+in another university, physics for non-physicists typically do not go through the derivations but are just simply given the equations to use. 
+But this course is for Physicists so it is crucial for students to have an understanding of where the equations came from.</p>
+
+<p>The course contained 11 assignments and the best 10/11 assignments were considered to the student’s final marks (this was not originally the case). The assignments are very difficult so you should start a few days before the deadline. 
+Despite having done physics before, I completely wiped what I learned from the course and so I struggled a lot, in the beginning, trying to recall what I learned from Highschool and university. The difficulty of the assignments was 
+easier than the ones I’ve done before so it’s quite embarrassing how many hours I spent solving the assignments (the assignments I’ve done at another physics course were very hard because it was designed to be worked in groups). 
+But I am glad to have taken PHYS1001 because I feel more knowledgeable in the subject despite being weaker at solving physics problems compared to before. The difficulty with Physics problem is actually knowing how to start the 
+question. There are a lot more things to consider when solving Physics compared to other subjects I’ve taken and I often find it hard to understand what the problem is stating.</p>
+
+<p><img src="../assets/math-physics/manga/math-confused.png" alt="Girl lost in how to solve the problem" /></p>
+<div class="caption">A snippet from a manga where Hina (the protagonist) being completely lost solving some math problems</div>
+
+<p>A science course (at least at the introductory level) is not complete without the lab component. If you know about me, I really hate labs. That is the main reason why I avoided Engineering and Science for many years and ran off 
+to study Computer Science at a University even though I never applied to study Computer Science (i.e. alternative offer). Despite my hatred of science labs, the labs ran a lot more smoothly than I expected. The lab supervisor Igor and the TA 
+Meaghen was super-helpful and encouraging. I ended up needing a lot of assistance throughout the entire lab and they (along with the lab technician) were there to help me and guide me through the labs. I think it also helps that 
+the lab section was very small (at the end of the course, my lab section had 7-8 students). Writing lab reports are time-consuming so be prepared for your entire weekend to be gone. 
+You are given a week to write the lab report (i.e. 7 days after performing the lab). Perhaps it’s just me but I spend a super long time 
+writing lab reports and I like to delve into the derivations of the equations I will be using for the calculations along with talking about the concepts covered in the lab. I learn a lot from writing the lab reports, going through the 
+derivations covered in lecture (or covered in the next lecture if I am unlucky) and reading the textbook along with other resources to understand the concepts and the equations. One useful tool to learn when writing lab reports 
+is to learn how to use Tex. Tex (or LaTex) is a typesetting system commonly used by academics in the sciences and math. It makes writing math and papers easy with all the customization you can apply to your documents. Check out my 
+<a href="../lab-tex">post for some tips on how I write my lab reports</a>.</p>
+
+<p><img src="../assets/math-physics/tex-anime1.png" alt="An image of a person writing tex from an anime" /></p>
+
+<div class="caption">A snippet from a manga of a person writing Tex</div>
+
+<p><img src="../assets/math-physics/tex-example.png" alt="An example of the quadratic formula derivation" /></p>
+
+<div class="caption">An example of using Tex</div>
+
+<p><img src="../assets/math-physics/phys1001-appa-example.jpg" alt="An example of how the lab looks like" /></p>
+
+<div class="caption">An example of how a lab station looks like</div>
+
+<p>The major complaint I have with the lab is the prelab. Before starting any labs, you must first complete the prelab. Perhaps it’s how the course is structured but sometimes we would not have learned about a particular topic yet in lecture 
+so I would have to google and read ahead in the textbook to figure out how to solve the problems. While there’s a philosophy that reverse-classroom style is a more effective way to teach students, it sure was annoying to learn the 
+concepts before learning them in class (recall that I recall almost nothing from my previous physics experiences). Nor was the course advertised as such. Another complaint I have is how the quizzes operate. Tutorials are held 
+typically every other week (i.e. a week after the labs) and right after the tutorial, a quiz will be held. The topics in the quiz typically cover what was taught during the tutorials so it’s a good idea to pay very close attention 
+to the tutorials and to have read through the tutorial problems before heading to the tutorial. I did not do well in the quizzes. The great thing about the quizzes is that the lowest quiz is dropped (i.e. best 4 out of 5 are counted).</p>
+
+<p>One thing you need to take away from this review is to avoid taking the first available lab time slot (i.e. Monday 8am). Not only is it so early, but you are the guinea pig (at least that is how people described it to me). Although I was in the afternoon labs (which ran smoothly), 
+it does not seem like the people in the morning labs like their time. Though it’s probably because it’s early in the morning. The issue with choosing Monday as your lab section is that you have your weekly Physics assignment due on 
+the same day. Having a lab report and tutorial to prepare for along with a physics assignment (and the occasional calculus quiz on the same day) can be quite hectic to juggle. Technically, if you are in the later sections, you can 
+benefit from those who are in the earlier sections by knowing what to prepare for such as tips on how to approach your lab reports or how to perform the lab. I don’t recall ever seeing people talking about the content of the quiz 
+(probably because it gives too much advantage to other sections) so students in the later section probably didn’t benefit on the quiz. Though I assume the prof and Igor could tell by looking at the average mark for each section.</p>
+
+<p>Due to the pandemic, the exam was held online and was open-book. There were no multiple choice questions and students were to scan their answers per question rather than writing the entire exam and then uploading one big file. While I 
+won’t disclose what was on the exam, I was quite surprised by some of the questions as I would never think of them ever appearing on the exam. The exam was easier than I initially thought because I was expecting the problems to be 
+of the same difficulty as the homework which was unrealistic. The homework takes me hours to do so it would be unreasonable to expect those types of questions to appear on the exam.</p>
+
+<p>Overall, I thought the professors, TA and lab supervisor has done a good job and 
+the course went better than I thought after I felt overwhelmed with the courseload. 
+Though taking physics and chemistry made me realize, sciences takes a lot of time commitment due to the fact there is a lab component.</p>
+
+<hr />
+
+<h2 id="faq">FAQ</h2>
+
+<p><strong>Do I need webassign?</strong></p>
+<ul>
+  <li>If it’s not on the syllabus, ask the professor. When I took the course, webassign was not needed</li>
+  <li>If you bought the textbook with webassign and cannot refund the item, open a ticket with Cengage to see if you can at least get the digital textbook - That is what I did</li>
+</ul>
+
+<p><strong>Do I need lab coats?</strong></p>
+<ul>
+  <li>No you do not need a lab count for this course. The course does not deal with any chemicals.</li>
+</ul>
+
+<p><strong>Do I need to buy the lab notebook?</strong></p>
+<ul>
+  <li>I bought it since it was in the course instruction but we never used it. Ask the lab supervisor if you need it.</li>
+</ul>
+
+<p><strong>How much Calculus is used in the Course?</strong></p>
+<ul>
+  <li>Simple derivatives and integration knowledge is required to understand the lectures and assignments.</li>
+  <li>In addition, to derive the formula for the uncertainty of 
+various calculations, partial derivatives are required (it’s not too difficult to do but it’s a huge pain to derive the uncertainty so it’s sometimes counted as bonus marks).</li>
+  <li>If you are not familiar with integration, you can learn on your own time while taking the course since 
+you only need to know the basics.</li>
+</ul>
+:ET
