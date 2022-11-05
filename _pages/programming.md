@@ -21,6 +21,8 @@ A random blog discussing various topics in Computer Science and Programming that
 * [A look at Double Pointers](../double-pointers)
 * [Another Look at CONST in C](../c-const)
 * [A Look at Input Buffer and Scanf](../a-look-at-input-buffer-using-scanf)
+* [Debugging Symbols - A Basic Look at Separating Debug Symbols](../debugging-symbols)
+* [recvfrom - Obtaining the Return Address](../recvfrom-ret-addr)
 
 ## Highlevel Overview of Topics
 
@@ -58,6 +60,9 @@ A random blog discussing various topics in Computer Science and Programming that
 * [Random Thoughts about Tee](../random-thoughts-about-tee)
 * [Github App Limiation: Not All Refs Are Readable Error](../github-app-limitation-not-all-refs-are-readable-error)
 * [Github Apps on GHE: Your Private Key is not Correct](../github-apps-on-ghe-your-private-key-is-not-correct)
+* [Testing GithubPages Repo and Directory Conflict Resolution](../github-pages-behavior)
+* [Shellbang Character limit](../shellbang-char-limit/)
+* [How to Check if an Application is PAM-Aware](../pam-aware)
 
 
 
