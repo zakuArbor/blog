@@ -10,9 +10,9 @@ With no plans in mind, I'll be venturing into Math at some random Canadian Unive
 My background is in Computer Science and I am particularly interested in reading and learning about Systems Programming (though I am quite lacking in experience and knowledge). 
 More specifically, I want to delve into Operating Systems and Embedded Programming since it looks like it'll be interesting. I initially got into computers after being introduced to 
 HTML during middle school by a friend who told me that websites could be created through notepad. Since then, I fiddled with various languages throughout Highschool and ended up studying 
-Computer Science at a Canadian University. After graduation, I worked at a software firm for a year before deciding to study Math and Physics at another random Canadian University.
+Computer Science at a Canadian University. After graduation, I worked at a software firm for a year before deciding to study Math at another random Canadian University.
 
-[Resume PDF Copy for internet stalkers](../assets/pdf/resume.pdf)
+[Copy of my CV for internet stalkers](../assets/pdf/cv.pdf) (Just fluff and not an actual academic CV)
 
 <strong>Disclaimer:</strong> Any opinions expressed in the blog are my own and do not reflect any of my previous, current, nor potential employers and are not affliated with any organizations 
 I may be involved whether directly or indirectly.
