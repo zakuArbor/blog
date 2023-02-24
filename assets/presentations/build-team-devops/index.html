@@ -1,0 +1,1000 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Build DevOps</title>
+
+	<meta name="description" content="Build Education - Generic Build Process">
+	<meta name="author" content="Ju Hong Kim">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	<style>
+		/* Three image containers (use 25% for four, and 50% for two, etc) */
+		.col {
+			float: left;
+			width: 45%;
+			padding: 5px;
+			padding-top: 0px;
+		}
+
+		/* Clear floats after image containers */
+		.row::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+
+		ul {
+			font-size: 33px;
+		}
+
+		section {
+			width: 120%;
+		}
+
+		.reveal blockquote {
+			width: 100%;
+			font-size: 35px;
+		}
+
+		.list-image-side ul {
+			font-size: 35px;
+			width: 80%;
+			margin: 0;
+			margin-left: -400px;
+		}
+
+		.list-image-side img {
+			position: absolute;
+			width: 300px;
+			float: right;
+			top: 30%;
+			right: 70px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<h2>An Overview of Builds and DevOps</h2>
+				<p>From a Semi-Outside Perspective</p>
+			</section>
+			<section>
+				<h2>What is a Build</h2>
+				<blockquote style="font-size: 20px;">The process of converting source code into an executable file
+				</blockquote>
+				<img
+					src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/highlevel-build.png" />
+				<div class="row">
+					<div class="col">
+						<img
+							src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/eclipse-build.png" />
+					</div>
+					<div class="col">
+						<img
+							src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/gcc-build.png" />
+					</div>
+					<aside class="notes">
+						Before we talk about what a Build team is, we first need to go to the basic question: what is a
+						build?
+
+						All of us have build our code before whether it be pressing the play button on our IDE or
+						compile
+						our code through the terminal
+
+						Build is the process of converting source code into an executable such as a exe file on Windows
+					</aside>
+			</section>
+			<section>
+				<h3>Build Process Can Be Complex</h3>
+				<img
+					src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/highlevel-build2.png" />
+				<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Preprocessor.png" />
+				<p>Stay Tuned for the Next Video</p>
+				<aside class="notes">
+					But what does this actually do? Well it’s a lot more complex than most people imagine it to be.
+					There are a whole lots of steps during the build process. However, I won’t be explaining the
+					overview of what the build process are today. That’ll be for another video.
+				</aside>
+			</section>
+			<section>
+				<h2>Build Tools</h2>
+				<ul>
+					<li>Automates Build Process</li>
+					<li>Can do more than build (i.e. automated tests and generate documents)</li>
+					<li><b>Examples:</b> Ant, Make, cMake, Maven, Gradle</li>
+					<img
+						src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/build_tools.png" />
+				</ul>
+				<aside class="notes">
+					To build our code, we typically utilize automation tools to do the build process for us. Build tools
+					can do more than just building code such as automating tests, generate documentations such as
+					running Doxygen or Javadocs.
+
+					Some typical Build tools you may have heard or seen before are Maven, Gradle, Ant, Cmake, and Make
+					where the tools on the left (Maven, Gradle, and Ant) are typically seen in Java applications and
+					Cmake and Make are used in C and C++ applications
+				</aside>
+			</section>
+			<section>
+				<h2>Motivation</h3>
+					<ul>
+						<li>Tedious to type</li>
+					</ul><br />
+					<pre><code class="shell" data-trim data-noescape>gcc parser.c symbol_table.c assembler.c -o assembler</code></pre>
+
+					<ul>
+						<li>instead, create a shell script so you can just type <b>./build</b></li>
+						<li>But when project becomes large, a simple shell script isn't suffice</li>
+					</ul>
+					<aside class="notes">
+						A build tool helps save time by avoiding all that typing on the terminal. Especially if you are
+						like me who likes to compile and run my code frequently making one or two line change, typing
+						all that is very tedious.
+
+						Before I learned about Makefiles, I used to write a simple shell script that would compile my
+						code for me, especially since the computers I touched didn’t have the graphical IDE installed.
+
+						But when projects becomes large, a simple shell script isn’t suffice. Makefiles gives you
+						control on how you want to compile such as building with debug or with profiling on. Profiling
+						for those of you not familiar, is gathering data about your program to figure out areas where
+						you can optimize your code.
+					</aside>
+			</section>
+			<section style="width: 140%; height: 90%;">
+				<pre stlye="margin: 0"><small><code class="make">%FILE: Makefile
+					all: myprog.c
+						gcc -g -Wall -o myprog myprog.c
+					clean:
+						$(RM) myprog
+				</code></small></pre>
+				<div class="row" style="margin: -30px">
+					<div class="col">
+						<img
+							src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/makefile-proxyauth.png" />
+					</div>
+					<div class="col">
+						<img
+							src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/makefile-diablo.png" />
+					</div>
+					<aside class="notes">
+						Here are some examples of Makefiles. Hopefully it’s not too small. On the top left corner is a
+						very simple makefile where all it does is compile a single file when you type “make” on the
+						terminal. And if you write “make clean” on the terminal, it’ll delete the executable file it
+						generated.
+
+						Normally when working on larger projects, you have a lot more dependencies and files to compile,
+						such as the other two makefiles on the screen. On the left if a random makefile I wrote a while
+						back that creates 3 files: a program that runs in the background, a shared library for the
+						computer’s authentication system to use and a test program
+
+						On the right is the makefile for the game Diablo
+					</aside>
+			</section>
+			<section>
+				<h2>What Does a Build Team Do?</h2>
+				<ul>
+					<small style="font-size: 30px;">
+						<li>Ambiguous and differs depending organization and even within the team</li>
+						<li>Generally:</li>
+						<ul>
+							<li>Monitor CI & Nightly Builds</li>
+							<li>Maintain build and infrastructure tools and environments</li>
+							<ul>
+								<li>i.e. write and maintain automation tools and ensure machines are healthy</li>
+							</ul>
+							<li>Responsible for building entire project for all supported hardware and platforms</li>
+							<li>Run some tests and track down errors</li>
+							<li>Build Verification Test (BVT)/Smoke Tests: a subset of tests that verify main/critical
+								functionalities to ensure the build is not corrupted or bad</li>
+						</ul>
+					</small>
+				</ul>
+				<aside class="notes">
+					The exact tasks and responsibilities are quite ambiguous and does differ depending on the
+					organization and even within the team. This means your tasks can differ from your coworker.
+
+					Generally, Builders are responsible to maintain build and infrastructure tools and environment.
+					Writing and improving automation tools and ensure the machines we use to build code are healthy.
+
+					Builders are responsible for building the entire project for all supported platforms, run some
+					tests, and track down errors.
+				</aside>
+			</section>
+			<section style="width: 120%;">
+				<h2>Reason For Formation</h2>
+				<ul style="font-size: 35px; width:80%; margin:0; margin-left:-400px">
+					<li>Out of <b><u>necessity</u></b> and <b><u>frustration</u></b></li>
+					<li>Build systems quickly became complex, large and unmanageable</li>
+					<li>Builds for big projects can take hours</li>
+					<ul>
+						<li>i.e. some builds at Microsoft can take up to 6 hours</li>
+						<li>At [redacted], builds can range from 30mins to 24 hours</li>
+					</ul>
+					<li>Found at many large companies: <small>Microsoft, Google,
+							IBM, Facebook, Netflix, Mozilla, LinkedIn, Gnome,
+							Eclipse, Qualcomm*, VMWare*</small></li>
+					<li>Can be within some devOps Team</li>
+				</ul>
+				<img src="https://imgs.xkcd.com/comics/compiling.png"
+					style="position: absolute;width: 300px;float:right; top: 30%;right: 70px;" />
+				<aside class="notes">
+					why does the Build Team exist? Before I entered the team as an intern, it never made sense to me why
+					there would be a team dedicated to builds. You just click the play button or type make. That’s
+					nothing complex.
+
+					However, after reading a paper about Build teams and working on the builds was when I realized that
+					there’s more than just running the play button.
+
+					Build teams were formed out of necessity and frustration. Build systems quickly became complex,
+					large, and unmanageable for developers to work on.
+
+					Builds can also take a long time to finish. All the projects I worked on from Highschool to
+					University, I never had my builds take more than a second or two to finish unless I was working on
+					some react app which sometimes took half a minute to finish. But in bigger projects, it is not rare
+					for builds to take a few hours. [read from slides]
+
+					After entering the build team did I finally understand the comic.
+				</aside>
+			</section>
+			<section>
+				<h2>Cost of Build Failures</h2>
+				<ul>
+					<li>Builds take hours to finish</li>
+					<li>Lots of idling time for developers</li>
+					<li>Lots of idling time → delay in development → if build breaks</li>
+					<li>Build failures → more delays & <b><u>uncertainty</u></b> of new code and tests</li>
+					<img src="https://media.makeameme.org/created/if-everything-could-ttc37t.jpg" width="500px" />
+				</ul>
+				<aside class="notes">
+					When builds take forever to complete, there’s a lot of idling time for developers who are waiting to
+					see if there is any issues with their code changes. These delays can cause deadlines to extend and
+					if a build breaks, it causes even more delays and introduces uncertainty to the state of the project
+					when compilation and tests fails.
+
+					As more code changes are made, it gets even more difficult to figure out who broke the build.
+					Therefore, a code freeze can occur where all developers halt their work to resolve the issues in the
+					code base.
+				</aside>
+			</section>
+			<section>
+				<h2></h2>
+				<blockquote>“One industry survey [1] found that developers perceived an average <u>productivity loss of
+						12%</u>
+					due to build problems, although some of the respondents felt that <u>20%–30% was not uncommon.</u>”
+					<br /><b>-
+						Software Build Systems: Principles and Experiences -</b>
+				</blockquote>
+				<blockquote>An unreliable, failure-prone build process is analogous to an irregular organizational
+					heartbeat <b><br />– Understanding and Improving Software Build System -</b></blockquote>
+
+				<aside class="notes">
+					Builds and infrastructure as a whole are considered the heartbeat of development. If the
+					infrastructure or builds are unreliable and break often, then it’s unlikely for the project to meet
+					its targeted deadlines.
+				</aside>
+			</section>
+			<section>
+				<h2>
+					Types of Builds
+				</h2>
+				<p>Nightly and CI</p>
+				<aside class="notes">
+
+				</aside>
+			</section>
+			<section class="list-image-side">
+				<h2>Nightly</h2>
+				<ul>
+					<li><b>Nightly - </b> a build that is performed at the end of the day</li>
+					<li>Also called daily build</li>
+					<li>can contain extensive testing and build coverage, produce image/installer/executable</li>
+					<li>Runs on neutral environment i.e. Build Machines</li>
+					<center><img
+							src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/firefox-nightly.png"
+							width="400px" style="right:-10px" /></center>
+				</ul>
+				<aside class="notes">
+					Nightly builds refer to builds that occur at the end of the day.
+
+					Typically the idea of a nightly build is to build all the changes at the end of the day when no one
+					is at the office and is checked up first thing in the morning.
+
+					Here’s an example of a nightly build. Firefox releases their nightly builds to the public if the
+					builds are clean and is downloadable if you which to help Firefox test the builds.
+				</aside>
+			</section>
+			<section>
+				<h2>CI Builds</h2>
+				<ul>
+					<li>Continuous Integrated Builds merging developer's code several times a day</li>
+					<li><b>Idea:</b> build frequently → catch breaks and bugs faster</li>
+				</ul>
+				<aside class="notes">
+					CI builds are builds that are built a few times a day. The idea is to build frequently to catch
+					breaks and bugs faster when they are more manageable.
+
+					The number of times builds are built varies from teams and organizations but the trend is to build
+					for every changes merged to the main development branch.
+				</aside>
+			</section>
+			<section>
+				<img
+					src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/ci-examples.png" />
+
+				<aside class="notes">
+					Here’s an example of a CI Build that is triggered for each PR that is opened. Once the pipeline is
+					clean, the PR is unlocked for merge.
+				</aside>
+			</section>
+			<section style="width: 80%">
+				<h2>Neutral Environment</h2>
+				<ul>
+					<li>An environment not used for development</li>
+					<li>No developer tools installed nor any previously built files</li>
+					<li>Ensures build consistency</li>
+				</ul>
+				<img style="float:right; margin-right:-400px; margin-top: 10px; width: 400px"
+					src="https://external-preview.redd.it/aR6WdUcsrEgld5xUlglgKX_0sC_NlryCPTXIHk5qdu8.jpg?auto=webp&s=5fe64dd318eec71711d87805d43def2765dd83cd" />
+				<img style="float:left; width: 400px"
+					src="https://media.makeameme.org/created/works-on-my-069a992b9c.jpg" />
+				<aside class="notes">
+					Nightly builds are built on neutral environment which is an environment not used for development.
+					This is key because you want to build in an environment that does not contain any developer tools or
+					any other files previously built that could hide any real issues if the build was to be used for
+					production.
+
+					A neutral build ensures consistency and avoids the argument “it works on my machine” statement.
+				</aside>
+			</section>
+			<section>
+				<h2>Goals of a Build System</h2>
+				<b><u>Repeatable:</u></b> Project is built exactly the same way <b><u>regardless</u></b> of
+				<b><u>who</u></b> and <b><u>where</u></b> it was built
+				<aside class="notes">
+
+				</aside>
+			</section>
+			<section>
+				<h2>Findings From Microsoft On Build Teams</h2>
+				<img
+					src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/build-paper.png" />
+				<aside class="notes">
+					When I first came to the Build team as an intern like the new hires today, I had absolutely no clue
+					what the Build team was. I knew the existence from my interview but I was expecting to join
+					regression or install and the job offer never mentioned anything about what my role would be.
+
+					During my search to understand what the Build team is about in my first week in my first paid
+					internship, I came across a
+					paper from Microsoft that analyzed build teams across various departments. This paper is the best
+					source I could find about the Build team and I will present you some of the findings from the paper.
+					I hope the information presented to you does not discourage you and give you an understanding about
+					your role at your organization. Please note that these are the findings from Microsoft and will differ from other
+					companies on
+					certain areas.
+				</aside>
+			</section>
+			<section>
+				<h2>Role Ambiguity</h2>
+				<ul>
+					<li>Role emerged and molded to fit changing needs</li>
+					<li>Hard to define as differs from organization and differ from the other within the team</li>
+					<li>Tasks overlap other teams</li>
+				</ul>
+				<img src="https://imgs.xkcd.com/comics/tools.png" />
+				<aside class="notes">
+					The first findings from the paper is how ambiguous the role is. Since Build teams emerged and molded
+					to fit the organization needs, the exact roles and responsibilities were not properly established.
+
+					The role and responsibility of builders varies from different product groups and also from within
+					the team. A lot of the tasks builders work on overlap other teams.
+
+					To this day, I still have trouble explaining to others what I do, especially to those who are not
+					within the software industry.
+				</aside>
+			</section>
+			<section>
+				<h2></h2>
+				<blockquote>For example, coordinating code flow (i.e., source code integra-tions) between teams is a
+					project management task; maintaining a build system a development task; and testing falls in the
+					domain of quality assurance.</blockquote>
+
+				<aside class="notes">
+
+				</aside>
+			</section>
+			<section>
+				<h2>Described As</h2>
+				<ul>
+					<li>“Generalist”</li>
+					<li>Jack of All Trades</li>
+				</ul>
+				<blockquote>can be abused, especially on smaller teams” (P2), where builders will likely to do a variety
+					of tasks outside of the build-space </blockquote>
+				<aside class="notes">
+					Due to the overlap in tasks with other teams and the ambiguity of the job itself, builders were
+					described as generalist and jack of all trades. Which is both a good and bad thing. If you have a
+					broad knowledge of things, you will never be able to do one thing very well.
+
+					Another issue is that builders noted that they felt taken advantage of because developers and other
+					teams do not understand the role of builders very well. It’s due to misunderstanding, lack of
+					communication and the ambiguity of the job that the builders and other teams seem to be at odds with
+					each other.
+				</aside>
+			</section>
+			<section>
+				<h2>Generalized Tasks Attempt</h2>
+				<img
+					src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/build-ms-survey.png" />
+				<aside class="notes">
+					Here are some tasks the authors compiled after surveying multiple builders in attempt to define the
+					role of builders from various product group.
+
+					I think this list is a good start to understanding what a typical builder does. For instance, build
+					operators monitor the build process and manage the build failures by figuring out who broke the
+					builds and work with them to have a fix delivered at a timely manner.
+
+					You’ll also have some opportunities to develop or improve automation tools once you get enough
+					experience handling the builds.
+				</aside>
+			</section>
+			<section>
+				<h2>Job Satisfaction</h2>
+				<ul>
+					<li>Due to Job ambiguity, satisfaction was low</li>
+					<li>Some builders go to management or back to development</li>
+					<li>Dissatisfy due to difficulty in quantifying contributions</li>
+					<li>Some worries about retention</li>
+				</ul>
+				<aside class="notes">
+					Builders were found to not be very satisfied with their work which raised concerns about retention.
+					On a positive note, the authors did not find job satisfaction impacting performance which is
+					opposite of expectations.
+
+					However, due to job ambiguity, builders may go to management or back to development because not only
+					are they dissatisfied with their work, they felt very under-appreciated and they also found it hard
+					to quantify their impact to the product itself. </aside>
+			</section>
+			<section>
+				<h2>Intragroup Knowledge Sharing</h2>
+				<ul>
+					<li>Knowledge transfer is slow</li>
+					<li><b><u>Tribal Knowledge</u></b> - undocumented build experiences</li>
+					<ul>
+						<li>Was found to be one of the most useful and frequently used source of knowledge</li>
+					</ul>
+					<li>Due to complexity and size, takes a while to start working</li>
+				</ul>
+				<blockquote>new build team members need “about three months of experience before they can confidently
+					manage the build process on their own
+				</blockquote>
+
+				<aside class="notes">
+					One of the concerns the authors raised was intragroup knowledge sharing (i.e. information sharing
+					within the team). This is an issue also at the company I worked at. Knowledge transfer in build team
+					is slow. Some interviews I had with other companies about development roles, I typically found that
+					most companies tell me that they expect new hires to start contributing within 2-4 weeks of the job.
+					The same is true at Microsoft, where one senior builder noting that it’ll take about 3 months before
+					builders can confidently manage the builds.
+
+					The reason for this pace is due to the complexity and size of the build system that it takes a while
+					to start working.
+
+					One thing I like about the paper is the use of the word “tribal knowledge”. Tribal knowledge is
+					referred as the undocumented build experience which is found to be one of the most useful and
+					frequently used source of knowledge.
+				</aside>
+			</section>
+			<section>
+				<h2>Knowledge Gap</h2><small>from my interpretation</small>
+				<ul>
+					<li>automation makes build process a <u>black box</u></li>
+					<li>If senior builder leaves, a huge loss to the team (from my interpretation)</li>
+				</ul>
+				<blockquote>“As awesome as automation is, it isolates the builder from the easy tasks that help them
+					understand the build process...when the senior builder moves on and the difficult tasks break, the
+					rookie is at a huge disadvantage while they try to gain tribal knowledge.”</blockquote>
+				<aside class="notes">
+					From reading the paper and relating it to my own experience, I find that there may be a huge
+					knowledge gap between new hires and senior builders.
+
+					There’s many reasons for the knowledge gap to be large. It’s a mix of documentation and the sheer
+					size of the build automation system as well. There’s only so much you can learn and if we were to
+					tell you everything there is, you’ll probably forget about it or would affect your understanding of
+					the builds itself. The best way to learn is to work on it yourself but the need for a lot of the
+					tasks doesn’t come up often. In addition, there’s a lot of things we don’t know.
+
+					The paper stresses to avoid making the build process as a black box which doesn’t help when you
+					automate and abstract the build process.
+
+					Even if there are documentation for every task, you have to be aware of the task, where to find
+					them, and try to understand them which may be hard to do.
+				</aside>
+			</section>
+			<section>
+				<h2>Sources of Info</h2>
+				<img
+					src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/build-ms-info-src.png" />
+				<p>Email, conversations, and Slack at [redacted] are quite often used source of information. Interesting
+					to see it’s not the case for Microsoft Build Teams</p>
+				<aside class="notes">
+					Here are some sources builders use to aid them in their work and debugging builds. Build and
+					automation logs are extremely important source of information. So it is obvious that the information
+					is the most useful and frequently used source.
+
+					The next most common source of information is tribal knowledge. This makes sense because senior
+					builders are more experienced and probably aware of where to look and how to fix them quickly.
+
+					Looking at code changes between different levels/builds and looking at slack conversations are
+					commonly used at the organization I worked at as well.
+
+					Knowledge sharing is a great concern for us and we wish to make new hire experience and full time
+					employees better and tackle this issue by encouraging more documentation, communication and holding
+					knowledge sharing sessions throughout the year. Though the progress has been quite slow...
+				</aside>
+			</section>
+			<section>
+				<h2>Platforms</h2>
+				<ul>
+					<li><b><u>recall:</u></b> “Responsible for building entire project for all supported hardware and
+						platforms”</li>
+					<li><b><u>Platform:</u></b> the targeted software and/or hardware where the program is run</li>
+					<ul>
+						<li>Customers use different OS and Hardware </li>
+						<li><b><u>Hardware:</u></b> 32 bit v.s 64 bit, x86 v.s. PowerPC v.s. ARM v.s. SPARC, little
+							endian v.s Big Endian, etc</li>
+						<li><b><u>Software</u></b> operating system such as Windows v.s. Linux v.s. Mac</li>
+						<ul>
+							<li>Can be browsers as well: Internet Explorer v.s. Firefox v.s. Chrome </li>
+							<li>i.e. “For best experience, please use Firefox or Chrome”</li>
+						</ul>
+					</ul>
+				</ul>
+				<img src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/ie.png" />
+				<aside class="notes">
+					Recall how I said builders are responsible for ensuring the builds are clean for various support
+					platforms. I want to expand on this topic a bit.
+
+					<read definition and slides>
+
+						For instance, you may see your banker utilize internet explorer still even though it’s not great
+						and so out of date. Of course, banks pay for extended and special support for them. All their
+						applications for internal use are built to work on internet explorer.
+				</aside>
+			</section>
+			<section>
+				<h2></h2>
+				<img
+					src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/csgo-windows.png" />
+				<img
+					src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/csgo-linux.png" />
+				<aside class="notes">
+					You probably know that Windows is the best OS for desktop gaming and if you are a Mac or Linux user,
+					you may have trouble trying to play games on your laptop. Many game companies don’t focus on other
+					operating systems and build only for Windows. Though the trend has been changing.
+
+					On this slide you can see that all 3 major OS are supported. If you look at the details, you’ll
+					notice the hardware and software requirements differ. For instance, Windows requires you to have
+					DirectX downloaded but on Linux you need OpenGL and OpenAL. DirectX is the graphics library commonly
+					used on Windows game development and only exists on the Windows platform. The reason why I wanted to
+					talk about this is to understand that builders need to support various platforms and a code change
+					for Windows may break other platforms because the function may not be defined for another OS or
+					behave differently.
+				</aside>
+			</section>
+			<section>
+				<h2>Linux Kernel</h2>
+				<img height="450px"
+					src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/debian-arch-list.png" />
+				<small><b>Fun fact:</b> amd64 does not mean we run on AMD chips
+					It’s called amd64 due to the fact AMD released the 64 bit specifications for the x86 first</small>
+				<aside class="notes">
+					The Linux kernel supports many architectures and it’s also why it is a popular OS aside from being
+					open source. Some of these architectures should be familiar with the team such as …
+				</aside>
+			</section>
+			<section>
+				<h2>Data Types on Windows v.s Linux On Same CPU</h2>
+				<aside class="notes">
+
+				</aside>
+			</section>
+			<section data-background-size="95%"
+				data-background-image="https://raw.githubusercontent.com/zakuArbor/blog/1a36a44b96f88aa00b0fc17ece4c1b7e1b658bb8/assets/programming/builds/windows-linux-longint.gif">
+				<h2></h2>
+
+				<aside class="notes">
+					His an example of the difference between Windows and Linux in representing the data size of a long
+					int. Windows represent long int with 4 Bytes causing any large value that would run on Linux
+					perfectly fine to overflow and become a negative number. The compiler is smart enough to notice this
+					and would give a warning but for demonstration purposes, I chose to ignore the warning.
+				</aside>
+			</section>
+			<section>
+				<h2>Linux Kernel</h2>
+				<small>
+					Notice how Different Architecture represents data size Differently
+					<br />
+					What is LE and BE? And why is it important?
+					<br />
+					<img width="400px"
+						src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/debian-arch-list.png" />
+				</small>
+				<aside class="notes">
+					Notice how each architecture may represent the data size of a pointer or a long double differently?
+					This can cause programs to behave differently which is very bad. Even different operating systems
+					may represent data types differently and some data types may not even exist in another operating
+					system. This can cause builds to break. These are build issues that are not rare to see when working
+					on projects that can support different platforms. Also, notice how there are two different types of
+					endian each CPU architecture can support (with the exception of CPU with bi-endian support where you
+					just need to set a bit to change endians).
+				</aside>
+			</section>
+			<section>
+				<h2>Endian</h2>
+				<ul>
+					<li><b>Endian:</b> the order of bytes</li>
+					<li>Little Endian stores Least Significant Byte (LSB) at the smallest address space and vice versa
+					</li>
+					<li>Big Endian is more “natural” to us</li>
+					<li>May have seen it when working on socket programming (networks use big endian) send MSB first
+					</li>
+				</ul>
+				<img src="https://4.bp.blogspot.com/_IEmaCFe3y9g/SO3GGEF4UkI/AAAAAAAAAAc/z7waF2Lwg0s/s400/lb.GIF" />
+				<aside class="notes">
+					Endian refers to the order of bytes.
+					Little Endian (LE) stores the least significant byte at the smallest address while Big endian does
+					the opposite.
+
+					Big Endian seems more natural to use because we read from left to right in English so we accept that
+					the number on the left represents a larger number than the digit to the left such as the number 123
+
+					The most highest significant number 1 represents 100 which is larger than the smallest significant
+					digit 3
+
+					You may have seen or heard about endian when working on socket programming since network sends data
+					in big Endian fashion
+
+				</aside>
+			</section>
+			<section
+				data-background-image="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/endian-explained.png"
+				data-background-size="75%">
+				<aside class="notes">
+					Big Endian is more natural to us since we read numbers from left to right in English. For instance,
+					in the number 123, 1 represents the highest number (i.e. $1\cdot100$) and 3 represents the smallest
+					digit in the number (i.e. $3\cdot1$). Therefore I like to see things in Big endian order. It’s great
+					to know that xdd, a hexdump tool, displays hex in big endian by default.
+				</aside>
+			</section>
+			<section>
+				<h2></h2>
+				<pre><medium><code class = "shell">$ xxd /tmp/test.txt 
+00000000: 7069 6b61 6368 750a                      pikachu.
+$ #xxd represents in Big Endian by default
+$ xxd -e -g 2 /tmp/test.txt
+00000000: 6970 616b 6863 0a75                      pikachu.</code></medium></pre>
+				<pre><medium><code class = "shell">$ echo "0000 6568 6c6c 206f 6f77 6c72 0a64" | xxd -r
+ehll oowlr
+	
+$ echo "0000 6865 6c6c 6f20 776f 726c 640a" | xxd -r
+hello world</code></medium></pre>
+				<aside class="notes">
+					If you ever have done digital forensics or cybersecurity work, you may sometimes notice that the
+					text in the logs seems a bit weird but if you switch the endian, it makes sense.
+				</aside>
+			</section>
+			<section style="width:120%">
+				<h2></h2>
+				<p style="float:left;width:40%"><small>Endian issues are not an issue for most developers<br /><br />
+						But occasionally endian issues pop up and it depends on how the code was written and what type
+						of
+						work you are doing</small>
+					<img width="600px" style="margin: 0"
+						src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/endian-issue1.png" />
+					<img width="600px" style="margin: 0"
+						src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/endian-issue2.png" />
+
+				</p>
+				<div class="float:right; width: 60%">
+					<img width="650px" style="margin: 0"
+						src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/endian-issue3.png" />
+				</div>
+				<aside class="notes">
+					Endian is usually not a huge issue for most developers, especially to high level programmers. And
+					even if it does, you could write endian independent code. But it occasionally shows up once in a
+					while such as on one of the Firefox releases where the browser history stored the data in the wrong
+					endian so it ends up looking weird.
+
+					If you are working on a big endian system, you may see some open source projects and libraries drop
+					support or have bugs just because the developers are all using x86 architecture.
+				</aside>
+			</section>
+			<section>
+				<h2>CPU Assembly Instructions</h2>
+				<small>Different CPU Architecture has their own Assembly Instructions</small><br />
+				<img
+					src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/assembly-example.png" />
+				<aside class="notes">
+					If you ever taken a course in computer architecture, you’ll quickly learn that every architecture
+					has a different instruction set. This means any assembly program or executable will not be able to
+					run on another architecture because the instructions are different. It’s like trying to understand
+					Latin. Even though we have the same (or at least share mostly the same) character set, it doesn’t
+					mean we understand each other.
+				</aside>
+			</section>
+			<section>
+				<h2>A Very Brief Talk About DevOps</h2>
+
+				<aside class="notes">
+					Since organizations are adopting practices of DevOps to help create quality software faster and
+					the Build team is part of the pipeline, it’s a good idea to talk about what DevOps is about. But
+					it’ll be brief because I am not knowledgeable in this field and still learning about the field
+					still.
+				</aside>
+			</section>
+			<section>
+				<h2>The Role of DevOps</h2>
+				<blockquote>Works in an agile, collaborative environment to build, deploy, configure, and maintain
+					systems, which may include software installations, updates, and core services. <br />-IBM DevOps
+					Roles-</blockquote>
+				<blockquote>Combining development and operations best practices to continuously integrate (CI) through
+					building and testing frequently to continuously delivery (CD) a good artifact ready for deployment.
+					The goal is to automate to deliver software faster</blockquote>
+				<aside class="notes">
+					IBM defines the role of devops as the following:
+
+					I like to refer devops as:
+				</aside>
+			</section>
+			<section>
+				<h2>DevOps</h2>
+				<ul>
+					<li>Catch bugs faster</li>
+					<li>Easier to manage build errors when caught early in the pipeline when they are small</li>
+					<li>Reduce idling by building frequently → more releases</li>
+					<li>Deploy faster</li>
+					<li>Automate the process to develop,
+						test, deploy and release as much
+						as possible</li>
+				</ul>
+				<img width="400px"
+					src="https://flexagon.com/wp-content/uploads/2020/04/a-world-without-ci.cd-meme-768x433.jpg" />
+				<aside class="notes">
+					One of the key elements of devops is to catch bugs faster by building frequently. This allows
+					builders to catch the build errors early in the pipeline when they are small and easy to work with.
+
+					Since there are more builds, there will be a reduction to idling and more releases which improves
+					the productivity of the organization.
+
+					The central idea I got from devOps and CI/CD is that you want to automate the pipeline as much as
+					possible and take more of a shared responsibility between teams to increase response and
+					understanding.
+				</aside>
+			</section>
+			<section>
+				<h2></h2>
+				<img
+					src="https://www.synopsys.com/blogs/software-security/wp-content/uploads/2018/03/differences-wp.jpg" />
+				<aside class="notes">
+					How Synopsis views agile, CI/CD, and devOps
+				</aside>
+			</section>
+			<section>
+				<h2>CI & CD</h2>
+				<ul>
+					<li>Continuous Integration: build & test frequently</li>
+					<li>Using version control (i.e. git) for a <b>single truth</b> of source</li>
+					<ul>
+						<li>No copies of multiple files where one of them works and the other copies don’t</li>
+					</ul>
+					<li>Automated testing
+						(can be covered in CD as well)
+					</li>
+				</ul>
+				<img width="400px"
+					src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/ci-process.png" />
+				<aside class="notes">
+					As I stated previously, CI refers to building and testing frequently. In devOps, they like to
+					emphasize the use of source control to have a single source of truth. This means that there
+					shouldn’t be multiple versions of the same file in different locations. You want a central location
+					where everyone can establish the version which would be used for building frequently. You don’t want
+					developers working on other branches or versions of the project because it’ll usually fall apart
+					when all these versions or branches get merged to the main development code base. You want to ensure
+					developers are working on relatively stable and up to date state of the project and ensure they are
+					delivering code in a timely manner.
+				</aside>
+			</section>
+			<section>
+				<h2>CI: Continuous Integration</h2>
+				<ul>
+					<li>Trigger CI builds for:</li>
+					<ul>
+						<li>Every commit or</li>
+						<li>Every PR (pull requests)</li>
+					</ul>
+					<li>No strict guidelines:</li>
+					<ul>
+						<li>Some say kick CI after merging to <b>master</b> (requires everyone to stop and fix broken
+							build)</li>
+						<li>Some say kick off CI and only merge to master <b>if clean</b></li>
+						<li>Clean v.s incremental (slow but safe v.s fast but a bit risky)</li>
+					</ul>
+				</ul>
+				<aside class="notes">
+					Approaches to CI differs from team and by organizations. Some trigger CI builds for every commit and
+					others trigger builds for every PR.
+
+					There are no strict guidelines to CI which is why you see differences in approach. Some believe CI
+					should be triggered for every commit/pr merged into master. This approach requires the entire
+					organization to work together to resolve broken build as soon as possible to avoid the main branch
+					from being broken too long.
+
+					Others say CI builds should be triggered and must pass before merging to master. I typically see
+					this in open source projects where they typically lock merge till the PR passes various checks.
+
+					There’s also debate from what I read into whether CI builds should be incremental or clean. The
+					argument for builds to be built from scratch is to ensure consistency and avoiding any hidden
+					problems in the builds and infrastructure itself. You may see projects utilizing kubernetes to spin
+					up containers to build, test, and deploy. For those of you who are not familiar, a container is a
+					lightweight way to create an executable package that contains everything the applications needs to
+					run. It’s similar to virtual machines except it’s lightewight because it shares the same host OS and
+					therefore is smaller in size and fast to create and deploy. Virtualization allows you ship your
+					application on any machine and it’ll run and behave the same giving developers consistency. You no
+					longer have to worry about supporting different platforms and issues with developers and consumers
+					having issues on their machine when trying to install or use the application.
+
+					Some may prefer using an incremental approach because it helps speed build time by only rebuilding
+					the components that either have been changed or rely on a component that will have to be rebuilt.
+					This can eventually cause builds to be corrupted and give false alarms on the state of the builds
+					since it can fail due to a corrupted component or having some components not being rebuilt as
+					desired.
+
+				</aside>
+			</section>
+			<section
+				data-background-image="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/ci-flow.png"
+				data-background-size="80%">
+				<h2></h2>
+
+				<aside class="notes">
+					Here’s an example of a typical CI build process. Developers push in their changes to github which
+					triggers a build and notify the developers whether the change has successfully been built and
+					tested. In the event of a failure, the manager and developers would be notified of the failure and
+					give urgency to the team to drop everything they were doing and fix the build as soon as possible.
+				</aside>
+			</section>
+			<section>
+				<h2>CD: Continuous Delivery/Deployment</h2>
+				<ul>
+					<li>Refers either to continuous deliver or deployment</li>
+					<li>Differences between:</li>
+					<ul>
+						<li>Having a ready deployable artifact </li>
+						<li>Deploying new artifact to production automatically</li>
+					</ul>
+					<li>Deployment does <b>NOT</b> have approval to release to production</li>
+				</ul>
+
+				<aside class="notes">
+					CD refers to either continuous delivery or continuous deployment. The differences between the two
+					are having a deployable artifact ready for deployment versus automatically deploying the new
+					artifact without an explicit approval. Continuous Deployment does not need to have the approval to
+					release to production and this may be undesired since you may want to be selective on when you want
+					to release or deploy your new changes. Perhaps you want to have the artifacts go through more
+					through testing or the changes requires a downtime to make a major overhaul. For instance, a change
+					in the schema of a database would require a careful and decisive action due to the sensitive and
+					severe impact it can have if the data were to be corrupted or loss.
+
+					I typically see CD as continuous deployment used on microservices, apps, and websites where the
+					impact to consumers won’t be severe. Though, they’ll probably use some form of deployment strategies
+					to ensure the transition is smooth and easy to roll back such as using canary deployment or
+					blue-green deployment which I won’t get into today.
+				</aside>
+			</section>
+			<section>
+				<h2></h2>
+				<img
+					src="https://d1.awsstatic.com/product-marketing/DevOps/continuous_delivery.4f4cddb8556e2b1a0ca0872ace4d5fe2f68bbc58.png" />
+				<img
+					src="https://wpblog.semaphoreci.com/wp-content/uploads/2019/03/cicd-pipeline-introduction-1024x422.png" />
+
+				<aside class="notes">
+					Here’s an overview of a CI/CD pipeline where CI builds are triggered when a change gets pushed to
+					the repo and once the build passes various tests to verify the new changes don’t break any important
+					functionalities, it’ll go through staging where more further tests would be conducted before going
+					to deployment if it was continuous delivery else it’ll be deployed automatically.
+				</aside>
+			</section>
+			<section>
+				<h3 style="margin: 0">Example: React</h3>
+				<small>PR must pass extensive CI checks before merging to master <br />
+
+					Means no running around to catch developers<br />
+
+					Approach often seen by Open Source Projects</small>
+				<img
+					src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/react-ci-check.png" />
+				<aside class="notes">
+					Here’s an example of where CI builds from React, a Javascript framework, where builds are triggered
+					when a PR is created. All PR must be extensively checked and once the build passes all required
+					checks, it’ll be merged to master.
+
+					This approach is great because it doesn’t require any active management to go around and catch
+					developers.
+				</aside>
+			</section>
+			<section>
+				<h3 style="margin:0">Example: IBM Carbon (UX Library)</h3>
+				<small>Notify developer the build is broken via a bot</small>
+				<img style="margin: 0" width="600px"
+					src="https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/ibm-carbon.png" />
+				<aside class="notes">
+					Here’s another example from IBM’s Carbon library which is UX Library for Javascript applications.
+					DevOps utilize various tools and bots to communicate with the developers when the builds fail.
+				</aside>
+			</section>
+			<section>
+				<h2></h2>
+				<img
+					src="https://apifriends.com/wp-content/uploads/2019/05/DevOps-pipeline-An-assembly-line-analogy-pic-4.png" />
+				<aside class="notes">
+					This picture gives a nice picture of tools that can be used in each stage of the CI/CD pipeline.
+					Jenkins is an automation server that can schedule and kick off jobs. For instance, Jenkins could be
+					listening to any changes that gets pushed to Github, and if a change occurs, it’ll kick off a build
+					on a node to build and once it passes the builds, it can kick off another job to upload the artifact
+					to artifactory, a repository on the cloud that stores artifacts. In case you’ve been confused what
+					an artifact is, I’ve been referring an artifact as the binary or executable file that has been
+					produced from the builds. That concludes my presentation on the overview of builds and devops.
+				</aside>
+			</section>
+			<section>
+				<h1>FIN</h1>
+				<aside class="notes">Thanks for watching</aside>
+			</section>
+		</div>
+
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/search/search.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			center: true,
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+		});
+
+	</script>
+
+</body>
+
+</html>
