@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Installing a duplicate Kafka Plugin for Fluent-Bit
-description: A walkthrough installing a duplicate Kafka plugin on Fluent Bit that you can fiddle around with
+title: Duplicate a Fluent-Bit Plugin
+description: A walkthrough installing a duplicating a fluent bit plugin
 categories: [programming, kafka, fluent-bit, compilation]
 ---
 
