@@ -201,6 +201,26 @@ we needed to update `kafka.c` as well. The thought process behind this is to `gr
 
 So rename the struct to the correct name. This should resolve the issue. There is one final step you have to do but you can refer to [this](https://www.cncf.io/blog/2022/05/04/how-to-write-a-fluent-bit-plugin/) blog to see the final step. All I was interested in today was the compilation
 
+**update:** If you followed the next step and enabled the plugin, you may notice the following error:
+
+<div class="language-plaintext highlighter-rouge">
+<pre class = "highlight"><code><span style="color:#D0CFCC"><b>$ </b></span>build/bin/fluent-bit -i cpu -t my_cpu -o out_kafka2
+<b>Fluent Bit v2.1.5</b>
+* <span style="color:#E9AD0C"><b>Copyright (C) 2015-2022 The Fluent Bit Authors</b></span>
+* Fluent Bit is a CNCF sub-project under the umbrella of Fluentd
+* https://fluentbit.io
+
+<b>[</b>2023/05/30 23:25:49<b>]</b> [<span style="color:#F66151">error</span>] [config] section &apos;out_kafka2&apos; tried to instance a plugin name that don&apos;t exists
+<b>[</b>2023/05/30 23:25:49<b>]</b> [<span style="color:#F66151">error</span>] configuration file contains errors, aborting.
+</code></pre></div>
+
+I forgot to mention that you also need to change the name of the plugin under `kafka.c`:
+```c
+struct flb_output_plugin out_kafka2_plugin = {
+    .name         = "kafka2",
+```
+
+Assuming you wrote the configuration correctly under `conf/fluent-bit.conf` and specified the `brokers` with your Kafka instance, everything should work now.
 
 ## Summary
 
