@@ -6,7 +6,7 @@ categories: [programming, C/C++, msgPack, avro]
 ---
 
 A tale of a clueless programmer trying to figure out how to use Fluent Bit's "built-in" support to send messages serialized/encoded in Avro, a compact 
-binary format that has types. Spoilers, turns out it wasn't me being crazy.
+binary format that has types. 
 
 Lately, I have been investigating various serialization formats such as protobuf, MsgPack, and Avro to see their performance in regards to:
 * serialization time
@@ -29,7 +29,7 @@ Fluent-Bit collects data from various inputs such as system logs or from differe
 structuring them (via a parser plugin), filter through the data, and output the data to various external destination for various use cases 
 such as storage (Database), analyzed, or to Kafka. 
 
-![fluentd many to many log routing](http://radar.oreilly.com/wp-files/2/2015/04/oreilly_radar_fluentd_3.png)
+![fluentd many to many log routing](https://web.archive.org/web/20220808123641if_/http://radar.oreilly.com/wp-files/2/2015/04/oreilly_radar_fluentd_3.png)
 <p class = "caption">Taken from OReilly. Apparent from Kiyoto Tamura</p>
 
 The picture may be for FluentD, but Fluent-bit works exactly the same way. Anyhow, in Fluent-Bit, data can go through various stages
