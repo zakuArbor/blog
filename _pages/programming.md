@@ -50,6 +50,8 @@ A random blog discussing various topics in Computer Science and Programming that
 
 ---
 
+* [Fluent Bit Avro Frustration](https://zakuarbor.github.io/blog/avro-fluentbit-header/)
+* [Duplicate a Fluent-Bit Plugin](https://zakuarbor.github.io/blog/fluentd-kafka-copy/)
 * [Rust - Invoking Closures in a Struct](../rust-closure-invoke/)
 * [Rust - Exploring the Assembly Code between Mutable and Shadow Variables](../rust-shadow-vs-mut)
 * [QNX - An Introduction to Adapative Partitioning Scheduler and How to Bankrupt Partitions](../qnx-aps)
