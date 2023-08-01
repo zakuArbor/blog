@@ -254,7 +254,7 @@ A linker resolves the missing references of symbols and functions not defined in
 
 One of the benefits of linkers is that they allow compilation to be done separately or in smaller manageable parts. A change in one module or file does not require recompilation of the entire project. All that is needed is to recompile and relink a single or a small set of modules. This is a time saving feature.
 
-![](https://www.webopedia.com/wp-content/uploads/2020/10/link_5f854d22127de-2.gif)
+<img src = 'https://www.webopedia.com/wp-content/uploads/2020/10/link_5f854d22127de-2.gif' class = 'transparent-background' alt = 'a diagram showing you code becomes object that goes to linker to output an executable'/>
 
 Though confusing, `gcc` is a C and C++ compiler that normally does all the steps of the build from preprocessing to linking object files. Here's the description of `gcc` from the man pages:
 
