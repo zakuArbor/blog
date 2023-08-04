@@ -11,8 +11,7 @@
     <meta http-equiv='content-language' content='en-ca'>
     <meta name="theme-color" content="#000000">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/images/favicon-32x32.png">
-
-
+    <script src = "{{ site.baseurl }}/assets/js/script.js"></script>
 <!--<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -56,8 +55,7 @@
           {{ content }}
         </div>
       </div>
-      <div class="back-to-top-wrapper"><a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a></div>
-
+      <button onclick="toTop()" id="top_btn" title="Go to top">Top</button>
       <div class="wrapper-footer">
         <div class="container">
           <footer class="footer">

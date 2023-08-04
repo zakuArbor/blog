@@ -9,39 +9,42 @@
   padding: 5px;
 }
 
-
-.back-to-top-wrapper {
-  position: absolute;
-  z-index:10;
-  top: 100vh;
-  right: 2.5rem;
-//  bottom: -5em;
-  width: 3em;
-  pointer-events: none;
+/*
+Code for button to go top top
+source: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+*/
+#top_btn {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: #555;
+    /* Set a background color */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 15px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
 }
 
-.back-to-top-link {
-  position: fixed;
-  pointer-events: all;
-  top: calc(100vh - 5rem);
-
-  display: inline-block;
-  text-decoration: none;
-  font-size: 2rem;
-  line-height: 3rem;
-  text-align: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  padding: 0.25rem;
-  padding-bottom: 0px;
-  background-color: white;
-}
-
-@media (min-width: 700px) {
-  .back-to-top-wrapper {
-      right: 4rem;
-  }
+#top_btn:hover {
+    background-color: #555;
+    /* Add a dark-grey background on hover */
 }
 
 .MathJax_Display, .MJXc-display, .MathJax_SVG_Display {
@@ -137,7 +140,12 @@ iframe {
     iframe {                                                                    
       width: 80vw;                                                              
       height: 45vw;                                                             
-    }                                                                           
+    }
+                                                                           
+    #top_btn {
+        right: 6px;
+        margin-bottom: 20px;
+    }
 }
 
 .highlight {
