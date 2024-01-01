@@ -2,7 +2,7 @@
 layout: post
 title: GDB - Mix Source Code with Assembly
 description: A quick mention on disassemble /m and /s option
-categories: [programming, c, gdb]
+categories: [programming, c/c++, gdb]
 ---
 
 Have you ever wonder how to view the assembly code generated for the particular line of code written in C before? 
@@ -37,8 +37,7 @@ Usage: disassemble[/m|/r|/s] START [, END]
 
 One can use either the `/r` or the `/s` option to view the assembly and C source code 
 mixed together in the output.
-
-```
+```armasm
 (gdb) disassemble /s main
 Dump of assembler code for function main:
 test2.c:
