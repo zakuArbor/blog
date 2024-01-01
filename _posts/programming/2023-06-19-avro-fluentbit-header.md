@@ -2,7 +2,7 @@
 layout: post
 title: Fluent Bit Avro Frustration
 description: A tale of a clueless programmer struggling to serialize JSON data into Avro via Fluent Bit
-categories: [programming, C/C++, msgPack, avro]
+categories: [programming, c/c++, msgPack, avro]
 ---
 
 A tale of a clueless programmer trying to figure out how to use Fluent Bit's "built-in" support to send messages serialized/encoded in Avro, a compact 

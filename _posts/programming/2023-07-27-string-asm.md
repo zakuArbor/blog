@@ -2,7 +2,7 @@
 layout: post
 title: An Uninteresting Glance At Strings
 description: An uninteresting post about looking at the generated assembly for strings
-categories: [programming, C/C++]
+categories: [programming, c/c++]
 ---
 
 An uninteresting post about looking at the generated assembly code of a simple program that just stores a string. I got bored at work and decided to randomly look at strings. 
