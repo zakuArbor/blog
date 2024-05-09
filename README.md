@@ -5,7 +5,7 @@
 asciinema rec --cols 80 --rows 25 test.cast
 #run commands
 #exit or crtl-D
-gg --speed 1.20 test.cast demo.gif
+agg --speed 1.20 test.cast demo.gif
 ```
 
 `--incremental` flag to render future web posts

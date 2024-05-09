@@ -65,6 +65,7 @@ A random blog discussing various topics in Computer Science and Programming that
 * [Testing GithubPages Repo and Directory Conflict Resolution](../github-pages-behavior)
 * [Shellbang Character limit](../shellbang-char-limit/)
 * [How to Check if an Application is PAM-Aware](../pam-aware)
+* [An Uninteresting Glance At Strings](..string-asm)
 
 
 
