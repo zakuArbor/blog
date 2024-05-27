@@ -131,7 +131,7 @@ from the main memory if the data is not already in cache. The diagram below does
 
 Another good flowchart of how TLB works can be found on [Wikipedia](https://en.wikipedia.org/wiki/Translation_lookaside_buffer) as well:
 
-<img alt = "Flowchart[5] shows the working of a translation lookaside buffer. For simplicity, the page-fault routine is not mentioned." src = "https://en.wikipedia.org/wiki/Translation_lookaside_buffer#/media/File:Steps_In_a_Translation_Lookaside_Buffer.png">
+<img alt = "Flowchart[5] shows the working of a translation lookaside buffer. For simplicity, the page-fault routine is not mentioned." src = "https://upload.wikimedia.org/wikipedia/commons/c/c1/Steps_In_a_Translation_Lookaside_Buffer.png">
 
 ## Spatial Locality In Respect With TLB and Cache
 
