@@ -1,8 +1,8 @@
 ---
 layout: post
 title: A Quick and Flawed Look Into Spatial Locality and TLB
-description: Speculating number of TLB and CPU cacheline requests are needed in respect to Spatial Locality. The expectation is that we should see signficantly less TLB miss compared to cache miss
-categories: [programming, c/c++, tlb, cache]
+description: Speculating number of TLB and CPU cacheline requests are needed in respect to Spatial Locality. The expectation is that we should see signficantly less TLB miss compared to cache miss if accessing elements sequentially.
+categories: [programming, c/c++]
 ---
 
 **WARNING:** I am inexperienced and not knowledgeable of computer architecture. Although noted below, I will be making a claim for a simplistic 
@@ -100,33 +100,38 @@ misinterpreting what I read ... something I need to work on more. Though I could
 
 TLB (Translation Lookaside Buffer) is a cache that the MMU (memory management unit) uses to avoid performing a page walk. TLB only contains 
 the PTE and not the page itself. Parts of the page could be cached into the CPU cache. When retrieving data from the main memory, the fetch 
-request does not only grab the data itself but a line of data referred as a cacheline. On a 64-bit CPU, 64 bits of data are retrieved for each 
+request does not only grab the data itself but a line of data referred as a cacheline. On a 64-bit CPU, 64 bytes of data are retrieved for each 
 fetch requests and stored into cache.
 
-<small><b>Note:</b>I recently learned there are a few different levels of TLB and TLB could be also split into memory and instruction just 
+<small><b>Note:</b> I recently learned there are a few different levels of TLB and TLB could be also split into memory and instruction just 
 like CPU caches</small>
 
 Let's suppose we want to fetch an element in an array such as an integer `arr[0]`. The CPU will also grab 15 other integers 
 (assuming an integer is 4 Bytes and our CPU is 64-bit) due to how the CPU fetches data from the main memory. When the CPU wants to fetch some 
 data from main memory, it'll grab a chunk of data called a cache line into the CPU cache to reduce the number of times the CPU needs to access 
 the main memory because accessing data from main memory is EXPENSIVE. So if `arr[0]` was not in cache, we will have a cache miss and therefore, 
-the CPU will need to fetch `arr[0]` from main memory. It'll also bring along `arr[1], arr[2], ..., arr[15]` along with it so that if we 
-ever need to access any of the first 16 elements of the array, we don't ever need to travel to the main memory which is far from the CPU 
-as it will already be in our cache which requires very little CPU cycles to retrieve the data. From my understanding, CPU designers noticed 
-that neighboring data are more likely to be access such as via a loop. We call this type of access as spatial locality.
+the CPU will need to fetch `arr[0]` from main memory (or worse, it'll fetch the data from storage like the harddrive to memory and then to cache). 
+It'll also bring along `arr[1], arr[2], ..., arr[15]` along with it so that if we ever need to access any of the first 16 elements of the array, 
+we don't ever need to travel to the main memory which is far from the CPU as it will already be in our cache which requires very little CPU 
+cycles to retrieve the data. From my understanding, CPU designers noticed that neighboring data are more likely to be access such as via a loop. 
+We call this type of access as spatial locality.
 
 <small>Note: while in theory, 16 integers should be retrievable from one request (should be 8 bytes at a time in 8 bursts to service the 
 request in general), I am not knowledgeable if there are some caveats such as alignment issues and other factors. As I did not study engineering 
 (in fact I am studying Mathematics which is far from this subject), my knowledge of hardware is limited</small>
 
 But you may be confused as I was about how the TLB and cache relate to each other. Recall TLB stores PTEs and cache stores data from the page. 
-We first need to translate the virtual address into physical before we proceed to fetch the data. If the PTE is already in cache, then there is 
+We first need to translate the virtual address into physical before we proceed to fetch the data. If the PTE is already in TLB, then there is 
 no need to do a page table walk, but we may still need to fetch the data if it's not in the CPU cache. The PTE can be used to retrieve the data 
 from the main memory if the data is not already in cache. The diagram below does a good job to capture this relation:
 
 <img alt = "An image illustrating in a high level of how data is retrieved making use of both the TLB and CPU cache" src = "http://www.cs.iit.edu/~cs561/cs351/VM/TLB.bmp">
 
 <p class = "caption">A high-level illustration of how data is retrieved which makes use of both the TLB and CPU cache when possible. Adapted from <a href = "http://www.cs.iit.edu/~cs561/cs351/VM/TLB.html">here</a></p>
+
+Another good flowchart of how TLB works can be found on [Wikipedia](https://en.wikipedia.org/wiki/Translation_lookaside_buffer) as well:
+
+<img alt = "Flowchart[5] shows the working of a translation lookaside buffer. For simplicity, the page-fault routine is not mentioned." src = "https://en.wikipedia.org/wiki/Translation_lookaside_buffer#/media/File:Steps_In_a_Translation_Lookaside_Buffer.png">
 
 ## Spatial Locality In Respect With TLB and Cache
 
