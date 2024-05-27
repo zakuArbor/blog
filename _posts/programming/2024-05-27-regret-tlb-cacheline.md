@@ -1,12 +1,15 @@
 ---
 layout: post
-title: A Quick Look Into Spatial Locality and TLB
-description: A quick investigation into TLB and CPU cacheline in respect to Spatial Locality. The expectation is that we should see signficantly less TLB miss compared to cache miss
+title: A Quick and Flawed Look Into Spatial Locality and TLB
+description: Speculating number of TLB and CPU cacheline requests are needed in respect to Spatial Locality. The expectation is that we should see signficantly less TLB miss compared to cache miss
 categories: [programming, c/c++, tlb, cache]
 ---
-This week marked the start of my internship at a company, where I was advised to delve into Linux memory operations at some point. 
-Since I had limited access to the company's resources and not much to do at work (it's my first week after all),
-I spent a bit of time skimming Ulrich's paper [What Every Programmer Should Know About Memory](https://akkadia.org/drepper/cpumemory.pdf), a 
+
+**WARNING:** I am inexperienced and not knowledgeable of computer architecture. Although noted below, I will be making a claim for a simplistic 
+computer architecture that is not easily reproducible. The blog does **not** have data to back up my claim. I probably will regret publishing 
+this post. We shall see how long it stays up. In the meantime, feel free to give corrections and criticism by opening a github issue.
+
+I got bored so skimmed through the first few sections of Ulrich's paper [What Every Programmer Should Know About Memory](https://akkadia.org/drepper/cpumemory.pdf), a 
 gigantic paper about computer memory that I only took a small glimpse over the years. What ignited this post was the following:
 
 >  It is therefore good for performance and scalability if the memory needed by the
@@ -17,8 +20,9 @@ gigantic paper about computer memory that I only took a small glimpse over the y
 > -- [What Every Programmer Should Know About Memory](https://akkadia.org/drepper/cpumemory.pdf)
 
 
-**Notice:** I am still very new in the subject of system performance and computer architecture so please do raise a Github Issue if there is 
+**Notice 1:** I am still very new in the subject of system performance and computer architecture so please do raise a Github Issue if there is 
 anything plainly wrong about my findings.
+
 
 If you have taken a course in operating system or had an opportunity to work with memory at a low level, you will know that although two 
 virtual address may be close virtually, they could be mapped to very different physical pages where the data is actually stored. Hence, 
@@ -124,8 +128,6 @@ from the main memory if the data is not already in cache. The diagram below does
 
 <p class = "caption">A high-level illustration of how data is retrieved which makes use of both the TLB and CPU cache when possible. Adapted from <a href = "http://www.cs.iit.edu/~cs561/cs351/VM/TLB.html">here</a></p>
 
-
-
 ## Spatial Locality In Respect With TLB and Cache
 
 Temporal locality refers to the behavior that if a piece of data is accessed, it is likely to be accessed repeatedly within a short timeframe. 
@@ -138,22 +140,27 @@ and cache saves a lot of CPU cycles and provides a noticeable increase in perfor
 
 So how does TLB benefit from spatial locality? Recall the quote that motivated this entire blog post stated that it is desirable for 
 the memory needed by the page table to be placed close together in the VIRTUAL address space and disregards the location of the physical 
-address. The reason for the disregard of the physical address has to do with the fact that the TLB caches the PTE and not the page nor the 
-physical address itself (at least that's what I think it does). If data are close to each other such as the next element in the array, it is 
-likely that the virtual address of the next element in the array to reside in the same virtual page and therefore has the same PTE. Meaning 
-if two pieces of data reside in the same virtual page, then the only thing that differs is the offset and thus we can use the cached PTE from 
-the TLB. A TLB hit allows us to avoid the page walk and thus avoid the overhead. Now let's suppose we are accessing a ton of element in the 
-array. In theory, as our page table is 4kB (I know it's in kB but let's ignore this fact for simplicty), then a single virtual page **could**  
-contain up to 1024 integers (4096/4 = 1024). 
+address. The reason for the disregard of the physical address has to do with the fact that the TLB caches the PTE and not the page 
+itself. If data are close to each other such as the next element in the array, it is likely that the virtual address of the next element 
+in the array to reside in the same virtual page and therefore has the same PTE. Meaning if two pieces of data reside in the same virtual page, 
+then the only thing that differs is the offset and thus we can use the cached PTE from the TLB. 
+A TLB hit allows us to avoid the page walk and thus avoid the overhead. Now let's suppose we are accessing a ton of element in the array. 
+
+
+**Speculation Without Any Evidence:** In theory, as our page table is 4kB, then a single virtual page **could** (in our simplistic model) 
+contain up to 1024 integers (4096/4 = 1024) but we know in reality it does not. 
+Though this claim assumes we are running on a single core CPU as each core probably has their own TLB.
 
 This would mean that when accessing 1024 integers stored sequentially, we will have 1024 TLB hits in a perfect world. This is an example 
-of how TLB benefits from spatial locality.
+of how TLB benefits from spatial locality. 
 
 1. arr[0]: TLB Miss because we never accessed the array
 2. arr[1]: TLB hit because the page is big enough to be within the same page
 3. arr[2]: TLB hit because the page is big enough to be within the same page
 ...
 1024. arr[1024] or somewhere near there: TLB miss
+
+**Note:** I should really get a old single-core CPU to test this claim. I have no evidence for this claim at all.
 
 ### 2b. Spatial Locality and CPU Cache
 
@@ -170,21 +177,22 @@ This from my understanding should be placed into L1d cache. As mentioned earlier
 our cache. Therefore we can avoid travelling to the main memory when we access the first 16 integers in the array as the data should be 
 stored into L1, L2, or L3 cache if we access them within a short time frame.
 
-## 3. Expected Growth between TLB and Cache Miss
+## 3. Expected Growth between TLB and Cache Miss When Iterating Through an Array Sequentially
 
 Recall that in a perfect world, we should expect a TLB miss after the first 1024 elements and a cache miss after 16 integers. This means 
 that we should see an extremely small amount of TLB miss but a large amount of cache miss. In other words, we should expect to see more TLB Hits 
-compared to cache hits when accessing an array of elements. This is the idea we shall be exploring through experimentation. However we will 
-need to consider that there could be optimization that makes these numbers unrealistic meaning we could hit a TLB miss past 1024 element or 
-have a cache miss way after 16 integers. I am not a hardware developer nor do I have any significant knowledge in hardware, having only taken 
-one single course on computer architecture from a Computer Science perspective. I almost graduated from university not knowing what a GPU was 
-good for nor the use of RAM (I'm not a gamer either so that doesn't help).
+compared to cache hits when accessing an array of elements. 
 
-### 3a. Methodology
+### Possible Methodology
 
-The following program will attempt to write a random value into the array sequentially:
+**Note:** This is a proposed idea to test my idea but I have not done the experiment myself. I did try a bit on my modern laptop and I found it 
+both hard to collect the right data and make any interpretation of the data I collected. This post was a random thought I had but has not 
+evidence to back up my claim.
 
-**file:** `seq_wr.c`
+
+The following program will return the sum of the array accessed sequentially:
+
+**file:** `seq_sum.c`
 
 **Code:**
 ```c
@@ -196,17 +204,21 @@ The following program will attempt to write a random value into the array sequen
 int main() {
   long sum = 0;
   int *arr = malloc(sizeof(int)*size);
-  srand(time(NULL));
+  int *trash = malloc(sizeof(int)*size);
 
+  setup(arr, trash);
+
+  //hopefully the cache is now cold with garbage data
   for (int i = 0; i < size; i++) {
-    int x = rand() % size;
-    arr[i] = x;
+    sum += arr[i];
   }
-  return 0;
+
+  return sum;
 }
 ```
 
-where the size is determined by a global value `size` stored in the headerfile:
+where the size is determined by a global value `size` stored in the headerfile. `setup` just populates the array and tries to make the 
+cache to be cold by populating the cache hopefully with random values:
 
 **file:** `spatial_const.h`
 
@@ -215,39 +227,56 @@ where the size is determined by a global value `size` stored in the headerfile:
 #ifndef SPATIAL_CONST_H
 #define SPATIAL_CONST_H
 
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 int size = 1ULL<<20;
+
+void setup(int *arr, int *trash) {
+  srand(time(NULL));
+
+  for (int i = 0; i < size; i++) {
+    arr[i] = rand() % size;
+  }
+
+  //attempt to make cache cold with garbage data
+  for (int i = 0; i < size; i++) {
+    trash[i] = i + rand() % size;
+  }
+}
 
 #endif
 ```
 
-We will be looking at the number of TLB data misses and L1 cache misses using `perf` with the following flags:
+On my system, these are the available cores (though I wouldn't want to use my multi-core system for this experiment):
 
+**CPU:**
+```
+$ lscpu | grep -E "L[123].*cache"
+L1d cache:                            128 KiB (4 instances)
+L1i cache:                            128 KiB (4 instances)
+L2 cache:                             1 MiB (4 instances)
+L3 cache:                             6 MiB (1 instance)
+```
+
+The array has $2^20$ elements meaning it takes up 4GB which is way larger than what the cache can hold. Therefore, populating another 
+random 4GB array should make the cache cold.
+
+Based on my fiddling and some brief readings around the internet, I learned that it is very difficult to instrument your code properly 
+with the proper metrics. As I do not have much background knowledge with this topic, if I was going to perform the experiment, I would 
+be making assumptions and try to explain my findings that could be very flawed.
+
+If I wasn't lazy, we would be looking at the number of TLB data misses and L1 cache misses using `perf` with the following flags:
+
+* **dtlb_store_misses.stlb_hit:** Stores that miss the DTLB and hit the STLB
 * dTLB-load-misses
-* dtlb_load_misses.miss_causes_a_walk,
-* iTLB-load-misses
-* L1-dcache-loads
+* **dtlb_load_misses.miss_causes_a_walk:** Load misses in all DTLB levels that cause page walks
 * L1-dcache-load-misses
 * l1d.replacement
-* faults
-```
 
-### 3b. Results
+We will have two programs: **seq_base** and **seq_sum** whose only difference is that the **seq_base** does not sum any numbers
 
-```
-$ perf stat -e dTLB-load-misses,dtlb_load_misses.miss_causes_a_walk,iTLB-load-misses,L1-dcache-loads,L1-dcache-load-misses,l1d.replacement,faults  ./seq_wr
+As my CPU does not support `L1-dcache-store-misses`, I will be ignoring this counter entirely. The purpose of the base program is to get a 
+baseline of the counters that we can compare once we try to take the sum of the desired array.
 
- Performance counter stats for './seq_wr':
-
-               213      dTLB-load-misses:u                                                      (65.54%)
-               390      dtlb_load_misses.miss_causes_a_walk:u                                        (65.58%)
-               213      iTLB-load-misses:u                                                      (65.58%)
-        27,365,003      L1-dcache-loads:u                                                       (68.35%)
-             8,808      L1-dcache-load-misses:u          #    0.03% of all L1-dcache accesses   (68.88%)
-             8,723      l1d.replacement:u                                                       (66.07%)
-             1,078      faults:u                                                              
-
-       0.017740941 seconds time elapsed
-```
-
-I am going to be honest, I have zero clue what the difference between `dTLB-load-misses` and `dtlb_load_misses.miss_causes_a_walk` are. 
-Based on the names, I can only infer that even if we have a dTLB load miss, it is possible that we do not perform a walk somehow.
