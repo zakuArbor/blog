@@ -115,7 +115,7 @@ files which are c runtime object code that deals with stuff before and after mai
 link your program with glibc, where it'll call `main()`. The very first program that actually executes (once the loader runs) is `_start()`.
 
 I am not going into specifics but here are links I only skimmed for a minute or two: 
-* Brief: [CRT: C Run Time Before Starting main()](https://www.vishalchovatiya.com/crt-run-time-before-starting-main/)
+* Brief: [CRT: C Run Time Before Starting main()](https://www.vishalchovatiya.com/posts/crt-run-time-before-starting-main/)
 * In-Depth: [Linux x86 Program Start Up or - How the heck do we get to main()? ](http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html)
 
 Here is an overview of what goes on before we call `main()` based on a quick trace I did on gdb:
@@ -165,3 +165,8 @@ main:
                                         ;   i.e.restores the caller's rbp
         ret
 ```
+
+```
+return_type (* pointer_name) (datatype_arg_1, datatype_arg_1, ...);
+```
+
