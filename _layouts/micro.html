@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }} – {{ site.description }}{% endif %}</title>
+    {% seo title=false %}
+    {% include meta.html %}
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/micro.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <!--<link rel="canonical" href="{{ site.url }}{{ page.url }}" />-->
+    <meta http-equiv='content-language' content='en-ca'>
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/images/favicon-32x32.png">
+    <script src = "{{ site.baseurl }}/assets/js/script.js"></script>
+<!--<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+  </head>
+
+  <body>
+    <div id="bar"></div>
+    <div class="wrapper-container">
+      <div class="wrapper-masthead">
+        <div class="container">
+          <header class="masthead clearfix">
+            <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.baseurl }}{{ site.avatar }}" alt="Site avator that links to main page" /></a>
+
+            <div class="site-info">
+              <h2 class="site-name"><a href="{{ site.baseurl }}/" alt = "home page">{{ site.name }}</a></h2>
+              <p class="site-description">{{ site.description }}</p> 
+            </div>
+
+            <nav>
+              <a href="{{ site.baseurl }}/archive" alt = "archive page">Archives</a>
+              <a href="{{ site.baseurl }}/personal" alt = "personal page">Personal</a>
+              <a href="{{ site.baseurl }}/programming" alt = "programming page">Programming</a>
+              <a href="{{ site.baseurl }}/math-physics" alt = "math page">Math</a>
+              <a href="{{ site.baseurl }}/about" alt = "about page">About</a>
+            </nav>
+          </header>
+        </div>
+      </div>
+
+      <div class="wrapper-main">
+        <div id="main" role="main" class="container">
+          <div id = "top"/>
+          <article class="post detailed">
+          {{ content }}
+          </article>
+        </div>
+      </div>
+      <button onclick="toTop()" id="top_btn" title="Go to top">Top</button>
+      <div class="wrapper-footer">
+        <div class="container">
+          <footer class="footer">
+            <a href = "../privacy/">Privacy</a><br/>
+            {% include svg-icons.html %}
+          </footer>
+        </div>
+      </div>
+    </div> 
+    {% include analytics.html %}
+  </body>
+</html>
+

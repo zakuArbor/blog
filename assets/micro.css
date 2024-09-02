@@ -1,0 +1,189 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+ul {
+  margin: 0;
+}
+
+.ul-title {
+  margin-bottom: .25em;
+}
+
+.ul-p {
+  display: block;
+  margin-bottom: -1em;
+}
+
+#linux {
+  font-weight:bold;
+  font-size: 55px;
+}
+
+.quick-badges {
+  display: grid;
+  grid-template-columns: 88px 88px 88px 88px;
+  grid-gap: 5px;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.pane-dual-row, .pane-dual {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-width: 60%;
+  gap: 20px;
+  margin-bottom: 5px;
+}
+
+.pane-dual-row {
+  justify-content: center;
+}
+
+#title {
+  font-weight: bold;
+  font-size: 3em;
+  letter-spacing: 5px;
+  word-spacing: 5px;
+  margin: auto;
+}
+
+#content {
+  margin-bottom: 5px;
+  border: 1px solid;
+  padding: 2.5em;
+  border-radius: 10px;
+  line-height: 1.7em;
+}
+.tags {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+.tags a {
+  font-size: 14.5px;
+  font-weight: bold;
+  padding: 2px 13px;
+  border: none;
+  color: rgb(34, 39, 46);
+  border-radius: 50px;
+  background-color: #f099ff;
+  text-decoration: none;
+}
+
+.tags a:hover {
+  text-decoration: underline;
+}
+
+.bits {
+}
+
+.bits .title {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.bits .date {
+  text-align: center;
+  margin: 0px;
+  margin-top: 5px;
+}
+
+.bits img {
+  display: block;
+  margin: auto;
+}
+
+.bits-hr {
+  border-top: dotted 1px;
+}
+/*
+pre code {
+  background-color: #1b1b1b;
+  display: block;
+  border-radius: 0.25rem;
+  padding: .5rem;
+  line-height: 1.25em;
+  overflow: scroll;
+}
+
+code {
+  background-color: #1b1b1b;
+  border-radius: 0.25rem;
+  padding: .25rem;
+  line-height: 1.25em;
+}*/
+
+
+blockquote {
+  background-color: #313131;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  line-height: 1.5em;
+}
+
+.caption {
+  font-size: small;
+  line-height: 1em;
+}
+
+.dual-image-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.dual-image-container .caption {
+  text-align: center;
+}
+
+@media only screen and (min-width: 700px) { 
+  #wrapper {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+  #buttons {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 850px) { 
+  #wrapper {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  #buttons {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #content {
+    padding: .5em;
+    border: 0px;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .pane-dual {
+    flex-direction: column;
+  }
+
+  #page-title {
+    text-align: center;
+  }
+
+  #pikachu-title {
+    margin-right: 0em !important;
+  }
+
+
+  #content, #discuss {
+    padding: .5em;
+    border: 0px;
+  }
+}
