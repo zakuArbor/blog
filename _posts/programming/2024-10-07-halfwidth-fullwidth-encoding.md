@@ -160,3 +160,7 @@ a series of bytes due to its more compact form (or at least that's what it seems
 hexadecimal digit will therefore take 8 bits = 1 byte. That is why the half-character `ｱ` takes up one byte as it is `0xB1` in Shift-JIS. `B1` consists of two hexadecimal digits 
 and hence only 8 bits and therefore 1 byte. The full-width character `ア` is `0x8341` which consists of 4 hexadecimal digits and therefore 4 * 4 bits = 16 bits or 2 bytes.
 
+## Good Resources
+* [https://www.unicode.org/charts/](https://www.unicode.org/charts/)
+* [http://charset.7jp.net/dump.html](http://charset.7jp.net/dump.html)
+* [https://mailmate.jp/blog/half-width-full-width-hankaku-zenkaku-explained](https://mailmate.jp/blog/half-width-full-width-hankaku-zenkaku-explained)
