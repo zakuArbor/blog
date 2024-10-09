@@ -2,7 +2,7 @@
 layout: post
 title: A Quick Look Into Half-Width and Full-Width Characters
 description: A small visual look into half-width and full-width characters
-categories: [programming, c/c++, corpus, linguistic, utf, encoding]
+categories: [programming, corpus, linguistic, utf, encoding]
 ---
 
 A friend of mine has been asking me a few questions about encoding for a paper he is working on. 
@@ -136,7 +136,9 @@ be the case:
 As you may notice, I am using the same example from the [article](https://mailmate.jp/blog/half-width-full-width-hankaku-zenkaku-explained) but I opted to generate my own 
 image. The blog for some reason decided to add `0x0D0A` which corresponds to `CRLF` i.e. `\r\n` making it less obvious to readers that the full-width character takes 2 Bytes 
 and the half-width chaacter only takes 1 byte. As I don't know Japanese, but according to the article both characters have the same phonetic sound. Though I am pretty sure the 
-two are the same in written (i.e. handwriting) language.
+two are the same in written (i.e. handwriting) language. The likely reason for this behavior is that fact that it is an extension of JIS X 0201:1997, they very same encoding 
+that first introduced Katakana (though the edition differs) and encodes the double-byte characters from JIS X 0208:1997 according to [wikipedia](https://en.wikipedia.org/wiki/Shift_JIS). 
+
 
 **Note:** 1 byte character can also be referred as single-byte character while 2 bytes characters can be referred as double-byte characters
 
