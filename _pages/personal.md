@@ -54,3 +54,4 @@ A random blog about me discussing on various topics that I randomly felt writing
 * [Ducky One 2 Mini - Replace Caps Lock as Function Key](../duckyone-mini-keyboard)
 * [Document Feeder and PDF Utilities - How to Scan Big Documents with the help of Document Feeder and PDF Utilitie](../scan-automation)
 * [CarletonU QNX License Request Policy](../carletonu-qnx-license)
+* [QNX now has a non-commercial license for hobbyists to fiddle around](../qnx-non-commercial/)
