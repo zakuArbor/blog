@@ -5,7 +5,7 @@ description: A Look at the Build toolchain
 categories: [programming, build, linker, c/c++, gcc-toolchain]
 ---
 
-On my previous post [What does the Build Team Do](build-team), I covered various topics about builds and devOps. Today, I want to go more in depth on what goes on when you press the run button which I briefly brushed over in the previous post. This does get quite technical but don't fret. I have stopped myself from writing and reading up in depth about the topic to avoid going through the rabbit hole.
+On my previous post [What does the Build Team Do](../build-team), I covered various topics about builds and devOps. Today, I want to go more in depth on what goes on when you press the run button which I briefly brushed over in the previous post. This does get quite technical but don't fret. I have stopped myself from writing and reading up in depth about the topic to avoid going through the rabbit hole.
 
 If you prefer looking at the slides, I'll provide them below:
 <center><iframe src = "/blog/assets/presentations/build-process/index.html" title = "Build Process - Slides" style = "width: 100% !important; height: 75vh !important"></iframe></center>
