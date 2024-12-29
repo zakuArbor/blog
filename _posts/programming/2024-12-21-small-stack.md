@@ -56,6 +56,8 @@ This shocked all of us since 1 MiB is not a large buffer in 2021 where we had pl
 
 ## Investigating why AMD64 (x86_64) seems unaffected
 
+**Note:** Everything below is nothing shocking nor interesting. I just felt like keeping it there.
+
 The behavior for AMD64 (x86_64) as noted requires more fiddling to trigger a crash which came to my surprise. From my understanding of the documentation, the stack size should still be 512KB.
 Suspecting there could be some optimization going on, I fiddled around with the compiler setting and added some code to see if I could trigger the crash and it turns out that if I make 
 a call to `printf`, the program will indeed crash as desired.
@@ -197,15 +199,141 @@ End of assembler dump.
 Program received signal SIGSEGV, Segmentation fault.
 ```
 
-Immediately we can see that the stack guard is not the reason for the crash but rather a call to `puts@plt` that triggered the crash. Due to my inexperience, I could 
-not narrow down the exact reason as to why jumping to `puts@plt` triggered the crash.
+Immediately we can see that the stack guard is not the reason for the crash but rather a call to `puts@plt` that triggered the crash. 
+Let's compare the two instruction registers before the crash is triggered where the first is from a program with a valid buffer size:
 
+```nasm
+(gdb) i r
+...
+rbp            0x81ce0             0x81ce0
+rsp            0x818d0             0x818d0
+...
+```
+
+v.s.
+
+```nasm
+(gdb) info r
+...
+rbp            0x81ce0             0x81ce0
+rsp            0xfffffffffff81cd0  0xfffffffffff81cd0
+...
+```
+
+Only the stack pointer `rsp` differs which is to be expected. To understand the crash, we first need to recall the fact that each function has their own stack. 
+
+<details>
+<summary>Side Note: Stacks</summary>
+
+Feel free to skip this section. This section investigates how the stack grows. All you need to understand is that the new stack frame will be located "after" the 
+callee stack frame.
+
+Let's observe the following simple program:
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="kt">void</span> <span class="nf">foo</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">z</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'W'</span><span class="p">,</span> <span class="sc">'o'</span><span class="p">,</span> <span class="sc">'r'</span><span class="p">,</span> <span class="sc">'l'</span><span class="p">,</span> <span class="sc">'d'</span><span class="p">};</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d: %s %y</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">x</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'H'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'l'</span><span class="p">,</span> <span class="sc">'l'</span><span class="p">,</span> <span class="sc">'o'</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+    <span class="n">foo</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<b>Note:</b> When reading the stack, recall which way the stack grows and the endian. In our case, the stack grows downwards starting from a higher address and 
+grows towards the lower addresses. The format is in little endian meaning the least significant bit is placed in the lower address.
+
+Before <code class = "language-plaintext highlighter-rouge">foo</code> is called, this is the state of our base and stack pointers:
+<div class="language-nasm highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">gdb</span><span class="p">)</span> <span class="nv">i</span> <span class="nv">r</span> <span class="nb">rbp</span>
+<span class="nf">rbp</span>            <span class="mh">0x81ce0</span>             <span class="mh">0x81ce0</span>
+<span class="p">(</span><span class="nf">gdb</span><span class="p">)</span> <span class="nv">i</span> <span class="nv">r</span> <span class="nb">rsp</span>
+<span class="nf">rsp</span>            <span class="mh">0x81ca0</span>             <span class="mh">0x81ca0</span>
+</code></pre></div></div>
+
+and the addresses of the stack variables:
+
+<div class="highlighter-rouge"><pre class="highlight"><code>(gdb) p &x[0]
+$2 = <font color="ff5733"><b>0x81cb0</b></font> "Hello"
+(gdb) p &y
+$3 = (int *) <font color="c898ff"><b>0x81cac</b></font>
+</code></pre></div>
+
+and the corresponding values in the stack (highlighted the same color as its corresponding addresses):
+<div class="highlighter-rouge"><pre class="highlight"><code>(gdb) x/6x $sp
+0x81ca0:        0x08049dd8      0x00000000      0x08049dd8      <font color="c898ff"><b>0x00000015</b></font>
+0x81cb0:        <font color="ff5733"><b>0x6c6c6548      0x0000006f</b></font>
+...
+</code></pre></div>
+
+<details>
+<summary>Reading the Stack</summary>
+<code class = "language-plaintext highlighter-rouge">y = 21</code> corresponds to <code class = "language-plaintext highlighter-rouge">0x15</code> stored in the address <font color="c898ff"><b>0x81cac</b></font>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>char x[32] = {'H', 'e', 'l', 'l', 'o'};
+movabs $0x6f6c6c6548,%rax
+</code></pre></div>
+
+The string <code  class = "language-plaintext highlighter-rouge">x</code> starts from <font color="ff5733"><b>0x81cb0</b></font> where <code class = "language-plaintext highlighter-rouge">H</code> is <code class = "language-plaintext highlighter-rouge">0x48</code> (104 in ASCII) and <code class = "language-plaintext highlighter-rouge">o</code> is <code class = "language-plaintext highlighter-rouge">6f</code> (111 in ASCII)
+</details>
+
+When the function <code class = "language-plaintext highlighter-rouge">foo</code> is called, we can observe that the new base stack is "above" (lower address) than the callee <code class = "language-plaintext highlighter-rouge">main</code>:
+<table>
+<thead>
+    <tr>
+        <td>Register</td><td>main</td><td>foo</td>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>rbp</td><td>0x81ce0</td><td>0x81ca0</td>
+    </tr>
+    <tr>
+        <td>rsp</td><td>0x81c90</td><td>0x81c60</td>
+    </tr>
+</tbody>
+</table>
+
+Therefore we should observe the stack variables under <code class = "language-plaintext highlighter-rouge">foo</code> "above" (lower address) than the callee <code  class = "language-plaintext highlighter-rouge">main</code> as well:
+
+<div class="language-nasm highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(gdb) p &(x[0])
+$4 = 0x81cb0 "Hello"
+(gdb) p &y
+$5 = (int *) 0x81c64
+(gdb) p &z[0]
+$6 = 0x81c70 "World"
+(gdb) x/80x rsp
+No symbol "rsp" in current context.
+(gdb) x/-21x 0x81cb0+8
+0x81c64:        0x00000015      0x00081cb0      0x00000000      0x6c726f57
+0x81c74:        0x00000064      0x00000000      0x00000000      0x000e74a0
+0x81c84:        0x00000001      0x649d7900      0xd7224120      0x00081ce0
+0x81c94:        0x00000000      0x08048897      0x00000000      0x08049dd8
+0x81ca4:        0x00000000      0x08049dd8      0x00000015      0x6c6c6548
+0x81cb4:        0x0000006f
+</code></pre></div></div>
+</details>
+
+Any new stack frames will come after `rsp` (lower addresses in our case), so we can simply try to modify `rsp` with any random value to trigger a segfault. Considering we cannot even 
+access the variable `buf`, it will come to no surprise that `gdb` will prevent us from writing to the memory address:
+```nasm
+(gdb) p buf[0]
+Cannot access memory at address 0xfffffffffff81cd0
+(gdb) p &buf[0]
+$4 = 0xfffffffffff81cd0 <error: Cannot access memory at address 0xfffffffffff81cd0>
+(gdb) set {int}$rsp=8
+Cannot access memory at address 0xfffffffffff81cd0
+```
+
+Honestly, this was very anti-climatic.
 
 **Conclusions:**
 * The stack guard was never triggered since we never overwrote our canary value (I mean the program did nothing anyways)
-* Adding a single print statement was enough to trigger a segmentation fault
+* Adding a single print statement was enough to trigger a segmentation fault as the stack pointer will point into an unreachable address for writing
 
 ---
+
+### Some Random Notes on GDB
 
 A few notes on working with a remote target with gdb:
 * **Connecting to the target:** `target qnx <ip-address>:8000`
@@ -223,3 +351,10 @@ Disabled 'set detach-on-fork' for remote targets
 Reading symbols from prog-amd64...
 (gdb) upload prog-amd64 /tmp/prog-amd64
 ```
+
+Some stuff I found out:
+```
+(gdb) x/1s 0x8048824
+0x8048824:      "hello world"
+```
+
