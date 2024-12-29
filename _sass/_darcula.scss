@@ -138,6 +138,9 @@ iframe {
     display: inline-block;                                                      
 }                                                                             
 @media only screen and (max-width: 800px) {                                   
+    details {
+      margin: 5px;
+    }
     .img_50, .img_60, .img_40, img_33 {                                         
       max-width: 100%;                                                          
     }                                                                           

@@ -10,6 +10,17 @@ agg --speed 1.20 test.cast demo.gif
 
 `--incremental` flag to render future web posts
 
+```
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gpg --edit-key alice@proton.me
+...
+gpg> fpr
+pub   ed25519/[redacted] 2024-01-10 alice@proton.me <alice@proton.me>
+ Primary key fingerprint: <font color="#C01C28"><b>768B 218A CCD7 AA34 9830  52D8 9BD4 1A08 9D98 BC02</b></font>
+</code></pre></div></div>
+```
+
+---
+
 <h1 align="center">
   <br>
   <img src="/images/reverie-text.png" alt="Reverie" width="200"/>

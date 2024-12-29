@@ -17,6 +17,22 @@ img {
   filter: brightness(.8) contrast(1.2);
 }
 
+details {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+}
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+}
+
+details[open] {
+  padding: 0.5em;
+}
+
 html {
   font-size: 100%;
   height: 100%;
@@ -751,6 +767,18 @@ Modules - reusable parts of our design
 }
 
 @media only screen and (min-width: 320px) and (max-width: 759px) {
+  details {
+    padding: 0em;
+  }
+
+  summary {
+    padding: 0em;
+  }
+
+  details[open] {
+    padding: 0em;
+  }
+
   #carbonads {
     float: none;
     margin: 0 auto;
