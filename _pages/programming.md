@@ -33,7 +33,8 @@ A random blog discussing various topics in Computer Science and Programming that
 * [Software Portability](../software-ports)
 * [Bias UTM CS Course Review](../bias-utm-cs-course-review)
 * [Computer Science – A Long and Gargled Explanation](../computer-science-a-long-and-gargled-explanation)
-
+* [A Quick Look Into Half-Width and Full-Width Characters](../halfwidth-fullwidth-encoding)
+* [Verifying Email Signature Manually](../signature-verification/)
 
 ## Dev Blogs
 
@@ -51,9 +52,10 @@ A random blog discussing various topics in Computer Science and Programming that
 
 ---
 
+* [Utilizing Aliases and Interactive Mode to Force Users to Think Twice Before Deleting Files](../alias-interactive)
+* [Splitting Files on Linux](../split-files)
 * [Fluent Bit Avro Frustration](https://zakuarbor.github.io/blog/avro-fluentbit-header/)
 * [Duplicate a Fluent-Bit Plugin](https://zakuarbor.github.io/blog/fluentd-kafka-copy/)
-* [Verifying Email Signature Manually](../signature-verification/)
 * [Rust - Invoking Closures in a Struct](../rust-closure-invoke/)
 * [Rust - Exploring the Assembly Code between Mutable and Shadow Variables](../rust-shadow-vs-mut)
 * [QNX - An Introduction to Adapative Partitioning Scheduler and How to Bankrupt Partitions](../qnx-aps)
