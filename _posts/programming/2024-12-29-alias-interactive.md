@@ -3,8 +3,7 @@ layout: post
 title:  "Utilizing Aliases and Interactive Mode to Force Users to Think Twice Before Deleting Files"
 description: "Using interactive mode and alias to force users to think twice before overwriting files"
 date: 2024-12-29
-categories: [micro, linux]
-permalink: micro/2024/12/:title
+categories: [linux]
 ---
 
 I previously mentioned in my microblog that [I lost my file](https://randombits.neocities.org/micro/2024/12/jekyll-cache) by accidentally overwriting my file using the `cp` command. This got me thinking as to why this would be impossible on 
