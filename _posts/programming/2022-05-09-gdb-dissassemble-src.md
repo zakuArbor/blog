@@ -14,7 +14,7 @@ to examine the behavior that is occuring behind the scene.
 <hr/>
 <ul>
 <li><code class="highlighter-rouge">disassemble /s</code> allows you to view the generated assembly code for each line of C code (i.e. annotations)</li>
-<li>Do not enable TUI. It doesn't seem to work</li>
+<li>Do not enable TUI if you want to mix assembly with the source code. It doesn't seem to work as it splits the assembly and source code into two separate windows</li>
 </ul>
 <hr/>
 </details>
@@ -92,7 +92,7 @@ trying to disassemble the program. The issue with tui is that the option `/s`
 does not appear to work and only gives me the regular output.
 
 ![GDB with TUI not showing the annotated line of C in the assembly code](../assets/programming/gdb-tui-split.png)
-<p class = "caption">GDB with TUI does not show the annotated line of C doe in the assembly view</p>
+<p class = "caption">GDB with TUI does not show the annotated line of C in the assembly view</p>
 
 I'll update this blog if I do find a way though. At the time of writing, I do not know 
 how to set TUI to display the output of `/s` when executing `disassemble`
