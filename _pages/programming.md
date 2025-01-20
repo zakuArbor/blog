@@ -24,6 +24,8 @@ A random blog discussing various topics in Computer Science and Programming that
 * [Debugging Symbols - A Basic Look at Separating Debug Symbols](../debugging-symbols)
 * [recvfrom - Obtaining the Return Address](../recvfrom-ret-addr)
 * [Polluting the Web With a Useless 5 argument main function](../useless-main/)
+* [The Sign of Char](../sign-of-char)
+* [Stack Overflow: The Case of a Small Stack](../small-stack)
 
 ## Highlevel Overview of Topics
 

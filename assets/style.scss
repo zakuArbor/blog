@@ -870,6 +870,56 @@ Modules - reusable parts of our design
   margin: 0 -2px 0 -5px;
 }
 
+.bit-table {
+  font-size: 0.9em;
+  background-color: none;
+  margin: auto;
+}
+
+.bit-table td, .bits-row tr, .bit-table th {
+ padding: 1px;
+ padding-left: 3px;
+ padding-right: 3px;
+ text-align: center;
+ border-left: 0px;
+ border-right: 0px;
+}
+
+.bits-row td:nth-child(1) {
+  border-left: 1px solid white;
+}
+
+.bits-row td:nth-child(4n) {
+  border-right: 1px solid white;
+}
+
+.bits-row td.highlight {
+  background-color: #444f2d;
+}
+
+.bits-row td.highlight2{
+//  background-color: #234153;
+  color: #ff7373;
+}
+
+.hex-row td.highlight2 {
+  color: #ff7373;
+}
+
+.hex-row, .hex-row td {
+  border: 0px;
+  color: #89b82b;
+  font-weight: bold;
+}
+
+.bit-table th {
+  border: 0px;
+  font-size: 0.8em;
+  font-style: italic;
+  color: #698a6c;
+  background-color: transparent;
+}
+
 @media only screen and (min-width: 1170px) {
   .cd-timeline-img {
     width: 60px;
