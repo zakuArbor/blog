@@ -16,7 +16,7 @@ Although I had some interest in becoming an electrician, it was just something I
 
 ---
 
-You can read [my blog on what made me study Computer Science](../my-personal-journey-in-choosing-what-to-do-after-high-school) 
+You can read [my blog on what made me study Computer Science](../my-personal-journey-in-choosing-what-to-do-after-high-school/) 
 for the background why I decided to study Computer Science. But to summarize, 
 I did not particularly want to study Computer Science. I liked learning 
 various programming languages and work on mini side projects, but I did not 
