@@ -34,7 +34,7 @@ $ cp -r out_kafka out_kafka2
 
 Since the plugin is written in C, it is likely that plugins are compiled as a shared library and either dynamically linked to Fluent Bit or dynamically loaded to Fluent Bit. So it would make no sense if there were two libraries with the same name, so we need to change the name of the copied plugin by editing the `CMakeLists.txt`:
 
-```
+```diff
 $ diff ../out_kafka/CMakeLists.txt CMakeLists.txt 
 7,8c7,8
 < FLB_PLUGIN(out_kafka "${src}" "rdkafka")
@@ -54,21 +54,21 @@ option(FLB_OUT_KAFKA2                  "Enable Kafka output plugin duplicate"   
 ```
 
 **Diff:**
-
-<div class="language-plaintext highlighter-rouge"><pre class = "highlight"><code><span style="color:#D0CFCC"><b>$ </b></span>git diff CMakeLists.txt
-<b>diff --git a/CMakeLists.txt b/CMakeLists.txt</b>
-<b>index d3847ef11..78edc9dab 100644</b>
-<b>--- a/CMakeLists.txt</b>
-<b>+++ b/CMakeLists.txt</b>
-<span style="color:#2AA1B3">@@ -237,6 +237,7 @@</span> option(FLB_OUT_FLOWCOUNTER             &quot;Enable flowcount output plugin&quot;
- option(FLB_OUT_LOGDNA                  &quot;Enable LogDNA output plugin&quot;              Yes)
- option(FLB_OUT_LOKI                    &quot;Enable Loki output plugin&quot;                Yes)
- option(FLB_OUT_KAFKA                   &quot;Enable Kafka output plugin&quot;                No)
-<span style="color:#26A269">+option(FLB_OUT_KAFKA2                  &quot;Enable Kafka output plugin duplicate&quot;     Yes)</span>
- option(FLB_OUT_KAFKA_REST              &quot;Enable Kafka Rest output plugin&quot;          Yes)
- option(FLB_OUT_CLOUDWATCH_LOGS         &quot;Enable AWS CloudWatch output plugin&quot;      Yes)
- option(FLB_OUT_KINESIS_FIREHOSE        &quot;Enable AWS Firehose output plugin&quot;        Yes)
-</code></pre></div>
+```diff
+git diff CMakeLists.txt
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d3847ef11..78edc9dab 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -237,6 +237,7 @@ option(FLB_OUT_FLOWCOUNTER             "Enable flowcount output plugin"
+ option(FLB_OUT_LOGDNA                  "Enable LogDNA output plugin"              Yes)
+ option(FLB_OUT_LOKI                    "Enable Loki output plugin"                Yes)
+ option(FLB_OUT_KAFKA                   "Enable Kafka output plugin"                No)
++option(FLB_OUT_KAFKA2                  "Enable Kafka output plugin duplicate"     Yes)
+ option(FLB_OUT_KAFKA_REST              "Enable Kafka Rest output plugin"          Yes)
+ option(FLB_OUT_CLOUDWATCH_LOGS         "Enable AWS CloudWatch output plugin"      Yes)
+ option(FLB_OUT_KINESIS_FIREHOSE        "Enable AWS Firehose output plugin"        Yes)
+```
 
 **Note:** By default, `kafka` plugin is disabled
 
@@ -78,23 +78,22 @@ REGISTER_OUT_PLUGIN("out_kafka2")
 ```
 
 **Diff:**
+```diff
+git diff CMakeLists.txt
+diff --git a/plugins/CMakeLists.txt b/plugins/CMakeLists.txt</b>
+index 78f007a81..6f534c485 100644</b>
+--- a/plugins/CMakeLists.txt</b>
++++ b/plugins/CMakeLists.txt</b>
+@@ -296,6 +296,7 @@ REGISTER_OUT_PLUGIN("out_influxdb")
+ REGISTER_OUT_PLUGIN("out_logdna")
+ REGISTER_OUT_PLUGIN("out_loki")
+ REGISTER_OUT_PLUGIN("out_kafka")
++REGISTER_OUT_PLUGIN("out_kafka2")
+ REGISTER_OUT_PLUGIN("out_kafka_rest")
+ REGISTER_OUT_PLUGIN("out_nats")
+ REGISTER_OUT_PLUGIN("out_nrlogs")
+```
 
-<div class="language-plaintext highlighter-rouge">
-<pre class = "highlight"><code><span style="color:#D0CFCC"><b>$ </b></span>git diff CMakeLists.txt
-<b>diff --git a/plugins/CMakeLists.txt b/plugins/CMakeLists.txt</b>
-<b>index 78f007a81..6f534c485 100644</b>
-<b>--- a/plugins/CMakeLists.txt</b>
-<b>+++ b/plugins/CMakeLists.txt</b>
-<span style="color:#2AA1B3">@@ -296,6 +296,7 @@</span> REGISTER_OUT_PLUGIN(&quot;out_influxdb&quot;)
- REGISTER_OUT_PLUGIN(&quot;out_logdna&quot;)
- REGISTER_OUT_PLUGIN(&quot;out_loki&quot;)
- REGISTER_OUT_PLUGIN(&quot;out_kafka&quot;)
-<span style="color:#26A269">+REGISTER_OUT_PLUGIN(&quot;out_kafka2&quot;)</span>
- REGISTER_OUT_PLUGIN(&quot;out_kafka_rest&quot;)
- REGISTER_OUT_PLUGIN(&quot;out_nats&quot;)
- REGISTER_OUT_PLUGIN(&quot;out_nrlogs&quot;)
-</code></pre></div>
-   
 3.) Generate the Build Files for our duplicate plugin:
 ```
 $ cmake -DFLB_OUT_KAFKA2=On ../ 

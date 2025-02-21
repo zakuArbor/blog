@@ -334,7 +334,7 @@ As expected, all the macros of been expanded and substituted along with the decl
 
 Once the source files have been preprocessed such that all external symbols have been declared and all macros have either been expanded or ran, we need to compile the code to produce the assembly code of our source files. This can be done using the `-S` option in `gcc`. Let's look at the ouput of compiling `main.c` (file: `main.s`):
 
-```c
+```nasm
         .file   "main.c"
         .text
         .globl  main
@@ -485,7 +485,7 @@ Let's inspect the executable itself using `objdump`:
 
 If we were to look at the code for `main`, we see the following:
 
-```c
+```nasm
 0000000000401177 <main>:
   401177:       55                      push   %rbp
   401178:       48 89 e5                mov    %rsp,%rbp

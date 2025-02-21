@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A look at Input Buffer and scanf"
-categories: [programming, c/c++]
+categories: [programming, c/c++, scanf]
 ---
 Today I learned something new that should have been obvious but it was something I never took time to think about. In Linux, we have three standard streams: `stdin`, `stdout`, and `stderr`. If you are familiar with programming in C, you should know that `stdin` is the input channel that handles data from an input device such as your keyboard.  `scanf` is a `function that scans input according to format` (definition from `SCANF(3) - Linux Programmer's Manual`). But how does `scanf` actually scan the input?
 
@@ -38,7 +38,7 @@ while (scanf("%c", &c) == 1) {
 
 Let's try running **figure 2** with various inputs and see how the program behaves:
 
-```
+```shell
 $ echo -e "5" | ./a.out
 read integer: 5
 Let's check what is in the input buffer:

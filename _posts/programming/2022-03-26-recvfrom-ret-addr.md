@@ -143,7 +143,7 @@ members of different sizes, we can estimate the minimum amount of memory require
 to set `addrlen` to obtain the IP address from `recvfrom()`
 
 Recall `src_addr` is the type `struct sockaddr_in`:
-```
+```c
 struct sockaddr_in                                                              
   {                                                                             
     sa_family_t sin_family;                                                     
