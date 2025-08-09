@@ -1,1 +1,1 @@
-Sitemap: https://zakuarbor.github.io/blog/sitemap.xml
+Sitemap: https://zakuarbor.codeberg.page/blog/sitemap.xml

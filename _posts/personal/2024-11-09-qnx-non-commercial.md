@@ -10,7 +10,7 @@ to the LinkedIn Community as well which was where I learned about it.
 For those who are not familiar with QNX, QNX is a properiety realtime operating system targetted for embedded systems and is installed in over 255 million vehicles.
 QNX has a great reputation for being reliable and safe embedded system to build software on top of due to its microarchitecture and compliance to many industrial and engineering design process
 which gives customers the ability to certify their software in safety critical systems more easily. What makes QNX appealing is a discussion on another time but for me, this is a good
-opportunity to fiddle around with the system. I was <a href="https://zakuarbor.github.io/blog/carletonu-qnx-license/">previously denied a license</a> from my university who had an agreement with QNX and
+opportunity to fiddle around with the system. I was <a href="{{ site.url }}/blog/carletonu-qnx-license/">previously denied a license</a> from my university who had an agreement with QNX and
 my attempts to get an educational license did not go far years ago.</p>
 
 <p><img src="../assets/products/qnx/announcement-linkedin.png" alt="LinkedIn Post announcing QNX 8.0 has a non-commercial license" /></p>
@@ -39,7 +39,7 @@ does a great job summarizing the sketpicism. QNX used to have a bigger hobbyist 
 to the community. Years later, QNX source code was available for the public to read (though probably with restrictions) but later shut the source code availability after being acquired bhy Blackberry who does not have the
 best reputation to the developer community (hence why Blackberry Phones failed to capture the market from my understanding despite once being a market leader).</p>
 
-<p>Regardless, I have plans to create a few materials on QNX in the coming months and perhaps create a follow up to <a href="https://zakuarbor.github.io/blog/qnx-aps/">QNX Adapative Partitioning System</a> as it seemed to have gained enou
+<p>Regardless, I have plans to create a few materials on QNX in the coming months and perhaps create a follow up to <a href="{{ site.url }}/blog/qnx-aps/">QNX Adapative Partitioning System</a> as it seemed to have gained enou
 has been ranked top 5 on Google search results (though I doubt it had many readers due to the population of QNX developers):</p>
 
 <p><img src="../assets/products/qnx/aps-search-results.png" alt="Google Search Result Ranking for my QNX APS webpage" /></p>

@@ -2,7 +2,7 @@
 layout: post 
 title:  "Stack Overflow: The Case of a Small Stack"
 description: "How a simple innocent looking one line code to allocate a buffer in main can crash the program and a look into why amd64 is yet isn't affected in our target platform"
-categories: [micro, stack, qnx, C/C++]
+categories: [micro, stack, qnx, c/c++]
 ---
 
 Years ago I was once asked by an intern to debug a mysterious crash that seemed so innocent. While I no longer recall what the code was about, we stripped the program to a single line in 

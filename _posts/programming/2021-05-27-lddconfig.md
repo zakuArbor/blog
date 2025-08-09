@@ -9,7 +9,7 @@ Have you ever encountered an error running a program where it's missing a dll or
 
 ![An image of a missing dll when trying to run Skype](https://filestore.community.support.microsoft.com/api/images/21f18fc5-2ff9-4fc8-a4b3-3734461b5b10)
 
-In my previous blogs such as [A Dive to the Build Process](https://zakuarbor.github.io/blog/building-code/) or [Debugging expr with ldd](https://zakuarbor.github.io/blog/ldd-to-debug-expr/), I have explained briefly went over 
+In my previous blogs such as [A Dive to the Build Process]({{ site.url }}/blog/building-code/) or [Debugging expr with ldd]({{ site.url }}/blog/ldd-to-debug-expr/), I have explained briefly went over 
 ldd and the usage of shared libraries. Today, I want to expand on this topic by going over something I encountered at work.
 
 ---

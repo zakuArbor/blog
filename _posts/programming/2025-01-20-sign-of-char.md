@@ -2,7 +2,7 @@
 layout: post
 title: The Sign of Char
 description: A look into the signedness of char on ARM architecture
-categories: [programming, C/C++, arm]
+categories: [programming, c/c++, arm]
 ---
 
 > **Note:** This is a follow up post from my [microblog](https://randombits.neocities.org/micro/2025/01/char-unsigned)

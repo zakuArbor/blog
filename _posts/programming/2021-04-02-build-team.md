@@ -5,11 +5,11 @@ categories: [programming, build]
 
 ---
 
-In my undergraduate in Computer Science, I got the opportunity to work at IBM as a member of the Build Infrastructure Team. I had absolutely no clue what the Build Infrastructure Team is or does. Though I am no expert and I still have a difficult time explaining what I do to friends and family, I'll try to tackle the subject to the best of my ability. This post is a precursor to an education session titled *An Overview of DevOps and Builds* I plan to give to new interns of the Build Infrastructure Team at IBM this May. I am hoping my actions of writing a blog will prepare me for my presentation. (On a side note, this is a good sequel to my previous blog about [Software Ports](https://zakuarbor.github.io/blog/software-ports/))
+In my undergraduate in Computer Science, I got the opportunity to work at IBM as a member of the Build Infrastructure Team. I had absolutely no clue what the Build Infrastructure Team is or does. Though I am no expert and I still have a difficult time explaining what I do to friends and family, I'll try to tackle the subject to the best of my ability. This post is a precursor to an education session titled *An Overview of DevOps and Builds* I plan to give to new interns of the Build Infrastructure Team at IBM this May. I am hoping my actions of writing a blog will prepare me for my presentation. (On a side note, this is a good sequel to my previous blog about [Software Ports]({{ site.url }}/blog/software-ports/))
 
 On my first week of joining the Build Infrastructure team, I tried to search up what a Build Team does because it was not clear to me what I will be doing. I came across a paper titled *[Understanding and Improving Software Build Teams](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/phillips-icse-2014.pdf)* which examines the various Build Teams at Microsoft. It's one of the only comprehensive pieces of  information I could find about Build Infrastructure teams at the time. Little did I know that there are tons of information about Build Teams but I did not google `Build Engineer`.
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/build-paper.png)
+![](../assets/programming/builds/build-paper.png)
 
 ## Disclaimer:
 
@@ -37,17 +37,17 @@ Before we talk about what a Build team is, we first need to go to the basic ques
 
 You may recall when working on Java, C, or C++ you ran a Build by pressing Build, Run, or Play button
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/eclipse-build.png)
+![](../assets/programming/builds/eclipse-build.png)
 
 or you would "compile" your code on the terminal
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/gcc-build.png)
+![](../assets/programming/builds/gcc-build.png)
 
 But what does this actually do? As you may know, a build is just simply the process of converting your source code (i.e. `.c` or `.java`) to a binary/executable (i.e. `.exe` or `.o`). More formally (if you accept Wikipedia as credible):
 
 > In software development, a **build** is the process of converting **source code** files into standalone **software artifact(s)** that can be run on a computer, or the result of doing so. - Wikipedia
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/highlevel-build.png)
+![](../assets/programming/builds/highlevel-build.png)
 
 An executable to put it briefly is the **ready to run** form of a program (hence why we call it an **executable**). An executable consists of instructions (i.e. machine code) that consists of zeros and ones assembled in a way the CPU understands. Some common locations where executables can often be found on Unix-like Operating System (OS) under `/bin`, `/sbin`, `/usr/bin`, or `usr/local/bin`. As this is more of a brief overview about builds, I won't delve into the structure of an executable (i.e. ELF Format. Though not like I have a good understanding of the topic either). 
 
@@ -60,7 +60,7 @@ Build tools are simply just tools that automate the build process but can do mor
 > **Build automation** is the process of automating the creation of a **software build** and the associated processes including: **compiling** computer **source code** into **binary code**, packagine binary code, and running **automated tests**
 > -Wikipedia
 
-![Compile](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/makefile-diablo.png)
+![Compile](../assets/programming/builds/makefile-diablo.png)
 
 <small>An example of a makefile from Diablo</small>
 
@@ -112,7 +112,7 @@ One **key** goal of a build system is that it must be **repeatable**. The projec
 
 Anyhow, back to the topic of **nightly builds**. Nightly builds can contain more extensive testing (regression, QA, and integration) and build coverage and can produce an image/installer/executable which can be used for deployment or further testing. When performing these builds, it may be a good idea to perform a clean build since some files may not be recompiled (for some unexplainable reason) or the generated files may be "corrupted".
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/firefox-nightly.png)
+![](../assets/programming/builds/firefox-nightly.png)
 
 <small>An example of nightly builds that gets released to the public every single day</small>
 
@@ -120,11 +120,11 @@ Anyhow, back to the topic of **nightly builds**. Nightly builds can contain more
 
 **Example:** Open Source Project Docker Compose: [Overview of Docker Compose](https://docs.docker.com/compose/)
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/docker-compose-github.png)
+![](../assets/programming/builds/docker-compose-github.png)
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/docker-compose-ci.png)
+![](../assets/programming/builds/docker-compose-ci.png)
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/docker-compose-jenkins.png)
+![](../assets/programming/builds/docker-compose-jenkins.png)
 
 The Docker team runs the CI pipeline before each PR gets merged. Though I could be wrong, you can take a look at their Jenkins server which is publically accessible:[Docker Compose Jenkins Link](https://ci-next.docker.com/public/job/compose/job/master/) and see for yourself (I didn't bother to take a close look).
 
@@ -151,7 +151,7 @@ Another finding from the paper notes that
 
 This finding is interesting and I can see this being applicable in some forms to my workplace. Due to the ambiguity of the tasks between various teams and the fact that other teams may not want to deal with legacy stuff, they may be dumping tasks that could be shared or simply do not make much sense to dump the work to us. Though other teams also work on tasks that encroach our domain as well so it can be quite confusing.
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/build-ms-survey.png)
+![](../assets/programming/builds/build-ms-survey.png)
 
 ### Job Satisfication
 
@@ -185,9 +185,9 @@ The biggest difference between interns and full time employees is the mentorship
 
 **Proposed Solution:** If we were to take a look at the common sources of information builders to utilize at Microsoft, we find that tribal knowledge was used very frequently and was seen as a very useful source of information. This is a great concern because it fosters the need to rely on senior builders to pass the information in a very slow and timely manner, it causes severe knowledge gap and would be very devastating if the senior builder were to leave the team or company. I think this is the issue at my company whereby all of the current members of the Build team were given some black box and we are trying to figure out how the system works. The senior builders have all left and we are not given the advantage of learning from the builders who wrote all the tools and infrastructure since they no longer work at the company.
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/build-ms-info-src.png)
+![](../assets/programming/builds/build-ms-info-src.png)
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/build-ms-experience.png)
+![](../assets/programming/builds/build-ms-experience.png)
 
 One way to facilitate knowledge sharing is to hold monthly education session whereby various members of the team take turns as a group or as individuals to study various parts about the Build System within or even outside the company and share with the team. Furthermore, the need to write documentation should be emphasized more. The documentation can be in any form, video or written. But documentation is also ineffective if no one knows about it so there needs to be some consideration on how to consolidate and expose all the documentation that exists into categories so that it can be quick to find the documentation. Lastly, perhaps the team should work on a side project to make a build simulator. This will be extremely hard and time-consuming but if builders are able to create a simulator that is isolated from production environments, senior builders can guide through new builders on how to do the tasks and give new builders the opportunity to practice various scenarios and tasks they do not perform before or at a regular basis. The simulator should be designed to be simple (because the actual build system and project can be way too complex) and isolated such that builders can simulate various tools without having the tool fail on them because of a dependency issue or a flaw in the tool itself. The reason why I really like the idea of creating a simulator is that new builders can be exposed, practice, and understand conceptually various tasks that exist rather than being taught and to never use it till the situation arises and it would be lost in their memory.
 
@@ -197,17 +197,17 @@ One way to facilitate knowledge sharing is to hold monthly education session whe
 
 I mention it before, builders are responsible for the states of the builds on all supported platforms. Any change a developer makes cannot break any of the platforms whether it be a different operating system or different hardware. For instance, Counterstrike Global Offensive supports all three major operating systems: Linux, MacOS, and Windows.
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/csgo.png) 
+![](../assets/programming/builds/csgo.png) 
 
 If we were to look at the game requirements, we find that there are different requirements depending on the Operating System. For instance, on Windows we can see Direct X library is required but on Linux you need OpenGL and OpenAL libraries instead. DirectX is a graphics and sound library commonly used by PC Games and only exists on Windows. Any code running DirectX on Linux without some sort of emulator or translator will break. The installer for DirectX or any executable on Windows is formatted differently from how executables are formatted on Linux (i.e. ELF Format). A Linux computer will not understand how to read Windows executable, nor know how to load the dynamic library nor understand system calls which are functions that interact with the kernel or the operating system. Therefore, Linux uses OpenGl library to handle the graphics and OpenAL is used to handle the sound. Both of these libraries are multi-platform libraries and even support Windows (OpenGL used to be supported on MacOS). You can find OpenGL being used by games that offically support all 3 major operating systems such as Minecraft Java Edition where it uses Java which is a very portable language along with its usage of multiplatform libraries.
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/csgo-windows.png)
+![](../assets/programming/builds/csgo-windows.png)
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/csgo-linux.png)
+![](../assets/programming/builds/csgo-linux.png)
 
 Another example is the Debian Kernel which is essentially the Linux Kernel version Debian uses. Debian supports many different architectures.
 
-![Debian Arch Table](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/debian-arch-list.png)
+![Debian Arch Table](../assets/programming/builds/debian-arch-list.png)
 
 ---
 
@@ -244,7 +244,7 @@ $ xxd -e -g 2 /tmp/test.txt
 
 You may have seen endian before when working on socket programming. Data being sent to the network is sent in big endian where the most significant byte is sent first. Little endian is probably more popular, at least among us consumers since x86 architecture is in little endian.
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/endian-computerphile.png)
+![](../assets/programming/builds/endian-computerphile.png)
 
 When working on forensics or in cybersecurity, sometimes you may see text in weird order such as "ehll oowlr". This is due to the difference in endian mode. If we take endian into account, the text should be more readable.
 
@@ -262,7 +262,7 @@ If you have ever programmed in assembly or taken a computer architecture, you'll
 
 Below is an example of how different the assembly code is between ARM and x86. The CPU may speak in zeroes and ones but it needs to be in a format that the CPU understands. It's like Latin and English. They both use similar character sets but an English speaker would not be able to understand Latin.
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/assembly-example.png)
+![](../assets/programming/builds/assembly-example.png)
 
 Here's another example, trying to execute a program compiled on a Solaris machine on my laptop using an Intel chip. You'll get an error because the computer cannot understand the instructions. This reminds me of a time when my father came to me for help since his program would no longer execute on his company's server. Upon inspecting the binary, I soon realized the program was compiled from a Solaris workstation but the workstation he was trying to run on was running on PowerPC. Turned out the company moved the server from a Solaris workstation to a PowerPC workstation running Red Hat. My father didn't realize that he couldn't simply run a program running on a different CPU, so I had him just recompile the program since he did have the source code in hand. 
 
@@ -309,7 +309,7 @@ As mentioned previously, CI is the process of building and testing changes frequ
 
 A lot of sources I read on CI and DevOps like to emphasize on the use of a version control system to have a **single source** of truth. To elaborate, CI focuses on building changes frequently to quicken development and software deliveries while maintaining quality. The first step to enable this benefit is to ensure there is a centralized code branch that is being built frequently. Building and testing on different copies of the projects or branches can cause issues whereby it gets hard to know which version works and the branch or version developers are working on could be out of date, unstable, or diverge from the project's direction. You want to establish a centralized version where developers make changes based off stable, up-to date, and correct code base.
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/ci-process.png)
+![](../assets/programming/builds/ci-process.png)
 
 Here's an overview of how a typical CI build process could work:
 
@@ -327,7 +327,7 @@ Here's an overview of how a typical CI build process could work:
 
 #### Example - React CI BUILDS
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/react-ci-check.png)
+![](../assets/programming/builds/react-ci-check.png)
 
 Here's an example of where CI builds from React, a Javascript frontend framework, where builds are triggered when a PR is created. I assume all subsequent commits in the commit will trigger the CI builds as well. Anyhow, the reason why I want to highlight this is that the PR must go through extensive automated checks before the PR can be merged to master. This approach is great because it doesn't require any active management to go around and catch developers to fix their changes. It'll probably require an approval by the project maintainers but you can see how the project embraces Continuous integration.
 
@@ -335,7 +335,7 @@ Here's an example of where CI builds from React, a Javascript frontend framework
 
 IBM Carbon is an open-source UX library for Javascript frameworks. It utilizes various tools to automate the builds, tests and has a bot to communicate with the developers when the builds fail.
 
-![](https://raw.githubusercontent.com/zakuArbor/blog/master/assets/programming/builds/ibm-carbon.png)
+![](../assets/programming/builds/ibm-carbon.png)
 
 ### Continuous Delivery/Deployment
 

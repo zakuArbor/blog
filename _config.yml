@@ -45,8 +45,8 @@ google_analytics:
 
 # Your website URL (e.g. http://amitmerchant1990.github.io or http://www.amitmerchant.com)
 # Used for Sitemap.xml and your RSS feed
-url: https://zakuarbor.github.io
-enforce_ssl: https://zakuarbor.github.io
+url: https://zakuarbor.codeberg.page
+enforce_ssl: https://zakuarbor.codeberg.page
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
