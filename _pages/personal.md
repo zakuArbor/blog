@@ -3,6 +3,9 @@ layout: page
 permalink: /personal/
 title: Personal
 ---
+
+**Site has been moved to [https://zakuarbor.codeberg.page/blog/](https://zakuarbor.codeberg.page/blog/)**
+
 A random blog about me discussing on various topics that I randomly felt writing. Most of the blogs will probably be slabs of sloppy work.
 
 ## Course Reviews

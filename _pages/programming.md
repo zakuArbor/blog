@@ -3,6 +3,9 @@ layout: page
 permalink: /programming/
 title: Programming
 ---
+
+**Site has been moved to [https://zakuarbor.codeberg.page/blog/](https://zakuarbor.codeberg.page/blog/)**
+
 A random blog discussing various topics in Computer Science and Programming that I find interesting to write about. It mostly serves as a medium to test or reiterate to myself what I learned.
 
 ## C/C++

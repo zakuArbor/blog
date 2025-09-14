@@ -4,6 +4,7 @@ permalink: /archive/
 title: Archives
 ---
 
+**Site has been moved to [https://zakuarbor.codeberg.page/blog/](https://zakuarbor.codeberg.page/blog/)**
 
 <div id="archives">
 Check out <a href = "../categories" alt = "Cateogries page">Categories</a> to list by categories

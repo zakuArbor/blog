@@ -4,6 +4,8 @@ title: Hello World
 permalink: /about/
 ---
 
+**Site has been moved to [https://zakuarbor.codeberg.page/blog/](https://zakuarbor.codeberg.page/blog/)**
+
 The name is Ju Hong Kim, a student, software developer, and a random human who writes random things. I am a computer enthusiast and I love learning new things and expanding my knowledge. 
 With no plans in mind, I'll be venturing into Math at some random Canadian University till I get bored of it.
 
